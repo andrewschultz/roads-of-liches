@@ -107,3 +107,12 @@ carry out endspiteing:
 	end the story finally;
 	the rule succeeds.
 
+volume meta
+
+to moot (x - a thing): move x to nary a void;
+
+definition: a thing (called th) is moot:
+	if th is in nary a void, yes;
+	no;
+
+nary a void is a room.
