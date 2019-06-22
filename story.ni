@@ -1,6 +1,6 @@
 "Welp Haunted" by Gary Skye
 
-the story headline is "a text adventure for EctoComp 2019".
+the story headline is "a text adventure for EctoComp 2020".
 
 Jesse Murney is a person. The player is Jesse Murney.
 
@@ -24,9 +24,57 @@ book healing farm
 
 Healing Farm is a room.
 
+book crazy leap
+
+crazy leap is a room. "You hear a deep cry echo through the crazy leap."
+
+The Lazy Creep is a person in Crazy Leap.
+
+chapter keepdrying
+
+keepdrying is an action applying to nothing.
+
+understand the command "keepdry" as something new.
+
+understand "keepdry" as keepdrying.
+
+kept-dry is a truth state that varies.
+
+carry out keepdrying:
+	if kept-dry is true, say "You already did." instead;
+	say "You keep dry and now have more confidence to say [if creepdie-warn is true]CREEP DIE as you couldn't quite bbfore[else]something bolder[end if].";
+	increment the score;
+	now kept-dry is true;
+	the rule succeeds.
+
+chapter creepdieing
+
+creepdieing is an action applying to nothing.
+
+understand the command "creepdie" as something new.
+
+understand "creepdie" as creepdieing.
+
+creep-died is a truth state that varies.
+
+creepdie-warn is a truth state that varies.
+
+carry out creepdieing:
+	if kept-dry is false:
+		now creepdie-warn is true;
+		say "You don't have the confidence to say that. But you bet it'll work when you do." instead;
+	now creepdie-warn is false;
+	now creep-died is true;
+	increment the score;
+	say "The creep dies!";
+	moot lazy creep;
+	the rule succeeds.
+
 volume regular verbs
 
-instead of sleeping, say "Sleep coming? Keep slumming!"
+the block sleeping rule is not listed in any rulebook.
+
+check sleeping: say "Sleep coming? Keep slumming!" instead;
 
 volume weird verbs
 
