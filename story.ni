@@ -6,6 +6,10 @@ volume includes
 
 include Trivial Niceties by Andrew Schultz.
 
+include Welp Haunted Tables by Andrew Schultz.
+
+volume basics about you
+
 Jesse Murney is a person. The player is Jesse Murney.
 
 to die: end the story saying "I do die! Ooh!"
