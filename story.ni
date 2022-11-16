@@ -1,8 +1,18 @@
-"Welp Haunted" by Gary Skye
-
-the story headline is "A text adventure for EctoComp 2023 Grand Guignol".
+"Welp Haunted" by Gary Skye and Terry Scales
 
 volume includes
+
+the story description is "STRAIGHT GORY GREAT STORY".
+
+the story headline is "A straight gory great story for EctoComp 2023 Grand Guignol".
+
+release along with cover art.
+
+release along with a website.
+
+release along with the "parchment" interpreter.
+
+chapter extra header
 
 include Trivial Niceties by Andrew Schultz.
 
@@ -10,9 +20,9 @@ include Welp Haunted Globals by Andrew Schultz.
 
 include Welp Haunted Tables by Andrew Schultz.
 
-volume basics about you
+volume you the player
 
-Jesse Murney is a person. The player is Jesse Murney.
+Jesse Murney is a person. The player is Jesse Murney. description is "You're wearing weird clothes."
 
 to die: end the story saying "I do die! Ooh!"
 
@@ -22,9 +32,7 @@ book ditch park
 
 Ditch Park is a room. the toast gown is a wearable thing in Ditch Park.
 
-hop-start is a truth state that varies.
-
-every turn when player is in ditch park and hop-start is false: say "It feels so heart-stopping here. You need a way to move.";
+every turn when player is in ditch park and sco-start-hopping is false: say "It feels so heart-stopping here. You need a way to move.";
 
 book deal room
 

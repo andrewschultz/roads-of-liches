@@ -26,11 +26,11 @@ to vcp (txt - text):
 volume the main tables
 
 table of passthrough 1
-word1 (topic)	word2 (topic)	check-rule	run-rule	think-cue (truth state)	idid (truth state)
-"start"	"hopping"	pre-start-hopping rule	post-start-hopping rule
-"howl"	"farm"	pre-howl-farm rule	post-howl-farm rule
-"keep"	"dry"	pre-keep-dry rule	post-keep-dry rule
-"creep"	"die"	pre-creep-die rule	post-creep-die rule
+word1 (topic)	word2 (topic)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
+"start"	"hopping"	--	--	false	true	true	false	Ditch Park	pre-start-hopping rule	post-start-hopping rule
+"howl"	"farm"	--	--	false	true	true	false	Ditch Park	pre-howl-farm rule	post-howl-farm rule
+"keep"	"dry"	--	--	false	true	true	false	Howl Farm	pre-keep-dry rule	post-keep-dry rule
+"creep"	"die"	--	--	false	true	true	false	Howl Farm	pre-creep-die rule	post-creep-die rule
 
 a spoonerism rule (this is the pre-start-hopping rule):
 	if sco-start-hopping is true:
