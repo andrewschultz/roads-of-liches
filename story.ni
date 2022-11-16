@@ -6,6 +6,8 @@ volume includes
 
 include Trivial Niceties by Andrew Schultz.
 
+include Welp Haunted Globals by Andrew Schultz.
+
 include Welp Haunted Tables by Andrew Schultz.
 
 volume basics about you
@@ -38,45 +40,9 @@ crazy leap is a room. "You hear a deep cry echo through the crazy leap."
 
 The Lazy Creep is a person in Crazy Leap.
 
-chapter keepdrying
+volume unsorted things
 
-keepdrying is an action applying to nothing.
-
-understand the command "keepdry" as something new.
-
-understand "keepdry" as keepdrying.
-
-kept-dry is a truth state that varies.
-
-carry out keepdrying:
-	if kept-dry is true, say "You already did." instead;
-	say "You keep dry and now have more confidence to say [if creepdie-warn is true]CREEP DIE as you couldn't quite bbfore[else]something bolder[end if].";
-	increment the score;
-	now kept-dry is true;
-	the rule succeeds.
-
-chapter creepdieing
-
-creepdieing is an action applying to nothing.
-
-understand the command "creepdie" as something new.
-
-understand "creepdie" as creepdieing.
-
-creep-died is a truth state that varies.
-
-creepdie-warn is a truth state that varies.
-
-carry out creepdieing:
-	if kept-dry is false:
-		now creepdie-warn is true;
-		say "You don't have the confidence to say that. But you bet it'll work when you do." instead;
-	now creepdie-warn is false;
-	now creep-died is true;
-	increment the score;
-	say "The creep dies!";
-	moot lazy creep;
-	the rule succeeds.
+the deep cry is a thing.
 
 volume regular verbs
 
@@ -94,20 +60,6 @@ check swearing obscenely:
 	say "Yelps! Who helps you?!" instead;
 
 volume weird verbs
-
-chapter starthopping
-
-starthopping is an action applying to nothing.
-
-understand the command "start hopping" as something new.
-
-understand "start hopping" as starthopping.
-
-carry out starthopping:
-	if hop-start is true, say "You already did." instead;
-	increment the score;
-	say "It's good to feel you can move. You feel less helpless now.";
-	the rule succeeds.
 
 chapter endspiteing
 
