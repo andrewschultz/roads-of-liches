@@ -34,6 +34,12 @@ book healing farm
 
 Healing Farm is a room.
 
+book howl farm
+
+Howl Farm is a room. "A deep cry is here."
+
+the deep cry is scenery in Howl Farm.
+
 book crazy leap
 
 crazy leap is a room. "You hear a deep cry echo through the crazy leap."
@@ -41,8 +47,6 @@ crazy leap is a room. "You hear a deep cry echo through the crazy leap."
 The Lazy Creep is a person in Crazy Leap.
 
 volume unsorted things
-
-the deep cry is a thing.
 
 volume regular verbs
 
