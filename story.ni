@@ -1,6 +1,10 @@
 "Welp Haunted" by Gary Skye
 
-the story headline is "a text adventure for EctoComp 2020".
+the story headline is "A text adventure for EctoComp 2023 Grand Guignol".
+
+volume includes
+
+include Trivial Niceties by Andrew Schultz.
 
 Jesse Murney is a person. The player is Jesse Murney.
 
@@ -75,6 +79,15 @@ volume regular verbs
 the block sleeping rule is not listed in any rulebook.
 
 check sleeping: say "Sleep coming? Keep slumming!" instead;
+
+the block swearing obscenely rule is not listed in any rulebook.
+the block swearing obscenely rule is not listed in any rulebook.
+
+check swearing mildly:
+	try swearing obscenely instead;
+
+check swearing obscenely:
+	say "Yelps! Who helps you?!" instead;
 
 volume weird verbs
 
