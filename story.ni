@@ -20,6 +20,8 @@ include Welp Haunted Globals by Andrew Schultz.
 
 include Welp Haunted Tables by Andrew Schultz.
 
+include Welp Haunted Tests by Andrew Schultz.
+
 volume you the player
 
 Jesse Murney is a person. The player is Jesse Murney. description is "You're wearing weird clothes."
