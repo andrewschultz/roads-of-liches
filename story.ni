@@ -1,4 +1,4 @@
-"Welp Haunted" by Gary Skye and Terry Scales
+"Roads of Liches" by Gary Skye and Terry Scales
 
 volume includes
 
@@ -16,11 +16,11 @@ chapter extra header
 
 include Trivial Niceties by Andrew Schultz.
 
-include Welp Haunted Globals by Andrew Schultz.
+include Roads of Liches Globals by Andrew Schultz.
 
-include Welp Haunted Tables by Andrew Schultz.
+include Roads of Liches Tables by Andrew Schultz.
 
-include Welp Haunted Tests by Andrew Schultz.
+include Roads of Liches Tests by Andrew Schultz.
 
 volume you the player
 
