@@ -4,7 +4,7 @@ Version 1/221116 of Welp Haunted Tests by Andrew Schultz begins here.
 
 volume silly tests
 
-test w with "start hopping/howl farm/w/creep die/keep dry/keep dry/creep die".
+test w with "start hopping/howl farm/w/creep die/keep dry/keep dry/creep die/gonear wayfair cell/say farewell".
 
 Welp Haunted Tests ends here.
 

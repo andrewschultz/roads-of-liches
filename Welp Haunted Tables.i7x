@@ -25,12 +25,28 @@ to vcp (txt - text):
 
 volume the main tables
 
+table of general stuff
+word1 (topic)	word2 (topic)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
+"cleared"	"woes"	--	--	false	true	false	false	--	pre-cleared-woes rule	post-cleared-woes rule
+
 table of passthrough 1
 word1 (topic)	word2 (topic)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "start"	"hopping"	--	--	false	true	true	false	Ditch Park	pre-start-hopping rule	post-start-hopping rule
 "howl"	"farm"	--	--	false	true	true	false	Ditch Park	pre-howl-farm rule	post-howl-farm rule
 "keep"	"dry"	--	--	false	true	true	false	Howl Farm	pre-keep-dry rule	post-keep-dry rule
 "creep"	"die"	--	--	false	true	true	false	Howl Farm	pre-creep-die rule	post-creep-die rule
+"say"	"farewell"	--	--	false	true	true	false	wayfair cell	pre-say-farewell rule	post-say-farewell rule	--	--
+
+a spoonerism rule (this is the pre-cleared-woes rule):
+	if sco-cleared-woes is true:
+		vcal "You already cleared woes. If you try too hard, you may wind up trying too hard to convince yourself you did, and they'll come back.";
+		already-done;
+	ready;
+
+this is the post-cleared-woes rule:
+	now sco-cleared-woes is true;
+	say "You feel a little less weird now. This may have no concrete value, but it's nice all the same.";
+	ready;
 
 a spoonerism rule (this is the pre-start-hopping rule):
 	if sco-start-hopping is true:
@@ -75,14 +91,32 @@ a spoonerism rule (this is the pre-creep-die rule):
 this is the post-creep-die rule:
 	now sco-creep-die is true;
 
+a spoonerism rule (this is the pre-say-farewell rule):
+	if player is not in wayfair cell, unavailable;
+	ready;
+
+this is the post-say-farewell rule:
+	now sco-say-farewell is true;
+	say "And just like that, you realize you shouldn't be bound by your own chains! It's time to move on. And you do.";
+	move player to Ditch Park;
+
 volume big picture stuff
 
 the check passthroughs rule is listed first in the for printing a parser error rulebook.
 
 rule for printing a parser error (this is the check passthroughs rule):
+	abide by the main-spoonerism-checker rule for table of general stuff;
+	abide by the main-spoonerism-checker rule for table of passthrough 1;
+	continue the action;
+
+volume rule reorg
+
+the wordguess rules are a table name based rulebook.
+
+a wordguess rule for a table name (called tn) (this is the main-spoonerism-checker rule):
 	let partial-row be 0;
 	let row-count be 0;
-	repeat through table of passthrough 1:
+	repeat through tn:
 		increment row-count;
 		now verb-dont-print is true;
 		process the check-rule entry;
@@ -115,7 +149,6 @@ rule for printing a parser error (this is the check passthroughs rule):
 		follow the notify score changes rule;
 		the rule succeeds;
 	if partial-row > 0, say "Hmm. You are on the right track, there.";
-	continue the action;
 
 Welp Haunted Tables ends here.
 
