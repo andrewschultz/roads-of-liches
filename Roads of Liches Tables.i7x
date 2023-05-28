@@ -25,11 +25,15 @@ to vcp (txt - text):
 
 volume the main tables
 
+book very general stuff
+
 table of general stuff
 word1 (topic)	word2 (topic)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "cleared"	"woes"	--	--	false	true	false	false	--	pre-cleared-woes rule	post-cleared-woes rule
 
-table of passthrough 1
+book fork 1
+
+table of fork 1
 word1 (topic)	word2 (topic)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "start"	"hopping"	--	--	false	true	true	false	Ditch Park	pre-start-hopping rule	post-start-hopping rule
 "howl"	"farm"	--	--	false	true	true	false	Ditch Park	pre-howl-farm rule	post-howl-farm rule
@@ -102,7 +106,7 @@ this is the post-say-farewell rule:
 
 book fork 2
 
-table of passthrough 2
+table of fork 2
 word1 (topic)	word2 (topic)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "gainful"	"pardon"	--	--	false	true	true	false	Painful Garden	pre-gainful-pardon rule	post-gainful-pardon rule	--	--
 
@@ -119,11 +123,11 @@ this is the post-gainful-pardon rule:
 
 volume big picture stuff
 
-the check passthroughs rule is listed first in the for printing a parser error rulebook.
+the check forks rule is listed first in the for printing a parser error rulebook.
 
-rule for printing a parser error (this is the check passthroughs rule):
+rule for printing a parser error (this is the check forks rule):
 	abide by the main-spoonerism-checker rule for table of general stuff;
-	abide by the main-spoonerism-checker rule for table of passthrough 1;
+	abide by the main-spoonerism-checker rule for table of fork 1;
 	continue the action;
 
 volume rule reorg

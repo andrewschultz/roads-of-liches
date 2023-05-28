@@ -28,7 +28,9 @@ Jesse Murney is a person. The player is Jesse Murney. description is "You're wea
 
 to die: end the story saying "I do die! Ooh!"
 
-volume rooms
+volume hub rooms
+
+volume fork 1
 
 book ditch park
 
@@ -52,7 +54,7 @@ the deep cry is scenery in Howl Farm.
 
 book crazy leap
 
-crazy leap is a room. "You hear a deep cry echo through the crazy leap."
+Crazy Leap is a room. "You hear a deep cry echo through the crazy leap."
 
 The Lazy Creep is a person in Crazy Leap.
 
@@ -70,9 +72,19 @@ volume unsorted things
 
 volume regular verbs
 
+book attacking
+
+the block attacking rule is not listed in any rulebook.
+
+check attacking: say "Gore foe? Forego!" instead;
+
+book sleeping
+
 the block sleeping rule is not listed in any rulebook.
 
 check sleeping: say "Sleep coming? Keep slumming!" instead;
+
+book swearing
 
 the block swearing obscenely rule is not listed in any rulebook.
 the block swearing obscenely rule is not listed in any rulebook.

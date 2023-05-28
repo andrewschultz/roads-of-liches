@@ -4,9 +4,13 @@ Version 1/221116 of Roads of Liches Globals by Andrew Schultz begins here.
 
 volume globals
 
+section general globals
+
 sco-cleared-woes is a truth state that varies.
 
 sco-start-hopping is a truth state that varies.
+
+section path 1 globals
 
 sco-howl-farm is a truth state that varies.
 
