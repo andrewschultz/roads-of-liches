@@ -56,6 +56,16 @@ crazy leap is a room. "You hear a deep cry echo through the crazy leap."
 
 The Lazy Creep is a person in Crazy Leap.
 
+book wayfair cell
+
+Wayfair Cell is a room.
+
+volume fork 2
+
+book Painful Garden
+
+Painful Garden is a room.
+
 volume unsorted things
 
 volume regular verbs

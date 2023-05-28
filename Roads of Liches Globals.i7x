@@ -15,6 +15,10 @@ sco-creep-die is a truth state that varies.
 
 sco-say-farewell is a truth state that varies.
 
+section path 2 globals
+
+sco-gainful-pardon is a truth state that varies.
+
 Roads of Liches Globals ends here.
 
 ---- DOCUMENTATION ----

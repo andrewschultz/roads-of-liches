@@ -100,6 +100,23 @@ this is the post-say-farewell rule:
 	say "And just like that, you realize you shouldn't be bound by your own chains! It's time to move on. And you do.";
 	move player to Ditch Park;
 
+book fork 2
+
+table of passthrough 2
+word1 (topic)	word2 (topic)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
+"gainful"	"pardon"	--	--	false	true	true	false	Painful Garden	pre-gainful-pardon rule	post-gainful-pardon rule	--	--
+
+a spoonerism rule (this is the pre-gainful-pardon rule):
+	if player is not in Painful Garden, unavailable;
+	if sco-gainful-pardon is true:
+		vcal "You already found some semblance of peace here.";
+		already-done;
+	ready;
+
+this is the post-gainful-pardon rule:
+	now sco-gainful-pardon is true;
+	say "Well, you can't expect any judge to give you a sealed document, so you work things out for yourself. Perhaps there are some things you need to make restitution for, but pain for its own sake will do no good, and you'll think of anything once you get out. If you get out. Maybe track down someone you did wrong. Here, though, not much to do.";
+
 volume big picture stuff
 
 the check passthroughs rule is listed first in the for printing a parser error rulebook.
