@@ -1,6 +1,6 @@
-Version 1/221116 of Welp Haunted Tables by Andrew Schultz begins here.
+Version 1/221116 of Roads of Liches Tables by Andrew Schultz begins here.
 
-"This lays out the major tables for Welp Haunted for easy indexing and searching."
+"This lays out the major tables for Roads of Liches for easy indexing and searching."
 
 volume stuff that may go to core
 
@@ -150,6 +150,6 @@ a wordguess rule for a table name (called tn) (this is the main-spoonerism-check
 		the rule succeeds;
 	if partial-row > 0, say "Hmm. You are on the right track, there.";
 
-Welp Haunted Tables ends here.
+Roads of Liches Tables ends here.
 
 ---- DOCUMENTATION ----

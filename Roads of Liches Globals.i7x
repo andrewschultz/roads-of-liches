@@ -1,6 +1,6 @@
-Version 1/221116 of Welp Haunted Globals by Andrew Schultz begins here.
+Version 1/221116 of Roads of Liches Globals by Andrew Schultz begins here.
 
-"This encompasses variables that would otherwise clutter the story.ni file for Welp Haunted. You can see what can be sent here with def.py."
+"This encompasses variables that would otherwise clutter the story.ni file for Roads of Liches. You can see what can be sent here with def.py."
 
 volume globals
 
@@ -15,6 +15,6 @@ sco-creep-die is a truth state that varies.
 
 sco-say-farewell is a truth state that varies.
 
-Welp Haunted Globals ends here.
+Roads of Liches Globals ends here.
 
 ---- DOCUMENTATION ----
