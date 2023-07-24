@@ -2,6 +2,8 @@ Version 1/221116 of Roads of Liches Tables by Andrew Schultz begins here.
 
 "This lays out the major tables for Roads of Liches for easy indexing and searching."
 
+[mrc.py can add code easily even though it was originally for VVFF. Use ?? to see examples in case they are forgotten. MRC detects whether we are in a double-rhyme or spoonerism directory.]
+
 volume stuff that may go to core
 
 definition: a thing (called th) is fungible:
@@ -37,6 +39,7 @@ table of fork 1
 word1 (topic)	word2 (topic)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "start"	"hopping"	--	--	false	true	true	false	Ditch Park	pre-start-hopping rule	post-start-hopping rule
 "howl"	"farm"	--	--	false	true	true	false	Ditch Park	pre-howl-farm rule	post-howl-farm rule
+"dang"	"fools"	--	--	false	true	true	false	Fang Duels	pre-dang-fools rule	post-dang-fools rule	--	--
 "keep"	"dry"	--	--	false	true	true	false	Howl Farm	pre-keep-dry rule	post-keep-dry rule
 "creep"	"die"	--	--	false	true	true	false	Howl Farm	pre-creep-die rule	post-creep-die rule
 "say"	"farewell"	--	--	false	true	true	false	wayfair cell	pre-say-farewell rule	post-say-farewell rule	--	--
@@ -73,6 +76,17 @@ this is the post-howl-farm rule:
 	now howl farm is mapped west of ditch park;
 	now ditch park is mapped east of howl farm;
 	now sco-howl-farm is true;
+
+a spoonerism rule (this is the pre-dang-fools rule):
+	if player is not in fang duels, unavailable;
+	if sco-dang-fools is true:
+		vcal "You already expressed your contempt. Repeated expression of contempt may make you act like a dang fool at the wrong time in the near future.";
+		already-done;
+	ready;
+
+this is the post-dang-fools rule:
+	now sco-dang-fools is true;
+	say "You realize aggression just wears people out. You express this brilliant philosophical belief eloquently. Either the entities involved are too intimidated by your intelligence, or they find you too wussy to bother with. But they are gone, and that's what matters![paragraph break]You're a bit bummed you are in a text adventure and not a TV show, so you can't give kids one to grow on, but hey.";
 
 a spoonerism rule (this is the pre-keep-dry rule):
 	if deep cry is not fungible, unavailable;

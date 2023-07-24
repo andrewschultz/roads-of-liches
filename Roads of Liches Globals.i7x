@@ -14,6 +14,8 @@ section path 1 globals
 
 sco-howl-farm is a truth state that varies.
 
+sco-dang-fools is a truth state that varies.
+
 sco-keep-dry is a truth state that varies.
 sco-creep-die is a truth state that varies.
 
