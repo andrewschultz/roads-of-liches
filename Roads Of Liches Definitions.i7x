@@ -26,7 +26,7 @@ gosouth is a region. firstdir of gosouth is south. spoontable of gosouth is tabl
 
 goeast is a region. firstdir of goeast is east. spoontable of goeast is table of east spoke spoonerisms.
 
-gowest is a region. firstdir of gowest is west. [spoontable of gowest is table of west spoke spoonerisms.]
+gowest is a region. firstdir of gowest is west. spoontable of gowest is table of west spoke spoonerisms.
 
 definition: a direction (called di) is dirsolved:
 	repeat with X running through regions:

@@ -13,6 +13,11 @@
 			<dock index="0" id="1" port="w" />
 			<dock index="1" id="4" port="e" />
 		</line>
+		<room id="6" name="Painful Garden" subtitle="" x="-128" y="64" w="96" h="64" region="South Hub" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<line id="7" name="" description="">
+			<dock index="0" id="1" port="s" />
+			<dock index="1" id="6" port="n" />
+		</line>
 	</map>
 	<settings>
 		<colors>

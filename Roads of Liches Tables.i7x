@@ -197,12 +197,30 @@ this is the post-cool-grow rule:
 	say "Gruel Co un-crumbles. You are about to leave, just grateful to help with the job well done, but then ... you are offered some paying gruel as reward!";
 	now player has paying gruel;
 
+book west spoke
+
+table of west spoke spoonerisms
+word1 (topic)	word2 (topic)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
+"slight"	"nudge"	--	--	false	true	true	false	night sludge	pre-slight-nudge rule	post-slight-nudge rule	--	--
+
+a spoonerism rule (this is the pre-slight-nudge rule):
+	if player is not in night sludge, unavailable;
+	if sco-slight-nudge is true:
+		vcal "You already found a way through. It shouldn't be too bad to move on, now.";
+		already-done;
+	ready;
+
+this is the post-slight-nudge rule:
+	now sco-slight-nudge is true;
+	say "You look around, hoping for a clue, and you find it. You scrap your foot along the path, and some parts are less icky than others.";
+
 volume big picture stuff
 
 the check forks rule is listed first in the for printing a parser error rulebook.
 
 rule for printing a parser error (this is the check forks rule):
 	abide by the main-spoonerism-checker rule for table of general stuff;
+	if debug-state is true, say "[mrlp]: [spoontable of mrlp], [firstdir of mrlp].";
 	if firstdir of mrlp is planar:
 		abide by the main-spoonerism-checker rule for spoontable of mrlp;
 	continue the action;

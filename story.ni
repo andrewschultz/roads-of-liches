@@ -67,12 +67,6 @@ book healing farm
 
 Healing Farm is a room.
 
-book howl farm
-
-Howl Farm is a room. "A deep cry is here."
-
-the deep cry is scenery in Howl Farm.
-
 book fang duel
 
 Fang Duels is a room.
@@ -91,13 +85,26 @@ volume south hub
 
 book Painful Garden
 
-Painful Garden is a room.
+Painful Garden is south of Ditch Park. It is in gosouth.
 
 volume east hub
 
+Gruel Co is east of Ditch Park. It is in goeast.
+
 volume west hub
 
-Gruel Co is east of Ditch Park. It is in goeast.
+book Night Sludge
+
+Night Sludge is west of Ditch Park. it is in gowest.
+
+check going west in Night Sludge:
+	if sco-slight-nudge is false, say "The night sludge has you a bit scared. You're clueless how to start going through it." instead;
+
+book howl farm
+
+Howl Farm is west of Night Sludge. It is in gowest. "A deep cry is here."
+
+the deep cry is scenery in Howl Farm.
 
 chapter Ghoul Crow
 
