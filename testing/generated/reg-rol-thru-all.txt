@@ -1,0 +1,77 @@
+# these are wrong to start. I don't care!
+
+## reg-rol-thru-all.txt
+## GENERATOR FILE: rbr-rol-thru.txt
+
+## walkthrough with all points
+
+** game: /home/andrew/prt/debug-roads-of-liches.z8
+** interpreter: /home/andrew/prt/dfrotz -m -w5000 -h25
+
+* main-thru
+
+>cleared woes
+by one point
+
+>score
+You have so far scored 1 out of a possible 0,
+
+>my list
+by one point
+
+>score
+
+>start hopping
+by one point
+
+>score
+
+>e
+
+`Gruel Co
+
+>ghoul crow
+by one point
+
+>score
+
+>cruel go
+by one point
+
+>score
+
+>cool grow
+by one point
+
+>score
+
+>w
+
+>w
+
+`Night Sludge
+
+>slight nudge
+by one point
+
+>score
+
+>e
+>s
+
+`Painful Garden
+
+>gainful pardon
+by one point
+
+>score
+
+>n
+>n
+
+`Meek Spined
+
+>speak mind
+by one point
+
+>score

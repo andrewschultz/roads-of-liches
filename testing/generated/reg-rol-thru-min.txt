@@ -1,0 +1,63 @@
+# these are wrong to start. I don't care!
+
+## reg-rol-thru-min.txt
+## GENERATOR FILE: rbr-rol-thru.txt
+
+## minimum walkthrough
+
+** game: /home/andrew/prt/debug-roads-of-liches.z8
+** interpreter: /home/andrew/prt/dfrotz -m -w5000 -h25
+
+* main-thru
+
+>my list
+by one point
+
+>score
+
+>start hopping
+by one point
+
+>score
+
+>e
+
+>ghoul crow
+by one point
+
+>score
+
+>cruel go
+by one point
+
+>score
+
+>cool grow
+by one point
+
+>score
+
+>w
+
+>w
+
+>slight nudge
+by one point
+
+>score
+
+>e
+>s
+
+>gainful pardon
+by one point
+
+>score
+
+>n
+>n
+
+>speak mind
+by one point
+
+>score

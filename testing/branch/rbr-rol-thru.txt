@@ -1,0 +1,136 @@
+#-- rbr-rol-thru.txt
+#-- main branch file for Roads of Liches walkthroughs
+#
+#-- ported from LLJJ. See what's still valid.
+#-- use HHV.PY to verify ha-half
+#-- use MCH.PY to verify mistake checking code
+#-- use SCT.PY to verify alternate verb solutions
+#-- use HCH.PY to verify room/thing homonyms
+#--
+
+# for when/if we hit glulx:
+# glulx-game: /home/andrew/prt/debug-roads-of-liches.ulx
+# glulx-interpreter: /home/andrew/prt/glulxe -q
+
+files=reg-rol-thru-min.txt,reg-rol-thru-all.txt
+~	min	t0
+~	all	t1
+##--stable-file: this eventually says that the project is stable, and I shouldn't change the main/minimal file unless I really need to.
+#--strict-file: this says that the project requires strict section marking e.g. @all instead of ==t1.
+
+# these are wrong to start. I don't care!
+}}MAX=0
+}}CURMAX=0
+}}SCORE=0
+}}CURMIN=0
+}}CURMINBONUS=0
+}}CURMAXBONUS=0
+}}MAXBONUS=0
+}$SCOS=You have so far scored {SCORE} out of a possible {MAX},
+
+## *FILE
+## *FORK
+
+TSV:## minimum walkthrough	## walkthrough with all points
+
+** game: /home/andrew/prt/debug-roads-of-liches.z8
+** interpreter: /home/andrew/prt/dfrotz -m -w5000 -h25
+
+* main-thru
+
+@!min
+>cleared woes
+by one point
+}}CURMIN++
+}}SCORE++
+\\
+>score
+{$SCOS}
+
+>my list
+by one point
+}}CURMIN++
+}}SCORE++
+
+>score
+}$SCOS
+
+>start hopping
+by one point
+}}CURMIN++
+}}SCORE++
+
+>score
+}$SCOS
+
+>e
+
+@all
+`Gruel Co
+
+>ghoul crow
+by one point
+}}CURMIN++
+}}SCORE++
+
+>score
+}$SCOS
+
+>cruel go
+by one point
+}}CURMIN++
+}}SCORE++
+
+>score
+}$SCOS
+
+>cool grow
+by one point
+}}CURMIN++
+}}SCORE++
+
+>score
+}$SCOS
+
+>w
+
+>w
+
+@all
+`Night Sludge
+
+>slight nudge
+by one point
+}}CURMIN++
+}}SCORE++
+
+>score
+}$SCOS
+
+>e
+>s
+
+@all
+`Painful Garden
+
+>gainful pardon
+by one point
+}}CURMIN++
+}}SCORE++
+
+>score
+}$SCOS
+
+>n
+>n
+
+@all
+`Meek Spined
+
+>speak mind
+by one point
+}}CURMIN++
+}}SCORE++
+
+>score
+}$SCOS
