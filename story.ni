@@ -16,6 +16,8 @@ chapter extra header
 
 include Trivial Niceties by Andrew Schultz.
 
+include Roads of Liches Definitions by Andrew Schultz.
+
 include Roads of Liches Globals by Andrew Schultz.
 
 include Roads of Liches Tables by Andrew Schultz.
@@ -30,13 +32,26 @@ to die: end the story saying "I do die! Ooh!"
 
 volume hub rooms
 
-volume fork 1
-
 book ditch park
 
-Ditch Park is a room. the toast gown is a wearable thing in Ditch Park.
+Ditch Park is a room. "[if sco-my-list is false]There is an oppressive lie mist choking you all around[else]The lie mist has dissipated, but it's still not very pleasant here. [ditch-park-go][end if].".
 
-every turn when player is in ditch park and sco-start-hopping is false: say "It feels so heart-stopping here. You need a way to move.";
+to say ditch-park-go:
+	say "You can go north, south, east or west"
+
+every turn when player is in ditch park and sco-my-list is true and sco-start-hopping is false: say "It feels so heart-stopping here. You need a way to move.";
+
+the lie mist is scenery in Ditch Park. "Ugh! You can't see through it, but it seems to be convincing you it's much thicker than it really is. It makes you feel disorganized, too."
+
+chapter my list
+
+my list is a thing. "It describes the passsages through. You feel a bit more confident and organized just reading it."
+
+chapter toast gown
+
+toast gown is a wearable thing in Ditch Park.
+
+volume fork 1
 
 book deal room
 
@@ -51,6 +66,10 @@ book howl farm
 Howl Farm is a room. "A deep cry is here."
 
 the deep cry is scenery in Howl Farm.
+
+book fang duel
+
+Fang Duels is a room.
 
 book crazy leap
 

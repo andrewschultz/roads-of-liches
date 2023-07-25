@@ -32,12 +32,25 @@ book very general stuff
 table of general stuff
 word1 (topic)	word2 (topic)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "cleared"	"woes"	--	--	false	true	false	false	--	pre-cleared-woes rule	post-cleared-woes rule
+"my"	"list"	--	--	false	true	true	false	Ditch Park	pre-my-list rule	post-my-list rule	--	--
+"start"	"hopping"	--	--	false	true	true	false	Ditch Park	pre-start-hopping rule	post-start-hopping rule
+
+a spoonerism rule (this is the pre-my-list rule):
+	if player is not in Ditch Park, unavailable;
+	if sco-my-list is true:
+		vcal "You already dispelled the lie mist!";
+		already-done;
+	ready;
+
+this is the post-my-list rule:
+	now sco-my-list is true;
+	say "The lie mist dissipates, but not before you hear whisperings that any old fool could've figured things out.";
+	now player has my list;
 
 book fork 1
 
 table of fork 1
 word1 (topic)	word2 (topic)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
-"start"	"hopping"	--	--	false	true	true	false	Ditch Park	pre-start-hopping rule	post-start-hopping rule
 "howl"	"farm"	--	--	false	true	true	false	Ditch Park	pre-howl-farm rule	post-howl-farm rule
 "dang"	"fools"	--	--	false	true	true	false	Fang Duels	pre-dang-fools rule	post-dang-fools rule	--	--
 "keep"	"dry"	--	--	false	true	true	false	Howl Farm	pre-keep-dry rule	post-keep-dry rule
