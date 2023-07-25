@@ -12,13 +12,12 @@
 # glulx-game: /home/andrew/prt/debug-roads-of-liches.ulx
 # glulx-interpreter: /home/andrew/prt/glulxe -q
 
-files=reg-rol-thru-min.txt,reg-rol-thru-all.txt
-~	min	t0
-~	all	t1
+file=reg-rol-thru-min.txt,min,minimum walkthrough
+file=reg-rol-thru-all.txt,all,walkthrough with all points
+
 ##--stable-file: this eventually says that the project is stable, and I shouldn't change the main/minimal file unless I really need to.
 #--strict-file: this says that the project requires strict section marking e.g. @all instead of ==t1.
 
-# these are wrong to start. I don't care!
 }}MAX=0
 }}CURMAX=0
 }}SCORE=0
@@ -31,7 +30,7 @@ files=reg-rol-thru-min.txt,reg-rol-thru-all.txt
 ## *FILE
 ## *FORK
 
-TSV:## minimum walkthrough	## walkthrough with all points
+## *DESCRIPTION
 
 ** game: /home/andrew/prt/debug-roads-of-liches.z8
 ** interpreter: /home/andrew/prt/dfrotz -m -w5000 -h25
