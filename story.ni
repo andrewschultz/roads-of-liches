@@ -34,10 +34,14 @@ volume hub rooms
 
 book ditch park
 
-Ditch Park is a room. "[if sco-my-list is false]There is an oppressive lie mist choking you all around[else]The lie mist has dissipated, but it's still not very pleasant here. [ditch-park-go][end if].".
+Ditch Park is a room in hubregion. "[if sco-my-list is false]There is an oppressive lie mist choking you all around[else]The lie mist has dissipated, but it's still not very pleasant here[ditch-park-go][end if].".
 
 to say ditch-park-go:
-	say "You can go north, south, east or west"
+	say ". You [if number of viable directions > 0]can go [list of viable directions][else]can't seem to go anywhere. There's a puzzle here[end if]";
+	if number of solved regions > 0:
+		say ". You already took care of things to the [list of dirsolved directions]";
+
+check going when player is in Ditch Park and sco-my-list is false: say "With the lie mist, you can't see your way around, and you wouldn't trust yourself to make way through it." instead;
 
 every turn when player is in ditch park and sco-my-list is true and sco-start-hopping is false: say "It feels so heart-stopping here. You need a way to move.";
 
@@ -49,9 +53,9 @@ my list is a thing. "It describes the passsages through. You feel a bit more con
 
 chapter toast gown
 
-toast gown is a wearable thing in Ditch Park.
+a toast gown is a wearable thing in Ditch Park.
 
-volume fork 1
+volume north hub
 
 book deal room
 
@@ -81,11 +85,17 @@ book wayfair cell
 
 Wayfair Cell is a room.
 
-volume fork 2
+volume south hub
 
 book Painful Garden
 
 Painful Garden is a room.
+
+volume east hub
+
+volume west hub
+
+Gruel Co is east of Ditch Park. It is in gowest.
 
 volume unsorted things
 

@@ -37,6 +37,7 @@ definition: a direction (called di) is dirsolved:
 
 to solve-it (rg - a region):
 	now rg is solved;
+	change the (firstdir of rg) exit of Ditch Park to nowhere;
 	move player to Ditch Park;
 
 Roads Of Liches Definitions ends here.

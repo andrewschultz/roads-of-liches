@@ -154,7 +154,8 @@ the check forks rule is listed first in the for printing a parser error rulebook
 
 rule for printing a parser error (this is the check forks rule):
 	abide by the main-spoonerism-checker rule for table of general stuff;
-	abide by the main-spoonerism-checker rule for table of fork 1;
+	if firstdir of mrlp is planar:
+		abide by the main-spoonerism-checker rule for spoontable of mrlp;
 	continue the action;
 
 volume rule reorg
