@@ -10,6 +10,8 @@ test e with "test st/e/ghoul crow/cruel go/cool grow".
 
 test st with "my list/start hopping".
 
+test smoke with "test st/e/ghoul crow/w/n/speak mind/s/w/slight nudge/e/s/gainful pardon/score".
+
 Roads of Liches Tests ends here.
 
 ---- DOCUMENTATION ----

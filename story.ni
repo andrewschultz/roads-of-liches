@@ -12,7 +12,7 @@ release along with a website.
 
 release along with the "parchment" interpreter.
 
-chapter extra header
+section extra header
 
 include Trivial Niceties by Andrew Schultz.
 
@@ -23,6 +23,12 @@ include Roads of Liches Globals by Andrew Schultz.
 include Roads of Liches Tables by Andrew Schultz.
 
 include Roads of Liches Tests by Andrew Schultz.
+
+section minor general modules
+
+include Old School Verb Total Carnage by Andrew Schultz.
+
+include Bold Final Question Rows by Andrew Schultz.
 
 volume you the player
 

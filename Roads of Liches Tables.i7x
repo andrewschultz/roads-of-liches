@@ -81,17 +81,14 @@ word1 (topic)	word2 (topic)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip
 
 a spoonerism rule (this is the pre-speak-mind rule):
 	if player is not in meek spined, unavailable;
-	if sco-speak-mind is false:
-		vcp "You still need to do something!";
-		not-yet;
 	if sco-speak-mind is true:
-		vcal "You already did this!";
+		vcal "You already spoke your mind!";
 		already-done;
 	ready;
 
 this is the post-speak-mind rule:
 	now sco-speak-mind is true;
-	say "Hooray! You figured what to do! You get a point!";
+	say "Speaking your mind makes you feel a bit better.";
 
 this is the pre-howl-farm rule:
 	if sco-howl-farm is true:
