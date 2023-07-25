@@ -27,6 +27,10 @@ section path 2 globals
 
 sco-gainful-pardon is a truth state that varies.
 
+sco-cool-grow is a truth state that varies.
+sco-cruel-go is a truth state that varies.
+sco-ghoul-crow is a truth state that varies.
+
 Roads of Liches Globals ends here.
 
 ---- DOCUMENTATION ----

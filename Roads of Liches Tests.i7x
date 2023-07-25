@@ -4,7 +4,11 @@ Version 1/221116 of Roads of Liches Tests by Andrew Schultz begins here.
 
 volume silly tests
 
-test w with "start hopping/howl farm/w/creep die/keep dry/keep dry/creep die/gonear wayfair cell/say farewell".
+test w with "test st/howl farm/w/creep die/keep dry/keep dry/creep die/gonear wayfair cell/say farewell".
+
+test e with "test st/e/ghoul crow/cruel go/cool grow".
+
+test st with "my list/start hopping".
 
 Roads of Liches Tests ends here.
 

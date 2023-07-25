@@ -20,13 +20,13 @@ a region has a number called max-score. a region has a number called cur-score. 
 
 hubregion is a region. firstdir of hubregion is up.
 
-gonorth is a region. firstdir of gonorth is north.
+gonorth is a region. firstdir of gonorth is north. spoontable of gonorth is table of north spoke spoonerisms.
 
-gosouth is a region. firstdir of gosouth is south.
+gosouth is a region. firstdir of gosouth is south. spoontable of gosouth is table of south spoke spoonerisms.
 
-goeast is a region. firstdir of goeast is east.
+goeast is a region. firstdir of goeast is east. spoontable of goeast is table of east spoke spoonerisms.
 
-gowest is a region. firstdir of gowest is west.
+gowest is a region. firstdir of gowest is west. [spoontable of gowest is table of west spoke spoonerisms.]
 
 definition: a direction (called di) is dirsolved:
 	repeat with X running through regions:

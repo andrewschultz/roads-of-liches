@@ -47,9 +47,9 @@ this is the post-my-list rule:
 	say "The lie mist dissipates, but not before you hear whisperings that any old fool could've figured things out.";
 	now player has my list;
 
-book fork 1
+book north spoke
 
-table of fork 1
+table of north spoke spoonerisms
 word1 (topic)	word2 (topic)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "howl"	"farm"	--	--	false	true	true	false	Ditch Park	pre-howl-farm rule	post-howl-farm rule
 "dang"	"fools"	--	--	false	true	true	false	Fang Duels	pre-dang-fools rule	post-dang-fools rule	--	--
@@ -131,9 +131,9 @@ this is the post-say-farewell rule:
 	say "And just like that, you realize you shouldn't be bound by your own chains! It's time to move on. And you do.";
 	move player to Ditch Park;
 
-book fork 2
+book south spoke
 
-table of fork 2
+table of south spoke spoonerisms
 word1 (topic)	word2 (topic)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "gainful"	"pardon"	--	--	false	true	true	false	Painful Garden	pre-gainful-pardon rule	post-gainful-pardon rule	--	--
 
@@ -147,6 +147,55 @@ a spoonerism rule (this is the pre-gainful-pardon rule):
 this is the post-gainful-pardon rule:
 	now sco-gainful-pardon is true;
 	say "Well, you can't expect any judge to give you a sealed document, so you work things out for yourself. Perhaps there are some things you need to make restitution for, but pain for its own sake will do no good, and you'll think of anything once you get out. If you get out. Maybe track down someone you did wrong. Here, though, not much to do.";
+
+book east spoke
+
+table of east spoke spoonerisms
+word1 (topic)	word2 (topic)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
+"ghoul"	"crow"	--	--	false	true	true	false	gruel co	pre-ghoul-crow rule	post-ghoul-crow rule	--	--
+"cruel"	"go"	--	--	false	true	true	false	gruel co	pre-cruel-go rule	post-cruel-go rule	--	--
+"cool"	"grow"	--	--	false	true	true	false	gruel co	pre-cool-grow rule	post-cool-grow rule	--	--
+
+a spoonerism rule (this is the pre-ghoul-crow rule):
+	if player is not in gruel co, unavailable;
+	if sco-ghoul-crow is true:
+		vcal "But you already summoned the ghoul crow!";
+		already-done;
+	ready;
+
+this is the post-ghoul-crow rule:
+	now sco-ghoul-crow is true;
+	say "A large ghoul crow appears! Boy, it looks evil. And yet ... and yet, perhaps it has a weakness. Perhaps you can work through its hard shell.";
+	move ghoul crow to Gruel Co;
+
+a spoonerism rule (this is the pre-cruel-go rule):
+	if player is not in gruel co, unavailable;
+	if sco-ghoul-crow is false:
+		vcp "You don't have anyone to yell that at yet!";
+		not-yet;
+	if sco-cruel-go is true:
+		vcal "But you already told the ghoul crow off!";
+		already-done;
+	ready;
+
+this is the post-cruel-go rule:
+	now sco-cruel-go is true;
+	say "The ghoul crow flashes a momentary look of regret and guilt, then goes off to goodness knows where.";
+
+a spoonerism rule (this is the pre-cool-grow rule):
+	if player is not in gruel co, unavailable;
+	if sco-cruel-go is false:
+		vcp "You [if ghoul crow is off-stage]sense you [end if]have not rid Gruel Co of the evil presence that is keeping it down.";
+		not-yet;
+	if sco-cool-grow is true:
+		vcal "You already rebuilt Gruel Co!";
+		already-done;
+	ready;
+
+this is the post-cool-grow rule:
+	now sco-cool-grow is true;
+	say "Gruel Co un-crumbles. You are about to leave, just grateful to help with the job well done, but then ... you are offered some paying gruel as reward!";
+	now player has paying gruel;
 
 volume big picture stuff
 

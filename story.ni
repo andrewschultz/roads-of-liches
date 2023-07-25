@@ -41,7 +41,9 @@ to say ditch-park-go:
 	if number of solved regions > 0:
 		say ". You already took care of things to the [list of dirsolved directions]";
 
-check going when player is in Ditch Park and sco-my-list is false: say "With the lie mist, you can't see your way around, and you wouldn't trust yourself to make way through it." instead;
+check going when player is in Ditch Park:
+	if sco-my-list is false, say "With the lie mist, you can't see your way around, and you wouldn't trust yourself to make way through it." instead;
+	if sco-start-hopping is false, say "You don't feel brave enough! The adventure feels so heart-stopping at the moment." instead;
 
 every turn when player is in ditch park and sco-my-list is true and sco-start-hopping is false: say "It feels so heart-stopping here. You need a way to move.";
 
@@ -95,7 +97,15 @@ volume east hub
 
 volume west hub
 
-Gruel Co is east of Ditch Park. It is in gowest.
+Gruel Co is east of Ditch Park. It is in goeast.
+
+chapter Ghoul Crow
+
+the ghoul crow is a thing.
+
+chapter paying gruel
+
+The paying gruel is a thing. "It's a bowl of paying gruel, as thanks for what you did.";
 
 volume unsorted things
 
