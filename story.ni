@@ -107,6 +107,9 @@ chapter paying gruel
 
 The paying gruel is a thing. "It's a bowl of paying gruel, as thanks for what you did.";
 
+check eating paying gruel:
+	say "No. It must become something else." instead;
+
 volume unsorted things
 
 volume regular verbs
@@ -116,6 +119,12 @@ book attacking
 the block attacking rule is not listed in any rulebook.
 
 check attacking: say "Gore foe? Forego!" instead;
+
+book eating
+
+the can't eat unless edible rule is not listed in any rulebook.
+
+check eating: say "Go nosh? No, gosh! [one of](You don't need to eat anything.)[or][line break][stopping]" instead;
 
 book sleeping
 
