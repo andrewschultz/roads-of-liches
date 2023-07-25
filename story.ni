@@ -59,6 +59,10 @@ a toast gown is a wearable thing in Ditch Park.
 
 volume north hub
 
+book Meek Spined
+
+Meek Spined is north of Ditch Park. Meek Spined is in gonorth.
+
 book deal room
 
 Deal Room is a room.

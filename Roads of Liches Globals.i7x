@@ -37,6 +37,8 @@ section west path globals
 
 sco-slight-nudge is a truth state that varies.
 
+sco-speak-mind is a truth state that varies.
+
 Roads of Liches Globals ends here.
 
 ---- DOCUMENTATION ----

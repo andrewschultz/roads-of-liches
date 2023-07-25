@@ -35,6 +35,17 @@ word1 (topic)	word2 (topic)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip
 "my"	"list"	--	--	false	true	true	false	Ditch Park	pre-my-list rule	post-my-list rule	--	--
 "start"	"hopping"	--	--	false	true	true	false	Ditch Park	pre-start-hopping rule	post-start-hopping rule
 
+a spoonerism rule (this is the pre-cleared-woes rule):
+	if sco-cleared-woes is true:
+		vcal "You already cleared woes. If you try too hard, you may wind up trying too hard to convince yourself you did, and they'll come back.";
+		already-done;
+	ready;
+
+this is the post-cleared-woes rule:
+	now sco-cleared-woes is true;
+	say "You feel a little less weird now. This may have no concrete value, but it's nice all the same.";
+	ready;
+
 a spoonerism rule (this is the pre-my-list rule):
 	if player is not in Ditch Park, unavailable;
 	if sco-my-list is true:
@@ -47,27 +58,6 @@ this is the post-my-list rule:
 	say "The lie mist dissipates, but not before you hear whisperings that any old fool could've figured things out.";
 	now player has my list;
 
-book north spoke
-
-table of north spoke spoonerisms
-word1 (topic)	word2 (topic)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
-"howl"	"farm"	--	--	false	true	true	false	Ditch Park	pre-howl-farm rule	post-howl-farm rule
-"dang"	"fools"	--	--	false	true	true	false	Fang Duels	pre-dang-fools rule	post-dang-fools rule	--	--
-"keep"	"dry"	--	--	false	true	true	false	Howl Farm	pre-keep-dry rule	post-keep-dry rule
-"creep"	"die"	--	--	false	true	true	false	Howl Farm	pre-creep-die rule	post-creep-die rule
-"say"	"farewell"	--	--	false	true	true	false	wayfair cell	pre-say-farewell rule	post-say-farewell rule	--	--
-
-a spoonerism rule (this is the pre-cleared-woes rule):
-	if sco-cleared-woes is true:
-		vcal "You already cleared woes. If you try too hard, you may wind up trying too hard to convince yourself you did, and they'll come back.";
-		already-done;
-	ready;
-
-this is the post-cleared-woes rule:
-	now sco-cleared-woes is true;
-	say "You feel a little less weird now. This may have no concrete value, but it's nice all the same.";
-	ready;
-
 a spoonerism rule (this is the pre-start-hopping rule):
 	if sco-start-hopping is true:
 		vcal "You're already moving. You don't want to get too agitated.";
@@ -77,6 +67,31 @@ a spoonerism rule (this is the pre-start-hopping rule):
 this is the post-start-hopping rule:
 	say "It's good to feel you can move. You feel less helpless now.";
 	now sco-start-hopping is true;
+
+book north spoke
+
+table of north spoke spoonerisms
+word1 (topic)	word2 (topic)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
+"speak"	"mind"	--	--	false	true	true	false	meek spined	pre-speak-mind rule	post-speak-mind rule	--	--
+"howl"	"farm"	--	--	false	true	true	false	Ditch Park	pre-howl-farm rule	post-howl-farm rule
+"dang"	"fools"	--	--	false	true	true	false	Fang Duels	pre-dang-fools rule	post-dang-fools rule	--	--
+"keep"	"dry"	--	--	false	true	true	false	Howl Farm	pre-keep-dry rule	post-keep-dry rule
+"creep"	"die"	--	--	false	true	true	false	Howl Farm	pre-creep-die rule	post-creep-die rule
+"say"	"farewell"	--	--	false	true	true	false	wayfair cell	pre-say-farewell rule	post-say-farewell rule	--	--
+
+a spoonerism rule (this is the pre-speak-mind rule):
+	if player is not in meek spined, unavailable;
+	if sco-speak-mind is false:
+		vcp "You still need to do something!";
+		not-yet;
+	if sco-speak-mind is true:
+		vcal "You already did this!";
+		already-done;
+	ready;
+
+this is the post-speak-mind rule:
+	now sco-speak-mind is true;
+	say "Hooray! You figured what to do! You get a point!";
 
 this is the pre-howl-farm rule:
 	if sco-howl-farm is true:
