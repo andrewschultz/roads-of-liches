@@ -30,7 +30,7 @@ volume the main tables
 book very general stuff
 
 table of general stuff
-word1 (topic)	word2 (topic)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
+w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "cleared"	"woes"	--	--	false	true	false	false	--	pre-cleared-woes rule	post-cleared-woes rule
 "my"	"list"	--	--	false	true	true	false	Ditch Park	pre-my-list rule	post-my-list rule	--	--
 "start"	"hopping"	--	--	false	true	true	false	Ditch Park	pre-start-hopping rule	post-start-hopping rule
@@ -71,7 +71,7 @@ this is the post-start-hopping rule:
 book north spoke
 
 table of north spoke spoonerisms
-word1 (topic)	word2 (topic)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
+w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "speak"	"mind"	--	--	false	true	true	false	meek spined	pre-speak-mind rule	post-speak-mind rule	--	--
 "howl"	"farm"	--	--	false	true	true	false	Ditch Park	pre-howl-farm rule	post-howl-farm rule
 "dang"	"fools"	--	--	false	true	true	false	Fang Duels	pre-dang-fools rule	post-dang-fools rule	--	--
@@ -146,7 +146,7 @@ this is the post-say-farewell rule:
 book south spoke
 
 table of south spoke spoonerisms
-word1 (topic)	word2 (topic)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
+w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "gainful"	"pardon"	--	--	false	true	true	false	Painful Garden	pre-gainful-pardon rule	post-gainful-pardon rule	--	--
 
 a spoonerism rule (this is the pre-gainful-pardon rule):
@@ -163,7 +163,7 @@ this is the post-gainful-pardon rule:
 book east spoke
 
 table of east spoke spoonerisms
-word1 (topic)	word2 (topic)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
+w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "ghoul"	"crow"	--	--	false	true	true	false	gruel co	pre-ghoul-crow rule	post-ghoul-crow rule	--	--
 "cruel"	"go"	--	--	false	true	true	false	gruel co	pre-cruel-go rule	post-cruel-go rule	--	--
 "cool"	"grow"	--	--	false	true	true	false	gruel co	pre-cool-grow rule	post-cool-grow rule	--	--
@@ -212,7 +212,7 @@ this is the post-cool-grow rule:
 book west spoke
 
 table of west spoke spoonerisms
-word1 (topic)	word2 (topic)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
+w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "slight"	"nudge"	--	--	false	true	true	false	night sludge	pre-slight-nudge rule	post-slight-nudge rule	--	--
 
 a spoonerism rule (this is the pre-slight-nudge rule):
@@ -232,7 +232,7 @@ the check forks rule is listed first in the for printing a parser error rulebook
 
 rule for printing a parser error (this is the check forks rule):
 	abide by the main-spoonerism-checker rule for table of general stuff;
-	if debug-state is true, say "[mrlp]: [spoontable of mrlp], [firstdir of mrlp].";
+	if debug-state is true, say "DEBUG INFO [mrlp]: [spoontable of mrlp], [firstdir of mrlp].";
 	if firstdir of mrlp is planar:
 		abide by the main-spoonerism-checker rule for spoontable of mrlp;
 	continue the action;
@@ -251,16 +251,22 @@ a wordguess rule for a table name (called tn) (this is the main-spoonerism-check
 		let rb-out be outcome of the rulebook;
 		now verb-dont-print is false;
 		if rb-out is unavailable outcome, next;
-		let w1 be whether or not the player's command includes word1 entry;
-		let w2 be whether or not the player's command includes word2 entry;
-		let b1 be boolval of w1;
-		let b2 be boolval of w2;
-		if b1 + b2 is 0, next;
-		if b1 + b2 is 1:
+		let my-count be 0;
+		if there is a wfull entry and the player's command matches the wfull entry:
+			now my-count is 4; [ 4 = topic match, 3 = mix up alt solutions, 2 = 2 word match (or DIMD). This is a magic number to get rid of a boolean, so we can have all non global variables inside one rule, because Inform only allows 15 local variables. ]
+		else:
+			if the player's command matches the regular expression "(^|\W)([w1 entry])($|\W)", increment my-count;
+			if there is a w2 entry:
+				if the player's command matches the regular expression "(^|\W)([w2 entry])($|\W)", increment my-count;
+			else if my-count > 0:
+				increment my-count;
+		if my-count is 2 and there is a wfull entry:
+			say "You are close, but you probably need to add a trivial word.";
+			the rule succeeds;
+		if my-count is 1:
 			now partial-row is row-count;
-			continue the action;
-		process the check-rule entry;
-		let rb-out be the outcome of the rulebook;
+			next;
+		if my-count is 0, next;
 		if rb-out is the already-done outcome, the rule succeeds;
 		if rb-out is the not-yet outcome:
 			let exact-cmd be true;
@@ -276,7 +282,9 @@ a wordguess rule for a table name (called tn) (this is the main-spoonerism-check
 		increment the score;
 		follow the notify score changes rule;
 		the rule succeeds;
-	if partial-row > 0, say "Hmm. You are on the right track, there.";
+	if partial-row > 0:
+		say "Hmm. You are on the right track, there.";
+		the rule succeeds;
 
 Roads of Liches Tables ends here.
 
