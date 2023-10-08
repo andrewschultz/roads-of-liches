@@ -2,9 +2,13 @@
 
 volume includes
 
+[dark heels: HARK DEALS chases them around]
+
 the story description is "STRAIGHT GORY GREAT STORY".
 
 the story headline is "A straight gory great story for EctoComp 2023 Grand Guignol".
+
+the release number is 1.
 
 release along with cover art.
 
@@ -30,11 +34,14 @@ include Old School Verb Total Carnage by Andrew Schultz.
 
 include Bold Final Question Rows by Andrew Schultz.
 
-volume you the player
+volume starting stuff
 
-Jesse Murney is a person. The player is Jesse Murney. description is "You're wearing weird clothes."
+Jesse Murney is a person. The player is Jesse Murney. description is "You're wearing weird clothes, [if sco-cleared-woes is true]but you no longer feel self-conscious about them[else]and it bugs you more than it should[end if]."
 
 to die: end the story saying "I do die! Ooh!"
+
+when play begins:
+	say "Details: you walk through the after-dark dafter ark to...";
 
 volume hub rooms
 
