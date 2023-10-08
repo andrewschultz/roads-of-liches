@@ -8,6 +8,10 @@ section general globals
 
 sco-cleared-woes is a truth state that varies.
 
+sco-speak-well is a truth state that varies.
+
+sco-greater-half is a truth state that varies.
+
 section ditch park globals
 
 sco-treat-chunk is a truth state that varies.

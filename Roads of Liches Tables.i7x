@@ -35,6 +35,8 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "my"	"list"	--	--	false	true	true	false	Ditch Park	pre-my-list rule	post-my-list rule	--	--
 "start"	"hopping"	--	--	false	true	true	false	Ditch Park	pre-start-hopping rule	post-start-hopping rule
 "treat"	"chunk"	--	--	false	true	true	false	ditch park	pre-treat-chunk rule	post-treat-chunk rule	--	--
+"speak"	"well"	--	--	false	true	true	false	--	pre-speak-well rule	post-speak-well rule	--	--
+"greater"	"half"	--	--	false	true	true	false	--	pre-greater-half rule	post-greater-half rule	--	--
 
 section ditch park scoring
 
@@ -82,6 +84,30 @@ a spoonerism rule (this is the pre-start-hopping rule):
 this is the post-start-hopping rule:
 	say "It's good to feel you can move. You feel less helpless now.";
 	now sco-start-hopping is true;
+
+a spoonerism rule (this is the pre-speak-well rule):
+	if weak spell is not touchable, unavailable;
+	if sco-speak-well is true:
+		vcal "You already acquired the weak spell!";
+		already-done;
+	ready;
+
+this is the post-speak-well rule:
+	now sco-speak-well is true;
+	say "Hooray! You figured what to do! You get a point!";
+	now player has weak spell;
+
+a spoonerism rule (this is the pre-greater-half rule):
+	if hater graph is not touchable, unavailable;
+	if sco-greater-half is true:
+		vcal "You already took the hater graph!";
+		already-done;
+	ready;
+
+this is the post-greater-half rule:
+	now sco-greater-half is true;
+	say "You see benefits to having such a graph. So you are able to take it.";
+	now player has hater graph;
 
 book north spoke
 

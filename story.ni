@@ -150,7 +150,13 @@ The paying gruel is a thing. "It's a bowl of paying gruel, as thanks for what yo
 check eating paying gruel:
 	say "No. It must become something else." instead;
 
+volume unsorted rooms
+
 volume unsorted things
+
+the weak spell is a thing. "A weak spell lies here. Maybe it's good it isn't powerful, or it might be too much for you."
+
+the hater graph is a thing. "Hoo boy! A hater graph is here. Statistics can be harsh and heartless, but this is something else."
 
 volume regular verbs
 
