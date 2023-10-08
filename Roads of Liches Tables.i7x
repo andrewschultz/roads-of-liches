@@ -55,6 +55,7 @@ a spoonerism rule (this is the pre-treat-chunk rule):
 this is the post-treat-chunk rule:
 	say "A treat chunk flies from the cheat trunk. Mmm, it looks like trail mix.";
 	now player has treat chunk;
+	set the pronoun it to treat chunk;
 	now sco-treat-chunk is true;
 
 a spoonerism rule (this is the pre-cleared-woes rule):

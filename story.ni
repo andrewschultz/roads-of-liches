@@ -76,6 +76,30 @@ chapter treat chunk
 
 the treat chunk is a thing. "It doesn't look particularly tasty, but if it helps you figure things out, it's probably best not to worry about that."
 
+to say first-of-ors of (x - indexed text):
+	replace the regular expression "\|.*" in x with "";
+	say "[x]";
+
+a wordguess rule for a table name (called tn) (this is the cheatfind rule):
+	repeat through tn:
+		process the check-rule entry;
+		let rb-out be the outcome of the rulebook;
+		if rb-out is not the ready outcome, next;
+		say "Mmm. That treat chunk is delicious. Good brain food. It makes you think [b][first-of-ors of w1 entry in upper case][if there is a w2 entry] [first-of-ors of w2 entry in upper case][r][end if]. Seems legit.[line break]";
+		now idid entry is true;
+		now think-cue entry is false;
+		up-which core entry;
+		process the run-rule entry;
+		now verb-dont-print is false;
+		the rule succeeds;
+
+check eating treat chunk:
+	now verb-dont-print is true;
+	abide by the cheatfind rule for spoontable of mrlp;
+	abide by the cheatfind rule for table of item spoonerisms;
+	say "There's nothing you can do.";
+	now verb-dont-print is false;
+
 chapter toast gown
 
 a toast gown is a wearable thing in Ditch Park.
@@ -164,10 +188,20 @@ book attacking
 
 the block attacking rule is not listed in any rulebook.
 
+to say trunk-feet: say "It jolts up a foot off the ground. Wait. No. It actually has feet. How about that? "
+
+check closing cheat trunk:
+	moot cheat trunk;
+	say "You respectfully close the cheat trunk. It understands its service here is done. [trunk-feet]You wave to it as it disappears.";
+	chest-bonus;
+	the rule succeeds;
+
 check attacking:
 	if noun is cheat trunk:
 		moot cheat trunk;
-		say "You give the cheat trunk a good kicking, to show you don't need it. You think you hear a whimper. It jolts up a foot off the ground. Wait. No. It actually has feet. How about that? And feelings, too![paragraph break]Meanie. All that to show you don't need someone or something any more." instead;
+		say "You give the cheat trunk a good kicking, to show you don't need it. You think you hear a whimper. [trunk-feet]And feelings, too![paragraph break]Meanie. All that to show you don't need someone or something any more.";
+		chest-bonus;
+		the rule succeeds;
 	say "Gore foe? Forego!" instead;
 
 book dropping
