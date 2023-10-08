@@ -132,6 +132,8 @@ this is the post-speak-mind rule:
 	now sco-speak-mind is true;
 	say "Speaking your mind makes you feel a bit better.";
 
+section roar fest scoring
+
 a spoonerism rule (this is the pre-forest rule):
 	if player is not in roar fest, unavailable;
 	if sco-forest is true:
@@ -141,7 +143,7 @@ a spoonerism rule (this is the pre-forest rule):
 
 this is the post-forest rule:
 	now sco-forest is true;
-	say "Hooray! You figured what to do! You get a point!";
+	say "The roar fest quiets a bit. It opens up a passage to a dark forest, which is slightly less intimidating.";
 
 this is the pre-howl-farm rule:
 	if sco-howl-farm is true:

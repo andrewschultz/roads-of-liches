@@ -70,8 +70,6 @@ chapter cheat trunk
 
 the cheat trunk is a thing. "A cheat trunk has appeared from the depths of the lie mist.". description is "You [if sco-treat-chunk is true]got a glimpse when it opened the first time, and there are a lot of treat chunks in there[else]can't really see what's in the cheat trunk, but you might be able to guess what's inside it[end if]."
 
-check attacking cheat trunk: say "The trunk disappears with a POP." instead;
-
 chapter treat chunk
 
 the treat chunk is a thing. "It doesn't look particularly tasty, but if it helps you figure things out, it's probably best not to worry about that."
@@ -84,7 +82,7 @@ volume north hub
 
 book Meek Spined
 
-Meek Spined is north of Ditch Park. Meek Spined is in gonorth.
+Meek Spined is north of Ditch Park. Meek Spined is in gonorth. "[if sco-speak-mind is false]Oh, man! You thought you were brave enough to keep going, but you feel meek-spined. Well, you can always go [gen-dir of south]. Even if baddies may've gotten there by now[else]You feel brave enough here to head north or go back [gen-dir of south][end if]."
 
 check going north in Meek Spined when sco-speak-mind is false: say "You feel awed to silence by the path to the north." instead;
 

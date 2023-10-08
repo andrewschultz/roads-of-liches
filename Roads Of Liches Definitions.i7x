@@ -10,6 +10,11 @@ definition: a direction (called di) is viable:
 	if the room di of location of player is nowhere, no;
 	yes;
 
+to say gen-dir of (di - a direction):
+	say "[di]";
+	let rdl be the room di of location of player;
+	unless rdl is nowhere or rdl is unvisited, say " to [rdl]";
+
 volume regions
 
 a region has a direction called firstdir.
