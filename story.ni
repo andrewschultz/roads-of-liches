@@ -181,6 +181,10 @@ rule for supplying a missing noun when eating:
 
 check eating: say "Go nosh? No, gosh! [one of](You don't need to eat anything.)[or][line break][stopping]" instead;
 
+book taking
+
+check taking (this is the RoL rejection rule): say "You shouldn't need to [b]TAKE[r] anything explicitly in [this-game]. It will be done for you, if you find the right command." instead;
+
 book sleeping
 
 the block sleeping rule is not listed in any rulebook.

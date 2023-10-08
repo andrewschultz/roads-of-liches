@@ -59,7 +59,6 @@ a spoonerism rule (this is the pre-cleared-woes rule):
 this is the post-cleared-woes rule:
 	now sco-cleared-woes is true;
 	say "You feel a little less weird now. This may have no concrete value, but it's nice all the same.";
-	ready;
 
 a spoonerism rule (this is the pre-my-list rule):
 	if player is not in Ditch Park, unavailable;
@@ -295,6 +294,8 @@ a wordguess rule for a table name (called tn) (this is the main-spoonerism-check
 			now partial-row is row-count;
 			next;
 		if my-count is 0, next;
+		process the check-rule entry;
+		let rb-out be the outcome of the rulebook;
 		if rb-out is the already-done outcome, the rule succeeds;
 		if rb-out is the not-yet outcome:
 			let exact-cmd be true;
