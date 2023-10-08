@@ -15,6 +15,32 @@ to say gen-dir of (di - a direction):
 	let rdl be the room di of location of player;
 	unless rdl is nowhere or rdl is unvisited, say " to [rdl]";
 
+volume useful stubs
+
+the score and thinking changes rule is listed instead of the notify score changes rule in the turn sequence rulebook.
+
+to say went-by (nu - a number): say "just went [if nu > 0]up[else]down[end if] by [nu in words] point[unless nu is 1 or nu is -1]s[end if]";
+
+this is the score and thinking changes rule:
+	let bonus-delt be cur-bonus - last-cur-bonus;
+	let sco-delt be current-score - last-current-score;
+	if sco-delt is 0 and bonus-delt is 0, continue the action;
+	say "[i][bracket]Your score ";
+	if bonus-delt is 0:
+		say "[went-by sco-delt]";
+	else if bonus-delt is sco-delt:
+		say "and bonus points [went-by bonus-delt]";
+	else:
+		say "[went-by sco-delt], and your bonus points [went-by bonus-delt]";
+	say ".[close bracket][r][line break]";
+	now last-cur-bonus is cur-bonus;
+	now last-current-score is current-score;
+
+to chest-bonus:
+	if player does not have treat chunk and used-cheats is false:
+		up-min;
+		process the score and thinking changes rule;
+
 volume regions
 
 a region has a direction called firstdir.

@@ -341,8 +341,8 @@ a wordguess rule for a table name (called tn) (this is the main-spoonerism-check
 			the rule succeeds;
 		now idid entry is true;
 		process the run-rule entry;
-		increment the score;
-		follow the notify score changes rule;
+		up-reg;
+		follow the score and thinking changes rule;
 		the rule succeeds;
 	if partial-row > 0:
 		say "Hmm. You are on the right track, there.";
