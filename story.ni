@@ -41,6 +41,8 @@ Jesse Murney is a person. The player is Jesse Murney. description is "You're wea
 to die: end the story saying "I do die! Ooh!"
 
 when play begins:
+	now the right hand status line is "[current-score]/[min-needed][if score is min-needed][else if min-needed is max-available]*[else]-[max-available][end if]";
+	force-status;
 	say "Details: you walk through the after-dark dafter ark to...";
 
 volume hub rooms
@@ -173,17 +175,33 @@ book dropping
 check dropping:
 	if noun is treat chunk:
 		moot treat chunk;
-		say "It drifts off to ... wherever." instead;
+		say "It drifts off to ... wherever.";
+		chest-bonus;
+		the rule succeeds;
 	say "You don't need to drop anything in [this-game]. Things will disappear once they're used." instead;
 
 book eating
 
 the can't eat unless edible rule is not listed in any rulebook.
 
+understand "eat" as eating.
+
 rule for supplying a missing noun when eating:
 	if player has the treat chunk, now noun is treat chunk;
 
 check eating: say "Go nosh? No, gosh! [one of](You don't need to eat anything.)[or][line break][stopping]" instead;
+
+book scoring
+
+the announce the score rule is not listed in the carry out requesting the score rulebook.
+
+to say it-they of (n - a number): say "[if n is 1]it[else]they[end if]";
+
+carry out requesting the score:
+	now verb-dont-print is true;
+	say "You have scored a total of [current-score] out of [max-overall] points and need [min-needed] to win. You have found [cur-bonus] of [max-bonus] bonus points so far[if bonus-locked-out > 0]. You are locked out of [bonus-locked-out] point[plur of bonus-locked-out][one of]. You can check for the maximum score dropping in the upper right, which usually happens when you take a one-way passage[or][stopping][end if].";
+	now verb-dont-print is false;
+	continue the action;
 
 book taking
 
