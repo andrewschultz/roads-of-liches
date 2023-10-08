@@ -76,6 +76,12 @@ book Meek Spined
 
 Meek Spined is north of Ditch Park. Meek Spined is in gonorth.
 
+check going north in Meek Spined when sco-speak-mind is false: say "You feel awed to silence by the path to the north." instead;
+
+book Roar Fest
+
+Roar Fest is north of Meek Spined. Roar Fest is in gonorth. printed name of Roar Fest is "[if sco-forest is true]Forest[else]Roar Fest[end if]".
+
 book deal room
 
 Deal Room is a room.

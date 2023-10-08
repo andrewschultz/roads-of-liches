@@ -73,6 +73,7 @@ book north spoke
 table of north spoke spoonerisms
 w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "speak"	"mind"	--	--	false	true	true	false	meek spined	pre-speak-mind rule	post-speak-mind rule	--	--
+"four|for"	"rest"	--	--	false	true	false	false	roar fest	pre-forest rule	post-forest rule	"forest"	--
 "howl"	"farm"	--	--	false	true	true	false	Ditch Park	pre-howl-farm rule	post-howl-farm rule
 "dang"	"fools"	--	--	false	true	true	false	Fang Duels	pre-dang-fools rule	post-dang-fools rule	--	--
 "keep"	"dry"	--	--	false	true	true	false	Howl Farm	pre-keep-dry rule	post-keep-dry rule
@@ -89,6 +90,17 @@ a spoonerism rule (this is the pre-speak-mind rule):
 this is the post-speak-mind rule:
 	now sco-speak-mind is true;
 	say "Speaking your mind makes you feel a bit better.";
+
+a spoonerism rule (this is the pre-forest rule):
+	if player is not in roar fest, unavailable;
+	if sco-forest is true:
+		vcal "You already created a forest path!";
+		already-done;
+	ready;
+
+this is the post-forest rule:
+	now sco-forest is true;
+	say "Hooray! You figured what to do! You get a point!";
 
 this is the pre-howl-farm rule:
 	if sco-howl-farm is true:

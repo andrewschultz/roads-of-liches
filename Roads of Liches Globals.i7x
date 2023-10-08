@@ -16,6 +16,8 @@ section north path globals
 
 sco-howl-farm is a truth state that varies.
 
+sco-forest is a truth state that varies.
+
 sco-dang-fools is a truth state that varies.
 
 sco-keep-dry is a truth state that varies.
