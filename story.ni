@@ -14,7 +14,7 @@ release along with cover art.
 
 release along with a website.
 
-release along with the "parchment" interpreter.
+release along with the "Parchment" interpreter.
 
 section extra header
 

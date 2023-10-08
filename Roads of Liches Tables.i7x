@@ -29,14 +29,19 @@ volume the main tables
 
 book very general stuff
 
-table of general stuff
+table of item spoonerisms
 w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "cleared"	"woes"	--	--	false	true	false	false	--	pre-cleared-woes rule	post-cleared-woes rule
+"speak"	"well"	--	--	false	true	true	false	--	pre-speak-well rule	post-speak-well rule	--	--
+"greater"	"half"	--	--	false	true	true	false	--	pre-greater-half rule	post-greater-half rule	--	--
+
+book hub stuff
+
+table of hub spoonerisms
+w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "my"	"list"	--	--	false	true	true	false	Ditch Park	pre-my-list rule	post-my-list rule	--	--
 "start"	"hopping"	--	--	false	true	true	false	Ditch Park	pre-start-hopping rule	post-start-hopping rule
 "treat"	"chunk"	--	--	false	true	true	false	ditch park	pre-treat-chunk rule	post-treat-chunk rule	--	--
-"speak"	"well"	--	--	false	true	true	false	--	pre-speak-well rule	post-speak-well rule	--	--
-"greater"	"half"	--	--	false	true	true	false	--	pre-greater-half rule	post-greater-half rule	--	--
 
 section ditch park scoring
 
@@ -286,9 +291,9 @@ volume big picture stuff
 the check forks rule is listed first in the for printing a parser error rulebook.
 
 rule for printing a parser error (this is the check forks rule):
-	abide by the main-spoonerism-checker rule for table of general stuff;
+	abide by the main-spoonerism-checker rule for table of item spoonerisms;
 	if debug-state is true, say "DEBUG INFO [mrlp]: [spoontable of mrlp], [firstdir of mrlp].";
-	if firstdir of mrlp is planar:
+	if firstdir of mrlp is not down:
 		abide by the main-spoonerism-checker rule for spoontable of mrlp;
 	continue the action;
 

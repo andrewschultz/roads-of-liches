@@ -23,7 +23,7 @@ a region can be solved or unsolved. a region is usually unsolved.
 
 a region has a number called max-score. a region has a number called cur-score. a region has a number called min-needed-score. a region has a table name called spoontable. a region has a room called firstroom.
 
-hubregion is a region. firstdir of hubregion is up.
+hubregion is a region. firstdir of hubregion is up. spoontable of hubregion is table of hub spoonerisms.
 
 gonorth is a region. firstdir of gonorth is north. spoontable of gonorth is table of north spoke spoonerisms.
 
