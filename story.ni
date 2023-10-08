@@ -66,6 +66,16 @@ chapter my list
 
 my list is a thing. "It describes the passsages through. You feel a bit more confident and organized just reading it."
 
+chapter cheat trunk
+
+the cheat trunk is a thing. "A cheat trunk has appeared from the depths of the lie mist.". description is "You [if sco-treat-chunk is true]got a glimpse when it opened the first time, and there are a lot of treat chunks in there[else]can't really see what's in the cheat trunk, but you might be able to guess what's inside it[end if]."
+
+check attacking cheat trunk: say "The trunk disappears with a POP." instead;
+
+chapter treat chunk
+
+the treat chunk is a thing. "It doesn't look particularly tasty, but if it helps you figure things out, it's probably best not to worry about that."
+
 chapter toast gown
 
 a toast gown is a wearable thing in Ditch Park.
@@ -148,11 +158,26 @@ book attacking
 
 the block attacking rule is not listed in any rulebook.
 
-check attacking: say "Gore foe? Forego!" instead;
+check attacking:
+	if noun is cheat trunk:
+		moot cheat trunk;
+		say "You give the cheat trunk a good kicking, to show you don't need it. You think you hear a whimper. It jolts up a foot off the ground. Wait. No. It actually has feet. How about that? And feelings, too![paragraph break]Meanie. All that to show you don't need someone or something any more." instead;
+	say "Gore foe? Forego!" instead;
+
+book dropping
+
+check dropping:
+	if noun is treat chunk:
+		moot treat chunk;
+		say "It drifts off to ... wherever." instead;
+	say "You don't need to drop anything in [this-game]. Things will disappear once they're used." instead;
 
 book eating
 
 the can't eat unless edible rule is not listed in any rulebook.
+
+rule for supplying a missing noun when eating:
+	if player has the treat chunk, now noun is treat chunk;
 
 check eating: say "Go nosh? No, gosh! [one of](You don't need to eat anything.)[or][line break][stopping]" instead;
 

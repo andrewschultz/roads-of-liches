@@ -8,6 +8,10 @@ section general globals
 
 sco-cleared-woes is a truth state that varies.
 
+section ditch park globals
+
+sco-treat-chunk is a truth state that varies.
+
 sco-my-list is a truth state that varies.
 
 sco-start-hopping is a truth state that varies.

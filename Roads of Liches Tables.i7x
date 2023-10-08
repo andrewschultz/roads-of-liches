@@ -34,6 +34,21 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "cleared"	"woes"	--	--	false	true	false	false	--	pre-cleared-woes rule	post-cleared-woes rule
 "my"	"list"	--	--	false	true	true	false	Ditch Park	pre-my-list rule	post-my-list rule	--	--
 "start"	"hopping"	--	--	false	true	true	false	Ditch Park	pre-start-hopping rule	post-start-hopping rule
+"treat"	"chunk"	--	--	false	true	true	false	ditch park	pre-treat-chunk rule	post-treat-chunk rule	--	--
+
+section ditch park scoring
+
+a spoonerism rule (this is the pre-treat-chunk rule):
+	if player is not in ditch park, unavailable;
+	if player carries treat chunk:
+		vcal "You already have a treat chunk! You will need to drop or use it to get another.";
+		already-done;
+	ready;
+
+this is the post-treat-chunk rule:
+	say "A treat chunk flies from the cheat trunk. Mmm, it looks like trail mix.";
+	now player has treat chunk;
+	now sco-treat-chunk is true;
 
 a spoonerism rule (this is the pre-cleared-woes rule):
 	if sco-cleared-woes is true:
@@ -55,8 +70,9 @@ a spoonerism rule (this is the pre-my-list rule):
 
 this is the post-my-list rule:
 	now sco-my-list is true;
-	say "The lie mist dissipates, but not before you hear whisperings that any old fool could've figured things out.";
+	say "The lie mist dissipates, but not before you hear whisperings that any old fool could've figured that out. Really![paragraph break]But you are so glad to see a paper labeled 'my list' that you don't, in fact, care.[paragraph break]Also, there's some sort of trunk here. A cheat trunk! What could be in it?";
 	now player has my list;
+	move cheat trunk to Ditch Park;
 
 a spoonerism rule (this is the pre-start-hopping rule):
 	if sco-start-hopping is true:
