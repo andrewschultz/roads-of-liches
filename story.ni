@@ -130,6 +130,9 @@ book Roar Fest
 
 Roar Fest is north of Meek Spined. Roar Fest is in gonorth. printed name of Roar Fest is "[if sco-forest is true]Forest[else]Roar Fest[end if]". "[if sco-forest is false]Perhaps there is a path besides back south, but all the roaring is distracting you[else]With the roaring cleared, you see passages west, south and east[end if]."
 
+check going in roar fest:
+	if noun is rejectable, say "The roaring means you can't think or see which way to go." instead;
+
 book Pale Wrath
 
 Pale Wrath is west of Roar Fest. it is in gonorth. "You can go north or east here[if sco-mill-key is false]. You also hear something[end if]."
@@ -273,8 +276,8 @@ book Night Sludge
 
 Night Sludge is west of Ditch Park. it is in gowest.
 
-check going west in Night Sludge:
-	if sco-slight-nudge is false, say "The night sludge has you a bit scared. You're clueless how to start going through it." instead;
+check going in Night Sludge:
+	if sco-slight-nudge is false and noun is rejectable, say "The night sludge has you a bit scared. You're clueless how to start going through it." instead;
 
 book Feeling Harm
 

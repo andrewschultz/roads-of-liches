@@ -17,6 +17,19 @@ to say gen-dir of (di - a direction):
 
 volume useful stubs
 
+book directions
+
+the cardinal directions only rule is listed first in the check going rules.
+
+check going (this is the cardinal directions only rule):
+	if noun is not cardinal, say "Only the four basic directions are used here." instead;
+
+definition: a direction (called di) is rejectable:
+	if the room di of location of player is visited, no;
+	yes;
+
+book scores
+
 the score and thinking changes rule is listed instead of the notify score changes rule in the turn sequence rulebook.
 
 to say went-by (nu - a number): say "just went [if nu > 0]up[else]down[end if] by [nu in words] point[unless nu is 1 or nu is -1]s[end if]";
