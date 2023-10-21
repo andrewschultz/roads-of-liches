@@ -138,7 +138,6 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "speak"	"mind"	--	--	false	true	true	false	meek spined	pre-speak-mind rule	post-speak-mind rule	--	--
 "four|for"	"rest"	--	--	false	true	false	false	roar fest	pre-forest rule	post-forest rule	"forest"	--
 ["howl"	"farm"	--	--	false	true	true	false	Ditch Park	pre-howl-farm rule	post-howl-farm rule]
-"dang"	"fools"	--	--	false	true	true	false	Fang Duels	pre-dang-fools rule	post-dang-fools rule	--	--
 "keep"	"dry"	--	--	false	true	true	false	--	pre-keep-dry rule	post-keep-dry rule
 "creep"	"die"	--	--	false	true	true	false	--	pre-creep-die rule	post-creep-die rule
 "rail"	"path"	--	--	false	true	true	false	pale wrath	pre-rail-path rule	post-rail-path rule	--	--
@@ -270,17 +269,6 @@ this is the post-howl-farm rule:
 	now ditch park is mapped east of howl farm;
 	now sco-howl-farm is true;]
 
-a spoonerism rule (this is the pre-dang-fools rule):
-	if player is not in fang duels, unavailable;
-	if sco-dang-fools is true:
-		vcal "You already expressed your contempt. Repeated expression of contempt may make you act like a dang fool at the wrong time in the near future.";
-		already-done;
-	ready;
-
-this is the post-dang-fools rule:
-	now sco-dang-fools is true;
-	say "You realize aggression just wears people out. You express this brilliant philosophical belief eloquently. Either the entities involved are too intimidated by your intelligence, or they find you too wussy to bother with. But they are gone, and that's what matters![paragraph break]You're a bit bummed you are in a text adventure and not a TV show, so you can't give kids one to grow on, but hey.";
-
 a spoonerism rule (this is the pre-keep-dry rule):
 	if deep cry is not fungible, unavailable;
 	if sco-keep-dry is true:
@@ -393,50 +381,20 @@ book east spoke
 
 table of east spoke spoonerisms
 w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
-"ghoul"	"crow"	--	--	false	true	true	false	gruel co	pre-ghoul-crow rule	post-ghoul-crow rule	--	--
-"cruel"	"go"	--	--	false	true	true	false	gruel co	pre-cruel-go rule	post-cruel-go rule	--	--
-"cool"	"grow"	--	--	false	true	true	false	gruel co	pre-cool-grow rule	post-cool-grow rule	--	--
+"dang"	"fools"	--	--	false	true	true	false	fang duels	pre-dang-fools rule	post-dang-fools rule	--	--
 
-a spoonerism rule (this is the pre-ghoul-crow rule):
-	if player is not in gruel co, unavailable;
-	if sco-ghoul-crow is true:
-		vcal "But you already summoned the ghoul crow!";
+a spoonerism rule (this is the pre-dang-fools rule):
+	if player is not in fang duels, unavailable;
+	if sco-dang-fools is true:
+		vcal "You already expressed your contempt. Repeated expression of contempt may make you act like a dang fool at the wrong time in the near future.";
 		already-done;
 	ready;
 
-this is the post-ghoul-crow rule:
-	now sco-ghoul-crow is true;
-	say "A large ghoul crow appears! Boy, it looks evil. And yet ... and yet, perhaps it has a weakness. Perhaps you can work through its hard shell.";
-	move ghoul crow to Gruel Co;
+this is the post-dang-fools rule:
+	now sco-dang-fools is true;
+	say "You realize aggression just wears people out. You express this brilliant philosophical belief eloquently. Either the entities involved are too intimidated by your intelligence, or they find you too wussy to bother with. But they are gone, and that's what matters![paragraph break]You're a bit bummed you are in a text adventure and not a TV show, so you can't give kids one to grow on, but hey.";
 
-a spoonerism rule (this is the pre-cruel-go rule):
-	if player is not in gruel co, unavailable;
-	if sco-ghoul-crow is false:
-		vcp "You don't have anyone to yell that at yet!";
-		not-yet;
-	if sco-cruel-go is true:
-		vcal "But you already told the ghoul crow off!";
-		already-done;
-	ready;
-
-this is the post-cruel-go rule:
-	now sco-cruel-go is true;
-	say "The ghoul crow flashes a momentary look of regret and guilt, then goes off to goodness knows where.";
-
-a spoonerism rule (this is the pre-cool-grow rule):
-	if player is not in gruel co, unavailable;
-	if sco-cruel-go is false:
-		vcp "You [if ghoul crow is off-stage]sense you [end if]have not rid Gruel Co of the evil presence that is keeping it down.";
-		not-yet;
-	if sco-cool-grow is true:
-		vcal "You already rebuilt Gruel Co!";
-		already-done;
-	ready;
-
-this is the post-cool-grow rule:
-	now sco-cool-grow is true;
-	say "Gruel Co un-crumbles. You are about to leave, just grateful to help with the job well done, but then ... you are offered some paying gruel as reward!";
-	now player has paying gruel;
+section fang duels scoring
 
 book west spoke
 

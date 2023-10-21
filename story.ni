@@ -2,6 +2,8 @@
 
 volume includes
 
+[deleted: Gruel Co, Ghoul Crow]
+
 the story description is "STRAIGHT GORY GREAT STORY".
 
 the story headline is "A straight gory great story for EctoComp 2023 Grand Guignol".
@@ -219,17 +221,17 @@ book Deal Room
 
 Real Doom is a room in gosouth. It is south of Painful Garden. printed name is "[if sco-deal-room is false]Deal Room[else]Real Doom[end if]".
 
-book shne
+book Dutiful Bawlers
 
-shne is a room in gosouth. It is east of Real Doom.
+Dutiful Bawlers is a room in gosouth. It is east of Real Doom.
 
 book Violence Senders
 
 Violence Senders is a room in gosouth. It is west of Real Doom.
 
-book shne
+book Dutiful Bawlers
 
-shse is a room in gosouth. It is south of shne.
+shse is a room in gosouth. It is south of Dutiful Bawlers.
 
 book Violence Senders
 
@@ -241,29 +243,29 @@ shs is a room in gosouth. It is east of shsw. It is west of shse.
 
 volume east hub
 
-book fang duel
+book fang duels
 
 Fang Duels is a room in goeast. it is east of Ditch Park.
 
-book ehnw
+book Screening Pool
 
-ehnw is a room in goeast. it is north of Fang Duels.
+Screening Pool is a room in goeast. it is north of Fang Duels.
 
-book ehsw
+book Crazy Leap
 
-ehsw is a room in goeast. it is south of Fang Duels.
+Crazy Leap is a room in goeast. it is south of Fang Duels.
 
 book Tool Cavern
 
-Tool Cavern is a room in goeast. it is east of ehnw.
+Tool Cavern is a room in goeast. it is east of Screening Pool.
 
 book ehse
 
-ehse is a room in goeast. it is east of ehsw.
+ehse is a room in goeast. it is east of Crazy Leap.
 
-book crazy leap
+book eastedge
 
-Crazy Leap is a room in goeast. it is south of Tool Cavern. it is north of ehse. "You hear a deep cry echo through the crazy leap."
+eastedge is a room in goeast. it is south of Tool Cavern. it is north of ehse. "You hear a deep cry echo through the eastedge."
 
 volume west hub
 
@@ -278,21 +280,21 @@ book Feeling Harm
 
 Feeling Harm is a room in gowest. it is north of Night Sludge.
 
-book whse
+book Blue Tombs
 
-whse is a room in gowest. it is south of Night Sludge.
+Blue Tombs is a room in gowest. it is south of Night Sludge.
 
-book whnw
+book Tumorous Home
 
-whnw is a room in gowest. it is west of Feeling Harm.
+Tumorous Home is a room in gowest. it is west of Feeling Harm.
 
-book whnw
+book Watery Pond
 
-whsw is a room in gowest. it is west of whse.
+Watery Pond is a room in gowest. it is west of Blue Tombs.
 
-book GruelCo
+book Trap Zoo
 
-Gruel Co is a room in gowest. it is south of whnw. it is north of whsw.
+Trap Zoo is a room in gowest. it is south of Tumorous Home. it is north of Watery Pond.
 
 chapter Ghoul Crow
 
@@ -443,6 +445,6 @@ nary a void is a room in gometa.
 
 volume mapping stuff
 
-index map with wayfair cell mapped east of shne.
+index map with wayfair cell mapped east of Dutiful Bawlers.
 
 index map with nary a void mapped south of wayfair cell.
