@@ -18,6 +18,81 @@ by one point
 
 >score
 
+>n
+
+>speak mind
+
+>n
+
+>forest
+
+>w
+
+>mill key
+
+>rail path
+
+>e
+
+>e
+
+>hating mill
+
+>bending pole
+
+>n
+
+>keen lamp
+
+>s
+
+>w
+
+>w
+
+>n
+
+>some oil
+
+>e
+
+>shabby grues
+
+>e
+
+>s
+
+>w
+
+>s
+
+>s
+
+>pitch dark
+by one point
+
+>n
+
+>n
+
+>e
+
+>n
+
+>w
+
+>beer fridge
+
+>e
+
+>s
+
+>w
+
+>s
+
+>s
+
 >e
 
 >ghoul crow

@@ -15,9 +15,7 @@
 file=reg-rol-thru-min.txt,min,minimum walkthrough
 file=reg-rol-thru-all.txt,all,walkthrough with all points
 
-##--stable-file: this eventually says that the project is stable, and I shouldn't change the main/minimal file unless I really need to.
-#--strict-file: this says that the project requires strict section marking e.g. @all instead of ==t1.
-
+### these obviously need to be fixed later. Right now, there are bigger things to do.
 }}MAX=0
 }}CURMAX=0
 }}SCORE=0
@@ -26,6 +24,9 @@ file=reg-rol-thru-all.txt,all,walkthrough with all points
 }}CURMAXBONUS=0
 }}MAXBONUS=0
 }$SCOS=You have so far scored {SCORE} out of a possible {MAX},
+
+##--stable-file: this eventually says that the project is stable, and I shouldn't change the main/minimal file unless I really need to.
+#--strict-file: this says that the project requires strict section marking e.g. @all instead of ==t1.
 
 ## *FILE
 ## *FORK
@@ -61,6 +62,108 @@ by one point
 
 >score
 }$SCOS
+
+>n
+
+@all
+`Meek Spined
+
+>speak mind
+
+>n
+
+@all
+`Roar Fest
+
+>forest
+
+>w
+
+@all
+`Pale Wrath
+
+>mill key
+
+>rail path
+
+@all
+`Rail Path
+
+>e
+
+>e
+
+@all
+`Mating Hill
+
+>hating mill
+
+@all
+pending bowl
+
+>bending pole
+
+>n
+
+@all
+`Lean Camp
+
+>keen lamp
+
+>s
+
+>w
+
+>w
+
+>n
+
+@all
+`Um, Soil
+
+>some oil
+
+>e
+
+@all
+`Fear Bridge
+
+>shabby grues
+
+>e
+
+>s
+
+>w
+
+>s
+
+>s
+
+>pitch dark
+by one point
+
+>n
+
+>n
+
+>e
+
+>n
+
+>w
+
+>beer fridge
+
+>e
+
+>s
+
+>w
+
+>s
+
+>s
 
 >e
 
