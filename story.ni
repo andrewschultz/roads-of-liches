@@ -397,6 +397,23 @@ check swearing mildly:
 check swearing obscenely:
 	say "Yelps! Who helps you?!" instead;
 
+book thinking
+
+the block thinking rule is not listed in any rulebook.
+
+check thinking:
+	let got-something be false;
+	repeat through spoontable of mrlp:
+		if idid entry is false and think-cue entry is true:
+			now got-something is true;
+			if there is a think-advice entry:
+				say "[think-advice entry]";
+			else:
+				say "You tried [b][w1 entry in upper case] [w2 entry in upper case][r][if there is a best-room entry] in [best-room entry][end if], but it didn't quite work out. Maybe later.";
+	if got-something is false:
+		say "There's nothing you could do later.";
+	the rule succeeds;
+
 volume weird verbs
 
 chapter endspiteing
