@@ -116,6 +116,26 @@ book Roar Fest
 
 Roar Fest is north of Meek Spined. Roar Fest is in gonorth. printed name of Roar Fest is "[if sco-forest is true]Forest[else]Roar Fest[end if]".
 
+book nhsw
+
+nhsw is west of Roar Fest. it is in gonorth.
+
+book nhnw
+
+nhnw is north of nhsw. it is in gonorth.
+
+book nhse
+
+nhse is east of Roar Fest. it is in gonorth.
+
+book nhne
+
+nhne is north of nhse. it is in gonorth.
+
+book Fear Bridge
+
+Fear Bridge is west of nhne. Fear Bridge is east of nhnw. it is in gonorth.
+
 book deal room
 
 Deal Room is a room.
