@@ -121,10 +121,10 @@ table of north spoke spoonerisms
 w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "speak"	"mind"	--	--	false	true	true	false	meek spined	pre-speak-mind rule	post-speak-mind rule	--	--
 "four|for"	"rest"	--	--	false	true	false	false	roar fest	pre-forest rule	post-forest rule	"forest"	--
-"howl"	"farm"	--	--	false	true	true	false	Ditch Park	pre-howl-farm rule	post-howl-farm rule
+["howl"	"farm"	--	--	false	true	true	false	Ditch Park	pre-howl-farm rule	post-howl-farm rule]
 "dang"	"fools"	--	--	false	true	true	false	Fang Duels	pre-dang-fools rule	post-dang-fools rule	--	--
-"keep"	"dry"	--	--	false	true	true	false	Howl Farm	pre-keep-dry rule	post-keep-dry rule
-"creep"	"die"	--	--	false	true	true	false	Howl Farm	pre-creep-die rule	post-creep-die rule
+"keep"	"dry"	--	--	false	true	true	false	--	pre-keep-dry rule	post-keep-dry rule
+"creep"	"die"	--	--	false	true	true	false	--	pre-creep-die rule	post-creep-die rule
 "say"	"farewell"	--	--	false	true	true	false	wayfair cell	pre-say-farewell rule	post-say-farewell rule	--	--
 
 a spoonerism rule (this is the pre-speak-mind rule):
@@ -151,7 +151,7 @@ this is the post-forest rule:
 	now sco-forest is true;
 	say "The roar fest quiets a bit. It opens up a passage to a dark forest, which is slightly less intimidating.";
 
-this is the pre-howl-farm rule:
+[this is the pre-howl-farm rule:
 	if sco-howl-farm is true:
 		vcal "You already opened passage to the howl farm.";
 		already-done;
@@ -161,7 +161,7 @@ this is the post-howl-farm rule:
 	say "You feel a howl farm off to the side, which is creepy, but it's not physically dangerous.";
 	now howl farm is mapped west of ditch park;
 	now ditch park is mapped east of howl farm;
-	now sco-howl-farm is true;
+	now sco-howl-farm is true;]
 
 a spoonerism rule (this is the pre-dang-fools rule):
 	if player is not in fang duels, unavailable;

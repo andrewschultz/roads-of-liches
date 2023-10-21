@@ -2,6 +2,12 @@
 
 volume includes
 
+[code to repurpose]
+
+[Howl Farm is west of Night Sludge. It is in gowest. "A deep cry is here."]
+
+the deep cry is scenery.
+
 [dark heels: HARK DEALS chases them around]
 
 the story description is "STRAIGHT GORY GREAT STORY".
@@ -136,10 +142,6 @@ book Fear Bridge
 
 Fear Bridge is west of nhne. Fear Bridge is east of nhnw. it is in gonorth.
 
-book Feeling Harm
-
-Feeling Harm is a room in gowest. it is north of Night Sludge.
-
 book wayfair cell
 
 Wayfair Cell is a room.
@@ -180,8 +182,6 @@ book fang duel
 
 Fang Duels is a room in goeast. it is east of Ditch Park.
 
-Gruel Co is a room in goeast.
-
 book ehnw
 
 ehnw is a room in goeast. it is north of Fang Duels.
@@ -211,11 +211,25 @@ Night Sludge is west of Ditch Park. it is in gowest.
 check going west in Night Sludge:
 	if sco-slight-nudge is false, say "The night sludge has you a bit scared. You're clueless how to start going through it." instead;
 
-book howl farm
+book Feeling Harm
 
-Howl Farm is west of Night Sludge. It is in gowest. "A deep cry is here."
+Feeling Harm is a room in gowest. it is north of Night Sludge.
 
-the deep cry is scenery in Howl Farm.
+book whse
+
+whse is a room in gowest. it is south of Night Sludge.
+
+book whnw
+
+whnw is a room in gowest. it is west of Feeling Harm.
+
+book whnw
+
+whsw is a room in gowest. it is west of whse.
+
+book GruelCo
+
+Gruel Co is a room in gowest. it is south of whnw. it is north of whsw.
 
 chapter Ghoul Crow
 
