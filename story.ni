@@ -136,23 +136,9 @@ book Fear Bridge
 
 Fear Bridge is west of nhne. Fear Bridge is east of nhnw. it is in gonorth.
 
-book deal room
+book Feeling Harm
 
-Deal Room is a room.
-
-book healing farm
-
-Healing Farm is a room.
-
-book fang duel
-
-Fang Duels is a room.
-
-book crazy leap
-
-Crazy Leap is a room. "You hear a deep cry echo through the crazy leap."
-
-The Lazy Creep is a person in Crazy Leap.
+Feeling Harm is a room in gowest. it is north of Night Sludge.
 
 book wayfair cell
 
@@ -164,17 +150,17 @@ book Painful Garden
 
 Painful Garden is south of Ditch Park. It is in gosouth.
 
-book shn
+book Deal Room
 
-shn is a room in gosouth. It is south of Painful Garden.
+Deal Room is a room in gosouth. It is south of Painful Garden.
 
 book shne
 
-shne is a room in gosouth. It is east of shn.
+shne is a room in gosouth. It is east of Deal Room.
 
 book shnw
 
-shnw is a room in gosouth. It is west of shn.
+shnw is a room in gosouth. It is west of Deal Room.
 
 book shne
 
@@ -190,7 +176,31 @@ shs is a room in gosouth. It is east of shsw. It is west of shse.
 
 volume east hub
 
-Gruel Co is east of Ditch Park. It is in goeast.
+book fang duel
+
+Fang Duels is a room in goeast. it is east of Ditch Park.
+
+Gruel Co is a room in goeast.
+
+book ehnw
+
+ehnw is a room in goeast. it is north of Fang Duels.
+
+book ehsw
+
+ehsw is a room in goeast. it is south of Fang Duels.
+
+book ehne
+
+ehne is a room in goeast. it is east of ehnw.
+
+book ehse
+
+ehse is a room in goeast. it is east of ehsw.
+
+book crazy leap
+
+Crazy Leap is a room in goeast. it is south of ehne. it is north of ehse. "You hear a deep cry echo through the crazy leap."
 
 volume west hub
 
