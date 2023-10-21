@@ -41,6 +41,11 @@ to chest-bonus:
 		up-min;
 		process the score and thinking changes rule;
 
+volume score stubs
+
+to decide which number is lamp-score:
+	decide on (boolval of sco-keen-lamp) + (boolval of sco-some-oil)
+
 volume regions
 
 a region has a direction called firstdir.

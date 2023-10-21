@@ -42,6 +42,22 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "my"	"list"	--	--	false	true	true	false	Ditch Park	pre-my-list rule	post-my-list rule	--	--
 "start"	"hopping"	--	--	false	true	true	false	Ditch Park	pre-start-hopping rule	post-start-hopping rule
 "treat"	"chunk"	--	--	false	true	true	false	ditch park	pre-treat-chunk rule	post-treat-chunk rule	--	--
+"pitch"	"dark"	--	--	false	true	true	false	ditch park	pre-pitch-dark rule	post-pitch-dark rule	--	--
+
+a spoonerism rule (this is the pre-pitch-dark rule):
+	if player is not in ditch park, unavailable;
+	if shabby grues are not in ditch park:
+		vcp "You have no need to make everything pitch dark at the moment!";
+		not-yet;
+	if sco-pitch-dark is true:
+		vcal "You already made Ditch Park pitch dark.";
+		already-done;
+	ready;
+
+this is the post-pitch-dark rule:
+	now sco-pitch-dark is true;
+	say "You make Ditch Park pitch dark for a moment. You hear the grues getting closer, then you turn the lamp as bright as it will go. There is much screaming, fleeing, and falling into ditches! The grues that did not all run away.";
+	moot shabby grues;
 
 section ditch park scoring
 
@@ -126,6 +142,98 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "keep"	"dry"	--	--	false	true	true	false	--	pre-keep-dry rule	post-keep-dry rule
 "creep"	"die"	--	--	false	true	true	false	--	pre-creep-die rule	post-creep-die rule
 "say"	"farewell"	--	--	false	true	true	false	wayfair cell	pre-say-farewell rule	post-say-farewell rule	--	--
+"rail"	"path"	--	--	false	true	true	false	pale wrath	pre-rail-path rule	post-rail-path rule	--	--
+"bending"	"pole"	--	--	false	true	true	false	Mating Hill	pre-bending-pole rule	post-bending-pole rule	--	--
+"mill"	"key"	--	--	false	true	true	false	pale wrath	pre-mill-key rule	post-mill-key rule	--	--
+"hating"	"mill"	--	--	false	true	true	false	mating hill	pre-hating-mill rule	post-hating-mill rule	--	--
+"some"	"oil"	--	--	false	true	true	false	um soil	pre-some-oil rule	post-some-oil rule	--	--
+"keen"	"lamp"	--	--	false	true	true	false	lean camp	pre-keen-lamp rule	post-keen-lamp rule	--	--
+"shabby"	"grues"	--	--	false	true	true	false	fear bridge	pre-shabby-grues rule	post-shabby-grues rule	--	--
+"beer"	"fridge"	--	--	false	true	true	false	fear bridge	pre-beer-fridge rule	post-beer-fridge rule	--	--
+
+section hating mill scoring
+
+a spoonerism rule (this is the pre-hating-mill rule):
+	if player is not in mating hill, unavailable;
+	if sco-hating-mill is true:
+		vcal "You already opened the hating mill!";
+		already-done;
+	ready;
+
+this is the post-hating-mill rule:
+	now sco-hating-mill is true;
+	say "The mating hill flattens out, revealing passage north.";
+	follow the try-opening-mill rule;
+
+a spoonerism rule (this is the pre-bending-pole rule):
+	if pending bowl is not fungible, unavailable;
+	ready;
+
+this is the post-bending-pole rule:
+	now sco-bending-pole is true;
+	say "Pop! The pending bowl becomes a bending pole.";
+	moot pending bowl;
+	now player has bending pole;
+
+section pale wrath scoring
+
+a spoonerism rule (this is the pre-mill-key rule):
+	if player is not in pale wrath, unavailable;
+	if sco-mill-key is true:
+		vcal "You already got the mill key!";
+		already-done;
+	ready;
+
+this is the post-mill-key rule:
+	now sco-mill-key is true;
+	say "A mill key appears in your hand.";
+	now player has mill key;
+
+a spoonerism rule (this is the pre-rail-path rule):
+	if player is not in pale wrath, unavailable;
+	if sco-rail-path is true:
+		vcal "You already made the rail path!";
+		already-done;
+	ready;
+
+this is the post-rail-path rule:
+	now sco-rail-path is true;
+	say "The wrath subsides, revealing a rickety rail path to the north. You'll probably need assistance to make it across without falling. It's a huge drop down!";
+
+section um soil scoring
+
+a spoonerism rule (this is the pre-some-oil rule):
+	if player is not in um soil and player does not have oil, unavailable;
+	if sco-some-oil is true:
+		vcal "You already got some oil! Save some for the next unfortunate adventurer.";
+		already-done;
+	ready;
+
+this is the post-some-oil rule:
+	now sco-some-oil is true;
+	say "You have some oil! It's in a nice can, too!";
+	now player has oil;
+	process-oil-lamp;
+
+to process-oil-lamp:
+	if lamp-score is 2:
+		say "[line break]It's pretty clear the oil can be poured in the lamp. So you do that.";
+		moot oil;
+
+section lean camp scoring
+
+a spoonerism rule (this is the pre-keen-lamp rule):
+	if player is not in lean camp, unavailable;
+	if sco-keen-lamp is true:
+		vcal "You already looted the camp!";
+		already-done;
+	ready;
+
+this is the post-keen-lamp rule:
+	now sco-keen-lamp is true;
+	say "Hooray! You figured what to do! You get a point!";
+	now player has keen lamp;
+	process-oil-lamp;
 
 a spoonerism rule (this is the pre-speak-mind rule):
 	if player is not in meek spined, unavailable;
@@ -203,6 +311,42 @@ this is the post-say-farewell rule:
 	now sco-say-farewell is true;
 	say "And just like that, you realize you shouldn't be bound by your own chains! It's time to move on. And you do.";
 	move player to Ditch Park;
+
+section fear bridge scoring
+
+a spoonerism rule (this is the pre-shabby-grues rule):
+	if player is not in fear bridge, unavailable;
+	if lamp-score < 2:
+		vcp "No way. Not without a reliable light source.";
+		not-yet;
+	ready;
+
+this is the post-shabby-grues rule:
+	now sco-shabby-grues is true;
+	say "The grabby shoes pop out, replaced by shabby grues. You'll need to get past them, somehow.";
+	moot grabby shoes;
+	move shabby grues to fear bridge;
+
+a spoonerism rule (this is the pre-beer-fridge rule):
+	if player is not in fear bridge, unavailable;
+	if shabby grues are not moot:
+		vcp "You fear there may be some deep dark evil behind everything.";
+		not-yet;
+	if sco-beer-fridge is true:
+		vcal "You already created the beer fridge!";
+		already-done;
+	ready;
+
+this is the post-beer-fridge rule:
+	now sco-beer-fridge is true;
+	say "The fear bridge collapses to form a beer fridge. Your work in this sector is done.";
+	solverg;
+
+to solverg:
+	now mrlp is solved;
+	if number of solved regions is 4:
+		say "Oh no! You're dumped in ...";
+		move player to wayfair cell;
 
 book south spoke
 
