@@ -158,7 +158,9 @@ the oil is a thing. "Oil, in a tight container, for when you might need fuel."
 
 book Mating Hill
 
-Mating Hill is east of Roar Fest. it is in gonorth.
+Mating Hill is east of Roar Fest. it is in gonorth. "[if sco-hating-mill is true]There's a mill here in place of the hill that was to the north. You can go north or west[else]There's a big hill to the north, but you can also go back west[end if]."
+
+check going north in mating hill when sco-hating-mill is false: say "Mating Hill is too high." instead;
 
 after printing the locale description when player is in mating hill (this is the try-opening-mill rule):
 	if player has mill key:
@@ -177,7 +179,7 @@ the bending pole is a thing.
 
 book Lean Camp
 
-Lean Camp is north of Mating Hill. it is in gonorth.
+Lean Camp is north of Mating Hill. it is in gonorth. "Passages west and south. [if sco-keen-lamp is false]Perhaps someone left something here[else]You've probably found all you could here[end if]."
 
 chapter keen lamp
 
@@ -185,7 +187,7 @@ the keen lamp is a thing. "It's nice and shiny and bright [if oil is moot]and li
 
 book Fear Bridge
 
-Fear Bridge is west of Lean Camp. Fear Bridge is east of Um Soil. it is in gonorth.
+Fear Bridge is west of Lean Camp. Fear Bridge is east of Um Soil. it is in gonorth. "Passages east and west.". printed name is "[if sco-beer-fridge is false]Fear Bridge[else]Beer Fridge[end if]".
 
 chapter grabby shoes
 
