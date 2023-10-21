@@ -2,14 +2,6 @@
 
 volume includes
 
-[code to repurpose]
-
-[Howl Farm is west of Night Sludge. It is in gowest. "A deep cry is here."]
-
-the deep cry is scenery.
-
-[dark heels: HARK DEALS chases them around]
-
 the story description is "STRAIGHT GORY GREAT STORY".
 
 the story headline is "A straight gory great story for EctoComp 2023 Grand Guignol".
@@ -144,7 +136,9 @@ Fear Bridge is west of nhne. Fear Bridge is east of nhnw. it is in gonorth.
 
 book wayfair cell
 
-Wayfair Cell is a room.
+endgame is a region.
+
+Wayfair Cell is a room in endgame.
 
 volume south hub
 
@@ -250,6 +244,12 @@ the weak spell is a thing. "A weak spell lies here. Maybe it's good it isn't pow
 
 the hater graph is a thing. "Hoo boy! A hater graph is here. Statistics can be harsh and heartless, but this is something else."
 
+[Howl Farm is west of Night Sludge. It is in gowest. "A deep cry is here."]
+
+the deep cry is scenery.
+
+[dark heels: HARK DEALS chases them around]
+
 volume regular verbs
 
 book attacking
@@ -351,4 +351,12 @@ definition: a thing (called th) is moot:
 	if th is in nary a void, yes;
 	no;
 
-nary a void is a room.
+gometa is a region.
+
+nary a void is a room in gometa.
+
+volume mapping stuff
+
+index map with wayfair cell mapped east of shne.
+
+index map with nary a void mapped south of wayfair cell.
