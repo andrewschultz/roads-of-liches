@@ -114,25 +114,31 @@ book Roar Fest
 
 Roar Fest is north of Meek Spined. Roar Fest is in gonorth. printed name of Roar Fest is "[if sco-forest is true]Forest[else]Roar Fest[end if]".
 
-book nhsw
+book Pale Wrath
 
-nhsw is west of Roar Fest. it is in gonorth.
+Pale Wrath is west of Roar Fest. it is in gonorth. "You can go north or east here."
 
-book nhnw
+kill me is scenery in Pale Wrath. "The voice could be something more constructive."
 
-nhnw is north of nhsw. it is in gonorth.
+check listening when player is in Pale Wrath:
+	if kill me is in pale wrath, say "You hear a faint 'Kill me...'" instead;
+	say "No more voices." instead;
 
-book nhse
+book Um Soil
 
-nhse is east of Roar Fest. it is in gonorth.
+Um Soil is north of Pale Wrath. printed name is "Um, Soil". it is in gonorth. "Passage leads south and east."
 
-book nhne
+book Mating Hill
 
-nhne is north of nhse. it is in gonorth.
+Mating Hill is east of Roar Fest. it is in gonorth.
+
+book Lean Camp
+
+Lean Camp is north of Mating Hill. it is in gonorth.
 
 book Fear Bridge
 
-Fear Bridge is west of nhne. Fear Bridge is east of nhnw. it is in gonorth.
+Fear Bridge is west of Lean Camp. Fear Bridge is east of Um Soil. it is in gonorth.
 
 book wayfair cell
 
@@ -154,17 +160,17 @@ book shne
 
 shne is a room in gosouth. It is east of Deal Room.
 
-book shnw
+book Violence Senders
 
-shnw is a room in gosouth. It is west of Deal Room.
+Violence Senders is a room in gosouth. It is west of Deal Room.
 
 book shne
 
 shse is a room in gosouth. It is south of shne.
 
-book shnw
+book Violence Senders
 
-shsw is a room in gosouth. It is south of shnw.
+shsw is a room in gosouth. It is south of Violence Senders.
 
 book shs
 
