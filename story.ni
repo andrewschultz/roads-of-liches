@@ -164,6 +164,30 @@ book Painful Garden
 
 Painful Garden is south of Ditch Park. It is in gosouth.
 
+book shn
+
+shn is a room in gosouth. It is south of Painful Garden.
+
+book shne
+
+shne is a room in gosouth. It is east of shn.
+
+book shnw
+
+shnw is a room in gosouth. It is west of shn.
+
+book shne
+
+shse is a room in gosouth. It is south of shne.
+
+book shnw
+
+shsw is a room in gosouth. It is south of shnw.
+
+book shs
+
+shs is a room in gosouth. It is east of shsw. It is west of shse.
+
 volume east hub
 
 Gruel Co is east of Ditch Park. It is in goeast.
