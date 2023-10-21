@@ -26,6 +26,15 @@ include Roads of Liches Tables by Andrew Schultz.
 
 include Roads of Liches Tests by Andrew Schultz.
 
+section temporary
+
+when play begins:
+	now gosouth is solved;
+	now goeast is solved;
+	now gowest is solved;
+
+understand the command "say" as something new.
+
 section minor general modules
 
 include Old School Verb Total Carnage by Andrew Schultz.
