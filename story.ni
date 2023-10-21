@@ -35,6 +35,8 @@ when play begins:
 
 understand the command "say" as something new.
 
+The print final score rule is not listed in for printing the player's obituary.
+
 section minor general modules
 
 include Old School Verb Total Carnage by Andrew Schultz.
@@ -204,8 +206,6 @@ after printing the locale description when shabby grues are not off-stage and sh
 	continue the action;
 
 book wayfair cell
-
-endgame is a region.
 
 Wayfair Cell is a room in endgame.
 

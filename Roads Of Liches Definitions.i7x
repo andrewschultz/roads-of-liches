@@ -48,7 +48,7 @@ to decide which number is lamp-score:
 
 volume regions
 
-a region has a direction called firstdir.
+a region has a direction called firstdir. firstdir of a region is usually inside
 
 a region can be solved or unsolved. a region is usually unsolved.
 
@@ -63,6 +63,8 @@ gosouth is a region. firstdir of gosouth is south. spoontable of gosouth is tabl
 goeast is a region. firstdir of goeast is east. spoontable of goeast is table of east spoke spoonerisms.
 
 gowest is a region. firstdir of gowest is west. spoontable of gowest is table of west spoke spoonerisms.
+
+endgame is a region. firstdir of endgame is down. spoontable of endgame is table of endgame spoonerisms.
 
 definition: a direction (called di) is dirsolved:
 	repeat with X running through regions:

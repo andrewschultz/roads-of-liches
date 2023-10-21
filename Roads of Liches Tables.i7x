@@ -141,7 +141,6 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "dang"	"fools"	--	--	false	true	true	false	Fang Duels	pre-dang-fools rule	post-dang-fools rule	--	--
 "keep"	"dry"	--	--	false	true	true	false	--	pre-keep-dry rule	post-keep-dry rule
 "creep"	"die"	--	--	false	true	true	false	--	pre-creep-die rule	post-creep-die rule
-"say"	"farewell"	--	--	false	true	true	false	wayfair cell	pre-say-farewell rule	post-say-farewell rule	--	--
 "rail"	"path"	--	--	false	true	true	false	pale wrath	pre-rail-path rule	post-rail-path rule	--	--
 "bending"	"pole"	--	--	false	true	true	false	Mating Hill	pre-bending-pole rule	post-bending-pole rule	--	--
 "mill"	"key"	--	--	false	true	true	false	pale wrath	pre-mill-key rule	post-mill-key rule	--	--
@@ -303,15 +302,6 @@ a spoonerism rule (this is the pre-creep-die rule):
 this is the post-creep-die rule:
 	now sco-creep-die is true;
 
-a spoonerism rule (this is the pre-say-farewell rule):
-	if player is not in wayfair cell, unavailable;
-	ready;
-
-this is the post-say-farewell rule:
-	now sco-say-farewell is true;
-	say "And just like that, you realize you shouldn't be bound by your own chains! It's time to move on. And you do.";
-	move player to Ditch Park;
-
 section fear bridge scoring
 
 a spoonerism rule (this is the pre-shabby-grues rule):
@@ -345,6 +335,7 @@ this is the post-beer-fridge rule:
 to solverg:
 	now mrlp is solved;
 	if number of solved regions is 4:
+		follow the score and thinking changes rule;
 		say "Oh no! You're dumped in ...";
 		move player to wayfair cell;
 
@@ -431,6 +422,22 @@ this is the post-slight-nudge rule:
 	now sco-slight-nudge is true;
 	say "You look around, hoping for a clue, and you find it. You scrap your foot along the path, and some parts are less icky than others.";
 
+book endgame
+
+table of endgame spoonerisms
+w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
+"say"	"farewell"	--	--	false	true	true	false	wayfair cell	pre-say-farewell rule	post-say-farewell rule	--	--
+
+a spoonerism rule (this is the pre-say-farewell rule):
+	if location of player is not wayfair cell, unavailable;
+	ready;
+
+this is the post-say-farewell rule:
+	now sco-say-farewell is true;
+	say "And just like that, you realize you shouldn't be bound by your own chains! It's time to move on. And you do.";
+	end the story;
+	follow the shutdown rules;
+
 volume big picture stuff
 
 the check forks rule is listed first in the for printing a parser error rulebook.
@@ -438,7 +445,7 @@ the check forks rule is listed first in the for printing a parser error rulebook
 rule for printing a parser error (this is the check forks rule):
 	abide by the main-spoonerism-checker rule for table of item spoonerisms;
 	if debug-state is true, say "DEBUG INFO [mrlp]: [spoontable of mrlp], [firstdir of mrlp].";
-	if firstdir of mrlp is not down:
+	if firstdir of mrlp is not inside:
 		abide by the main-spoonerism-checker rule for spoontable of mrlp;
 	continue the action;
 
