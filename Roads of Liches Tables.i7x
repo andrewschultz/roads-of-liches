@@ -344,6 +344,39 @@ book south spoke
 table of south spoke spoonerisms
 w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "gainful"	"pardon"	--	--	false	true	true	false	Painful Garden	pre-gainful-pardon rule	post-gainful-pardon rule	--	--
+"deal"	"room"	--	--	false	true	true	false	real doom	pre-deal-room rule	post-deal-room rule	--	--
+"silence"	"vendors"	--	--	false	true	true	false	violence senders	pre-silence-vendors rule	post-silence-vendors rule	--	--
+
+section real doom scoring
+
+a spoonerism rule (this is the pre-deal-room rule):
+	if player is not in real doom, unavailable;
+	if sco-deal-room is true:
+		vcal "You already dealt with the real doom!";
+		already-done;
+	ready;
+
+this is the post-deal-room rule:
+	now sco-deal-room is true;
+	say "You feel slightly less awful about things as the sense of real doom pulls back. Of course, bad things can happen in a deal room and do.";
+
+section violence senders scoring
+
+a spoonerism rule (this is the pre-silence-vendors rule):
+	if player is not in violence senders, unavailable;
+	if sco-silence-vendors is false:
+		vcp "You still need to do something!";
+		not-yet;
+	if sco-silence-vendors is true:
+		vcal "You already did this!";
+		already-done;
+	ready;
+
+this is the post-silence-vendors rule:
+	now sco-silence-vendors is true;
+	say "Hooray! You figured what to do! You get a point!";
+
+section painful garden scoring
 
 a spoonerism rule (this is the pre-gainful-pardon rule):
 	if player is not in Painful Garden, unavailable;

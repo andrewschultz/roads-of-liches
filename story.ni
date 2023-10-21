@@ -222,15 +222,15 @@ Painful Garden is south of Ditch Park. It is in gosouth.
 
 book Deal Room
 
-Deal Room is a room in gosouth. It is south of Painful Garden.
+Real Doom is a room in gosouth. It is south of Painful Garden. printed name is "[if sco-deal-room is false]Deal Room[else]Real Doom[end if]".
 
 book shne
 
-shne is a room in gosouth. It is east of Deal Room.
+shne is a room in gosouth. It is east of Real Doom.
 
 book Violence Senders
 
-Violence Senders is a room in gosouth. It is west of Deal Room.
+Violence Senders is a room in gosouth. It is west of Real Doom.
 
 book shne
 
@@ -258,9 +258,9 @@ book ehsw
 
 ehsw is a room in goeast. it is south of Fang Duels.
 
-book ehne
+book Tool Cavern
 
-ehne is a room in goeast. it is east of ehnw.
+Tool Cavern is a room in goeast. it is east of ehnw.
 
 book ehse
 
@@ -268,7 +268,7 @@ ehse is a room in goeast. it is east of ehsw.
 
 book crazy leap
 
-Crazy Leap is a room in goeast. it is south of ehne. it is north of ehse. "You hear a deep cry echo through the crazy leap."
+Crazy Leap is a room in goeast. it is south of Tool Cavern. it is north of ehse. "You hear a deep cry echo through the crazy leap."
 
 volume west hub
 
