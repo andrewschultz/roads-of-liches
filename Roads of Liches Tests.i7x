@@ -4,9 +4,11 @@ Version 1/221116 of Roads of Liches Tests by Andrew Schultz begins here.
 
 volume silly tests
 
-test n with "test st/n/speak mind/n/forest/w/mill key/rail path/e/e/hating mill/bending pole/n/keen lamp/s/w/w/n/some oil/e/shabby grues/e/s/w/s/s/pitch dark/n/n/e/n/w/beer fridge/e/s/w/s/s"
+test all with "test st/test n/test w".
 
-test w with "test st/howl farm/w/creep die/keep dry/keep dry/creep die/gonear wayfair cell/say farewell".
+test n with "n/speak mind/n/forest/w/mill key/rail path/e/e/hating mill/bending pole/n/keen lamp/s/w/w/n/some oil/e/shabby grues/e/s/w/s/s/pitch dark/n/n/e/n/w/beer fridge/e/s/w/s/s"
+
+test w with "w/slight nudge/n/healing farm"
 
 test e with "test st/e/ghoul crow/cruel go/cool grow".
 

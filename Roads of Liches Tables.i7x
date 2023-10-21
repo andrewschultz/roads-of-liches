@@ -528,6 +528,7 @@ a wordguess rule for a table name (called tn) (this is the main-spoonerism-check
 		process the run-rule entry;
 		up-reg;
 		follow the score and thinking changes rule;
+		now think-cue entry is false;
 		the rule succeeds;
 	if partial-row > 0:
 		say "Hmm. You are on the right track, there.";

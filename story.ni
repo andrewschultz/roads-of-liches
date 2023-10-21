@@ -31,7 +31,6 @@ section temporary
 when play begins:
 	now gosouth is solved;
 	now goeast is solved;
-	now gowest is solved;
 
 understand the command "say" as something new.
 
@@ -114,10 +113,6 @@ check eating treat chunk:
 	say "There's nothing you can do.";
 	now verb-dont-print is false;
 
-chapter toast gown
-
-a toast gown is a wearable thing in Ditch Park.
-
 volume north hub
 
 book Meek Spined
@@ -130,7 +125,7 @@ book Roar Fest
 
 Roar Fest is north of Meek Spined. Roar Fest is in gonorth. printed name of Roar Fest is "[if sco-forest is true]Forest[else]Roar Fest[end if]". "[if sco-forest is false]Perhaps there is a path besides back south, but all the roaring is distracting you[else]With the roaring cleared, you see passages west, south and east[end if]."
 
-check going in roar fest:
+check going in roar fest when sco-forest is false:
 	if noun is rejectable, say "The roaring means you can't think or see which way to go." instead;
 
 book Pale Wrath
@@ -274,10 +269,10 @@ volume west hub
 
 book Night Sludge
 
-Night Sludge is west of Ditch Park. it is in gowest.
+Night Sludge is west of Ditch Park. it is in gowest. "[if sco-slight-nudge is false]Ugh, this sludge really leaves you clueless of any way to go except back east[else]You see paths through the sludge to the south and north now and back east as well[end if]."
 
-check going in Night Sludge:
-	if sco-slight-nudge is false and noun is rejectable, say "The night sludge has you a bit scared. You're clueless how to start going through it." instead;
+check going in Night Sludge when sco-slight-nudge is false:
+	if noun is rejectable, say "The night sludge has you a bit scared. You're clueless how to start going through it." instead;
 
 book Feeling Harm
 
