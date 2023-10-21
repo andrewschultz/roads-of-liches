@@ -69,22 +69,29 @@ sco-start-hopping is a truth state that varies.
 
 section north path globals
 
-sco-howl-farm is a truth state that varies.
-
 sco-forest is a truth state that varies.
 
-sco-dang-fools is a truth state that varies.
+sco-some-oil is a truth state that varies.
 
-sco-keep-dry is a truth state that varies.
-sco-creep-die is a truth state that varies.
+sco-rail-path is a truth state that varies.
 
-sco-say-farewell is a truth state that varies.
+sco-bending-pole is a truth state that varies.
+
+sco-howl-farm is a truth state that varies.
+
+sco-mill-key is a truth state that varies.
+
+sco-hating-mill is a truth state that varies.
+
+sco-keen-lamp is a truth state that varies.
 
 section south path globals
 
 sco-gainful-pardon is a truth state that varies.
 
 section east path globals
+
+sco-dang-fools is a truth state that varies.
 
 sco-cool-grow is a truth state that varies.
 sco-cruel-go is a truth state that varies.
@@ -95,6 +102,21 @@ section west path globals
 sco-slight-nudge is a truth state that varies.
 
 sco-speak-mind is a truth state that varies.
+
+section endgame globals
+
+sco-say-farewell is a truth state that varies.
+
+section unsorted globals
+
+sco-keep-dry is a truth state that varies.
+sco-creep-die is a truth state that varies.
+
+sco-shabby-grues is a truth state that varies.
+
+sco-beer-fridge is a truth state that varies.
+
+sco-pitch-dark is a truth state that varies.
 
 book game states
 

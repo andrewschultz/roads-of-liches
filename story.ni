@@ -57,6 +57,11 @@ to say ditch-park-go:
 check going when player is in Ditch Park:
 	if sco-my-list is false, say "With the lie mist, you can't see your way around, and you wouldn't trust yourself to make way through it." instead;
 	if sco-start-hopping is false, say "You don't feel brave enough! The adventure feels so heart-stopping at the moment." instead;
+	if noun is not planar, continue the action;
+	repeat with rg running through regions:
+		if firstdir of rg is noun:
+			if rg is solved, say "You've already taken care of things to [the noun]." instead;
+			break;
 
 every turn when player is in ditch park and sco-my-list is true and sco-start-hopping is false: say "It feels so heart-stopping here. You need a way to move.";
 
@@ -112,11 +117,13 @@ check going north in Meek Spined when sco-speak-mind is false: say "You feel awe
 
 book Roar Fest
 
-Roar Fest is north of Meek Spined. Roar Fest is in gonorth. printed name of Roar Fest is "[if sco-forest is true]Forest[else]Roar Fest[end if]".
+Roar Fest is north of Meek Spined. Roar Fest is in gonorth. printed name of Roar Fest is "[if sco-forest is true]Forest[else]Roar Fest[end if]". "[if sco-forest is false]Perhaps there is a path besides back south, but all the roaring is distracting you[else]With the roaring cleared, you see passages west, south and east[end if]."
 
 book Pale Wrath
 
-Pale Wrath is west of Roar Fest. it is in gonorth. "You can go north or east here."
+Pale Wrath is west of Roar Fest. it is in gonorth. "You can go north or east here[if sco-mill-key is false]. You also hear something[end if]."
+
+chapter kill me
 
 kill me is scenery in Pale Wrath. "The voice could be something more constructive."
 
@@ -124,21 +131,68 @@ check listening when player is in Pale Wrath:
 	if kill me is in pale wrath, say "You hear a faint 'Kill me...'" instead;
 	say "No more voices." instead;
 
+check going north in pale wrath:
+	if sco-rail-path is false, say "You are pushed back by sheer hatred." instead;
+	if sco-bending-pole is false, say "You are unable to keep your balance." instead;
+
+chapter mill key
+
+the mill key is a thing. "You can guess what it opens, seeing as it says MILL on the side."
+
 book Um Soil
 
 Um Soil is north of Pale Wrath. printed name is "Um, Soil". it is in gonorth. "Passage leads south and east."
+
+the oil is a thing. "Oil, in a tight container, for when you might need fuel."
 
 book Mating Hill
 
 Mating Hill is east of Roar Fest. it is in gonorth.
 
+after printing the locale description when player is in mating hill (this is the try-opening-mill rule):
+	if player has mill key:
+		move pending bowl to mating hill;
+		say "Your mill key opens up the mill. It's empty, except for a pending bowl, which seems to be phased in halfway.";
+		moot mill key;
+	continue the action;
+
+chapter pending bowl
+
+the pending bowl is a thing.
+
+chapter bending pole
+
+the bending pole is a thing.
+
 book Lean Camp
 
 Lean Camp is north of Mating Hill. it is in gonorth.
 
+chapter keen lamp
+
+the keen lamp is a thing. "It's nice and shiny and bright [if oil is moot]and lit, too[else]but not lit, yet[end if]."
+
 book Fear Bridge
 
 Fear Bridge is west of Lean Camp. Fear Bridge is east of Um Soil. it is in gonorth.
+
+chapter grabby shoes
+
+the grabby shoes are a plural-named thing in Fear Bridge. "Some grabby shoes tap-tap about here, just ready to descend on someone who might want to dismantle the fear bridge."
+
+chapter shabby grues
+
+the shabby grues are people. "Shabby grues here don't look too happy with you."
+
+after printing the locale description when shabby grues are not off-stage and shabby grues are not in location of player and sco-pitch-dark is false:
+	if grues are in ditch park:
+		say "The grues give up on you.";
+		move grabby shoes to fear bridge;
+		moot shabby grues;
+	else:
+		say "The shabby grues follow you from [location of shabby grues].";
+		move shabby grues to location of player;
+	continue the action;
 
 book wayfair cell
 
