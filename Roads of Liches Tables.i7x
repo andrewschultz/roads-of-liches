@@ -35,6 +35,17 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "speak"	"well"	--	--	false	true	true	false	--	pre-speak-well rule	post-speak-well rule	--	--
 "greater"	"half"	--	--	false	true	true	false	--	pre-greater-half rule	post-greater-half rule	--	--
 
+a spoonerism rule (this is the pre-speak-well rule):
+	if weak spell is not touchable, unavailable;
+	if sco-speak-well is true:
+		vcal "You already mastered the weak spell!";
+		already-done;
+	ready;
+
+this is the post-speak-well rule:
+	now sco-speak-well is true;
+	say "You practice the weak spell, and you get it nailed down nicely.";
+
 book hub stuff
 
 table of hub spoonerisms
@@ -106,18 +117,6 @@ a spoonerism rule (this is the pre-start-hopping rule):
 this is the post-start-hopping rule:
 	say "It's good to feel you can move. You feel less helpless now.";
 	now sco-start-hopping is true;
-
-a spoonerism rule (this is the pre-speak-well rule):
-	if weak spell is not touchable, unavailable;
-	if sco-speak-well is true:
-		vcal "You already acquired the weak spell!";
-		already-done;
-	ready;
-
-this is the post-speak-well rule:
-	now sco-speak-well is true;
-	say "Hooray! You figured what to do! You get a point!";
-	now player has weak spell;
 
 a spoonerism rule (this is the pre-greater-half rule):
 	if hater graph is not touchable, unavailable;
@@ -401,8 +400,12 @@ book west spoke
 table of west spoke spoonerisms
 w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "slight"	"nudge"	--	--	false	true	true	false	night sludge	pre-slight-nudge rule	post-slight-nudge rule	--	--
-"rocking"	"blows"	--	--	false	true	true	false	blue tombs	pre-rocking-blows rule	post-rocking-blows rule	--	--
 "perky"	"meanie"	--	--	false	true	true	false	blue tombs	pre-perky-meanie rule	post-perky-meanie rule	--	--
+"rocking"	"blows"	--	--	false	true	true	false	blue tombs	pre-rocking-blows rule	post-rocking-blows rule	--	--
+"pottery"	"wand"	--	--	false	true	true	false	watery pond	pre-pottery-wand rule	post-pottery-wand rule	--	--
+"healing"	"farm"	--	--	false	true	true	false	feeling harm	pre-healing-farm rule	post-healing-farm rule	--	--
+"humorous"	"tome"	--	--	false	true	true	false	tumorous home	pre-humorous-tome rule	post-humorous-tome rule	--	--
+"zap"	"true"	--	--	false	true	true	false	trap zoo	pre-zap-true rule	post-zap-true rule	--	--
 
 section night sludge scoring
 
@@ -447,6 +450,64 @@ this is the post-perky-meanie rule:
 	say "The murky peony recedes, making way for a perky meanie. This seems temporarily more dangerous for you.";
 	moot murky peony;
 	move perky meanie to blue tombs;
+
+section watery pond scoring
+
+a spoonerism rule (this is the pre-pottery-wand rule):
+	if player is not in watery pond, unavailable;
+	if sco-pottery-wand is true:
+		vcal "You already found the pottery wand!";
+		already-done;
+	ready;
+
+this is the post-pottery-wand rule:
+	now sco-pottery-wand is true;
+	say "It's tricky, of course, looking in a watery pond without knowing what to look for. But since you do, you persevere, and you find it. It's both clay and something you'd expect to find in Harry Potter or whatever.";
+	now player has pottery wand.
+
+section tumorous home scoring
+
+a spoonerism rule (this is the pre-humorous-tome rule):
+	if player is not in tumorous home, unavailable;
+	if sco-humorous-tome is true:
+		vcal "You already discovered the humorous tome!";
+		already-done;
+	ready;
+
+this is the post-humorous-tome rule:
+	now sco-humorous-tome is true;
+	say "Up pops a humorous tome! You have to admit, it's pretty funny. You can't understand it. Not much at all, really. Except, of course, for a basic weak spell. It comes off in your hand.";
+	now player has weak spell;
+
+section feeling harm scoring
+
+a spoonerism rule (this is the pre-healing-farm rule):
+	if player is not in feeling harm, unavailable;
+	if sco-healing-farm is true:
+		vcal "You've already made the farm!";
+		already-done;
+	ready;
+
+this is the post-healing-farm rule:
+	now sco-healing-farm is true;
+	say "Everything feels much less stressful in short order. But ... there are some odd animals that pop up. Credible sheep, apparently. Or they seem to be.";
+	move credible sheep to feeling harm;
+
+section trap zoo scoring
+
+a spoonerism rule (this is the pre-zap-true rule):
+	if player is not in trap zoo, unavailable;
+	if sco-zap-true is true:
+		vcal "You already released animals from the trap zoo!";
+		already-done;
+	ready;
+
+this is the post-zap-true rule:
+	now sco-zap-true is true;
+	say "With your pottery wand and weak spell you now thoroughly understand, you think you can release the trap zoo. You cast the spell, wait and ... there you go!";
+	moot pottery wand;
+	moot weak spell;
+	solverg;
 
 book endgame
 

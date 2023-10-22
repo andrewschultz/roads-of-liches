@@ -112,6 +112,8 @@ sco-slight-nudge is a truth state that varies.
 sco-rocking-blows is a truth state that varies.
 sco-perky-meanie is a truth state that varies.
 
+sco-humorous-tome is a truth state that varies.
+
 section endgame globals
 
 sco-say-farewell is a truth state that varies.
@@ -120,6 +122,12 @@ section unsorted globals
 
 sco-keep-dry is a truth state that varies.
 sco-creep-die is a truth state that varies.
+
+sco-pottery-wand is a truth state that varies.
+
+sco-zap-true is a truth state that varies.
+
+sco-healing-farm is a truth state that varies.
 
 book game states
 

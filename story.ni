@@ -30,10 +30,6 @@ include Roads of Liches Tests by Andrew Schultz.
 
 section temporary
 
-when play begins:
-	now gosouth is solved;
-	now goeast is solved;
-
 understand the command "say" as something new.
 
 The print final score rule is not listed in for printing the player's obituary.
@@ -187,7 +183,7 @@ the keen lamp is a thing. "It's nice and shiny and bright [if oil is moot]and li
 
 book Fear Bridge
 
-Fear Bridge is west of Lean Camp. Fear Bridge is east of Um Soil. it is in gonorth. "Passages east and west.". printed name is "[if sco-beer-fridge is false]Fear Bridge[else]Beer Fridge[end if]". Fear Bridge is oneway.
+Fear Bridge is west of Lean Camp. Fear Bridge is east of Um Soil. it is in gonorth. "The fear bridge runs north/south, and you don't want to cross it. You can only go back [opposite of last-dir], though you can see something to [the last-dir].". printed name is "[if sco-beer-fridge is false]Fear Bridge[else]Beer Fridge[end if]". Fear Bridge is oneway.
 
 chapter grabby shoes
 
@@ -235,17 +231,20 @@ shse is a room in gosouth. It is south of Dutiful Bawlers.
 
 book Violence Senders
 
-shsw is a room in gosouth. It is south of Violence Senders.
+Hater Graph is a room in gosouth. It is south of Violence Senders. "Hoo boy! A hater graph is here. Statistics can be harsh and heartless, but this is something else."
 
 book Testing Jeers Jesting Tears
 
-Testing Jeers Jesting Tears is a room in gosouth. It is east of shsw. It is west of shse. It is oneway.
+Testing Jeers Jesting Tears is a room in gosouth. It is east of Hater Graph. It is west of shse. It is oneway. "This is a sandy area. You feel an invisible line dividing you. You don't want to step over it. You can see clearly to [the last-dir], but you probably can only go back [last-dir]."
 
 volume east hub
 
 book fang duels
 
 Fang Duels is a room in goeast. it is east of Ditch Park.
+
+check going in fang duels when sco-dang-fools is false:
+	if noun is rejectable, say "No way to push through those fights." instead;
 
 book Screening Pool
 
@@ -259,13 +258,13 @@ book Tool Cavern
 
 Tool Cavern is a room in goeast. it is east of Screening Pool.
 
-book ehse
+book Mass Crime
 
-ehse is a room in goeast. it is east of Crazy Leap.
+Mass Crime is a room in goeast. it is east of Crazy Leap.
 
-book eastedge
+book Tricky Pile
 
-eastedge is a room in goeast. it is south of Tool Cavern. it is north of ehse. "You hear a deep cry echo through the eastedge.". eastedge is oneway.
+Tricky Pile is a room in goeast. it is south of Tool Cavern. it is north of Mass Crime. "A tricky pile blocks passage [last-dir]. You can see over it, but it's shifty, so no way you can climb over it. You can go back [opposite of last-dir].". Tricky Pile is oneway.
 
 volume west hub
 
@@ -278,7 +277,23 @@ check going in Night Sludge when sco-slight-nudge is false:
 
 book Feeling Harm
 
-Feeling Harm is a room in gowest. it is north of Night Sludge.
+Feeling Harm is a room in gowest. it is north of Night Sludge. "[if sco-healing-farm is false]You feel squeezed in by terror. Until that subsides, you can only go back south[else]The healing farm feels more wide open now. You can go west or south[end if]."
+
+check going in feeling harm:
+	if sco-healing-farm is false and noun is rejectable, say "You fear harm any way but south." instead;
+	if noun is west and creep is not moot, say "The [sheep-creep] won't let you go west. How to get rid of them?" instead;
+
+to decide which thing is sheep-creep:
+	if sheep is touchable, decide on sheep;
+	decide on creep;
+
+chapter sheddable creep
+
+the sheddable creep is a thing.
+
+chapter credible sheep
+
+the credible sheep is a thing.
 
 book Blue Tombs
 
@@ -297,9 +312,17 @@ book Tumorous Home
 
 Tumorous Home is a room in gowest. it is west of Feeling Harm. "A bend with passages south and east."
 
+chapter weak spell
+
+the weak spell is a thing.
+
 book Watery Pond
 
 Watery Pond is a room in gowest. it is west of Blue Tombs. "A bend with passages east and north."
+
+chapter pottery wand
+
+the pottery wand is a thing.
 
 book Trap Zoo
 
@@ -322,7 +345,7 @@ volume unsorted things
 
 the weak spell is a thing. "A weak spell lies here. Maybe it's good it isn't powerful, or it might be too much for you."
 
-the hater graph is a thing. "Hoo boy! A hater graph is here. Statistics can be harsh and heartless, but this is something else."
+the greater half is a thing. "This is a relatively benign message about pulling through even when things seem bad."
 
 [Howl Farm is west of Night Sludge. It is in gowest. "A deep cry is here."]
 
@@ -452,8 +475,11 @@ gometa is a region.
 
 nary a void is a room in gometa.
 
+stride seat is a room in gometa.
+
 volume mapping stuff
 
 index map with wayfair cell mapped east of Dutiful Bawlers.
 
-index map with nary a void mapped south of wayfair cell.
+index map with nary a void mapped north of tumorous home.
+index map with stride seat mapped north of nary a void.
