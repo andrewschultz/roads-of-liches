@@ -4,9 +4,9 @@ Version 1/221116 of Roads of Liches Globals by Andrew Schultz begins here.
 
 volume globals
 
-core-max is a number that varies. core-max is 5.
+core-max is a number that varies. core-max is 36.
 
-max-bonus is a number that varies. max-bonus is 1.
+max-bonus is a number that varies. max-bonus is 2.
 
 section copied from PRPR globals
 
@@ -143,7 +143,22 @@ sco-shaped-scrolls is a truth state that varies.
 
 sco-muppet-pastor is a truth state that varies.
 
+sco-crass-mime is a truth state that varies.
+
+sco-preening-school is a truth state that varies.
+
+sco-eight-strays is a truth state that varies.
+
+sco-muddy-wrench is a truth state that varies.
+
+sco-pricky-tile is a truth state that varies.
+sco-picky-trial is a truth state that varies.
+
 book game states
+
+pile-status is a number that varies.
+mime-tile is a truth state that varies.
+mime-trial is a truth state that varies.
 
 cavern-is-tavern is a truth state that varies.
 

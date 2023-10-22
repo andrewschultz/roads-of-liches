@@ -49,7 +49,7 @@ to die: end the story saying "I do die! Ooh!"
 when play begins:
 	now the right hand status line is "[current-score]/[min-needed][if score is min-needed][else if min-needed is max-available]*[else]-[max-available][end if]";
 	force-status;
-	say "Details: you walk through the after-dark dafter ark to...";
+	say "Alas, dear reader, the intro needs a boost. I was so busy putting the puzzles together.[paragraph break]But this is the gist: spooky spooky Halloween. You note an after-dark dafter ark. You are promised loads of riches ... and you walk through. There are roads -- empty at first, but then liches run you off them, to a park...";
 
 volume hub rooms
 
@@ -84,8 +84,11 @@ my list is a thing. "It describes the passsages through. You feel a bit more con
 
 to decide which number is nsr: decide on number of solved regions;
 
-report taking inventory:
-	if nsr > 0 and nsr < 4, say "You have also found [nsr] mauled scrap[if nsr > 1]s[end if].";
+report taking inventory when my list is not moot:
+	if nsr is 0:
+		say "You haven't found any mauled scraps yet.";
+	else:
+		say "You have also found [nsr] mauled scrap[if nsr > 1]s[end if].";
 
 check examining my list:
 	say "Your list has a few tasks that will help you get mauled scraps that will make a scrawled map.";
@@ -100,30 +103,36 @@ the cheat trunk is a thing. "A cheat trunk has appeared from the depths of the l
 
 chapter treat chunk
 
-the treat chunk is a thing. "It doesn't look particularly tasty, but if it helps you figure things out, it's probably best not to worry about that."
+the treat chunk is scenery. "It doesn't look particularly tasty, but if it helps you figure things out, it's probably best not to worry about that."
 
 to say first-of-ors of (x - indexed text):
 	replace the regular expression "\|.*" in x with "";
 	say "[x]";
+
+chunk-warn is a truth state that varies.
 
 a wordguess rule for a table name (called tn) (this is the cheatfind rule):
 	repeat through tn:
 		process the check-rule entry;
 		let rb-out be the outcome of the rulebook;
 		if rb-out is not the ready outcome, next;
-		say "Mmm. That treat chunk is delicious. Good brain food. It makes you think [b][first-of-ors of w1 entry in upper case][if there is a w2 entry] [first-of-ors of w2 entry in upper case][r][end if]. Seems legit.[line break]";
+		say "Mmm. That treat chunk is delicious. Good brain food. It makes you think [b][first-of-ors of w1 entry in upper case][if there is a w2 entry] [first-of-ors of w2 entry in upper case][r][end if]. Seems legit.[paragraph break]";
 		now idid entry is true;
 		now think-cue entry is false;
 		up-which core entry;
 		process the run-rule entry;
 		now verb-dont-print is false;
+		move treat chunk to ditch park;
+		if chunk-warn is false:
+			say "(By the way, you can TAKE CHUNK again, if you want[if player is not in ditch park], back at ditch park[end if].)";
+			now chunk-warn is true;
 		the rule succeeds;
 
 check eating treat chunk:
 	now verb-dont-print is true;
 	abide by the cheatfind rule for spoontable of mrlp;
 	abide by the cheatfind rule for table of item spoonerisms;
-	say "There's nothing you can do.";
+	say "There's nothing you can do here now.";
 	now verb-dont-print is false;
 
 volume north hub
@@ -513,9 +522,6 @@ book taking
 
 check taking (this is the RoL rejection rule): say "You shouldn't need to [b]TAKE[r] anything explicitly in [this-game]. It will be done for you, if you find the right command." instead;
 
-check requesting the score:
-	say "(under construction)" instead;
-
 book sleeping
 
 the block sleeping rule is not listed in any rulebook.
@@ -544,7 +550,9 @@ understand the command "about" as something new.
 understand "about" as abouting.
 
 carry out abouting:
-	say "Placeholder. Written for 2023 EctoComp Grand Guignol. It's sort of a companion to Trail Stash, written in twine for IFComp. I'd had the idea for a while but didn't want to parcel it out too quickly before I had a less niche-y effort. I hope the contrast of spoonerisms in a parser and choice environment are interesting to you. They were for me.";
+	say "Placeholder. Written for 2023 EctoComp Grand Guignol. It's sort of a companion to Trail Stash, written in twine for IFComp 2023. I'd had the idea originally for EctoComp 2018 (!) but didn't want to parcel it out too quickly before I had a less niche-y effort. I hope the contrast of spoonerisms in a parser and choice environment are interesting to you, if you are able to play both. They were for me.";
+	say "[line break]https://github.com/andrewschultz/roads-of-liches is the repo, for bugs, etc.";
+	say "[line break]This is the second in my [i]I Heart High Art[r] series, [i]Trail Stash[r] being the first.";
 	the rule succeeds;
 
 chapter creditsing
@@ -588,6 +596,15 @@ check thinking:
 		say "There's nothing you could do later.";
 	the rule succeeds;
 
+volume parser errors
+
+rule for printing a parser error when the latest parser error is the not a verb I recognise error:
+	if core-score is 0:
+		say "The lie mist remains, pulsating, menacing. You need to dispel the lie mist. Perhaps it is simpler than you think.";
+	else:
+		say "You twiddle words around. No, nothing comes up. ([this-game] has a stripped-down parser, so you don't need to do anything fancy with verbs.)";
+	the rule succeeds;
+
 volume weird verbs
 
 chapter endspiteing
@@ -605,7 +622,7 @@ carry out endspiteing:
 	end the story finally;
 	the rule succeeds.
 
-volume meta
+volume meta regions
 
 to moot (x - a thing): move x to nary a void;
 
@@ -615,9 +632,9 @@ definition: a thing (called th) is moot:
 
 gometa is a region.
 
-nary a void is a room in gometa.
+nary a void is a room in gometa. [once we're done]
 
-stride seat is a room in gometa.
+stride seat is a room in gometa. [temporarily shelved]
 
 volume mapping stuff
 

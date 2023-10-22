@@ -68,7 +68,7 @@ table of hub spoonerisms
 w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "my"	"list"	--	--	false	true	true	false	Ditch Park	pre-my-list rule	post-my-list rule	--	--
 "start"	"hopping"	--	--	false	true	true	false	Ditch Park	pre-start-hopping rule	post-start-hopping rule
-"treat"	"chunk"	--	--	false	true	true	false	ditch park	pre-treat-chunk rule	post-treat-chunk rule	--	--
+"treat"	"chunk"	--	--	false	true	false	false	ditch park	pre-treat-chunk rule	post-treat-chunk rule	--	--
 "pitch"	"dark"	--	--	false	true	true	false	ditch park	pre-pitch-dark rule	post-pitch-dark rule	--	--
 
 a spoonerism rule (this is the pre-pitch-dark rule):
@@ -331,6 +331,7 @@ to solverg:
 		follow the score and thinking changes rule;
 		say "Oh no! You're dumped in ...";
 		move player to wayfair cell;
+		moot my list;
 	else:
 		say "But the scrawled map is incomplete. Still, yay progress.";
 
@@ -811,7 +812,11 @@ a wordguess rule for a table name (called tn) (this is the main-spoonerism-check
 		let idid-before be idid entry;
 		now idid entry is true;
 		process the run-rule entry;
-		if idid-before is false, up-reg;
+		if idid-before is false:
+			if core entry is true:
+				up-reg;
+			else:
+				up-min;
 		follow the score and thinking changes rule;
 		now think-cue entry is false;
 		the rule succeeds;
