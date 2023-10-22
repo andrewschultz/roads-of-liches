@@ -187,7 +187,7 @@ the keen lamp is a thing. "It's nice and shiny and bright [if oil is moot]and li
 
 book Fear Bridge
 
-Fear Bridge is west of Lean Camp. Fear Bridge is east of Um Soil. it is in gonorth. "Passages east and west.". printed name is "[if sco-beer-fridge is false]Fear Bridge[else]Beer Fridge[end if]".
+Fear Bridge is west of Lean Camp. Fear Bridge is east of Um Soil. it is in gonorth. "Passages east and west.". printed name is "[if sco-beer-fridge is false]Fear Bridge[else]Beer Fridge[end if]". Fear Bridge is oneway.
 
 chapter grabby shoes
 
@@ -237,9 +237,9 @@ book Violence Senders
 
 shsw is a room in gosouth. It is south of Violence Senders.
 
-book shs
+book Testing Jeers Jesting Tears
 
-shs is a room in gosouth. It is east of shsw. It is west of shse.
+Testing Jeers Jesting Tears is a room in gosouth. It is east of shsw. It is west of shse. It is oneway.
 
 volume east hub
 
@@ -265,7 +265,7 @@ ehse is a room in goeast. it is east of Crazy Leap.
 
 book eastedge
 
-eastedge is a room in goeast. it is south of Tool Cavern. it is north of ehse. "You hear a deep cry echo through the eastedge."
+eastedge is a room in goeast. it is south of Tool Cavern. it is north of ehse. "You hear a deep cry echo through the eastedge.". eastedge is oneway.
 
 volume west hub
 
@@ -294,7 +294,7 @@ Watery Pond is a room in gowest. it is west of Blue Tombs.
 
 book Trap Zoo
 
-Trap Zoo is a room in gowest. it is south of Tumorous Home. it is north of Watery Pond.
+Trap Zoo is a room in gowest. it is south of Tumorous Home. it is north of Watery Pond. Trap Zoo is oneway.
 
 chapter Ghoul Crow
 

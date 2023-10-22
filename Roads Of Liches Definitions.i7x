@@ -28,6 +28,19 @@ definition: a direction (called di) is rejectable:
 	if the room di of location of player is visited, no;
 	yes;
 
+chapter one way rooms
+
+a room can be oneway. a room is usually not oneway.
+
+last-dir is a direction that varies
+
+after going to a oneway room:
+	now last-dir is noun;
+	continue the action;
+
+check going when location of player is oneway:
+	if noun is last-dir, say "No, [location of player] is cut in half. You can only go back [opposite of noun]." instead;
+
 book scores
 
 the score and thinking changes rule is listed instead of the notify score changes rule in the turn sequence rulebook.
