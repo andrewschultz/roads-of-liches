@@ -321,10 +321,14 @@ this is the post-beer-fridge rule:
 
 to solverg:
 	now mrlp is solved;
+	say "You find a[one of][or]nother[stopping] mauled scrap.";
 	if number of solved regions is 4:
+		say "And this time, they all fit together to find a way down the roads of liches! But you are captured...";
 		follow the score and thinking changes rule;
 		say "Oh no! You're dumped in ...";
 		move player to wayfair cell;
+	else:
+		say "But the scrawled map is incomplete. Still, yay progress.";
 
 book south spoke
 

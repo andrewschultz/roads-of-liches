@@ -80,15 +80,17 @@ a region can be solved or unsolved. a region is usually unsolved.
 
 a region has a number called max-score. a region has a number called cur-score. a region has a number called min-needed-score. a region has a table name called spoontable. a region has a room called firstroom.
 
+a region has text called descrip.
+
 hubregion is a region. firstdir of hubregion is up. spoontable of hubregion is table of hub spoonerisms.
 
-gonorth is a region. firstdir of gonorth is north. spoontable of gonorth is table of north spoke spoonerisms.
+gonorth is a region. firstdir of gonorth is north. spoontable of gonorth is table of north spoke spoonerisms. descrip of gonorth is "prevent influx of monsters over a dark bridge (north)".
 
-gosouth is a region. firstdir of gosouth is south. spoontable of gosouth is table of south spoke spoonerisms.
+gosouth is a region. firstdir of gosouth is south. spoontable of gosouth is table of south spoke spoonerisms. descrip of gosouth is "defeat big bad meanie on a language technicaity in the boss fight (south)".
 
-goeast is a region. firstdir of goeast is east. spoontable of goeast is table of east spoke spoonerisms.
+goeast is a region. firstdir of goeast is east. spoontable of goeast is table of east spoke spoonerisms. descrip of goeast is "defeat someone who will not attack or annoy with words (east)".
 
-gowest is a region. firstdir of gowest is west. spoontable of gowest is table of west spoke spoonerisms.
+gowest is a region. firstdir of gowest is west. spoontable of gowest is table of west spoke spoonerisms. descrip of gowest is "rescue animals from a zoo (west)".
 
 endgame is a region. firstdir of endgame is down. spoontable of endgame is table of endgame spoonerisms.
 

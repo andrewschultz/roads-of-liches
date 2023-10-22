@@ -77,7 +77,19 @@ the lie mist is scenery in Ditch Park. "Ugh! You can't see through it, but it se
 
 chapter my list
 
-my list is a thing. "It describes the passsages through. You feel a bit more confident and organized just reading it."
+my list is a thing. "It describes the passsages through. You feel a bit more confident and organized just reading it.". printed name of my list is "'my list'".
+
+to decide which number is nsr: decide on number of solved regions;
+
+report taking inventory:
+	if nsr > 0 and nsr < 4, say "You have also found [nsr] mauled scrap[if nsr > 1]s[end if].";
+
+check examining my list:
+	say "Your list has a few tasks that will help you get mauled scraps that will make a scrawled map.";
+	repeat with mrg running through regions:
+		if firstdir of mrg is not planar, next;
+		say " * [descrip of mrg][if mrg is solved] (DONE!) [end if][line break]";
+	the rule succeeds;
 
 chapter cheat trunk
 
