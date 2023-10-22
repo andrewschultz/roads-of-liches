@@ -494,6 +494,19 @@ check going in wayfair cell:
 
 check entering revolving door: try going north instead;
 
+book Bane Row
+
+Bane Row is a room in endgame. "It's obviously totally hopeless here and nothing can cheer up your day. Right?! Right?"
+
+check going in Bane Row:
+	say "You'd need something special and cheery and bright to REALLY get out of here." instead;
+
+book Near My Claim
+
+Near My Claim is a room in endgame. "Oh man! You know you're near the treasure! And yet, you don't feel you deserved it. After all, you destroyed a zoo, tore up a puppet, intimidated some grues, and caused a mime pain. Oh, and that creep chasing you is bummed at the time you made them waste. You feel like a horrible person, someone who doesn't deserve treasure.";
+
+check going in Near My Claim: say "No running from all these serious issues!" instead;
+
 volume regular action verbs
 
 book attacking

@@ -6,6 +6,8 @@ understand "for rest" and "four rest" as a mistake ("No, it's not quite rest you
 
 understand "milky" as a mistake ("No, we need something more substantial, not a description.") when kill me is touchable.
 
+understand "brain oh" as a mistake ("You wrack your brain for what to do. Something cheery. Anything.") when player is in Bane Row.
+
 Roads Of Liches Mistakes ends here.
 
 ---- DOCUMENTATION ----

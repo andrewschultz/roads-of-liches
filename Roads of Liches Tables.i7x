@@ -748,6 +748,8 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "so"	"well"	--	--	false	true	true	false	woe cell	pre-so-well rule	post-so-well rule	--	--
 "revolving"	"door"	--	--	false	true	true	false	wayfair cell	pre-revolving-door rule	post-revolving-door rule	--	--
 "say"	"farewell"	--	--	false	true	true	false	wayfair cell	pre-say-farewell rule	post-say-farewell rule	--	--
+"rain"	"bow"	--	--	false	true	true	false	bane row	pre-rain-bow rule	post-rain-bow rule	"rainbow"	--
+"clear"	"name"	--	--	false	true	true	false	near my claim	pre-clear-name rule	post-clear-name rule	"clear my name"	--
 
 section woe cell scoring
 
@@ -805,7 +807,29 @@ a spoonerism rule (this is the pre-say-farewell rule):
 
 this is the post-say-farewell rule:
 	now sco-say-farewell is true;
-	say "And just like that, you realize you shouldn't be bound by your own chains! It's time to move on. And you do.";
+	say "And just like that, you realize you shouldn't be bound by your own chains! It's time to move on. And you do. To ... somewhere even drearier. Well, it is Halloween. What did you expect?";
+	move player to bane row;
+
+section bane row scoring
+
+a spoonerism rule (this is the pre-rain-bow rule):
+	if player is not in bane row, unavailable;
+	ready;
+
+this is the post-rain-bow rule:
+	now sco-rain-bow is true;
+	say "Various undead voices grumble that this is all way too on-point, and you don't deserve to be happy. You ignore them as you admire, then cross, the rainbow. And yet ... you still feel you don't deserve whateve treasure is out there. You feel some implacable guilt for being you.";
+	move player to near my claim;
+
+section near my claim scoring
+
+a spoonerism rule (this is the pre-clear-name rule):
+	if player is not in near my claim, unavailable;
+	ready;
+
+this is the post-clear-name rule:
+	now sco-clear-name is true;
+	say "You ignore the nonsense in your head. Even if you aren't a perfect person, dadgummit, you signed up for a treasure hunt, and treasure, you found!";
 	end the story;
 	follow the shutdown rules;
 
