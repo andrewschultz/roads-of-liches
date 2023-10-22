@@ -466,7 +466,7 @@ the deep cry is scenery.
 
 [dark heels: HARK DEALS chases them around]
 
-volume regular verbs
+volume regular action verbs
 
 book attacking
 
@@ -509,23 +509,9 @@ rule for supplying a missing noun when eating:
 
 check eating: say "Go nosh? No, gosh! [one of](You don't need to eat anything.)[or][line break][stopping]" instead;
 
-book scoring
-
-the announce the score rule is not listed in the carry out requesting the score rulebook.
-
-to say it-they of (n - a number): say "[if n is 1]it[else]they[end if]";
-
-carry out requesting the score:
-	now verb-dont-print is true;
-	say "You have scored a total of [current-score] out of [max-overall] points and need [min-needed] to win. You have found [cur-bonus] of [max-bonus] bonus points so far[if bonus-locked-out > 0]. You are locked out of [bonus-locked-out] point[plur of bonus-locked-out][one of]. You can check for the maximum score dropping in the upper right, which usually happens when you take a one-way passage[or][stopping][end if].";
-	now verb-dont-print is false;
-	continue the action;
-
 book taking
 
 check taking (this is the RoL rejection rule): say "You shouldn't need to [b]TAKE[r] anything explicitly in [this-game]. It will be done for you, if you find the right command." instead;
-
-book score
 
 check requesting the score:
 	say "(under construction)" instead;
@@ -546,6 +532,44 @@ check swearing mildly:
 
 check swearing obscenely:
 	say "Yelps! Who helps you?!" instead;
+
+volume meta verbs
+
+chapter abouting
+
+abouting is an action out of world.
+
+understand the command "about" as something new.
+
+understand "about" as abouting.
+
+carry out abouting:
+	say "Placeholder. Written for 2023 EctoComp Grand Guignol. It's sort of a companion to Trail Stash, written in twine for IFComp. I'd had the idea for a while but didn't want to parcel it out too quickly before I had a less niche-y effort. I hope the contrast of spoonerisms in a parser and choice environment are interesting to you. They were for me.";
+	the rule succeeds;
+
+chapter creditsing
+
+creditsing is an action out of world.
+
+understand the command "credits" as something new.
+
+understand "credits" as creditsing.
+
+carry out creditsing:
+	say "Oh hi Club Floyd! Thanks so much. Seriously. Sorry about the unimplemented items. I work from puzzles to details.";
+	the rule succeeds;
+
+book scoring
+
+the announce the score rule is not listed in the carry out requesting the score rulebook.
+
+to say it-they of (n - a number): say "[if n is 1]it[else]they[end if]";
+
+carry out requesting the score:
+	now verb-dont-print is true;
+	say "You have scored a total of [current-score] out of [max-overall] points and need [min-needed] to win. You have found [cur-bonus] of [max-bonus] bonus points so far[if bonus-locked-out > 0]. You are locked out of [bonus-locked-out] point[plur of bonus-locked-out][one of]. You can check for the maximum score dropping in the upper right, which usually happens when you take a one-way passage[or][stopping][end if].";
+	now verb-dont-print is false;
+	continue the action;
 
 book thinking
 
