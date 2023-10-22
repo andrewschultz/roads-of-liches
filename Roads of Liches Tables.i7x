@@ -645,7 +645,7 @@ a spoonerism rule (this is the pre-rocking-blows rule):
 		vcp "But the rocking blows would land on you!";
 		not-yet;
 	if sco-rocking-blows is true:
-		vcal "You already did this!";
+		vcal "You already showed the blocking rose what's what.";
 		already-done;
 	ready;
 
@@ -744,10 +744,28 @@ book endgame
 
 table of endgame spoonerisms
 w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
+"revolving"	"door"	--	--	false	true	true	false	wayfair cell	pre-revolving-door rule	post-revolving-door rule	--	--
 "say"	"farewell"	--	--	false	true	true	false	wayfair cell	pre-say-farewell rule	post-say-farewell rule	--	--
+
+section wayfair cell scoring
+
+a spoonerism rule (this is the pre-revolving-door rule):
+	if player is not in wayfair cell, unavailable;
+	if sco-revolving-door is true:
+		vcal "You already summoned a revolving door!";
+		already-done;
+	ready;
+
+this is the post-revolving-door rule:
+	now sco-revolving-door is true;
+	say "A revolving door appears! Yay, a way out! But it seems stuck.";
+
 
 a spoonerism rule (this is the pre-say-farewell rule):
 	if location of player is not wayfair cell, unavailable;
+	if sco-revolving-door is false:
+		vcp "That'd be nice, but you have no way out, yet.";
+		not-yet;
 	ready;
 
 this is the post-say-farewell rule:
