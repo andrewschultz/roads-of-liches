@@ -33,6 +33,23 @@ table of item spoonerisms
 w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "cleared"	"woes"	--	--	false	true	false	false	--	pre-cleared-woes rule	post-cleared-woes rule
 "speak"	"well"	--	--	false	true	true	false	--	pre-speak-well rule	post-speak-well rule	--	--
+"eight"	"strays"	--	--	false	true	true	false	--	pre-eight-strays rule	post-eight-strays rule	--	--
+
+a spoonerism rule (this is the pre-eight-strays rule):
+	if player does not have straight as, unavailable;
+	if player is not in feeling harm:
+		vcp "You can't just let eight strays wander out anywhere!";
+		not-yet;
+	if sco-healing-farm is false:
+		vcp "It'd be cruel to leave the eight strays here as-is. Could you change the environs?";
+		not-yet;
+	ready;
+
+this is the post-eight-strays rule:
+	now sco-eight-strays is true;
+	say "The straight A's change into eight strays, who are happy in the healing farm. You pet them all a bit. You hope you did this for them and not just to gain passage east of Preening School";
+	move strays to feeling harm;
+	moot straight as;
 
 a spoonerism rule (this is the pre-speak-well rule):
 	if weak spell is not touchable, unavailable;
@@ -309,7 +326,7 @@ this is the post-beer-fridge rule:
 to solverg:
 	now mrlp is solved;
 	say "You find a[one of][or]nother[stopping] mauled scrap.";
-	if number of solved regions is 4:
+	if nsr is 4:
 		say "And this time, they all fit together to find a way down the roads of liches! But you are captured...";
 		follow the score and thinking changes rule;
 		say "Oh no! You're dumped in ...";
@@ -439,6 +456,11 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "lazy"	"creep"	--	--	false	true	true	false	crazy leap	pre-lazy-creep rule	post-lazy-creep rule	--	--
 "cool"	"tavern"	--	--	false	true	true	false	tool cavern	pre-cool-tavern rule	post-cool-tavern rule	--	--
 "tool"	"cavern"	--	--	false	true	true	true	tool cavern	pre-tool-cavern rule	post-tool-cavern rule	--	--
+"crass"	"mime"	--	--	false	true	true	false	mass crime	pre-crass-mime rule	post-crass-mime rule	--	--
+"preening"	"school"	--	--	false	true	true	false	screening pool	pre-preening-school rule	post-preening-school rule	--	--
+"muddy"	"wrench"	--	--	false	true	true	false	tool cavern	pre-muddy-wrench rule	post-muddy-wrench rule	--	--
+"pricky"	"tile"	--	--	false	true	true	false	tricky pile	pre-pricky-tile rule	post-pricky-tile rule	--	--
+"picky"	"trial"	--	--	false	true	true	false	tricky pile	pre-picky-trial rule	post-picky-trial rule	--	--
 
 section fang duels scoring
 
@@ -471,13 +493,24 @@ this is the post-lazy-creep rule:
 	moot creep;
 	now creep-chase is false;
 
+section screening pool scoring
+
+a spoonerism rule (this is the pre-preening-school rule):
+	if player is not in screening pool, unavailable;
+	if sco-preening-school is true:
+		vcal "You already got past the screening pool!";
+		already-done;
+	ready;
+
+this is the post-preening-school rule:
+	now sco-preening-school is true;
+	say "Ah, yes, you passed the 'test' of the screening pool. You are accepted to the preening school.";
+	now the player has straight as;
+
 section tool cavern scoring
 
 a spoonerism rule (this is the pre-cool-tavern rule):
 	if player is not in tool cavern, unavailable;
-	if sco-cool-tavern is false:
-		vcp "You still need to do something!";
-		not-yet;
 	if cavern-is-tavern is true:
 		vcal "You already changed to the tavern!";
 		already-done;
@@ -486,8 +519,16 @@ a spoonerism rule (this is the pre-cool-tavern rule):
 this is the post-cool-tavern rule:
 	now sco-cool-tavern is true;
 	say "You focus and blink, and the cavern changes[one of][or] back to[stopping] a tavern.";
-	now cavern-is-tavern is false;
-	if ruddy mensch is in tool cavern, now ruddy mensch is in stride seat;
+	say "[if ruddy mensch is off-stage]And someone is here! They introduce themselves, apologetically, as a ruddy mensch[else]Your friend the ruddy mensch is waiting[end if].";
+	if player has muddy wrench:
+		moot muddy wrench;
+		moot ruddy mensch;
+		say "The ruddy mensch thanks you and takes the wrench. They show you to a hidden passage south just once they fix that door there. They salute you and depart.";
+		now tricky pile is mapped south of tool cavern;
+		now tool cavern is mapped north of tricky pile;
+		continue the action;
+	move ruddy mensch to tool cavern;
+	now cavern-is-tavern is true;
 
 a spoonerism rule (this is the pre-tool-cavern rule):
 	if player is not in tool cavern, unavailable;
@@ -497,10 +538,77 @@ a spoonerism rule (this is the pre-tool-cavern rule):
 	ready;
 
 this is the post-tool-cavern rule:
-	say "You focus and blink, and the tavern changes[one of][or] back to[stopping] a cavern.";
+	say "You focus and blink, and the tavern changes[one of][or] back to[stopping] a cavern[if ruddy mensch is in tool cavern]. The ruddy mensch blurs out of view as well[end if].";
 	now cavern-is-tavern is false;
-	say "[if ruddy mensch is off-stage]And someone is here! They introduce themselves, apologetically, as a ruddy mensch[else]Your friend the ruddy mensch is waiting[end if].";
-	move ruddy mensch to tool cavern;
+	if ruddy mensch is in tool cavern, now ruddy mensch is in stride seat;
+
+a spoonerism rule (this is the pre-muddy-wrench rule):
+	if player is not in tool cavern, unavailable;
+	if sco-cool-tavern is false, unavailable; [don't show this early]
+	if cavern-is-tavern is true:
+		vcal "Not (quite) here! Where might a muddy wrench be?";
+		not-yet;
+	if sco-muddy-wrench is true:
+		vcal "You already got the muddy wrench!";
+		already-done;
+	ready;
+
+this is the post-muddy-wrench rule:
+	now sco-muddy-wrench is true;
+	say "You know what to look for. It's hidden beneath newer, more glistening tools. But this muddy wrench has CHARACTER. You take it.";
+	now player has muddy wrench;
+
+section mass crime scoring
+
+a spoonerism rule (this is the pre-crass-mime rule):
+	if player is not in mass crime, unavailable;
+	if sco-crass-mime is true:
+		vcal "You already summoned the mime!";
+		already-done;
+	ready;
+
+this is the post-crass-mime rule:
+	now sco-crass-mime is true;
+	say "A crass mime appears, annoying as can be, but at least not criminally annoying. And yet ... and yet ... they seem genuinely happy to see you.[paragraph break]Perhaps you will have to let them perform, to get what you want or need.";
+	move crass mime to mass crime;
+
+section tricky pile scoring
+
+this is the tile-flip rule:
+	if player is not in tricky pile, unavailable;
+	if mime is moot:
+		vcal "You already put the mime in all the situations you needed to.";
+		already-done;
+
+a spoonerism rule (this is the pre-pricky-tile rule):
+	abide by the tile-flip rule;
+	if mime-tile is true:
+		vcal "You already got the mime to step on the tile!";
+		already-done;
+	if pile-status is 2:
+		vcal "But the tile is already here!";
+		already-done;
+	ready;
+
+this is the post-pricky-tile rule:
+	now sco-pricky-tile is true;
+	say "The tricky pile rearranges so there is pricky tile all around."; [?? bug check if it is already in a certain status]
+	now pile-status is 2;
+
+a spoonerism rule (this is the pre-picky-trial rule):
+	abide by the tile-flip rule;
+	if mime-trial is true:
+		vcal "You already had the mime face a trial!";
+		already-done;
+	if pile-status is 1:
+		vcal "But the trial is already here!";
+		already-done;
+	ready;
+
+this is the post-picky-trial rule:
+	now sco-picky-trial is true;
+	say "The tricky pile rearranges to become an impromptu courtroom."; [?? bug check if it is already in a certain status]
+	now pile-status is 1;
 
 book west spoke
 
@@ -700,9 +808,10 @@ a wordguess rule for a table name (called tn) (this is the main-spoonerism-check
 			else:
 				say "[line break]Hmph. That [if exact-cmd is false](or a functionally equivalent alternate solution) [end if]still doesn't quite work! You'll figure out the how and when and where, though.";
 			the rule succeeds;
+		let idid-before be idid entry;
 		now idid entry is true;
 		process the run-rule entry;
-		up-reg;
+		if idid-before is false, up-reg;
 		follow the score and thinking changes rule;
 		now think-cue entry is false;
 		the rule succeeds;

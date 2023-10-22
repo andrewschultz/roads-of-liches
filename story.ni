@@ -68,8 +68,11 @@ check going when player is in Ditch Park:
 	if noun is not planar, continue the action;
 	repeat with rg running through regions:
 		if firstdir of rg is noun:
-			if rg is solved, say "You've already taken care of things to [the noun]." instead;
-			break;
+			if rg is not solved, continue the action;
+			if noun is west or noun is east:
+				say "While you took care of things to [the noun], it is interconnected with another sector.";
+				continue the action;
+			say "You've already taken care of things to [the noun]." instead;
 
 every turn when player is in ditch park and sco-my-list is true and sco-start-hopping is false: say "It feels so heart-stopping here. You need a way to move.";
 
@@ -285,9 +288,9 @@ check going in fang duels when sco-dang-fools is false:
 
 book Screening Pool
 
-Screening Pool is a room in goeast. it is north of Fang Duels.
+Screening Pool is a room in goeast. it is north of Fang Duels. "A bend here, south and east."
 
-check going east in Screening Pool when strays are not moot:
+check going east in Screening Pool when sco-eight-strays is false:
 	say "You feel an animal unrest pushing you back." instead;
 
 chapter straight as
@@ -296,7 +299,7 @@ there is a thing called straight as. printed name is "straight a's". description
 
 chapter eight strays
 
-there is a thing called eight strays. "Eight stray animals potter around here, hoping you can lead them back home, or what passes for it."
+there is a thing called eight strays. "Eight stray animals potter around here, glad you led them to a new home."
 
 book Crazy Leap
 
@@ -320,13 +323,37 @@ book Mass Crime
 
 Mass Crime is a room in goeast. it is east of Crazy Leap. "Bend west and north."
 
+check going north when player is in mass crime:
+	if mime is moot, say "You walk north unimpeded, though you doubt you have anything to do there.";
+	if sco-crass-mime is false, say "I should have a better reason to restrict this later. You have something to do here." instead;
+	if pile-status is 0, say "The mime follows you north and looks at the tricky pile. They shrug as if to say, what is the big deal? Then they pull you back. They make mock-sleeping gestures, as if to say, that's not very interesting. They can't make a performance out of that!" instead;
+	if pile-status is 1:
+		if mime-trial is true, say "You already put the mime on trial." instead;
+		say "You walk north to a trial where the mime overreacts to judgement thrown down on them.";
+		now mime-trial is true;
+	if pile-status is 2:
+		if mime-tile is true, say "You already at the mime step on the pricky tile." instead;
+		say "You walk north to the pricky tile, where the mime jumps around in pain. Those spiky bumps hurt!";
+		now mime-tile is true;
+	abide by the mime-map rule;
+
+this is the mime-map rule:
+	if mime-trial is true and mime-tile is true:
+		say "The mime slumps over. They've taken too much! As they fall over, a mauled scrap flies up from their hands. You take it. They express astonishment and run off, fake-crying. But you swear they winked at you as they looked back.[paragraph break]Hooray for a new scrap, but you officially feel emotionally blackmailed into putting up with mimes much longer than you thought you had to, for the next few years.";
+		solverg;
+	else:
+		say "The mime raises one finger. There is still more they can do to the north!";
+	the rule succeeds;
+
+check going west when player is in mass crime and mime is in mass crime: say "The mime mockingly shoos you away, taps a fake watch, then signals for you to come back. Later, you suppose.";
+
 chapter crass mime
 
 the crass mime is a person.
 
 book Tricky Pile
 
-Tricky Pile is a room in goeast. it is south of Tool Cavern. it is north of Mass Crime. "A tricky pile blocks passage [last-dir]. You can see over it, but it's shifty, so no way you can climb over it. You can go back [opposite of last-dir].". Tricky Pile is oneway.
+Tricky Pile is a room in goeast. it is north of Mass Crime. "A tricky pile blocks passage [last-dir]. You can see over it, but it's shifty, so no way you can climb over it. You can go back [opposite of last-dir].". Tricky Pile is oneway.
 
 volume west hub
 
@@ -497,6 +524,11 @@ carry out requesting the score:
 book taking
 
 check taking (this is the RoL rejection rule): say "You shouldn't need to [b]TAKE[r] anything explicitly in [this-game]. It will be done for you, if you find the right command." instead;
+
+book score
+
+check requesting the score:
+	say "(under construction)" instead;
 
 book sleeping
 
