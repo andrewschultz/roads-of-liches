@@ -401,6 +401,10 @@ book west spoke
 table of west spoke spoonerisms
 w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "slight"	"nudge"	--	--	false	true	true	false	night sludge	pre-slight-nudge rule	post-slight-nudge rule	--	--
+"rocking"	"blows"	--	--	false	true	true	false	blue tombs	pre-rocking-blows rule	post-rocking-blows rule	--	--
+"perky"	"meanie"	--	--	false	true	true	false	blue tombs	pre-perky-meanie rule	post-perky-meanie rule	--	--
+
+section night sludge scoring
 
 a spoonerism rule (this is the pre-slight-nudge rule):
 	if player is not in night sludge, unavailable;
@@ -412,6 +416,37 @@ a spoonerism rule (this is the pre-slight-nudge rule):
 this is the post-slight-nudge rule:
 	now sco-slight-nudge is true;
 	say "You look around, hoping for a clue, and you find it. You scrap your foot along the path, and some parts are less icky than others.";
+
+section blue tombs scoring
+
+a spoonerism rule (this is the pre-rocking-blows rule):
+	if player is not in blue tombs or blocking rose is moot, unavailable;
+	if sco-perky-meanie is false:
+		vcp "But the rocking blows would land on you!";
+		not-yet;
+	if sco-rocking-blows is true:
+		vcal "You already did this!";
+		already-done;
+	ready;
+
+this is the post-rocking-blows rule:
+	now sco-rocking-blows is true;
+	say "The blocking rose turns against the perky meanie and gives it a good swat.";
+	moot blocking rose;
+	moot perky meanie;
+
+a spoonerism rule (this is the pre-perky-meanie rule):
+	if player is not in blue tombs or perky meanie is moot, unavailable;
+	if sco-perky-meanie is true:
+		vcal "You already summoned the perky meanie!";
+		already-done;
+	ready;
+
+this is the post-perky-meanie rule:
+	now sco-perky-meanie is true;
+	say "The murky peony recedes, making way for a perky meanie. This seems temporarily more dangerous for you.";
+	moot murky peony;
+	move perky meanie to blue tombs;
 
 book endgame
 

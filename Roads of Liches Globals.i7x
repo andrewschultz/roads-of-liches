@@ -109,6 +109,9 @@ section west path globals
 
 sco-slight-nudge is a truth state that varies.
 
+sco-rocking-blows is a truth state that varies.
+sco-perky-meanie is a truth state that varies.
+
 section endgame globals
 
 sco-say-farewell is a truth state that varies.

@@ -282,19 +282,28 @@ Feeling Harm is a room in gowest. it is north of Night Sludge.
 
 book Blue Tombs
 
-Blue Tombs is a room in gowest. it is south of Night Sludge.
+Blue Tombs is a room in gowest. it is south of Night Sludge. "You can go north or west."
+
+the blocking rose is a thing in Blue Tombs. "A blocking rose menacingly guards the way west."
+
+the murky peony is a thing in Blue Tombs. "A murky peony stands next to the blocking rose."
+
+check going west in blue tombs when sco-rocking-blows is false:
+	say "That blocking rose is in the way." instead;
+
+the perky meanie is a person.
 
 book Tumorous Home
 
-Tumorous Home is a room in gowest. it is west of Feeling Harm.
+Tumorous Home is a room in gowest. it is west of Feeling Harm. "A bend with passages south and east."
 
 book Watery Pond
 
-Watery Pond is a room in gowest. it is west of Blue Tombs.
+Watery Pond is a room in gowest. it is west of Blue Tombs. "A bend with passages east and north."
 
 book Trap Zoo
 
-Trap Zoo is a room in gowest. it is south of Tumorous Home. it is north of Watery Pond. Trap Zoo is oneway.
+Trap Zoo is a room in gowest. it is south of Tumorous Home. it is north of Watery Pond. Trap Zoo is oneway. "The zoo cuts horizontally. You can only go back [opposite of last-dir], although you see something [last-dir] of the zoo."
 
 chapter Ghoul Crow
 
