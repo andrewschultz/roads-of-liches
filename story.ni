@@ -227,7 +227,7 @@ Violence Senders is a room in gosouth. It is west of Real Doom.
 
 book Dutiful Bawlers
 
-shse is a room in gosouth. It is south of Dutiful Bawlers.
+Scraped Shoals is a room in gosouth. It is south of Dutiful Bawlers.
 
 book Violence Senders
 
@@ -235,7 +235,7 @@ Hater Graph is a room in gosouth. It is south of Violence Senders. "Hoo boy! A h
 
 book Testing Jeers Jesting Tears
 
-Testing Jeers Jesting Tears is a room in gosouth. It is east of Hater Graph. It is west of shse. It is oneway. "This is a sandy area. You feel an invisible line dividing you. You don't want to step over it. You can see clearly to [the last-dir], but you probably can only go back [last-dir]."
+Testing Jeers Jesting Tears is a room in gosouth. It is east of Hater Graph. It is west of Scraped Shoals. It is oneway. "This is a sandy area. You feel an invisible line dividing you. You don't want to step over it. You can see clearly to [the last-dir], but you probably can only go back [last-dir]."
 
 volume east hub
 
@@ -289,11 +289,35 @@ to decide which thing is sheep-creep:
 
 chapter sheddable creep
 
-the sheddable creep is a thing.
+the sheddable creep is a person.
+
+creep-catch is a truth state that varies.
+creep-chase is a truth state that varies.
+
+every turn when sheddable creep is in location of player:
+	if creep-catch is true:
+		say "The sheddable creep, well, you weren't able to shed them. They bug you a bit, leaving you feeling a bit like a bum. Then they head back to Healing Farm.";
+		move creep to feeling harm;
+		now creep-chase is false;
+	else:
+		now creep-catch is true;
+
+after printing the locale description when player is in feeling harm:
+	if sheddable creep is in feeling harm and creep-chase is false:
+		say "The creep sees you again. There's going to be another chase.";
+		now creep-chase is true;
+	continue the action;
+
+after printing the locale description when creep-chase is true:
+		say "The sheddable creep follows you from [location of sheddable creep].";
+		move sheddable creep to location of player;
+		now creep-catch is false;
+	continue the action;
+
 
 chapter credible sheep
 
-the credible sheep is a thing.
+the credible sheep are plural-named people.
 
 book Blue Tombs
 

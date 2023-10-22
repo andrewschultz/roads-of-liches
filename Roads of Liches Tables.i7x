@@ -381,6 +381,9 @@ book east spoke
 table of east spoke spoonerisms
 w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "dang"	"fools"	--	--	false	true	true	false	fang duels	pre-dang-fools rule	post-dang-fools rule	--	--
+"lazy"	"creep"	--	--	false	true	true	false	crazy leap	pre-lazy-creep rule	post-lazy-creep rule	--	--
+
+section fang duels scoring
 
 a spoonerism rule (this is the pre-dang-fools rule):
 	if player is not in fang duels, unavailable;
@@ -393,7 +396,23 @@ this is the post-dang-fools rule:
 	now sco-dang-fools is true;
 	say "You realize aggression just wears people out. You express this brilliant philosophical belief eloquently. Either the entities involved are too intimidated by your intelligence, or they find you too wussy to bother with. But they are gone, and that's what matters![paragraph break]You're a bit bummed you are in a text adventure and not a TV show, so you can't give kids one to grow on, but hey.";
 
-section fang duels scoring
+section crazy leap scoring
+
+a spoonerism rule (this is the pre-lazy-creep rule):
+	if player is not in crazy leap, unavailable;
+	if creep is not in crazy leap:
+		vcp "But there is no creep nearby to make lazy!";
+		not-yet;
+	if sco-lazy-creep is true:
+		vcal "You already disposed of the creep!";
+		already-done;
+	ready;
+
+this is the post-lazy-creep rule:
+	now sco-lazy-creep is true;
+	say "The sheddable creep suddenly looks exhausted and assures you you're not worth chasing and pestering any more. Whatever they wanted to pester you about, you just won't LEARN. They go off somewhere to find someone else to bug.";
+	moot creep;
+	now creep-chase is false;
 
 book west spoke
 
@@ -404,6 +423,7 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "rocking"	"blows"	--	--	false	true	true	false	blue tombs	pre-rocking-blows rule	post-rocking-blows rule	--	--
 "pottery"	"wand"	--	--	false	true	true	false	watery pond	pre-pottery-wand rule	post-pottery-wand rule	--	--
 "healing"	"farm"	--	--	false	true	true	false	feeling harm	pre-healing-farm rule	post-healing-farm rule	--	--
+"sheddable"	"creep"	--	--	false	true	true	false	feeling harm	pre-sheddable-creep rule	post-sheddable-creep rule	--	--
 "humorous"	"tome"	--	--	false	true	true	false	tumorous home	pre-humorous-tome rule	post-humorous-tome rule	--	--
 "zap"	"true"	--	--	false	true	true	false	trap zoo	pre-zap-true rule	post-zap-true rule	--	--
 
@@ -492,6 +512,20 @@ this is the post-healing-farm rule:
 	now sco-healing-farm is true;
 	say "Everything feels much less stressful in short order. But ... there are some odd animals that pop up. Credible sheep, apparently. Or they seem to be.";
 	move credible sheep to feeling harm;
+
+a spoonerism rule (this is the pre-sheddable-creep rule):
+	if player is not in feeling harm, unavailable;
+	if sco-sheddable-creep is true:
+		vcal "You already got rid of the credible sheep!";
+		already-done;
+	ready;
+
+this is the post-sheddable-creep rule:
+	now sco-sheddable-creep is true;
+	say "Wait! Those sheep look a little weird. Yeah, you're going to have to see about that ... yes, it's a disguise and not a very good one. A sheddable creep is behind them. But how to shed them?";
+	moot credible sheep;
+	move sheddable creep to feeling harm;
+	now creep-chase is true;
 
 section trap zoo scoring
 
