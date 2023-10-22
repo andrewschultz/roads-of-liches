@@ -24,6 +24,8 @@ include Roads of Liches Definitions by Andrew Schultz.
 
 include Roads of Liches Globals by Andrew Schultz.
 
+include Roads of Liches Mistakes by Andrew Schultz.
+
 include Roads of Liches Tables by Andrew Schultz.
 
 include Roads of Liches Tests by Andrew Schultz.
