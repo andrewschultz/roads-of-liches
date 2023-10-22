@@ -33,7 +33,6 @@ table of item spoonerisms
 w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "cleared"	"woes"	--	--	false	true	false	false	--	pre-cleared-woes rule	post-cleared-woes rule
 "speak"	"well"	--	--	false	true	true	false	--	pre-speak-well rule	post-speak-well rule	--	--
-"greater"	"half"	--	--	false	true	true	false	--	pre-greater-half rule	post-greater-half rule	--	--
 
 a spoonerism rule (this is the pre-speak-well rule):
 	if weak spell is not touchable, unavailable;
@@ -117,18 +116,6 @@ a spoonerism rule (this is the pre-start-hopping rule):
 this is the post-start-hopping rule:
 	say "It's good to feel you can move. You feel less helpless now.";
 	now sco-start-hopping is true;
-
-a spoonerism rule (this is the pre-greater-half rule):
-	if hater graph is not touchable, unavailable;
-	if sco-greater-half is true:
-		vcal "You already took the hater graph!";
-		already-done;
-	ready;
-
-this is the post-greater-half rule:
-	now sco-greater-half is true;
-	say "You see benefits to having such a graph. So you are able to take it.";
-	now player has hater graph;
 
 book north spoke
 
@@ -338,6 +325,22 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "beautiful"	"dollars"	--	--	false	true	true	false	dutiful bawlers	pre-beautiful-dollars rule	post-beautiful-dollars rule	--	--
 "deal"	"room"	--	--	false	true	true	false	real doom	pre-deal-room rule	post-deal-room rule	--	--
 "silence"	"vendors"	--	--	false	true	true	false	violence senders	pre-silence-vendors rule	post-silence-vendors rule	--	--
+"greater"	"half"	--	--	false	true	true	false	hater graph	pre-greater-half rule	post-greater-half rule	--	--
+"shaped"	"scrolls"	--	--	false	true	true	false	scraped shoals	pre-shaped-scrolls rule	post-shaped-scrolls rule	--	--
+"muppet"	"pastor"	--	--	false	true	true	false	testing jeers	pre-muppet-pastor rule	post-muppet-pastor rule	--	--
+
+section painful garden scoring
+
+a spoonerism rule (this is the pre-gainful-pardon rule):
+	if player is not in Painful Garden, unavailable;
+	if sco-gainful-pardon is true:
+		vcal "You already found some semblance of peace here.";
+		already-done;
+	ready;
+
+this is the post-gainful-pardon rule:
+	now sco-gainful-pardon is true;
+	say "Well, you can't expect any judge to give you a sealed document, so you work things out for yourself. Perhaps there are some things you need to make restitution for, but pain for its own sake will do no good, and you'll think of anything once you get out. If you get out. Maybe track down someone you did wrong. Here, though, not much to do.";
 
 section real doom scoring
 
@@ -381,18 +384,52 @@ this is the post-silence-vendors rule:
 	move silence vendors to violence senders;
 	follow the dollars-and-vendors rule;
 
-section painful garden scoring
+section hater graph scoring
 
-a spoonerism rule (this is the pre-gainful-pardon rule):
-	if player is not in Painful Garden, unavailable;
-	if sco-gainful-pardon is true:
-		vcal "You already found some semblance of peace here.";
+a spoonerism rule (this is the pre-greater-half rule):
+	if player is not in hater graph, unavailable;
+	if sco-greater-half is true:
+		vcal "You already took the hater graph!";
 		already-done;
 	ready;
 
-this is the post-gainful-pardon rule:
-	now sco-gainful-pardon is true;
-	say "Well, you can't expect any judge to give you a sealed document, so you work things out for yourself. Perhaps there are some things you need to make restitution for, but pain for its own sake will do no good, and you'll think of anything once you get out. If you get out. Maybe track down someone you did wrong. Here, though, not much to do.";
+this is the post-greater-half rule:
+	now sco-greater-half is true;
+	say "You stare at the hater graph a bit. Yes, it is biased. It overemphasizes certain data. You extract a more favorable interpretation of what is going on. You reach behind the graph and get ... a greater half.";
+	now player has greater half;
+
+section scraped shoals scoring
+
+a spoonerism rule (this is the pre-shaped-scrolls rule):
+	if player is not in scraped shoals, unavailable;
+	if sco-shaped-scrolls is true:
+		vcal "There can't be more to find in the scraped shoals.";
+		already-done;
+	if sco-greater-half is false:
+		vcal "But you aren't sure what you are looking for. Maybe if you had part of a document...";
+		already-done;
+	ready;
+
+this is the post-shaped-scrolls rule:
+	now sco-shaped-scrolls is true;
+	say "You look around the scraped shoals. A lot of scrolls are hidden, but only one fits with the greater half.";
+	now player has shaped scrolls;
+
+section testing jeers scoring
+
+a spoonerism rule (this is the pre-muppet-pastor rule):
+	if player is not in testing jeers and puppet master is not touchable, unavailable;
+	if player does not have scrolls:
+		vcp "The puppet master smacks down your feeble spoonerism/portmanteau combo try. Obviously, it's not within the rules! And yet, perhaps, with the right documentation, you could get past all this.";
+		not-yet;
+	ready;
+
+this is the post-muppet-pastor rule:
+	now sco-muppet-pastor is true;
+	say "The puppet master wags their finger at your portmanteau-rhyme, but you've come prepared with evidence why this is okay, despite seeming problems. There's a big argument, but thanfully, you studied the scrolls, and eventually the puppet master leaves, defeated by your impressive arguments. Or maybe tired of the whole ordeal.";
+	moot puppet master;
+	now Jeers is not oneway;
+	solverg;
 
 book east spoke
 

@@ -258,13 +258,21 @@ book Scraped Shoals
 
 Scraped Shoals is a room in gosouth. It is south of Dutiful Bawlers. "Bend south and west.".
 
+chapter shaped scrolls
+
+some shaped scrolls are a plural-named thing.
+
 book Violence Senders
 
 Hater Graph is a room in gosouth. It is south of Violence Senders.  "Bend north and east. Hoo boy! A hater graph is here. Statistics can be harsh and heartless, but this is something else."
 
 book Testing Jeers Jesting Tears
 
-Testing Jeers Jesting Tears is a room in gosouth. It is east of Hater Graph. It is west of Scraped Shoals. It is oneway. "This is a sandy area. You feel an invisible line dividing you. You don't want to step over it. You can see clearly to [the last-dir], but you probably can only go back [last-dir]."
+Testing Jeers Jesting Tears is a room in gosouth. It is east of Hater Graph. It is west of Scraped Shoals. It is oneway. "[if sco-muppet-pastor is false]This is a sandy area. A large puppet master stands in the middle, gloating they are totally unchangeable, and if they were, they couldn't be changed into something fuzzy and lovable. You won't be getting past them. You can see clearly to [the last-dir], but you probably can only go back [last-dir][else]There's nothing stopping you from exiting east or west[end if]."
+
+chapter puppet master
+
+The puppet master is a person in jesting tears. "The puppet master strides about, laughing wickedly."
 
 volume east hub
 

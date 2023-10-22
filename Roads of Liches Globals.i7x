@@ -137,6 +137,12 @@ sco-cool-tavern is a truth state that varies.
 
 sco-beautiful-dollars is a truth state that varies.
 
+sco-scraped-shoals is a truth state that varies.
+
+sco-shaped-scrolls is a truth state that varies.
+
+sco-muppet-pastor is a truth state that varies.
+
 book game states
 
 cavern-is-tavern is a truth state that varies.
