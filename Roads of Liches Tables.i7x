@@ -396,6 +396,8 @@ table of east spoke spoonerisms
 w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "dang"	"fools"	--	--	false	true	true	false	fang duels	pre-dang-fools rule	post-dang-fools rule	--	--
 "lazy"	"creep"	--	--	false	true	true	false	crazy leap	pre-lazy-creep rule	post-lazy-creep rule	--	--
+"cool"	"tavern"	--	--	false	true	true	false	tool cavern	pre-cool-tavern rule	post-cool-tavern rule	--	--
+"tool"	"cavern"	--	--	false	true	true	true	tool cavern	pre-tool-cavern rule	post-tool-cavern rule	--	--
 
 section fang duels scoring
 
@@ -427,6 +429,37 @@ this is the post-lazy-creep rule:
 	say "The sheddable creep suddenly looks exhausted and assures you you're not worth chasing and pestering any more. Whatever they wanted to pester you about, you just won't LEARN. They go off somewhere to find someone else to bug.";
 	moot creep;
 	now creep-chase is false;
+
+section tool cavern scoring
+
+a spoonerism rule (this is the pre-cool-tavern rule):
+	if player is not in tool cavern, unavailable;
+	if sco-cool-tavern is false:
+		vcp "You still need to do something!";
+		not-yet;
+	if cavern-is-tavern is true:
+		vcal "You already changed to the tavern!";
+		already-done;
+	ready;
+
+this is the post-cool-tavern rule:
+	now sco-cool-tavern is true;
+	say "You focus and blink, and the cavern changes[one of][or] back to[stopping] a tavern.";
+	now cavern-is-tavern is false;
+	if ruddy mensch is in tool cavern, now ruddy mensch is in stride seat;
+
+a spoonerism rule (this is the pre-tool-cavern rule):
+	if player is not in tool cavern, unavailable;
+	if muddy wrench is moot:
+		vcal "But you got what you needed from all this.";
+		already-done;
+	ready;
+
+this is the post-tool-cavern rule:
+	say "You focus and blink, and the tavern changes[one of][or] back to[stopping] a cavern.";
+	now cavern-is-tavern is false;
+	say "[if ruddy mensch is off-stage]And someone is here! They introduce themselves, apologetically, as a ruddy mensch[else]Your friend the ruddy mensch is waiting[end if].";
+	move ruddy mensch to tool cavern;
 
 book west spoke
 

@@ -267,17 +267,42 @@ book Screening Pool
 
 Screening Pool is a room in goeast. it is north of Fang Duels.
 
+check going east in Screening Pool when strays are not moot:
+	say "You feel an animal unrest pushing you back." instead;
+
+chapter straight as
+
+there is a thing called straight as. printed name is "straight a's". description is "You're not sure what you can do with good grades, if anything.".
+
+chapter eight strays
+
+there is a thing called eight strays. "Eight stray animals potter around here, hoping you can lead them back home, or what passes for it."
+
 book Crazy Leap
 
-Crazy Leap is a room in goeast. it is south of Fang Duels.
+Crazy Leap is a room in goeast. it is south of Fang Duels. "A bend north and east.".
+
+check going east in crazy leap when sco-lazy-creep is false: say "A voice seems to shake you and demand life force from you, or someone, before you can pass. You have not made this sacrifice yet." instead;
 
 book Tool Cavern
 
-Tool Cavern is a room in goeast. it is east of Screening Pool.
+Tool Cavern is a room in goeast. it is east of Screening Pool. "Bend west and south.". printed name is "[if cavern-is-tavern is true]Cool Tavern[else]Tool Cavern[end if]".
+
+chapter muddy wrench
+
+the muddy wrench is a thing.
+
+chapter ruddy mensch
+
+the ruddy mensch is a person.
 
 book Mass Crime
 
-Mass Crime is a room in goeast. it is east of Crazy Leap.
+Mass Crime is a room in goeast. it is east of Crazy Leap. "Bend west and north."
+
+chapter crass mime
+
+the crass mime is a person.
 
 book Tricky Pile
 
