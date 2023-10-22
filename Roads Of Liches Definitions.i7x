@@ -72,6 +72,9 @@ volume score stubs
 to decide which number is lamp-score:
 	decide on (boolval of sco-keen-lamp) + (boolval of sco-some-oil)
 
+to decide which number is woe-cell-score:
+	decide on (boolval of sco-oh-swell) + (boolval of sco-so-well)
+
 volume regions
 
 a region has a direction called firstdir. firstdir of a region is usually inside

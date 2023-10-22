@@ -330,7 +330,7 @@ to solverg:
 		say "And this time, they all fit together to find a way down the roads of liches! But you are captured...";
 		follow the score and thinking changes rule;
 		say "Oh no! You're dumped in ...";
-		move player to wayfair cell;
+		move player to woe cell;
 		moot my list;
 	else:
 		say "But the scrawled map is incomplete. Still, yay progress.";
@@ -744,8 +744,43 @@ book endgame
 
 table of endgame spoonerisms
 w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
+"oh"	"swell"	--	--	false	true	true	false	woe cell	pre-oh-swell rule	post-oh-swell rule	--	--
+"so"	"well"	--	--	false	true	true	false	woe cell	pre-so-well rule	post-so-well rule	--	--
 "revolving"	"door"	--	--	false	true	true	false	wayfair cell	pre-revolving-door rule	post-revolving-door rule	--	--
 "say"	"farewell"	--	--	false	true	true	false	wayfair cell	pre-say-farewell rule	post-say-farewell rule	--	--
+
+section woe cell scoring
+
+a spoonerism rule (this is the pre-oh-swell rule):
+	if player is not in woe cell, unavailable;
+	if sco-oh-swell is true:
+		vcal "You already showed sarcastic disgust!";
+		already-done;
+	ready;
+
+this is the post-oh-swell rule:
+	now sco-oh-swell is true;
+	say "Hmmph. You complain to yourself. Does it have to end like this? No. It does not.";
+	follow the woe-cell-progress rule;
+
+a spoonerism rule (this is the pre-so-well rule):
+	if player is not in woe cell, unavailable;
+	if sco-so-well is true:
+		vcal "You already showed general bemusement!";
+		already-done;
+	ready;
+
+this is the post-so-well rule:
+	now sco-so-well is true;
+	say "You step back with general bemusement. It's therapeutic.";
+	follow the woe-cell-progress rule;
+
+this is the woe-cell-progress rule:
+	if woe-cell-score is 1:
+		say "That's a good start, but you haven't exhausted the possibilities.";
+	else:
+		say "After complaining to yourself enough, you realize the prison was in your mind, yada yada. Why, you can just walk out if you want to. You always could![paragraph break]And walk away you do, until you are again waylaid, this time in a much stricter cell. One with annoying distracting noise. Well, that stinks.";
+		move player to wayfair cell;
 
 section wayfair cell scoring
 

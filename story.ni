@@ -229,22 +229,6 @@ after printing the locale description when shabby grues are not off-stage and sh
 		move shabby grues to location of player;
 	continue the action;
 
-volume endgame
-
-book wayfair cell
-
-Wayfair Cell is a room in endgame. "[if sco-revolving-door is false]Oh no! You feel trapped here! You can see no exits. There's also a constantly devolving roar. Just when you think it's gone, it starts up again[else]There's a revolving door here, but it'd be rude to exit without a proper word[end if]."
-
-the devolving roar is scenery. "It's annoying. It's very cyclical, too."
-
-the revolving door is scenery. "It won't budge! Perhaps you need a word with it."
-
-check going in wayfair cell:
-	if revolving door is not in wayfair cell, say "You haven't made a way out yet." instead;
-	say "You aren't sure which way to go. Besides, it would feel rude to leave without a word for whoever put you here. Even a snarky one." instead;
-
-check entering revolving door: try going north instead;
-
 volume south hub
 
 book Painful Garden
@@ -426,7 +410,6 @@ after printing the locale description when creep-chase is true:
 		now creep-catch is false;
 	continue the action;
 
-
 chapter credible sheep
 
 the credible sheep are plural-named people.
@@ -488,6 +471,28 @@ the greater half is a thing. "This is a relatively benign message about pulling 
 the deep cry is scenery.
 
 [dark heels: HARK DEALS chases them around]
+
+volume endgame
+
+book woe cell
+
+Woe Cell is a room in endgame. "You feel so woeful here! Perhaps if you get in touch with your woe properly, you will find a way out."
+
+check going in woe cell: say "You see no exits. Navel-gazing's the way here.";
+
+book wayfair cell
+
+Wayfair Cell is a room in endgame. "[if sco-revolving-door is false]Oh no! You feel trapped here! You can see no exits. There's also a constantly devolving roar. Just when you think it's gone, it starts up again[else]There's a revolving door here, but it'd be rude to exit without a proper word[end if]."
+
+the devolving roar is scenery. "It's annoying. It's very cyclical, too."
+
+the revolving door is scenery. "It won't budge! Perhaps you need a word with it."
+
+check going in wayfair cell:
+	if revolving door is not in wayfair cell, say "You haven't made a way out yet." instead;
+	say "You aren't sure which way to go. Besides, it would feel rude to leave without a word for whoever put you here. Even a snarky one." instead;
+
+check entering revolving door: try going north instead;
 
 volume regular action verbs
 

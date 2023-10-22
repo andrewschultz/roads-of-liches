@@ -156,6 +156,9 @@ sco-picky-trial is a truth state that varies.
 
 sco-revolving-door is a truth state that varies.
 
+sco-oh-swell is a truth state that varies.
+sco-so-well is a truth state that varies.
+
 book game states
 
 pile-status is a number that varies.
