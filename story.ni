@@ -221,17 +221,34 @@ book Dutiful Bawlers
 
 Dutiful Bawlers is a room in gosouth. It is east of Real Doom.
 
-book Violence Senders
+chapter beautiful dollars
 
-Violence Senders is a room in gosouth. It is west of Real Doom.
-
-book Dutiful Bawlers
-
-Scraped Shoals is a room in gosouth. It is south of Dutiful Bawlers.
+the beautiful dollars are a thing.
 
 book Violence Senders
 
-Hater Graph is a room in gosouth. It is south of Violence Senders. "Hoo boy! A hater graph is here. Statistics can be harsh and heartless, but this is something else."
+Violence Senders is a room in gosouth. It is west of Real Doom. printed name is "[if sco-silence-vendors is true]Silence Vendors[else]Violence Senders[end if]". "Bend south and east.".
+
+check going south in violence senders:
+	unless dollars are moot, say "A vicious roar from the south pushes you back." instead;
+
+after printing the locale description when player is in violence senders (this is the dollars-and-vendors rule):
+	if player has dollars and silence vendors are in violence senders and player is in violence senders:
+		say "You fork over the dollars to the silence vendors. They nod, pleased. The roar from the south diminishes. You'd feel safe going there now.";
+		moot dollars;
+	continue the action;
+
+chapter silence vendors
+
+the silence vendors are people.
+
+book Scraped Shoals
+
+Scraped Shoals is a room in gosouth. It is south of Dutiful Bawlers. "Bend south and west.".
+
+book Violence Senders
+
+Hater Graph is a room in gosouth. It is south of Violence Senders.  "Bend north and east. Hoo boy! A hater graph is here. Statistics can be harsh and heartless, but this is something else."
 
 book Testing Jeers Jesting Tears
 

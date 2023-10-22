@@ -133,7 +133,13 @@ sco-sheddable-creep is a truth state that varies.
 
 sco-lazy-creep is a truth state that varies.
 
+sco-cool-tavern is a truth state that varies.
+
+sco-beautiful-dollars is a truth state that varies.
+
 book game states
+
+cavern-is-tavern is a truth state that varies.
 
 used-cheats is a truth state that varies.
 

@@ -228,7 +228,7 @@ a spoonerism rule (this is the pre-keen-lamp rule):
 
 this is the post-keen-lamp rule:
 	now sco-keen-lamp is true;
-	say "Hooray! You figured what to do! You get a point!";
+	say "You search the camp with an idea of what to find. And a lamp turns up! A surprisingly nice one! You feel great, until you wonder if this is proof manifesting actually works for far worse people than yourself as well";
 	now player has keen lamp;
 	process-oil-lamp;
 
@@ -331,6 +331,7 @@ book south spoke
 table of south spoke spoonerisms
 w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "gainful"	"pardon"	--	--	false	true	true	false	Painful Garden	pre-gainful-pardon rule	post-gainful-pardon rule	--	--
+"beautiful"	"dollars"	--	--	false	true	true	false	dutiful bawlers	pre-beautiful-dollars rule	post-beautiful-dollars rule	--	--
 "deal"	"room"	--	--	false	true	true	false	real doom	pre-deal-room rule	post-deal-room rule	--	--
 "silence"	"vendors"	--	--	false	true	true	false	violence senders	pre-silence-vendors rule	post-silence-vendors rule	--	--
 
@@ -347,21 +348,34 @@ this is the post-deal-room rule:
 	now sco-deal-room is true;
 	say "You feel slightly less awful about things as the sense of real doom pulls back. Of course, bad things can happen in a deal room and do.";
 
+section dutiful bawlers scoring
+
+a spoonerism rule (this is the pre-beautiful-dollars rule):
+	if player is not in dutiful bawlers, unavailable;
+	if sco-beautiful-dollars is true:
+		vcal "Don't get greedy!";
+		already-done;
+	ready;
+
+this is the post-beautiful-dollars rule:
+	now sco-beautiful-dollars is true;
+	say "Oh, man! You give minimal consolatin, and the bawlers hand the dollars over to you ... not that money buys happiness these days, anyway!";
+	now player has dollars;
+
 section violence senders scoring
 
 a spoonerism rule (this is the pre-silence-vendors rule):
 	if player is not in violence senders, unavailable;
-	if sco-silence-vendors is false:
-		vcp "You still need to do something!";
-		not-yet;
 	if sco-silence-vendors is true:
-		vcal "You already did this!";
+		vcal "You already summoned the silence vendors!";
 		already-done;
 	ready;
 
 this is the post-silence-vendors rule:
 	now sco-silence-vendors is true;
-	say "Hooray! You figured what to do! You get a point!";
+	say "Silence vendors appear and hold up a paper saying 'We don't sell silence for free!'";
+	move silence vendors to violence senders;
+	follow the dollars-and-vendors rule;
 
 section painful garden scoring
 
