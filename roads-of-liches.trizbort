@@ -149,6 +149,22 @@
 			<dock index="0" id="55" port="n" />
 			<dock index="1" id="2" port="s" />
 		</line>
+		<room id="58" name="Woe Cell" subtitle="" x="-448" y="-448" w="96" h="64" region="End Rooms" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="59" name="Wayfair Cell" subtitle="" x="-448" y="-320" w="96" h="64" region="End Rooms" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<line id="60" name="" description="" style="dashed" flow="oneWay">
+			<dock index="0" id="58" port="s" />
+			<dock index="1" id="59" port="n" />
+		</line>
+		<room id="61" name="Bane Row" subtitle="" x="-448" y="192" w="96" h="64" region="End Rooms" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<line id="62" name="" description="" style="dashed" flow="oneWay">
+			<dock index="0" id="59" port="sw" />
+			<dock index="1" id="61" port="nw" />
+		</line>
+		<room id="63" name="Near My Claim" subtitle="" x="-448" y="320" w="96" h="64" region="End Rooms" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isEndRoom="yes" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<line id="64" name="" description="" style="dashed" flow="oneWay">
+			<dock index="0" id="61" port="s" />
+			<dock index="1" id="63" port="n" />
+		</line>
 	</map>
 	<settings>
 		<colors>
