@@ -6,7 +6,7 @@ volume globals
 
 core-max is a number that varies. core-max is 44.
 
-max-bonus is a number that varies. max-bonus is 2.
+max-bonus is a number that varies. max-bonus is 3.
 
 section copied from PRPR globals
 

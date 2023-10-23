@@ -132,6 +132,7 @@ a wordguess rule for a table name (called tn) (this is the cheatfind rule):
 		process the run-rule entry;
 		now verb-dont-print is false;
 		move treat chunk to ditch park;
+		max-down;
 		if chunk-warn is false:
 			say "(By the way, you can TAKE CHUNK again, if you want[if player is not in ditch park], back at ditch park[end if].)";
 			now chunk-warn is true;
@@ -529,6 +530,19 @@ chapter top scaring
 top scaring is scenery in Near My Claim. "The more you ponder the top scaring, the worse it gets. How to disengage?"
 
 every turn when player is in near my claim and top scaring is in near my claim: say "The top scaring really gets into your soul! You wonder if there is any way to zone it out.";
+
+book final bit
+
+table of final question options (continued)
+final question wording	only if victorious	topic	final response rule	final response activity
+"see the points you [b]MISSED[r]"	true	"missed/misses"	show-misses rule	--
+
+this is the show-misses rule:
+	if sco-cleared-woes is false, say "You could have, on seeing your weird clothes, [b]CLEARED WOES[r].";
+	if sco-treat-chunk is false:
+		say "You could have, on seeing the cheat trunk, gotten a [b]TREAT CHUNK[r].";
+	else if chunk-warn is true:
+		say "You could've gotten another bonus point for not using the treat chunk."
 
 volume regular action verbs
 

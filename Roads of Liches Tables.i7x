@@ -856,14 +856,20 @@ this is the post-stop-caring rule:
 a spoonerism rule (this is the pre-clear-name rule):
 	if player is not in near my claim, unavailable;
 	if sco-stop-caring is false:
-		vcp "You'd loe to, but you still feel guilt! Unreasonable guilt, but guilt nonetheless.";
+		vcp "You'd love to, but you still feel guilt! Unreasonable guilt, but guilt nonetheless.";
 		not-yet;
 	ready;
 
 this is the post-clear-name rule:
 	now sco-clear-name is true;
 	say "You ignore the nonsense in your head. Even if you aren't a perfect person, dadgummit, you signed up for a treasure hunt, and treasure, you found!";
+	if chunk-warn is false:
+		up-min;
+		follow the score and thinking changes rule;
 	end the story;
+	if cur-bonus is max-bonus:
+		choose row with final response rule of show-misses rule in the Table of Final Question Options;
+		blank out the whole row; [don't let the player see MISSED if they got everything]
 	follow the shutdown rules;
 
 volume big picture stuff
