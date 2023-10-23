@@ -658,24 +658,42 @@ to say here-in of (rm - a room):
 	else:
 		say "in [rm]"
 
-got-something is a truth state that varies.
+think-index is a number that varies.
+
+local-header-yet is a truth state that varies
+
+any-think-yet is a truth state that varies.
+
+think-headers is a list of text variable. think-headers is { "Items you can do stuff with:", "Things undone in this region:", "Things undone in all regions:" }
 
 check thinking:
-	let got-something be false;
-	spoon-region mrlp;
+	say "You think of what you've done and what you want to do.";
+	now local-header-yet is false;
+	now any-think-yet is false;
+	now think-index is 1;
+	spoon-think-check table of item spoonerisms;
+	now local-header-yet is false;
+	now think-index is 2;
+	spoon-think-check spoontable of mrlp;
+	let local-header-yet be false;
+	now think-index is 3;
 	repeat with rg running through regions:
-		spoon-region mrlp;
+		if rg is mrlp, next;
+		spoon-think-check spoontable of rg;
+	if any-think-yet is false:
+		say "[line break]There's nothing to do that you tried when you weren't quite ready.";
 
-to spoon-region (rg - a region):
-	repeat through spoontable of rg:
+to spoon-think-check (tn - a table name):
+	repeat through tn:
 		if idid entry is false and think-cue entry is true:
-			now got-something is true;
+			if local-header-yet is false:
+				say "[line break][entry think-index in think-headers][line break]";
+			now local-header-yet is true;
+			now any-think-yet is true;
 			if there is a think-advice entry:
 				say "[think-advice entry]";
 			else:
 				say "You tried [b][w1 entry in upper case] [w2 entry in upper case][r][if there is a best-room entry] [here-in of best-room entry][end if], but it didn't quite work out. Maybe later.";
-	if got-something is false:
-		say "There's nothing you could do later.";
 	the rule succeeds;
 
 volume parser errors
