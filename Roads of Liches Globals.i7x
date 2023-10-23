@@ -4,7 +4,7 @@ Version 1/221116 of Roads of Liches Globals by Andrew Schultz begins here.
 
 volume globals
 
-core-max is a number that varies. core-max is 41.
+core-max is a number that varies. core-max is 44.
 
 max-bonus is a number that varies. max-bonus is 2.
 
@@ -166,6 +166,8 @@ sco-clear-name is a truth state that varies.
 sco-thickening-suds is a truth state that varies.
 
 sco-riving-drain is a truth state that varies.
+
+sco-stop-caring is a truth state that varies.
 
 book game states
 

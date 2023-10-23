@@ -524,6 +524,12 @@ Near My Claim is a room in endgame. "Oh man! You know you're near the treasure! 
 
 check going in Near My Claim: say "No running from all these serious issues!" instead;
 
+chapter top scaring
+
+top scaring is scenery in Near My Claim. "The more you ponder the top scaring, the worse it gets. How to disengage?"
+
+every turn when player is in near my claim and top scaring is in near my claim: say "The top scaring really gets into your soul! You wonder if there is any way to zone it out.";
+
 volume regular action verbs
 
 book attacking

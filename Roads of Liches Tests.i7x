@@ -16,7 +16,7 @@ test s with "s/s/e/beautiful dollars/w/w/silence vendors/s/greater half/n/e/e/s/
 
 test e with "e/n/preening school/s/w/w/n/healing farm/eight strays/s/e/e/n/e/cool tavern/tool cavern/muddy wrench/cool tavern/s/picky trial/n/w/s/s/e/crass mime/n/w/n/n/e/s/pricky tile/n/w/s/s/e/n". [this has an extra HEALING FARM command in it]
 
-test end with "so well/oh swell/thickening suds/revolving door/say farewell/rainbow/clear my name".
+test end with "so well/oh swell/thickening suds/revolving door/say farewell/rainbow/stop caring/clear my name".
 
 Roads of Liches Tests ends here.
 

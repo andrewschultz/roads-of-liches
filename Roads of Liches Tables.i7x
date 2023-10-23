@@ -139,7 +139,7 @@ book north spoke
 table of north spoke spoonerisms
 w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "speak"	"mind"	--	--	false	true	true	false	meek spined	pre-speak-mind rule	post-speak-mind rule	--	--
-"four|for"	"rest"	--	--	false	true	false	false	roar fest	pre-forest rule	post-forest rule	"forest"	--
+"four|for"	"rest"	--	--	false	true	true	false	roar fest	pre-forest rule	post-forest rule	"forest"	--
 ["howl"	"farm"	--	--	false	true	true	false	Ditch Park	pre-howl-farm rule	post-howl-farm rule]
 "keep"	"dry"	--	--	false	true	true	false	--	pre-keep-dry rule	post-keep-dry rule
 "creep"	"die"	--	--	false	true	true	false	--	pre-creep-die rule	post-creep-die rule
@@ -764,6 +764,7 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "revolving"	"door"	--	--	false	true	true	false	wayfair cell	pre-revolving-door rule	post-revolving-door rule	--	--
 "say"	"farewell"	--	--	false	true	true	false	wayfair cell	pre-say-farewell rule	post-say-farewell rule	--	--
 "rain"	"bow"	--	--	false	true	true	false	bane row	pre-rain-bow rule	post-rain-bow rule	"rainbow"	--
+"stop"	"caring"	--	--	false	true	true	false	near my claim	pre-stop-caring rule	post-stop-caring rule	--	--
 "clear"	"name"	--	--	false	true	true	false	near my claim	pre-clear-name rule	post-clear-name rule	"clear my name"	--
 
 section woe cell scoring
@@ -782,7 +783,7 @@ this is the post-so-well rule:
 a spoonerism rule (this is the pre-oh-swell rule):
 	if player is not in woe cell, unavailable;
 	if sco-so-well is false:
-		say "You can't swing that yet in your current state of mind.";
+		vcp "You can't swing that yet in your current state of mind.";
 		not-yet;
 	if sco-oh-swell is true:
 		vcal "You already showed sarcastic disgust!";
@@ -841,8 +842,22 @@ this is the post-rain-bow rule:
 
 section near my claim scoring
 
+a spoonerism rule (this is the pre-stop-caring rule):
+	if player is not in near claim, unavailable;
+	if sco-stop-caring is true:
+		vcal "You don't want to overdo the stop-caring angle, even if you overdid the caring angle in the past. You're in the right frame of mind.";
+		already-done;
+	ready;
+
+this is the post-stop-caring rule:
+	now sco-stop-caring is true;
+	say "You feel relieved once you think of things in the near and distant past that you'd been carrying around that weren't really your fault.";
+
 a spoonerism rule (this is the pre-clear-name rule):
 	if player is not in near my claim, unavailable;
+	if sco-stop-caring is false:
+		vcp "You'd loe to, but you still feel guilt! Unreasonable guilt, but guilt nonetheless.";
+		not-yet;
 	ready;
 
 this is the post-clear-name rule:
