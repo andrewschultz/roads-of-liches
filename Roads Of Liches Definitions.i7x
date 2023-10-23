@@ -72,6 +72,9 @@ volume score stubs
 to decide which number is lamp-score:
 	decide on (boolval of sco-keen-lamp) + (boolval of sco-some-oil)
 
+to decide which number is zoo-score:
+	decide on (boolval of sco-pottery-wand) + (boolval of sco-speak-well)
+
 to decide which number is woe-cell-score:
 	decide on (boolval of sco-oh-swell) + (boolval of sco-so-well)
 
@@ -89,7 +92,7 @@ hubregion is a region. firstdir of hubregion is up. spoontable of hubregion is t
 
 gonorth is a region. firstdir of gonorth is north. spoontable of gonorth is table of north spoke spoonerisms. descrip of gonorth is "prevent influx of monsters over a dark bridge (north)".
 
-gosouth is a region. firstdir of gosouth is south. spoontable of gosouth is table of south spoke spoonerisms. descrip of gosouth is "defeat big bad meanie on a language technicaity in the boss fight (south)".
+gosouth is a region. firstdir of gosouth is south. spoontable of gosouth is table of south spoke spoonerisms. descrip of gosouth is "defeat big bad meanie on a language technicality in the boss fight (south)".
 
 goeast is a region. firstdir of goeast is east. spoontable of goeast is table of east spoke spoonerisms. descrip of goeast is "defeat someone who will not attack or annoy with words (east)".
 

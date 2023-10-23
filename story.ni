@@ -16,9 +16,19 @@ release along with a website.
 
 release along with the "Parchment" interpreter.
 
-section extra header
+section general headers
 
 include Trivial Niceties by Andrew Schultz.
+
+include Punctuation Stripper by Andrew Schultz.
+
+include Intro Restore Skip by Andrew Schultz.
+
+include Old School Verb Total Carnage by Andrew Schultz.
+
+include Bold Final Question Rows by Andrew Schultz.
+
+section game specific
 
 include Roads of Liches Definitions by Andrew Schultz.
 
@@ -30,17 +40,11 @@ include Roads of Liches Tables by Andrew Schultz.
 
 include Roads of Liches Tests by Andrew Schultz.
 
-section temporary
+volume game specific verb and rule zapping
 
 understand the command "say" as something new.
 
 The print final score rule is not listed in for printing the player's obituary.
-
-section minor general modules
-
-include Old School Verb Total Carnage by Andrew Schultz.
-
-include Bold Final Question Rows by Andrew Schultz.
 
 volume starting stuff
 
@@ -57,7 +61,7 @@ volume hub rooms
 
 book ditch park
 
-Ditch Park is a room in hubregion. "[if sco-my-list is false]There is an oppressive lie mist choking you all around[else]The lie mist has dissipated, but it's still not very pleasant here[ditch-park-go][end if].".
+Ditch Park is a room in hubregion. "[if sco-my-list is false]There is an oppressive lie mist choking you all around. You don't trust yourself to find your way until it's lifted, but how?[else]The lie mist has dissipated, but it's still not very pleasant here[ditch-park-go].[end if]".
 
 to say ditch-park-go:
 	say ". You [if number of viable directions > 0]can go [list of viable directions][else]can't seem to go anywhere. There's a puzzle here[end if]";
@@ -90,7 +94,7 @@ report taking inventory when my list is not moot:
 	if nsr is 0:
 		say "You haven't found any mauled scraps yet.";
 	else:
-		say "You have also found [nsr] mauled scrap[if nsr > 1]s[end if].";
+		say "You have also found [nsr in words] mauled scrap[if nsr > 1]s[end if].";
 
 check examining my list:
 	say "Your list has a few tasks that will help you get mauled scraps that will make a scrawled map.";
@@ -102,6 +106,9 @@ check examining my list:
 chapter cheat trunk
 
 the cheat trunk is a thing. "A cheat trunk has appeared from the depths of the lie mist.". description is "You [if sco-treat-chunk is true]got a glimpse when it opened the first time, and there are a lot of treat chunks in there[else]can't really see what's in the cheat trunk, but you might be able to guess what's inside it[end if]."
+
+check opening cheat trunk: say "No need to open or close it." instead;
+check closing cheat trunk: say "No need to open or close it." instead;
 
 chapter treat chunk
 
@@ -136,6 +143,7 @@ check eating treat chunk:
 	abide by the cheatfind rule for table of item spoonerisms;
 	say "There's nothing you can do here now.";
 	now verb-dont-print is false;
+	the rule succeeds;
 
 volume north hub
 
@@ -237,15 +245,15 @@ Painful Garden is south of Ditch Park. It is in gosouth.
 
 book Deal Room
 
-Real Doom is a room in gosouth. It is south of Painful Garden. printed name is "[if sco-deal-room is false]Deal Room[else]Real Doom[end if]".
+Real Doom is a room in gosouth. It is south of Painful Garden. printed name is "[if sco-deal-room is true]Deal Room[else]Real Doom[end if]". "[if sco-deal-room is false]Only back north[else]North, west and east[end if]."
 
 book Dutiful Bawlers
 
-Dutiful Bawlers is a room in gosouth. It is east of Real Doom.
+Dutiful Bawlers is a room in gosouth. It is east of Real Doom. "Bend south and west."
 
 chapter beautiful dollars
 
-the beautiful dollars are a thing.
+the beautiful dollars are a plural-named thing.
 
 book Violence Senders
 
@@ -262,11 +270,11 @@ after printing the locale description when player is in violence senders (this i
 
 chapter silence vendors
 
-the silence vendors are people.
+the silence vendors are plural-named people. "Silence vendors stand here, offering no enthusiastic sales pitch."
 
 book Scraped Shoals
 
-Scraped Shoals is a room in gosouth. It is south of Dutiful Bawlers. "Bend south and west.".
+Scraped Shoals is a room in gosouth. It is south of Dutiful Bawlers. "Bend north and west.".
 
 chapter shaped scrolls
 
@@ -278,7 +286,7 @@ Hater Graph is a room in gosouth. It is south of Violence Senders.  "Bend north 
 
 book Testing Jeers Jesting Tears
 
-Testing Jeers Jesting Tears is a room in gosouth. It is east of Hater Graph. It is west of Scraped Shoals. It is oneway. "[if sco-muppet-pastor is false]This is a sandy area. A large puppet master stands in the middle, gloating they are totally unchangeable, and if they were, they couldn't be changed into something fuzzy and lovable. You won't be getting past them. You can see clearly to [the last-dir], but you probably can only go back [last-dir][else]There's nothing stopping you from exiting east or west[end if]."
+Testing Jeers Jesting Tears is a room in gosouth. It is east of Hater Graph. It is west of Scraped Shoals. It is oneway. "[if sco-muppet-pastor is false]This is a sandy area. A large puppet master stands in the middle, gloating they are totally unchangeable, and if they were, they couldn't be changed into something fuzzy and lovable. You won't be getting past them. You can see clearly to [the last-dir], but you probably can only go back [opposite of last-dir][else]There's nothing stopping you from exiting east or west[end if]."
 
 chapter puppet master
 
@@ -288,7 +296,7 @@ volume east hub
 
 book fang duels
 
-Fang Duels is a room in goeast. it is east of Ditch Park.
+Fang Duels is a room in goeast. it is east of Ditch Park. description is "[if sco-dang-fools is false]Only way back is west[else]With the fighting gone you see passages north and south as well as back west[end if]."
 
 check going in fang duels when sco-dang-fools is false:
 	if noun is rejectable, say "No way to push through those fights." instead;
@@ -405,6 +413,7 @@ after printing the locale description when player is in feeling harm:
 	continue the action;
 
 after printing the locale description when creep-chase is true:
+	if creep is not in the location of the player:
 		say "The sheddable creep follows you from [location of sheddable creep].";
 		move sheddable creep to location of player;
 		now creep-catch is false;
@@ -615,15 +624,26 @@ book thinking
 
 the block thinking rule is not listed in any rulebook.
 
+to say here-in of (rm - a room):
+	if player is in rm:
+		say "here";
+	else:
+		say "in [rm]"
+
 check thinking:
 	let got-something be false;
-	repeat through spoontable of mrlp:
+	spoon-region mrlp;
+	repeat with rg running through regions:
+		spoon-region mrlp;
+
+to spoon-region (rg - a region):
+	repeat through spoontable of rg:
 		if idid entry is false and think-cue entry is true:
 			now got-something is true;
 			if there is a think-advice entry:
 				say "[think-advice entry]";
 			else:
-				say "You tried [b][w1 entry in upper case] [w2 entry in upper case][r][if there is a best-room entry] in [best-room entry][end if], but it didn't quite work out. Maybe later.";
+				say "You tried [b][w1 entry in upper case] [w2 entry in upper case][r][if there is a best-room entry] [here-in of best-room entry][end if], but it didn't quite work out. Maybe later.";
 	if got-something is false:
 		say "There's nothing you could do later.";
 	the rule succeeds;

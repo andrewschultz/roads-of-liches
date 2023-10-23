@@ -47,7 +47,7 @@ a spoonerism rule (this is the pre-eight-strays rule):
 
 this is the post-eight-strays rule:
 	now sco-eight-strays is true;
-	say "The straight A's change into eight strays, who are happy in the healing farm. You pet them all a bit. You hope you did this for them and not just to gain passage east of Preening School";
+	say "The straight A's change into eight strays, who are happy in the healing farm. You pet them all a bit. You hope you did this for them and not just to gain passage east of Preening School!";
 	move strays to feeling harm;
 	moot straight as;
 
@@ -232,7 +232,7 @@ a spoonerism rule (this is the pre-keen-lamp rule):
 
 this is the post-keen-lamp rule:
 	now sco-keen-lamp is true;
-	say "You search the camp with an idea of what to find. And a lamp turns up! A surprisingly nice one! You feel great, until you wonder if this is proof manifesting actually works for far worse people than yourself as well";
+	say "You search the camp with an idea of what to find. And a lamp turns up! A surprisingly nice one! You feel great, until you wonder if this is proof manifesting actually works for far worse people than yourself as well.";
 	now player has keen lamp;
 	process-oil-lamp;
 
@@ -384,7 +384,7 @@ a spoonerism rule (this is the pre-beautiful-dollars rule):
 
 this is the post-beautiful-dollars rule:
 	now sco-beautiful-dollars is true;
-	say "Oh, man! You give minimal consolatin, and the bawlers hand the dollars over to you ... not that money buys happiness these days, anyway!";
+	say "Oh, man! You give minimal consolation, and the bawlers hand the dollars over to you ... not that money buys happiness these days, anyway!";
 	now player has dollars;
 
 section violence senders scoring
@@ -438,7 +438,7 @@ section testing jeers scoring
 a spoonerism rule (this is the pre-muppet-pastor rule):
 	if player is not in testing jeers and puppet master is not touchable, unavailable;
 	if player does not have scrolls:
-		vcp "The puppet master smacks down your feeble spoonerism/portmanteau combo try. Obviously, it's not within the rules! And yet, perhaps, with the right documentation, you could get past all this.";
+		vcp "The puppet master smacks down your feeble spoonerism/portmanteau combo try. Obviously, it's not within the rules! Why, it can't be![paragraph break]And yet, perhaps, with the right documentation, you could flim-flam your way past this semantic barrier.";
 		not-yet;
 	ready;
 
@@ -519,7 +519,7 @@ a spoonerism rule (this is the pre-cool-tavern rule):
 
 this is the post-cool-tavern rule:
 	now sco-cool-tavern is true;
-	say "You focus and blink, and the cavern changes[one of][or] back to[stopping] a tavern.";
+	say "You focus and blink, and the cavern changes[one of][or] back[stopping] to a tavern.";
 	say "[if ruddy mensch is off-stage]And someone is here! They introduce themselves, apologetically, as a ruddy mensch[else]Your friend the ruddy mensch is waiting[end if].";
 	if player has muddy wrench:
 		moot muddy wrench;
@@ -635,7 +635,7 @@ a spoonerism rule (this is the pre-slight-nudge rule):
 
 this is the post-slight-nudge rule:
 	now sco-slight-nudge is true;
-	say "You look around, hoping for a clue, and you find it. You scrap your foot along the path, and some parts are less icky than others.";
+	say "You look around, hoping for a clue, and you find it. You scrape your foot along the path, and some parts are less icky than others. Specifically, ways north and south look okay.";
 
 section blue tombs scoring
 
@@ -731,6 +731,9 @@ a spoonerism rule (this is the pre-zap-true rule):
 	if sco-zap-true is true:
 		vcal "You already released animals from the trap zoo!";
 		already-done;
+	if zoo-score is 0:
+		vcp "You have nothing magic that would help you zap anything.";
+		not-yet;
 	ready;
 
 this is the post-zap-true rule:
@@ -744,8 +747,8 @@ book endgame
 
 table of endgame spoonerisms
 w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
-"oh"	"swell"	--	--	false	true	true	false	woe cell	pre-oh-swell rule	post-oh-swell rule	--	--
 "so"	"well"	--	--	false	true	true	false	woe cell	pre-so-well rule	post-so-well rule	--	--
+"oh"	"swell"	--	--	false	true	true	false	woe cell	pre-oh-swell rule	post-oh-swell rule	--	--
 "revolving"	"door"	--	--	false	true	true	false	wayfair cell	pre-revolving-door rule	post-revolving-door rule	--	--
 "say"	"farewell"	--	--	false	true	true	false	wayfair cell	pre-say-farewell rule	post-say-farewell rule	--	--
 "rain"	"bow"	--	--	false	true	true	false	bane row	pre-rain-bow rule	post-rain-bow rule	"rainbow"	--
