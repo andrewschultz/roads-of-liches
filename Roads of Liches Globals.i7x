@@ -165,6 +165,8 @@ sco-clear-name is a truth state that varies.
 
 sco-thickening-suds is a truth state that varies.
 
+sco-riving-drain is a truth state that varies.
+
 book game states
 
 pile-status is a number that varies.

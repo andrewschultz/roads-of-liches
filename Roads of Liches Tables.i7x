@@ -345,7 +345,8 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "silence"	"vendors"	--	--	false	true	true	false	violence senders	pre-silence-vendors rule	post-silence-vendors rule	--	--
 "greater"	"half"	--	--	false	true	true	false	hater graph	pre-greater-half rule	post-greater-half rule	--	--
 "shaped"	"scrolls"	--	--	false	true	true	false	scraped shoals	pre-shaped-scrolls rule	post-shaped-scrolls rule	--	--
-"muppet"	"pastor"	--	--	false	true	true	false	testing jeers	pre-muppet-pastor rule	post-muppet-pastor rule	--	--
+"riving"	"drain"	--	--	false	true	true	false	driving rain	pre-riving-drain rule	post-riving-drain rule	--	--
+"muppet"	"pastor"	--	--	false	true	true	false	driving rain	pre-muppet-pastor rule	post-muppet-pastor rule	--	--
 
 section painful garden scoring
 
@@ -433,10 +434,21 @@ this is the post-shaped-scrolls rule:
 	say "You look around the scraped shoals. A lot of scrolls are hidden, but only one fits with the greater half.";
 	now player has shaped scrolls;
 
-section testing jeers scoring
+section driving rain scoring
+
+a spoonerism rule (this is the pre-riving-drain rule):
+	if player is not in driving rain, unavailable;
+	if sco-riving-drain is true:
+		vcal "The riving drain cannot rive further.";
+		already-done;
+	ready;
+
+this is the post-riving-drain rule:
+	now sco-riving-drain is true;
+	say "The driving rain lets up a bit, revealing a riving drain that may or may not always have been there.[paragraph break]Either way, it's nice to have a break in the weather! What isn't so nice is the puppet master that rises from the drain";
 
 a spoonerism rule (this is the pre-muppet-pastor rule):
-	if player is not in testing jeers and puppet master is not touchable, unavailable;
+	if player is not in driving rain and puppet master is not touchable, unavailable;
 	if player does not have scrolls:
 		vcp "The puppet master smacks down your feeble spoonerism/portmanteau combo try. Obviously, it's not within the rules! Why, it can't be![paragraph break]And yet, perhaps, with the right documentation, you could flim-flam your way past this semantic barrier.";
 		not-yet;
@@ -444,9 +456,8 @@ a spoonerism rule (this is the pre-muppet-pastor rule):
 
 this is the post-muppet-pastor rule:
 	now sco-muppet-pastor is true;
-	say "The puppet master wags their finger at your portmanteau-rhyme, but you've come prepared with evidence why this is okay, despite seeming problems. There's a big argument, but thanfully, you studied the scrolls, and eventually the puppet master leaves, defeated by your impressive arguments. Or maybe tired of the whole ordeal.";
+	say "The puppet master wags their finger at your portmanteau-rhyme, but you've come prepared with evidence why this is okay, despite seeming problems. There's a big argument, but thankfully, you studied the scrolls, and eventually the puppet master lashes out. In a final futile gesture, the puppet master grabs at your scrolls, rips them in half and ... out falls a mauled scrap![paragraph break]The argument continues, but since you read the scrolls so dutifully, you fight back effectively. The puppet master slinks away, defeated by your impressive arguments. Or maybe tired of the whole ordeal.";
 	moot puppet master;
-	now Jeers is not oneway;
 	solverg;
 
 book east spoke
@@ -547,7 +558,7 @@ a spoonerism rule (this is the pre-muddy-wrench rule):
 	if player is not in tool cavern, unavailable;
 	if sco-cool-tavern is false, unavailable; [don't show this early]
 	if cavern-is-tavern is true:
-		vcal "Not (quite) here! Where might a muddy wrench be?";
+		vcp "Not (quite) here! Where might a muddy wrench be?";
 		not-yet;
 	if sco-muddy-wrench is true:
 		vcal "You already got the muddy wrench!";

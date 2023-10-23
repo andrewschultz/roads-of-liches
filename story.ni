@@ -284,13 +284,13 @@ book Violence Senders
 
 Hater Graph is a room in gosouth. It is south of Violence Senders.  "Bend north and east. Hoo boy! A hater graph is here. Statistics can be harsh and heartless, but this is something else."
 
-book Testing Jeers Jesting Tears
+book Driving Rain
 
-Testing Jeers Jesting Tears is a room in gosouth. It is east of Hater Graph. It is west of Scraped Shoals. It is oneway. "[if sco-muppet-pastor is false]This is a sandy area. A large puppet master stands in the middle, gloating they are totally unchangeable, and if they were, they couldn't be changed into something fuzzy and lovable. You won't be getting past them. You can see clearly to [the last-dir], but you probably can only go back [opposite of last-dir][else]There's nothing stopping you from exiting east or west[end if]."
+Driving Rain is a room in gosouth. It is east of Hater Graph. It is west of Scraped Shoals. It is oneway. "[if sco-riving-drain is false]Ugh! With all this driving rain, you can't see clearly. As-is, you can only play it safe and go back [last-dir][else]A riving drain cuts north-south through the center of this plain, which means you're not making it [opposite of last-dir]. You'll just have to go back [last-dir][end if]". printed name is "[if sco-riving-drain is true]Riving Drain[else]Driving Rain[end if]".
 
 chapter puppet master
 
-The puppet master is a person in jesting tears. "The puppet master strides about, laughing wickedly."
+The puppet master is a person. "A large puppet master stands by the riving drain, gloating they are totally unchangeable, and if they were, they couldn't be changed into something fuzzy and lovable. You won't be getting past them."
 
 volume east hub
 
