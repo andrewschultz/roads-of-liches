@@ -43,7 +43,7 @@
 			<dock index="0" id="14" port="n" />
 			<dock index="1" id="16" port="s" />
 		</line>
-		<room id="18" name="Fear Bridge" subtitle="" x="-128" y="-448" w="96" h="64" region="North Hub" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="18" name="Fear Bridge" subtitle="" x="-128" y="-448" w="96" h="64" region="North Hub" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="Right" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="19" name="" description="">
 			<dock index="0" id="16" port="e" />
 			<dock index="1" id="18" port="w" />
@@ -67,7 +67,7 @@
 			<dock index="0" id="4" port="w" />
 			<dock index="1" id="25" port="e" />
 		</line>
-		<room id="27" name="Trap Zoo" subtitle="" x="-448" y="-64" w="96" h="64" region="West Hub" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="27" name="Trap Zoo" subtitle="" x="-448" y="-64" w="96" h="64" region="West Hub" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="28" name="" description="">
 			<dock index="0" id="25" port="s" />
 			<dock index="1" id="27" port="n" />
@@ -101,7 +101,7 @@
 			<dock index="0" id="36" port="s" />
 			<dock index="1" id="38" port="n" />
 		</line>
-		<room id="40" name="Jesting Tears Testing Jeers" subtitle="" x="-128" y="320" w="96" h="64" region="South Hub" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="40" name="Driving Rain" subtitle="" x="-128" y="320" w="96" h="64" region="South Hub" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="Right" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="41" name="" description="">
 			<dock index="0" id="38" port="e" />
 			<dock index="1" id="40" port="w" />
@@ -130,7 +130,7 @@
 			<dock index="0" id="47" port="e" />
 			<dock index="1" id="49" port="w" />
 		</line>
-		<room id="51" name="Crazy Leap" subtitle="" x="192" y="-64" w="96" h="64" region="East Hub" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="51" name="Tricky Pile" subtitle="" x="192" y="-64" w="96" h="64" region="East Hub" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="#FFFFFF" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="52" name="" description="" style="dashed">
 			<dock index="0" id="49" port="s" />
 			<dock index="1" id="51" port="n" />
