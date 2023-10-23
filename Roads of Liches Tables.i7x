@@ -749,24 +749,13 @@ table of endgame spoonerisms
 w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "so"	"well"	--	--	false	true	true	false	woe cell	pre-so-well rule	post-so-well rule	--	--
 "oh"	"swell"	--	--	false	true	true	false	woe cell	pre-oh-swell rule	post-oh-swell rule	--	--
+"thickening"	"suds"	--	--	false	true	true	false	woe cell	pre-thickening-suds rule	post-thickening-suds rule	--	--
 "revolving"	"door"	--	--	false	true	true	false	wayfair cell	pre-revolving-door rule	post-revolving-door rule	--	--
 "say"	"farewell"	--	--	false	true	true	false	wayfair cell	pre-say-farewell rule	post-say-farewell rule	--	--
 "rain"	"bow"	--	--	false	true	true	false	bane row	pre-rain-bow rule	post-rain-bow rule	"rainbow"	--
 "clear"	"name"	--	--	false	true	true	false	near my claim	pre-clear-name rule	post-clear-name rule	"clear my name"	--
 
 section woe cell scoring
-
-a spoonerism rule (this is the pre-oh-swell rule):
-	if player is not in woe cell, unavailable;
-	if sco-oh-swell is true:
-		vcal "You already showed sarcastic disgust!";
-		already-done;
-	ready;
-
-this is the post-oh-swell rule:
-	now sco-oh-swell is true;
-	say "Hmmph. You complain to yourself. Does it have to end like this? No. It does not.";
-	follow the woe-cell-progress rule;
 
 a spoonerism rule (this is the pre-so-well rule):
 	if player is not in woe cell, unavailable;
@@ -778,14 +767,30 @@ a spoonerism rule (this is the pre-so-well rule):
 this is the post-so-well rule:
 	now sco-so-well is true;
 	say "You step back with general bemusement. It's therapeutic.";
-	follow the woe-cell-progress rule;
 
-this is the woe-cell-progress rule:
-	if woe-cell-score is 1:
-		say "That's a good start, but you haven't exhausted the possibilities.";
-	else:
-		say "After complaining to yourself enough, you realize the prison was in your mind, yada yada. Why, you can just walk out if you want to. You always could![paragraph break]And walk away you do, until you are again waylaid, this time in a much stricter cell. One with annoying distracting noise. Well, that stinks.";
-		move player to wayfair cell;
+a spoonerism rule (this is the pre-oh-swell rule):
+	if player is not in woe cell, unavailable;
+	if sco-so-well is false:
+		say "You can't swing that yet in your current state of mind.";
+		not-yet;
+	if sco-oh-swell is true:
+		vcal "You already showed sarcastic disgust!";
+		already-done;
+	ready;
+
+this is the post-oh-swell rule:
+	now sco-oh-swell is true;
+	say "Hmmph. You complain to yourself. Does it have to end like this? No. It does not.[paragraph break]As you complain more, you find something more to complain about: sickening thuds!";
+	move sickening thuds to woe cell;
+
+a spoonerism rule (this is the pre-thickening-suds rule):
+	if sickening thuds are not touchable, unavailable;
+	ready;
+
+this is the post-thickening-suds rule:
+	now sco-thickening-suds is true;
+	say "The sickening thuds which don't stop become thickening suds which keep pouring in. It's annoying to keep popping them, but you find yourself able to reach a bit higher as they pop and leave behind solid residue. Eventually you are able to climb out!";
+	move player to wayfair cell;
 
 section wayfair cell scoring
 
@@ -798,8 +803,7 @@ a spoonerism rule (this is the pre-revolving-door rule):
 
 this is the post-revolving-door rule:
 	now sco-revolving-door is true;
-	say "A revolving door appears! Yay, a way out! But it seems stuck.";
-
+	say "A revolving door appears! Yay, a way out! But it seems stuck if you just push on it. Perhaps you need to show, definitively, that you really want to leave.";
 
 a spoonerism rule (this is the pre-say-farewell rule):
 	if location of player is not wayfair cell, unavailable;
@@ -810,7 +814,7 @@ a spoonerism rule (this is the pre-say-farewell rule):
 
 this is the post-say-farewell rule:
 	now sco-say-farewell is true;
-	say "And just like that, you realize you shouldn't be bound by your own chains! It's time to move on. And you do. To ... somewhere even drearier. Well, it is Halloween. What did you expect?";
+	say "And just like that, you realize you shouldn't be bound by your own chains! You test the revolving door, and it budges. It's time to move on. And so you walk through the door. To ... somewhere even drearier. Well, it is Halloween. What did you expect?";
 	move player to bane row;
 
 section bane row scoring

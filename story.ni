@@ -305,12 +305,14 @@ book Screening Pool
 
 Screening Pool is a room in goeast. it is north of Fang Duels. "A bend here, south and east."
 
-check going east in Screening Pool when sco-eight-strays is false:
-	say "You feel an animal unrest pushing you back." instead;
+check going east in Screening Pool:
+	if sco-preening-school is false, say "The screening pool gets deeper as you walk out east some more. There's no way to swim through it." instead;
+	if sco-eight-strays is false,  say "You try to go east, but suddenly the straight A's start weighing very heavily on you. You almost feel guilty to have them on your person, as if you were showing off. You can't just go dropping them, but how to get rid of them?" instead;
+	if tool cavern is unvisited, say "You step gingerly easy, worried the straight A's rubbed off on you. But you are not impeded.";
 
 chapter straight as
 
-there is a thing called straight as. printed name is "straight a's". description is "You're not sure what you can do with good grades, if anything.".
+there is a thing called straight as. printed name is "straight a's". description of straight as is "You're not sure what you can do with good grades, if anything.".
 
 chapter eight strays
 
@@ -485,9 +487,15 @@ volume endgame
 
 book woe cell
 
-Woe Cell is a room in endgame. "You feel so woeful here! Perhaps if you get in touch with your woe properly, you will find a way out."
+Woe Cell is a room in endgame. "You feel so woeful here! Perhaps if you get in touch with your woe properly, you will figure out a way to climb way up, where it seems like there's an exit. There's not much else to do here.". printed name is "[if sco-so-well is false]Woe Cell[else if sco-oh-swell is false]So, Well...[else]Oh, Swell...[end if]".
 
-check going in woe cell: say "You see no exits. Navel-gazing's the way here.";
+check going in woe cell: say "You see an exit way up, but you can't make it on your own." instead;
+
+every turn when player is in woe cell and sickening thuds are in woe cell: say "Those sickening thuds just won't let up!"
+
+chapter sickening thuds
+
+the sickening thuds are scenery. "Thinking about the thuds too much gives a headache. How can you get rid of them or change them?"
 
 book wayfair cell
 
@@ -629,6 +637,8 @@ to say here-in of (rm - a room):
 		say "here";
 	else:
 		say "in [rm]"
+
+got-something is a truth state that varies.
 
 check thinking:
 	let got-something be false;
