@@ -877,18 +877,23 @@ volume big picture stuff
 the check forks rule is listed first in the for printing a parser error rulebook.
 
 rule for printing a parser error (this is the check forks rule):
+	now partial-row is 0;
 	abide by the main-spoonerism-checker rule for table of item spoonerisms;
 	if debug-state is true, say "DEBUG INFO [mrlp]: [spoontable of mrlp], [firstdir of mrlp].";
 	if firstdir of mrlp is not inside:
 		abide by the main-spoonerism-checker rule for spoontable of mrlp;
+	if partial-row > 0:
+		say "Hmm. You are on the right track, there.";
+		the rule succeeds;
 	continue the action;
 
 volume rule reorg
 
 the wordguess rules are a table name based rulebook.
 
+partial-row is a number that varies.
+
 a wordguess rule for a table name (called tn) (this is the main-spoonerism-checker rule):
-	let partial-row be 0;
 	let row-count be 0;
 	repeat through tn:
 		increment row-count;
@@ -935,9 +940,6 @@ a wordguess rule for a table name (called tn) (this is the main-spoonerism-check
 				up-min;
 		follow the score and thinking changes rule;
 		now think-cue entry is false;
-		the rule succeeds;
-	if partial-row > 0:
-		say "Hmm. You are on the right track, there.";
 		the rule succeeds;
 
 Roads of Liches Tables ends here.
