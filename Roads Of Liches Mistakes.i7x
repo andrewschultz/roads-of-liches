@@ -6,6 +6,8 @@ understand "for rest" and "four rest" as a mistake ("No, it's not quite rest you
 
 understand "milky" as a mistake ("No, we need something more substantial, not a description.") when kill me is touchable.
 
+understand "mail tricks" and "male tricks" and "mail trix" and "male trix" as a mistake ("You look around for a silly rabbit to deny the treat chunk to. You find none.")
+
 understand "brain oh" as a mistake ("You wrack your brain for what to do. Something cheery. Anything.") when player is in Bane Row.
 
 Roads Of Liches Mistakes ends here.

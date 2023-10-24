@@ -112,7 +112,14 @@ check closing cheat trunk: say "No need to open or close it." instead;
 
 chapter treat chunk
 
-the treat chunk is scenery. "It doesn't look particularly tasty, but if it helps you figure things out, it's probably best not to worry about that."
+the treat chunk is scenery. "Well, it doesn't look like a super-duper candy bar, but it is tasty and tempting enough. It reminds you of stomachaches you couldn't avoid in Halloweens past when you would gorge yourself on all the good candy, leaving the wack stuff for later."
+
+report examining treat chunk:
+	if chunk-warn is false:
+		say "Can you resist it now? And what is the reward if you do?";
+	else:
+		say "You already ate one. You feel slight vague guilt. But it helped you move forward.";
+	continue the action;
 
 to say first-of-ors of (x - indexed text):
 	replace the regular expression "\|.*" in x with "";
@@ -206,7 +213,7 @@ the pending bowl is a thing.
 
 chapter bending pole
 
-the bending pole is a thing.
+the bending pole is a thing. "It reminds you of what people in a circus hold to balance."
 
 book Lean Camp
 
@@ -214,7 +221,7 @@ Lean Camp is north of Mating Hill. it is in gonorth. "Passages west and south. [
 
 chapter keen lamp
 
-the keen lamp is a thing. "It's nice and shiny and bright [if oil is moot]and lit, too[else]but not lit, yet[end if]."
+the keen lamp is a scenery. "It's nice and shiny and bright [if oil is moot]and lit, too[else]but not lit, yet[end if]."
 
 book Fear Bridge
 
@@ -424,20 +431,26 @@ after printing the locale description when creep-chase is true:
 
 chapter credible sheep
 
-the credible sheep are plural-named people.
+the credible sheep are plural-named people. "Some credible sheep mill around here. They look the part, but they're a bit aggressive.". description is "Looking closer, you expect that their true nature hasn't been revealed."
 
 book Blue Tombs
 
-Blue Tombs is a room in gowest. it is south of Night Sludge. "You can go north or west."
-
-the blocking rose is a thing in Blue Tombs. "A blocking rose menacingly guards the way west."
-
-the murky peony is a thing in Blue Tombs. "A murky peony stands next to the blocking rose."
+Blue Tombs is a room in gowest. it is south of Night Sludge. "[if sco-two-blooms is false]Blue tombs rise up in all directions. More specifically, some block a promising passage west[else]You see a passage west where the blue tombs were[end if]. Also, you can go back north.". printed name is "[if sco-two-blooms is false]Blue Tombs[else]Two Blooms[end if]".
 
 check going west in blue tombs when sco-rocking-blows is false:
-	say "That blocking rose is in the way." instead;
+	say "That blocking rose won't let you by." instead;
 
-the perky meanie is a person.
+chapter blocking rose
+
+the blocking rose is a thing. "A blocking rose menacingly guards the way west for the moment, though[if peony is in tombs], with a murky peony next to it[end if]."
+
+chapter murky peony
+
+the murky peony is scenery. "It seems full of potential misdirected anger."
+
+chapter perky meanie
+
+the perky meanie is a person. "That perky meanie you summoned seems to have made things worse. Seems.". description is "Ugh! Smugness. You don't want to chase them away, and they're probably too big for you."
 
 book Tumorous Home
 

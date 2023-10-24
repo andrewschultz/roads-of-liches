@@ -10,7 +10,7 @@ test st with "cleared woes/treat chunk/my list/start hopping/n/speak mind/n/fore
 
 test n with "n/n/w/mill key/rail path/e/e/hating mill/bending pole/n/keen lamp/s/w/w/n/some oil/e/shabby grues/w/s/e/s/s/pitch dark/n/n/e/n/w/beer fridge/e/s/w/s/s".
 
-test w with "w/s/perky meanie/rocking blows/w/pottery wand/e/n/n/healing farm/sheddable creep/s/e/e/s/lazy creep/n/w/w/n/w/humorous tome/s/zap true/n/e/s/e".
+test w with "w/s/two blooms/perky meanie/rocking blows/w/pottery wand/e/n/n/healing farm/sheddable creep/s/e/e/s/lazy creep/n/w/w/n/w/humorous tome/s/zap true/n/e/s/e".
 
 test s with "s/s/e/beautiful dollars/w/w/silence vendors/s/greater half/n/e/e/s/shaped scrolls/w/riving drain/muppet pastor/e/n/w/n/n".
 

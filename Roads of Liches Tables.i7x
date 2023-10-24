@@ -332,6 +332,9 @@ to solverg:
 		say "Oh no! You're dumped in ...";
 		move player to woe cell;
 		moot my list;
+		if sco-treat-chunk is false:
+			max-down;
+			max-down;
 	else:
 		say "But the scrawled map is incomplete. Still, yay progress.";
 
@@ -627,6 +630,7 @@ book west spoke
 table of west spoke spoonerisms
 w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "slight"	"nudge"	--	--	false	true	true	false	night sludge	pre-slight-nudge rule	post-slight-nudge rule	--	--
+"two"	"blooms"	--	--	false	true	true	false	blue tombs	pre-two-blooms rule	post-two-blooms rule	--	--
 "perky"	"meanie"	--	--	false	true	true	false	blue tombs	pre-perky-meanie rule	post-perky-meanie rule	--	--
 "rocking"	"blows"	--	--	false	true	true	false	blue tombs	pre-rocking-blows rule	post-rocking-blows rule	--	--
 "pottery"	"wand"	--	--	false	true	true	false	watery pond	pre-pottery-wand rule	post-pottery-wand rule	--	--
@@ -634,6 +638,21 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "sheddable"	"creep"	--	--	false	true	true	false	feeling harm	pre-sheddable-creep rule	post-sheddable-creep rule	--	--
 "humorous"	"tome"	--	--	false	true	true	false	tumorous home	pre-humorous-tome rule	post-humorous-tome rule	--	--
 "zap"	"true"	--	--	false	true	true	false	trap zoo	pre-zap-true rule	post-zap-true rule	--	--
+
+section blue tombs scoring
+
+a spoonerism rule (this is the pre-two-blooms rule):
+	if player is not in blue tombs, unavailable;
+	if sco-two-blooms is true:
+		vcal "You already made the tombs crumble!";
+		already-done;
+	ready;
+
+this is the post-two-blooms rule:
+	now sco-two-blooms is true;
+	say "The blue tombs crumble. Two flowers appear in their place. Huge, menacing flowers. A blocking rose and a murky peony. So going west still ain't happening. Yet.";
+	move murky peony to blue tombs;
+	move blocking rose to blue tombs;
 
 section night sludge scoring
 
@@ -863,13 +882,16 @@ a spoonerism rule (this is the pre-clear-name rule):
 this is the post-clear-name rule:
 	now sco-clear-name is true;
 	say "You ignore the nonsense in your head. Even if you aren't a perfect person, dadgummit, you signed up for a treasure hunt, and treasure, you found!";
-	if chunk-warn is false:
+	if chunk-warn is false and player has treat chunk:
+		say "[line break]And not only that, but you resisted the temptation to eat the treat chunk you found! That merits a bonus point!";
 		up-min;
 		follow the score and thinking changes rule;
-	end the story;
+	if sco-cleared-woes is false:
+		max-down;
 	if cur-bonus is max-bonus:
 		choose row with final response rule of show-misses rule in the Table of Final Question Options;
 		blank out the whole row; [don't let the player see MISSED if they got everything]
+	end the story finally;
 	follow the shutdown rules;
 
 volume big picture stuff
