@@ -61,7 +61,9 @@ volume hub rooms
 
 book ditch park
 
-Ditch Park is a room in hubregion. "[if sco-my-list is false]There is an oppressive lie mist choking you all around. You don't trust yourself to find your way until it's lifted, but how?[else]The lie mist has dissipated, but it's still not very pleasant here[ditch-park-go].[end if]".
+Ditch Park is a room in hubregion. "[if sco-my-list is false]There is an oppressive lie mist choking you all around. You don't trust yourself to find your way until it's lifted, but how?[else]The lie mist has dissipated, but it's still not very pleasant here[ditch-park-go][lamp-note].[end if]".
+
+to say lamp-note: say "[if sco-pitch-dark is true]. The keen lamp you left hanging from the bending pole is keeping things lit nicely[end if]"
 
 to say ditch-park-go:
 	say ". You [if number of viable directions > 0]can go [list of viable directions][else]can't seem to go anywhere. There's a puzzle here[end if]";

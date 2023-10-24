@@ -83,8 +83,10 @@ a spoonerism rule (this is the pre-pitch-dark rule):
 
 this is the post-pitch-dark rule:
 	now sco-pitch-dark is true;
-	say "You make Ditch Park pitch dark for a moment. You hear the grues getting closer, then you turn the lamp as bright as it will go. There is much screaming, fleeing, and falling into ditches! The grues that did not all run away.";
+	say "You make Ditch Park pitch dark for a moment. You hear the grues getting closer, then you turn the lamp as bright as it will go. There is much screaming, fleeing, and falling into ditches! The grues that did not, all run away.[paragraph break]But this creates a problem! What if the grues come back? You have an idea! You stick the bending pole between two trees, and you notice there's a hook on the lamp. So you hang it from the pole, and voila, a light source! And a clearer inventory, too!";
 	moot shabby grues;
+	move bending pole to ditch park;
+	move lamp to ditch park;
 
 section ditch park scoring
 
@@ -434,7 +436,8 @@ a spoonerism rule (this is the pre-shaped-scrolls rule):
 
 this is the post-shaped-scrolls rule:
 	now sco-shaped-scrolls is true;
-	say "You look around the scraped shoals. A lot of scrolls are hidden, but only one fits with the greater half.";
+	say "You look around the scraped shoals. A lot of scrolls are hidden, but only one fits together with the greater half. Once it does, you read it -- and wow! That's profound.";
+	moot greater half;
 	now player has shaped scrolls;
 
 section driving rain scoring
