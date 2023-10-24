@@ -170,7 +170,7 @@ check going in roar fest when sco-forest is false:
 
 book Pale Wrath
 
-Pale Wrath is west of Roar Fest. it is in gonorth. "You can go north or east here[if sco-mill-key is false]. You also hear something[end if]."
+Pale Wrath is west of Roar Fest. it is in gonorth. "[if sco-rail-path is false]There's a huge chasm to the north[else]You made a rail path north[end if], though you can go back east, too[if sco-mill-key is false]. You also hear something[end if].". printed name is "[if sco-rail-path is true]Rail Path[else]Pale Wrath[end if]"
 
 chapter kill me
 
@@ -181,7 +181,7 @@ check listening when player is in Pale Wrath:
 	say "No more voices." instead;
 
 check going north in pale wrath:
-	if sco-rail-path is false, say "You are pushed back by sheer hatred." instead;
+	if sco-rail-path is false, say "You'd fall to your death." instead;
 	if sco-bending-pole is false, say "You are unable to keep your balance." instead;
 
 chapter mill key
@@ -249,7 +249,7 @@ volume south hub
 
 book Painful Garden
 
-Painful Garden is south of Ditch Park. It is in gosouth.
+Painful Garden is south of Ditch Park. It is in gosouth. "[if sco-gainful-pardon is false]You feel bad about wanting to go further south. Plus, it looks really thorny that way. You remember trespassing in flower beds when you were five. The memory hurts[else]You feel up to going south now that you've forgiven yourself for indiscretions when you were five[end if]. You can also go back north to Ditch Park.". printed name is "[if sco-gainful-pardon is true]Gainful Pardon[else]Painful Garden[end if]".
 
 book Deal Room
 
