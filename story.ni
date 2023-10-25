@@ -771,13 +771,17 @@ definition: a thing (called th) is moot:
 
 gometa is a region.
 
-nary a void is a room in gometa. [once we're done]
+Nary a Void is a room in gometa. "This is where finished items go.". [once we're done]
 
-stride seat is a room in gometa. [temporarily shelved]
+Stride Seat is a room in gometa. "This is a bullpen for NPCs that can still chase you around". [temporarily shelved]
 
 volume mapping stuff
 
-index map with wayfair cell mapped east of Dutiful Bawlers.
+index map with woe cell mapped west of um soil.
+index map with wayfair cell mapped south of woe cell.
 
-index map with nary a void mapped north of tumorous home.
-index map with stride seat mapped north of nary a void.
+index map with bane row mapped south of watery pond.
+index map with near my claim mapped south of bane row.
+
+index map with nary a void mapped east of lean camp.
+index map with stride seat mapped south of nary a void.
