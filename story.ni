@@ -403,6 +403,7 @@ this is the mime-map rule:
 	if mime-trial is true and mime-tile is true:
 		say "The mime slumps over. They've taken too much! As they fall over, a mauled scrap flies up from their hands. You take it. They express astonishment and run off, fake-crying. But you swear they winked at you as they looked back.[paragraph break]Hooray for a new scrap, but you officially feel emotionally blackmailed into putting up with mimes much longer than you thought you had to, for the next few years.";
 		solverg;
+		now tricky pile is oneway;
 	else:
 		say "The mime raises one finger. There is still more they can do to the north!";
 	the rule succeeds;

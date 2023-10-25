@@ -6,6 +6,9 @@ Version 1/221116 of Roads of Liches Tables by Andrew Schultz begins here.
 
 volume stuff that may go to core
 
+to bothways:
+	now location of player is not oneway;
+
 definition: a thing (called th) is fungible:
 	if th is in location of player, yes;
 	no;
@@ -262,39 +265,6 @@ this is the post-forest rule:
 	now sco-forest is true;
 	say "The roar fest quiets a bit. It opens up a passage to a dark forest, which is slightly less intimidating.";
 
-[this is the pre-howl-farm rule:
-	if sco-howl-farm is true:
-		vcal "You already opened passage to the howl farm.";
-		already-done;
-	ready;
-
-this is the post-howl-farm rule:
-	say "You feel a howl farm off to the side, which is creepy, but it's not physically dangerous.";
-	now howl farm is mapped west of ditch park;
-	now ditch park is mapped east of howl farm;
-	now sco-howl-farm is true;]
-
-a spoonerism rule (this is the pre-keep-dry rule):
-	if deep cry is not fungible, unavailable;
-	if sco-keep-dry is true:
-		vcal "You already kept dry.";
-		already-done;
-	ready;
-
-this is the post-keep-dry rule:
-	say "You keep dry.";
-	now sco-keep-dry is true;
-
-a spoonerism rule (this is the pre-creep-die rule):
-	if deep cry is not fungible, unavailable;
-	if sco-keep-dry is false:
-		vcal "You don't feel the confidence to say that. You need a middle or medium step before that.";
-		already-done;
-	ready;
-
-this is the post-creep-die rule:
-	now sco-creep-die is true;
-
 section fear bridge scoring
 
 a spoonerism rule (this is the pre-shabby-grues rule):
@@ -327,6 +297,7 @@ this is the post-beer-fridge rule:
 
 to solverg:
 	now mrlp is solved;
+	bothways;
 	say "You find a[one of][or]nother[stopping] mauled scrap.";
 	if nsr is 4:
 		say "And this time, they all fit together to find a way down the roads of liches! But you are captured...";
@@ -492,7 +463,7 @@ a spoonerism rule (this is the pre-dang-fools rule):
 
 this is the post-dang-fools rule:
 	now sco-dang-fools is true;
-	say "You realize aggression just wears people out. You express this brilliant philosophical belief eloquently. Either the entities involved are too intimidated by your intelligence, or they find you too wussy to bother with. But they are gone, and that's what matters![paragraph break]You're a bit bummed you are in a text adventure and not a TV show, so you can't give kids one to grow on, but hey.";
+	say "You realize aggression just wears people out. You express this brilliant philosophical belief eloquently. Either the entities involved are too intimidated by your intelligence, or they find you too wussy to bother with, or they just want to get away from your blather and continue fighting in peace.[paragraph break]But enough of them pulled back so you can now go north and south, and that's what really matters![paragraph break]You're a bit bummed you are in a text adventure and not a TV show, so you can't give kids one to grow on, but you still feel wise, and stuff.";
 
 section crazy leap scoring
 
@@ -772,7 +743,7 @@ a spoonerism rule (this is the pre-zap-true rule):
 
 this is the post-zap-true rule:
 	now sco-zap-true is true;
-	say "With your pottery wand and weak spell you now thoroughly understand, you think you can release the trap zoo. You cast the spell, wait and ... there you go!";
+	say "With your pottery wand and weak spell you now thoroughly understand, you think you can release the trap zoo. You cast the spell, wait and ... there you go! The wand and spell both vaporize at the conclusion.";
 	moot pottery wand;
 	moot weak spell;
 	solverg;
@@ -869,7 +840,8 @@ this is the post-speak-mind rule:
 a spoonerism rule (this is the pre-rain-bow rule):
 	if player is not in bane row, unavailable;
 	if sco-speak-mind is false:
-		say "You're too meek-spined at the moment to admit a rainbow would be nice here.";
+		vcp "You're too meek-spined at the moment to admit a rainbow would be nice here.";
+		not-yet;
 	ready;
 
 this is the post-rain-bow rule:
@@ -987,6 +959,39 @@ volume runoff for later (?)
 ["howl"	"farm"	--	--	false	true	true	false	Ditch Park	pre-howl-farm rule	post-howl-farm rule
 "keep"	"dry"	--	--	false	true	true	false	--	pre-keep-dry rule	post-keep-dry rule
 "creep"	"die"	--	--	false	true	true	false	--	pre-creep-die rule	post-creep-die rule]
+
+[this is the pre-howl-farm rule:
+	if sco-howl-farm is true:
+		vcal "You already opened passage to the howl farm.";
+		already-done;
+	ready;
+
+this is the post-howl-farm rule:
+	say "You feel a howl farm off to the side, which is creepy, but it's not physically dangerous.";
+	now howl farm is mapped west of ditch park;
+	now ditch park is mapped east of howl farm;
+	now sco-howl-farm is true;
+
+a spoonerism rule (this is the pre-keep-dry rule):
+	if deep cry is not fungible, unavailable;
+	if sco-keep-dry is true:
+		vcal "You already kept dry.";
+		already-done;
+	ready;
+
+this is the post-keep-dry rule:
+	say "You keep dry.";
+	now sco-keep-dry is true;
+
+a spoonerism rule (this is the pre-creep-die rule):
+	if deep cry is not fungible, unavailable;
+	if sco-keep-dry is false:
+		vcal "You don't feel the confidence to say that. You need a middle or medium step before that.";
+		already-done;
+	ready;
+
+this is the post-creep-die rule:
+	now sco-creep-die is true;]
 
 Roads of Liches Tables ends here.
 
