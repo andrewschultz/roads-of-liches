@@ -628,7 +628,14 @@ check eating: say "Go nosh? No, gosh! [one of](You don't need to eat anything.)[
 
 book taking
 
-check taking (this is the RoL rejection rule): say "You shouldn't need to [b]TAKE[r] anything explicitly in [this-game]. It will be done for you, if you find the right command." instead;
+the RoL rejection rule is listed instead of the can't take scenery rule in the check taking rules.
+
+check taking (this is the RoL rejection rule):
+	if noun is treat chunk:
+		say "[if player has chunk]Grow! Need no greed! (Use what you have, first.)[else]The trunk refills itself.[end if]";
+		continue the action;
+	if noun is pending bowl, say "There's no meal ahead. The bowl doesn't seem useful in its current state." instead;
+	say "You shouldn't need to [b]TAKE[r] anything explicitly in [this-game]. It will be done for you, if you find the right command." instead;
 
 book sleeping
 
