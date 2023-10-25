@@ -313,7 +313,7 @@ the silence vendors are plural-named people. "Silence vendors stand here, offeri
 
 book Scraped Shoals
 
-Scraped Shoals is a room in gosouth. It is south of Dutiful Bawlers. "This shoreline bends from the north to the west. Perhaps it was rich with treasure now, but [if sco-shaped-scrolls is true]you probably got the last of it.[else]not much is likely left. Still, who knows what you'll find if you know what to look for?[end if]".
+Scraped Shoals is a room in gosouth. It is south of Dutiful Bawlers. "This shoreline bends from the north to the west. Perhaps it was rich with treasure once, but now [if sco-shaped-scrolls is true]you probably got the last of it.[else]not much is likely left. Still, who knows what you'll find if you know what to look for?[end if]".
 
 chapter shaped scrolls
 
@@ -321,7 +321,7 @@ some shaped scrolls are a plural-named thing. description is "[if sco-greater-ha
 
 book Violence Senders
 
-Hater Graph is a room in gosouth. It is south of Violence Senders.  "Bend north and east. Hoo boy! A hater graph is here. Statistics can be harsh and heartless, but this is something else."
+Hater Graph is a room in gosouth. It is south of Violence Senders.  "A monstrously large hater graph spans the south and west edges. [if sco-greater-half is false]You've deduced why it's inaccurate, now, so you feel less uncomfortable[else]Hoo boy! Statistics can be harsh and heartless, but this is something else[end if]. You can go north and east."
 
 chapter greater half
 
@@ -346,7 +346,7 @@ check going in fang duels when sco-dang-fools is false:
 
 book Screening Pool
 
-Screening Pool is a room in goeast. it is north of Fang Duels. "A bend here, south and east.". printed name is "[if sco-preening-school is true]Preening School[else]Preening School[end if]".
+Screening Pool is a room in goeast. it is north of Fang Duels. "A bend here, south and east.". printed name is "[if sco-preening-school is true]Preening School[else]Screening Pool[end if]".
 
 check going east in Screening Pool:
 	if sco-preening-school is false, say "The screening pool gets deeper as you walk out east some more. There's no way to swim through it." instead;
@@ -383,7 +383,7 @@ the ruddy mensch is a person. "A ruddy mensch paces around. 'Where is that tool 
 
 book Mass Crime
 
-Mass Crime is a room in goeast. it is east of Crazy Leap. "Bend west and north."
+Mass Crime is a room in goeast. it is east of Crazy Leap. "The path bends west and north here. [if sco-crass-mime is true]Well, okay, you can go east or south, but it's really seedy. You'd reach a bad end[end if]."
 
 check going north when player is in mass crime:
 	if mime is moot, say "You walk north unimpeded, though you doubt you have anything to do there.";
@@ -412,7 +412,7 @@ check going west when player is in mass crime and mime is in mass crime: say "Th
 
 chapter crass mime
 
-the crass mime is a person. "The crass mime dances around here, making slightly tacky gestures.". description is "The mime smiles and waves at you."
+the crass mime is a person. "The crass mime dances around here, making slightly tacky gestures, blocking your way north.". description is "The mime smiles and waves at you."
 
 book Tricky Pile
 
@@ -473,7 +473,7 @@ the credible sheep are plural-named people. "Some credible sheep mill around her
 
 book Blue Tombs
 
-Blue Tombs is a room in gowest. it is south of Night Sludge. "[if sco-two-blooms is false]Blue tombs rise up in all directions. More specifically, some block a promising passage west[else]You see a passage west where the blue tombs were[end if]. Also, you can go back north.". printed name is "[if sco-two-blooms is false]Blue Tombs[else]Two Blooms[end if]".
+Blue Tombs is a room in gowest. it is south of Night Sludge. "[if sco-two-blooms is false]Blue tombs rise up in many directions. More specifically, some block a promising passage west[else]You see a passage west where some blue tombs were[end if]. Also, you can go back north.". printed name is "[if sco-two-blooms is false]Blue Tombs[else]Two Blooms[end if]".
 
 check going west in blue tombs when sco-rocking-blows is false:
 	say "That blocking rose won't let you by." instead;
@@ -500,7 +500,7 @@ the weak spell is a thing. description is "[if sco-speak-well is false]Maybe it'
 
 book Watery Pond
 
-Watery Pond is a room in gowest. it is west of Blue Tombs. "A bend with passages east and north."
+Watery Pond is a room in gowest. it is west of Blue Tombs. "A pond blocks passage all ways both north and west, but it's so nice and clean and non-sludgy, you're grateful it's helping you focus on where you really need to go[if sco-pottery-wand is false]. You wonder, somewhat greedily, if there is anything beneath it for you[end if]."
 
 chapter pottery wand
 
@@ -508,7 +508,7 @@ the pottery wand is a thing. description is "Rather plain looking.  No inscripti
 
 book Trap Zoo
 
-Trap Zoo is a room in gowest. it is south of Tumorous Home. it is north of Watery Pond. Trap Zoo is oneway. "The zoo cuts horizontally. You can only go back [opposite of last-dir], although you see something [last-dir] of the zoo."
+Trap Zoo is a room in gowest. it is south of Tumorous Home. it is north of Watery Pond. Trap Zoo is oneway. "[if sco-zap-true is false]A trap zoo holds animals against their will here, making an east-to-west barrier. You can only go back [opposite of last-dir], although you see a passage [last-dir] of the zoo[else]With the trap zoo opened, you can freely walk north and south here[end if]."
 
 volume unsorted rooms
 
@@ -549,9 +549,13 @@ the sickening thuds are scenery. "Thinking about the thuds too much gives a head
 
 book wayfair cell
 
-Wayfair Cell is a room in endgame. "[if sco-revolving-door is false]Oh no! You feel trapped here! You can see no exits. There's also a constantly devolving roar. Just when you think it's gone, it starts up again[else]There's a revolving door here, but it'd be rude to exit without a proper word[end if]."
+Wayfair Cell is a room in endgame. "[if sco-revolving-door is false]Oh no! Once again, you feel trapped, and there's no way to climb out this time! There's also a constantly devolving roar. Just when you think it's gone, it starts up again[else]There's a revolving door here, but it'd be rude to exit without a proper word[end if]."
 
-the devolving roar is scenery. "It's annoying. It's very cyclical, too."
+check going outside in Wayfair Cell: say "You try to exit the revolving door but end up where you were. Perhaps you need a magic word." instead;
+
+check entering revolving door: try going outside instead;
+
+the devolving roar is scenery in wayfair cell. "It's annoying. It's very cyclical, too."
 
 the revolving door is scenery. "It won't budge! Perhaps you need a word with it."
 
@@ -563,14 +567,14 @@ check entering revolving door: try going north instead;
 
 book Bane Row
 
-Bane Row is a room in endgame. "It's obviously totally hopeless here and nothing can cheer up your day. Right?! Right?"
+Bane Row is a room in endgame. "[if sco-speak-mind is false]It's obviously totally hopeless here and nothing can cheer up your day. Right?! Right?[else]You feel this could be adjacent to somewhere more life-affirming, if you just think for a second.[end if][paragraph break]All normal ways out seem to lead to gloom and doom."
 
 check going in Bane Row:
 	say "You'd need something special and cheery and bright to REALLY get out of here." instead;
 
 book Near My Claim
 
-Near My Claim is a room in endgame. "Oh man! You know you're near the treasure! And yet, you don't feel you deserved it. After all, you destroyed a zoo, tore up a puppet, intimidated some grues, and caused a mime pain. Oh, and that creep chasing you is bummed at the time you made them waste. You feel like a horrible person, someone who doesn't deserve treasure.";
+Near My Claim is a room in endgame. "You must be near the treasure. You can just feel it![paragraph break][if sco-stop-caring is false]Oh, man! You know you're near the treasure! And yet, you don't feel you deserved it. After all, you destroyed a zoo, tore up a puppet, intimidated some grues, and caused a mime pain. Oh, and that creep chasing you is bummed at the time you made them waste. You feel like a horrible person, someone who doesn't deserve treasure[else]You've got silly bad thoughts out of your head, but you have one more procedural thing to do[end if].";
 
 check going in Near My Claim: say "No running from all these serious issues!" instead;
 
