@@ -72,8 +72,6 @@ this is the see-room-desc rule:
 
 volume starting stuff
 
-Jesse Murney is a person. The player is Jesse Murney. description is "You're wearing weird clothes, [if sco-cleared-woes is true]but you no longer feel self-conscious about them[else]and it bugs you more than it should[end if]."
-
 to die: end the story saying "I do die! Ooh!"
 
 when play begins:
@@ -108,11 +106,17 @@ check going when player is in Ditch Park:
 
 every turn when player is in ditch park and sco-my-list is true and sco-start-hopping is false: say "It feels so heart-stopping here. You need a way to move.";
 
+chapter you uh me
+
+Jesse Murney is a person in Ditch Park. The player is Jesse Murney. description is "You, Jesse Murney, are wearing weird clothes, [if sco-cleared-woes is true]but you no longer feel self-conscious about them[else]and it bugs you more than it should[end if]."
+
+chapter lie mist
+
 the lie mist is scenery in Ditch Park. "Ugh! You can't see through it, but it seems to be convincing you it's much thicker than it really is. It makes you feel disorganized, too."
 
 chapter my list
 
-my list is a thing. "It describes the passsages through. You feel a bit more confident and organized just reading it.". printed name of my list is "'my list'".
+my list is a thing. "It describes the passsages through. You feel a bit more confident and organized just reading it.". printed name of my list is "'my list'". description is "Your list has a few tasks that will help you get mauled scraps that will make a scrawled map.".
 
 to decide which number is nsr: decide on number of solved regions;
 
@@ -122,19 +126,20 @@ report taking inventory when my list is not moot:
 	else:
 		say "You have also found [nsr in words] mauled scrap[if nsr > 1]s[end if].";
 
-check examining my list:
-	say "Your list has a few tasks that will help you get mauled scraps that will make a scrawled map.";
+report examining my list:
 	repeat with mrg running through regions:
 		if firstdir of mrg is not planar, next;
 		say " * [descrip of mrg][if mrg is solved] (DONE!) [end if][line break]";
-	the rule succeeds;
+	continue the action;
 
 chapter cheat trunk
 
-the cheat trunk is a thing. "A cheat trunk has appeared from the depths of the lie mist.". description is "You [if sco-treat-chunk is true]got a glimpse when it opened the first time, and there are a lot of treat chunks in there[else]can't really see what's in the cheat trunk, but you might be able to guess what's inside it[end if]."
+the cheat trunk is a thing. "A cheat trunk sits here. [if sco-treat-chunk is false]What could be in it?[else]You got a treat chunk from it, but there's more if needed.[end if]". description is "You [if sco-treat-chunk is true]got a glimpse when it opened the first time, and there are a lot of treat chunks in there[else]can't really see what's in the cheat trunk, but you might be able to guess what's inside it[end if]."
 
-check opening cheat trunk: say "No need to open or close it." instead;
-check closing cheat trunk: say "No need to open or close it." instead;
+check opening cheat trunk: say "[trunk-open-close]." instead;
+check closing cheat trunk: say "[trunk-open-close]." instead;
+
+to say trunk-open-close: say "No need to open or close the cheat trunk. You can just take [if sco-treat-chunk is false]whatever might appear in it[else]a treat chunk as needed[end if]";
 
 chapter treat chunk
 
@@ -167,7 +172,7 @@ a wordguess rule for a table name (called tn) (this is the cheatfind rule):
 		move treat chunk to ditch park;
 		max-down;
 		if chunk-warn is false:
-			say "(By the way, you can TAKE CHUNK again, if you want[if player is not in ditch park], back at ditch park[end if].)";
+			say "[line break](By the way, you can [b]TAKE CHUNK[r] again, if you want[if player is not in ditch park], back at ditch park[end if]. The cheat trunk is pretty big.)";
 			now chunk-warn is true;
 		the rule succeeds;
 
@@ -181,15 +186,15 @@ check eating treat chunk:
 
 volume north hub
 
-book Meek Spined
+book Cold Barrier
 
-Meek Spined is north of Ditch Park. Meek Spined is in gonorth. "[if sco-speak-mind is false]Oh, man! You thought you were brave enough to keep going, but you feel meek-spined. Well, you can always go [gen-dir of south]. Even if baddies may've gotten there by now[else]You feel brave enough here to head north or go back [gen-dir of south][end if]."
+Cold Barrier is north of Ditch Park. Cold Barrier is in gonorth. "[if sco-bold-carrier is false]A cold barrier blocks you to the north. Well, you can always go [gen-dir of south]. Even if baddies may've gotten there by now[else]The ground has transformed into a sort of grounded aircraft carrier. The cold barrier it replaced is no longer around. You can also go [gen-dir of south][end if].". printed name is "[if sco-bold-carrier is false]Cold Barrier[else]Bold Carrier[end if]"
 
-check going north in Meek Spined when sco-speak-mind is false: say "You feel awed to silence by the path to the north." instead;
+check going north in Cold Barrier when sco-bold-carrier is false: say "It feels even colder to the north." instead;
 
 book Roar Fest
 
-Roar Fest is north of Meek Spined. Roar Fest is in gonorth. printed name of Roar Fest is "[if sco-forest is true]Forest[else]Roar Fest[end if]". "[if sco-forest is false]Perhaps there is a path besides back south, but all the roaring is distracting you[else]With the roaring cleared, you see passages west, south and east[end if]."
+Roar Fest is north of Cold Barrier. Roar Fest is in gonorth. printed name of Roar Fest is "[if sco-forest is true]Forest[else]Roar Fest[end if]". "[if sco-forest is false]Perhaps there is a path besides back south, but all the roaring is distracting you from finding it[else]With the roaring cleared, you see passages west, south and east[end if]."
 
 check going in roar fest when sco-forest is false:
 	if noun is rejectable, say "The roaring means you can't think or see which way to go." instead;
@@ -212,13 +217,13 @@ check going north in pale wrath:
 
 chapter mill key
 
-the mill key is a thing. "You can guess what it opens, seeing as it says MILL on the side."
+the mill key is a thing. description is "You can guess what it opens, seeing as it says MILL on the side."
 
 book Um Soil
 
-Um Soil is north of Pale Wrath. printed name is "Um, Soil". it is in gonorth. "Passage leads south and east."
+Um Soil is north of Pale Wrath. printed name is "Um, Soil". it is in gonorth. "This is, thankfully, a relatively nondescript location[if sco-some-oil is false], but who knows what might be buried beneath? [else], but finding the oil was nice. [end if]You can go south and east."
 
-the oil is a thing. "Oil, in a tight container, for when you might need fuel."
+the oil is a thing. description is "Oil, in a tight container, for when you might need fuel."
 
 book Mating Hill
 
@@ -235,15 +240,15 @@ after printing the locale description when player is in mating hill (this is the
 
 chapter pending bowl
 
-the pending bowl is a thing.
+the pending bowl is a thing. "A pending bowl sits here.". description is "It's weird. It's sort of half there and half not. Like it should be something else."
 
 chapter bending pole
 
-the bending pole is a thing. "It reminds you of what people in a circus hold to balance."
+the bending pole is a thing. description is "[if sco-pitch-dark is true]It fits snugly between two trees here in the park, holding the keen lamp[else]It reminds you of what people in a circus hold to balance[end if]."
 
 book Lean Camp
 
-Lean Camp is north of Mating Hill. it is in gonorth. "Passages west and south. [if sco-keen-lamp is false]Perhaps someone left something here[else]You've probably found all you could here[end if]."
+Lean Camp is north of Mating Hill. it is in gonorth. "Barren and desolate here. Passages west and south. [if sco-keen-lamp is false]Perhaps someone left something here, but what?[else]You can't really expect to find more than the keen lamp.[end if]"
 
 chapter keen lamp
 
@@ -251,15 +256,15 @@ the keen lamp is a scenery. "It's nice and shiny and bright [if oil is moot]and 
 
 book Fear Bridge
 
-Fear Bridge is west of Lean Camp. Fear Bridge is east of Um Soil. it is in gonorth. "The fear bridge runs north/south, and you don't want to cross it. You can only go back [opposite of last-dir], though you can see something to [the last-dir].". printed name is "[if sco-beer-fridge is false]Fear Bridge[else]Beer Fridge[end if]". Fear Bridge is oneway.
+Fear Bridge is west of Lean Camp. Fear Bridge is east of Um Soil. it is in gonorth. "[if sco-beer-fridge is true]By the beer fridge, people come and go, which is nice and relaxing, but you don't have time for that. You can go east or west[else]The fear bridge splits this area north/south, and you don't want to cross or even touch it. You can only go back [opposite of last-dir], though you can see something to [the last-dir][end if].". printed name is "[if sco-beer-fridge is false]Fear Bridge[else]Beer Fridge[end if]". Fear Bridge is oneway.
 
 chapter grabby shoes
 
-the grabby shoes are a plural-named thing in Fear Bridge. "Some grabby shoes tap-tap about here, just ready to descend on someone who might want to dismantle the fear bridge."
+the grabby shoes are a plural-named thing in Fear Bridge. "Some grabby shoes tap-tap about here, just ready to descend on someone who might want to dismantle the fear bridge.". description is "If you get too close, you know they'll close in on your fingers or whatever. Certainly not lethal but annoying in volume. They also seem to hide a much darker nature."
 
 chapter shabby grues
 
-the shabby grues are people. "Shabby grues here don't look too happy with you."
+the shabby grues are people. "Shabby grues here look around, chasing forlornly. Thankfully, you can stay in the moonlight, so they can't attack.". description is "You don't want to get too close where they'd feel comfortable grabbing you."
 
 after printing the locale description when shabby grues are not off-stage and shabby grues are not in location of player and sco-pitch-dark is false:
 	if grues are in ditch park:
@@ -279,7 +284,7 @@ Painful Garden is south of Ditch Park. It is in gosouth. "[if sco-gainful-pardon
 
 book Deal Room
 
-Real Doom is a room in gosouth. It is south of Painful Garden. printed name is "[if sco-deal-room is true]Deal Room[else]Real Doom[end if]". "[if sco-deal-room is false]Only back north[else]North, west and east[end if]."
+Real Doom is a room in gosouth. It is south of Painful Garden. printed name is "[if sco-deal-room is true]Deal Room[else]Real Doom[end if]". "[if sco-deal-room is false]Ugh! You feel a sense of foreboding you can't negotiate from any direction except back north[else]The deal room has opened up passages north, west and east[end if]."
 
 book Dutiful Bawlers
 
@@ -287,24 +292,24 @@ Dutiful Bawlers is a room in gosouth. It is east of Real Doom. "Bend south and w
 
 chapter beautiful dollars
 
-the beautiful dollars are a plural-named thing.
+the beautiful dollars are a plural-named thing. description is "You can't look at them too long, or you'll succumb to the love of money that will make you the sort of undead that hovers restlessly here. Best to just find someone to barter them with."
 
 book Violence Senders
 
-Violence Senders is a room in gosouth. It is west of Real Doom. printed name is "[if sco-silence-vendors is true]Silence Vendors[else]Violence Senders[end if]". "Bend south and east.".
+Violence Senders is a room in gosouth. It is west of Real Doom. printed name is "[if sco-silence-vendors is true]Silence Vendors[else]Violence Senders[end if]". "[if sco-silence-vendors is false]You feel oppressed by unseen forces[else]It's more businesslike here with the violence senders pushed back[end if]. You see passage east and south."
 
 check going south in violence senders:
-	unless dollars are moot, say "A vicious roar from the south pushes you back." instead;
+	unless dollars are moot, say "Alas, the violence senders, hidden to the south, do their thing again. You don't feel equipped to push through all the noise and turbulence." instead;
 
 after printing the locale description when player is in violence senders (this is the dollars-and-vendors rule):
 	if player has dollars and silence vendors are in violence senders and player is in violence senders:
-		say "You fork over the dollars to the silence vendors. They nod, pleased. The roar from the south diminishes. You'd feel safe going there now.";
+		say "You fork over the beautiful dollars to the silence vendors. They nod, pleased. The roar from the south diminishes. You'd feel safe going there now.";
 		moot dollars;
 	continue the action;
 
 chapter silence vendors
 
-the silence vendors are plural-named people. "Silence vendors stand here, offering no enthusiastic sales pitch."
+the silence vendors are plural-named people. "Silence vendors stand here, offering no enthusiastic sales pitch. But perhaps .". description is "The silence vendors seem to want to sell you something, but you're not sure what method of payment they'd take. It'd be hypocritical for them to describe in detail, too."
 
 book Scraped Shoals
 
@@ -312,25 +317,29 @@ Scraped Shoals is a room in gosouth. It is south of Dutiful Bawlers. "This shore
 
 chapter shaped scrolls
 
-some shaped scrolls are a plural-named thing. "[if sco-greater-half is true]Great wisdom is contained herein, of how to win an argument without being a jerk, even if you are in the wrong[else]They are weirdly shaped, with all the good bits of writing cut off. If only you could find a complementary bit to fill in[end if]!"
+some shaped scrolls are a plural-named thing. description is "[if sco-greater-half is true]Great wisdom is contained herein, of how to win an argument without being a jerk, even if you are in the wrong[else]They are weirdly shaped, with all the good bits of writing cut off. If only you could find a complementary bit to fill in[end if]!"
 
 book Violence Senders
 
 Hater Graph is a room in gosouth. It is south of Violence Senders.  "Bend north and east. Hoo boy! A hater graph is here. Statistics can be harsh and heartless, but this is something else."
 
+chapter greater half
+
+the greater half is a thing. description is "This is a relatively benign message about pulling through even when things seem bad."
+
 book Driving Rain
 
-Driving Rain is a room in gosouth. It is east of Hater Graph. It is west of Scraped Shoals. It is oneway. "[if sco-riving-drain is false]Ugh! With all this driving rain, you can't see clearly. As-is, you can only play it safe and go back [last-dir][else]A riving drain cuts north-south through the center of this plain, which means you're not making it [opposite of last-dir]. You'll just have to go back [last-dir][end if]". printed name is "[if sco-riving-drain is true]Riving Drain[else]Driving Rain[end if]".
+Driving Rain is a room in gosouth. It is east of Hater Graph. It is west of Scraped Shoals. It is oneway. "[if sco-muppet-pastor is true]The drain is less intimidating now. You can go east or west over it as you need[else if sco-riving-drain is false]Ugh! With all this driving rain, you can't see clearly. As-is, you can only play it safe and go back [last-dir][else]A riving drain cuts north-south through the center of this plain, which means you're not making it [opposite of last-dir]. You'll just have to go back [last-dir][end if].". printed name is "[if sco-riving-drain is true]Riving Drain[else]Driving Rain[end if]".
 
 chapter puppet master
 
-The puppet master is a person. "A large puppet master stands by the riving drain, gloating they are totally unchangeable, and if they were, they couldn't be changed into something fuzzy and lovable. You won't be getting past them."
+The puppet master is a person. "A large puppet master stands by the riving drain, gloating they are totally unchangeable, and if they were, they couldn't be changed into something fuzzy and lovable. You won't be getting past them.". description is "Bigger, stronger and louder than you. They obviously pull the strings in realms physical and spiritual. How could they be laid low?"
 
 volume east hub
 
 book fang duels
 
-Fang Duels is a room in goeast. it is east of Ditch Park. description is "[if sco-dang-fools is false]Only way back is west[else]With the fighting gone you see passages north and south as well as back west[end if]."
+Fang Duels is a room in goeast. it is east of Ditch Park. description is "[if sco-dang-fools is false]You can't push forward through all the fighting to the side. As-is, you can only go back west[else]With the foolish fighting confined to various corners, you can now easily go north and south as well as back west[end if]."
 
 check going in fang duels when sco-dang-fools is false:
 	if noun is rejectable, say "No way to push through those fights." instead;
@@ -350,13 +359,15 @@ there is a thing called straight as. printed name is "straight a's". description
 
 chapter eight strays
 
-there is a thing called eight strays. "Eight stray animals potter around here, glad you led them to a new home."
+there is a thing called eight strays. "Eight stray animals potter around here, glad you led them to a new home.". description is "They seem happy here, each a sort of weird hybrid of animals you know."
 
 book Crazy Leap
 
-Crazy Leap is a room in goeast. it is south of Fang Duels. "A bend north and east.".
+Crazy Leap is a room in goeast. it is south of Fang Duels. "The path bends here. It falls off sharply in every direction except north and east.".
 
-check going east in crazy leap when sco-lazy-creep is false: say "A voice seems to shake you and demand life force from you, or someone, before you can pass. You have not made this sacrifice yet." instead;
+check going in crazy leap:
+	if noun is south or noun is west, say "You don't want your final words to be 'Clays! Eee! Reap!'" instead;
+	if noun is east and sco-lazy-creep is false, say "A voice seems to shake you and demand life force from you, or someone, before you can pass. You have not made this sacrifice yet." instead;
 
 book Tool Cavern
 
@@ -364,11 +375,11 @@ Tool Cavern is a room in goeast. it is east of Screening Pool. "Bend west and so
 
 chapter muddy wrench
 
-the muddy wrench is a thing.
+the muddy wrench is a thing. description is "It looks serviceable."
 
 chapter ruddy mensch
 
-the ruddy mensch is a person.
+the ruddy mensch is a person. "A ruddy mensch paces around. 'Where is that tool of mine? It's like it's both here and not here at the same time.". description is "The ruddy mensch frowns at you. 'I hate to intrude, but I've turned this place inside out and can't find a tool I need. I'd say what it is, but I'm embarrassed it's so useful to me. There are others bigger and shinier.'"
 
 book Mass Crime
 
@@ -400,7 +411,7 @@ check going west when player is in mass crime and mime is in mass crime: say "Th
 
 chapter crass mime
 
-the crass mime is a person. "The crass mime dances around here, making slightly tacky gestures.". "The mime smiles and waves at you."
+the crass mime is a person. "The crass mime dances around here, making slightly tacky gestures.". description is "The mime smiles and waves at you."
 
 book Tricky Pile
 
@@ -429,7 +440,7 @@ to decide which thing is sheep-creep:
 
 chapter sheddable creep
 
-the sheddable creep is a person.
+the sheddable creep is a person. "The sheddable creep saunters around.". description is "Not the nicest, but they also seem a bit disinterest. You wonder how you could stoke further disinterest."
 
 creep-catch is a truth state that varies.
 creep-chase is a truth state that varies.
@@ -468,7 +479,7 @@ check going west in blue tombs when sco-rocking-blows is false:
 
 chapter blocking rose
 
-the blocking rose is a thing. "A blocking rose menacingly guards the way west for the moment, though[if peony is in tombs], with a murky peony next to it[end if]."
+the blocking rose is a thing. "A blocking rose menacingly guards the way west for the moment, though[if peony is in tombs], with a murky peony next to it[end if].". description is "The way its petals are organized, it seems almost to be grimacing at you.";
 
 chapter murky peony
 
@@ -484,7 +495,7 @@ Tumorous Home is a room in gowest. it is west of Feeling Harm. "A bend with pass
 
 chapter weak spell
 
-the weak spell is a thing.
+the weak spell is a thing. description is "[if sco-speak-well is false]Maybe it's good it isn't powerful, or it might be too much for you. You imagine casting it. How could you practice[else]The weak spell makes sense now you can speak well. It seems to have practical applications. Now, where to use it[end if]?"
 
 book Watery Pond
 
@@ -492,13 +503,17 @@ Watery Pond is a room in gowest. it is west of Blue Tombs. "A bend with passages
 
 chapter pottery wand
 
-the pottery wand is a thing.
+the pottery wand is a thing. description is "Rather plain looking.  No inscriptions clue the sort of magic it can perform."
 
 book Trap Zoo
 
 Trap Zoo is a room in gowest. it is south of Tumorous Home. it is north of Watery Pond. Trap Zoo is oneway. "The zoo cuts horizontally. You can only go back [opposite of last-dir], although you see something [last-dir] of the zoo."
 
-chapter Ghoul Crow
+volume unsorted rooms
+
+volume unsorted things
+
+[chapter Ghoul Crow
 
 the ghoul crow is a thing.
 
@@ -507,19 +522,11 @@ chapter paying gruel
 The paying gruel is a thing. "It's a bowl of paying gruel, as thanks for what you did.";
 
 check eating paying gruel:
-	say "No. It must become something else." instead;
-
-volume unsorted rooms
-
-volume unsorted things
-
-the weak spell is a thing. "A weak spell lies here. Maybe it's good it isn't powerful, or it might be too much for you."
-
-the greater half is a thing. "This is a relatively benign message about pulling through even when things seem bad."
+	say "No. It must become something else." instead;]
 
 [Howl Farm is west of Night Sludge. It is in gowest. "A deep cry is here."]
 
-the deep cry is scenery.
+[the deep cry is scenery.]
 
 [dark heels: HARK DEALS chases them around]
 
@@ -527,9 +534,11 @@ volume endgame
 
 book woe cell
 
-Woe Cell is a room in endgame. "You feel so woeful here! Perhaps if you get in touch with your woe properly, you will figure out a way to climb way up, where it seems like there's an exit. There's not much else to do here.". printed name is "[if sco-so-well is false]Woe Cell[else if sco-oh-swell is false]So, Well...[else]Oh, Swell...[end if]".
+Woe Cell is a room in endgame. "You feel so woeful here in this pit! [if sco-so-well is false]You haven't even begun to cope. Once you do, maybe[else if sco-oh-swell is false]You've started coping a bit more. You feel confident[else]Despite, or because of, how it's no longer quiet,[end if] you will figure out a way to climb way up, where it seems like there's an exit. There's not much else to do here.". printed name is "[if sco-so-well is false]Woe Cell[else if sco-oh-swell is false]So, Well...[else]Oh, Swell...[end if]".
 
-check going in woe cell: say "You see an exit way up, but you can't make it on your own." instead;
+check going in woe cell:
+	if noun is up, say "You need something to climb on. You'll take anything, weird or normal, but you haven't found it yet." instead;
+	say "You can't just walk out of this pit. You see an exit way up, but you can't make it on your own." instead;
 
 every turn when player is in woe cell and sickening thuds are in woe cell: say "Those sickening thuds just won't let up!"
 
