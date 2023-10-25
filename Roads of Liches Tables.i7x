@@ -464,6 +464,7 @@ this is the post-muppet-pastor rule:
 	now sco-muppet-pastor is true;
 	say "The puppet master wags their finger at your portmanteau-rhyme, but you've come prepared with evidence why this is okay, despite seeming problems. There's a big argument, but thankfully, you studied the scrolls, and eventually the puppet master lashes out. In a final futile gesture, the puppet master grabs at your scrolls, rips them in half and ... out falls a mauled scrap![paragraph break]The argument continues, but since you read the scrolls so dutifully, you fight back effectively. The puppet master slinks away, defeated by your impressive arguments. Or maybe tired of the whole ordeal.";
 	moot puppet master;
+	moot shaped scrolls;
 	solverg;
 
 book east spoke

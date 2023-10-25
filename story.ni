@@ -198,7 +198,7 @@ the oil is a thing. "Oil, in a tight container, for when you might need fuel."
 
 book Mating Hill
 
-Mating Hill is east of Roar Fest. it is in gonorth. "[if sco-hating-mill is true]There's a mill here in place of the hill that was to the north. You can go north or west[else]There's a big hill to the north, but you can also go back west[end if]."
+Mating Hill is east of Roar Fest. it is in gonorth. "[if sco-hating-mill is true]There's a mill here in place of the hill that was to the north. You can go north or west[else]There's a big hill to the north, but you can also go back west[end if].". printed name is "[if sco-hating-mill is true]Hating Mill[else]Mating Hill[end if]".
 
 check going north in mating hill when sco-hating-mill is false: say "Mating Hill is too high." instead;
 
@@ -284,11 +284,11 @@ the silence vendors are plural-named people. "Silence vendors stand here, offeri
 
 book Scraped Shoals
 
-Scraped Shoals is a room in gosouth. It is south of Dutiful Bawlers. "Bend north and west.".
+Scraped Shoals is a room in gosouth. It is south of Dutiful Bawlers. "This shoreline bends from the north to the west. Perhaps it was rich with treasure now, but [if sco-shaped-scrolls is true]you probably got the last of it.[else]not much is likely left. Still, who knows what you'll find if you know what to look for?[end if]".
 
 chapter shaped scrolls
 
-some shaped scrolls are a plural-named thing.
+some shaped scrolls are a plural-named thing. "[if sco-greater-half is true]Great wisdom is contained herein, of how to win an argument without being a jerk, even if you are in the wrong[else]They are weirdly shaped, with all the good bits of writing cut off. If only you could find a complementary bit to fill in[end if]!"
 
 book Violence Senders
 
@@ -313,7 +313,7 @@ check going in fang duels when sco-dang-fools is false:
 
 book Screening Pool
 
-Screening Pool is a room in goeast. it is north of Fang Duels. "A bend here, south and east."
+Screening Pool is a room in goeast. it is north of Fang Duels. "A bend here, south and east.". printed name is "[if sco-preening-school is true]Preening School[else]Preening School[end if]".
 
 check going east in Screening Pool:
 	if sco-preening-school is false, say "The screening pool gets deeper as you walk out east some more. There's no way to swim through it." instead;
@@ -376,7 +376,7 @@ check going west when player is in mass crime and mime is in mass crime: say "Th
 
 chapter crass mime
 
-the crass mime is a person.
+the crass mime is a person. "The crass mime dances around here, making slightly tacky gestures.". "The mime smiles and waves at you."
 
 book Tricky Pile
 
@@ -393,7 +393,7 @@ check going in Night Sludge when sco-slight-nudge is false:
 
 book Feeling Harm
 
-Feeling Harm is a room in gowest. it is north of Night Sludge. "[if sco-healing-farm is false]You feel squeezed in by terror. Until that subsides, you can only go back south[else]The healing farm feels more wide open now. You can go west or south[end if]."
+Feeling Harm is a room in gowest. it is north of Night Sludge. "[if sco-healing-farm is false]You feel squeezed in by terror. Until that subsides, you can only go back south[else]The healing farm feels more wide open now. You can go west or south[end if].". printed name is "[if sco-healing-farm is true]Healing Farm[else]Healing Farm[end if]".
 
 check going in feeling harm:
 	if sco-healing-farm is false and noun is rejectable, say "You fear harm any way but south." instead;
