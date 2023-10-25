@@ -46,6 +46,30 @@ understand the command "say" as something new.
 
 The print final score rule is not listed in for printing the player's obituary.
 
+volume remove before final release - not for release
+
+include property checking by emily short
+
+a thing can be abstract.
+
+a room can be uncheckable. a room is usually not uncheckable.
+
+when play begins:
+	abide by the see-room-desc rule;
+
+the see-room-desc rule is listed first in the shutdown rules.
+
+this is the see-room-desc rule:
+	say "ROOM DESCRIPTIONS[line break]";
+	repeat with rm running through rooms:
+		if map region of rm is gometa, next;
+		say "[rm][line break]";
+		if description of rm is empty:
+			say "--------[line break]";
+		else:
+			say "[description of rm][line break]";
+		say "[line break]";
+
 volume starting stuff
 
 Jesse Murney is a person. The player is Jesse Murney. description is "You're wearing weird clothes, [if sco-cleared-woes is true]but you no longer feel self-conscious about them[else]and it bugs you more than it should[end if]."

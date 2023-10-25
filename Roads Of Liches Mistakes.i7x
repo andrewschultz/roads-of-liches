@@ -8,6 +8,8 @@ book general
 
 understand "mail tricks" and "male tricks" and "mail trix" and "male trix" as a mistake ("You look around for a silly rabbit to deny the treat chunk to. You find none.") when player has treat chunk.
 
+understand "messy journey" as a mistake ("The right idea, but it already is. Why pile on more mess?").
+
 book north area
 
 understand "clean amp" as a mistake ("You don't want to mess around with electricity, and you don't have to.") when keen lamp is touchable or player is in lean camp.

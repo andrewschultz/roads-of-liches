@@ -23,7 +23,7 @@
 			<dock index="0" id="8" port="n" />
 			<dock index="1" id="4" port="s" />
 		</line>
-		<room id="5" name="Meek Spined" subtitle="" x="-128" y="-192" w="96" h="64" region="North Hub" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="5" name="Cold Barrier" subtitle="" x="-128" y="-192" w="96" h="64" region="North Hub" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="11" name="" description="" style="dashed">
 			<dock index="0" id="1" port="n" />
 			<dock index="1" id="5" port="s" />

@@ -140,19 +140,30 @@ book north spoke
 
 table of north spoke spoonerisms
 w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
-"speak"	"mind"	--	--	false	true	true	false	meek spined	pre-speak-mind rule	post-speak-mind rule	--	--
+"bold"	"carrier"	--	--	false	true	true	false	cold barrier	pre-bold-carrier rule	post-bold-carrier rule	--	--
 "four|for"	"rest"	--	--	false	true	true	false	roar fest	pre-forest rule	post-forest rule	"forest"	--
-["howl"	"farm"	--	--	false	true	true	false	Ditch Park	pre-howl-farm rule	post-howl-farm rule]
-"keep"	"dry"	--	--	false	true	true	false	--	pre-keep-dry rule	post-keep-dry rule
-"creep"	"die"	--	--	false	true	true	false	--	pre-creep-die rule	post-creep-die rule
 "rail"	"path"	--	--	false	true	true	false	pale wrath	pre-rail-path rule	post-rail-path rule	--	--
-"bending"	"pole"	--	--	false	true	true	false	Mating Hill	pre-bending-pole rule	post-bending-pole rule	--	--
 "mill"	"key"	--	--	false	true	true	false	pale wrath	pre-mill-key rule	post-mill-key rule	--	--
+"bending"	"pole"	--	--	false	true	true	false	Mating Hill	pre-bending-pole rule	post-bending-pole rule	--	--
 "hating"	"mill"	--	--	false	true	true	false	mating hill	pre-hating-mill rule	post-hating-mill rule	--	--
-"some"	"oil"	--	--	false	true	true	false	um soil	pre-some-oil rule	post-some-oil rule	--	--
 "keen"	"lamp"	--	--	false	true	true	false	lean camp	pre-keen-lamp rule	post-keen-lamp rule	--	--
+"some"	"oil"	--	--	false	true	true	false	um soil	pre-some-oil rule	post-some-oil rule	--	--
 "shabby"	"grues"	--	--	false	true	true	false	fear bridge	pre-shabby-grues rule	post-shabby-grues rule	--	--
 "beer"	"fridge"	--	--	false	true	true	false	fear bridge	pre-beer-fridge rule	post-beer-fridge rule	--	--
+
+section cold barrier scoring
+
+a spoonerism rule (this is the pre-bold-carrier rule):
+	if player is not in cold barrier, unavailable;
+	if sco-bold-carrier is true:
+		vcal "You already feel safer here!";
+		already-done;
+	ready;
+
+this is the post-bold-carrier rule:
+	now sco-bold-carrier is true;
+	say "The ground warms up and turns grey. You're on an aircraft carrier, but thankfully withouth the water around, now.";
+
 
 section hating mill scoring
 
@@ -237,17 +248,6 @@ this is the post-keen-lamp rule:
 	say "You search the camp with an idea of what to find. And a lamp turns up! A surprisingly nice one! You feel great, until you wonder if this is proof manifesting actually works for far worse people than yourself as well.";
 	now player has keen lamp;
 	process-oil-lamp;
-
-a spoonerism rule (this is the pre-speak-mind rule):
-	if player is not in meek spined, unavailable;
-	if sco-speak-mind is true:
-		vcal "You already spoke your mind!";
-		already-done;
-	ready;
-
-this is the post-speak-mind rule:
-	now sco-speak-mind is true;
-	say "Speaking your mind makes you feel a bit better.";
 
 section roar fest scoring
 
@@ -786,6 +786,7 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "thickening"	"suds"	--	--	false	true	true	false	woe cell	pre-thickening-suds rule	post-thickening-suds rule	--	--
 "revolving"	"door"	--	--	false	true	true	false	wayfair cell	pre-revolving-door rule	post-revolving-door rule	--	--
 "say"	"farewell"	--	--	false	true	true	false	wayfair cell	pre-say-farewell rule	post-say-farewell rule	--	--
+"speak"	"mind"	--	--	false	true	true	false	bane row	pre-speak-mind rule	post-speak-mind rule	--	--
 "rain"	"bow"	--	--	false	true	true	false	bane row	pre-rain-bow rule	post-rain-bow rule	"rainbow"	--
 "stop"	"caring"	--	--	false	true	true	false	near my claim	pre-stop-caring rule	post-stop-caring rule	--	--
 "clear"	"name"	--	--	false	true	true	false	near my claim	pre-clear-name rule	post-clear-name rule	"clear my name"	--
@@ -854,8 +855,21 @@ this is the post-say-farewell rule:
 
 section bane row scoring
 
+a spoonerism rule (this is the pre-speak-mind rule):
+	if player is not in bane row, unavailable;
+	if sco-speak-mind is true:
+		vcal "You already spoke your mind!";
+		already-done;
+	ready;
+
+this is the post-speak-mind rule:
+	now sco-speak-mind is true;
+	say "You take charge of your emotions. You say something to someone, somewhere. You feel confident your words will have weight.";
+
 a spoonerism rule (this is the pre-rain-bow rule):
 	if player is not in bane row, unavailable;
+	if sco-speak-mind is false:
+		say "You're too meek-spined at the moment to admit a rainbow would be nice here.";
 	ready;
 
 this is the post-rain-bow rule:
@@ -967,6 +981,12 @@ a wordguess rule for a table name (called tn) (this is the main-spoonerism-check
 		follow the score and thinking changes rule;
 		now think-cue entry is false;
 		the rule succeeds;
+
+volume runoff for later (?)
+
+["howl"	"farm"	--	--	false	true	true	false	Ditch Park	pre-howl-farm rule	post-howl-farm rule
+"keep"	"dry"	--	--	false	true	true	false	--	pre-keep-dry rule	post-keep-dry rule
+"creep"	"die"	--	--	false	true	true	false	--	pre-creep-die rule	post-creep-die rule]
 
 Roads of Liches Tables ends here.
 
