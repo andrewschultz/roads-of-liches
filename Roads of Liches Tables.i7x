@@ -494,7 +494,7 @@ a spoonerism rule (this is the pre-preening-school rule):
 
 this is the post-preening-school rule:
 	now sco-preening-school is true;
-	say "Ah, yes, you passed the 'test' of the screening pool. You are accepted to the preening school.";
+	say "Ah, yes, you passed the 'test' of the screening pool. You are accepted to the preening school, where you do well. You're almost distressed at how well you do, because you are not that sort of person. But people praise how you mix humility with pomp. They could learn from you![paragraph break]You receive straight A's for your performance. You feel guilty having them. They look more like a scarlet letter than a medal. But you see no immediate way to get rid of them.";
 	now the player has straight as;
 
 section tool cavern scoring
@@ -523,7 +523,7 @@ this is the post-cool-tavern rule:
 a spoonerism rule (this is the pre-tool-cavern rule):
 	if player is not in tool cavern, unavailable;
 	if muddy wrench is moot:
-		vcal "But you got what you needed from all this.";
+		vcal "You don't need to go back to the tool cavern.";
 		already-done;
 	ready;
 

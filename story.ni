@@ -85,7 +85,7 @@ book ditch park
 
 Ditch Park is a room in hubregion. "[if sco-my-list is false]There is an oppressive lie mist choking you all around. You don't trust yourself to find your way until it's lifted, but how?[else]The lie mist has dissipated, but it's still not very pleasant here[ditch-park-go][lamp-note].[end if]".
 
-to say lamp-note: say "[if sco-pitch-dark is true]. The keen lamp you left hanging from the bending pole is keeping things lit nicely[end if]"
+to say lamp-note: if sco-pitch-dark is true, say ". The keen lamp you left hanging from the bending pole is keeping things lit nicely"
 
 to say ditch-park-go:
 	say ". You [if number of viable directions > 0]can go [list of viable directions][else]can't seem to go anywhere. There's a puzzle here[end if]";
@@ -227,7 +227,7 @@ the oil is a thing. description is "Oil, in a tight container, for when you migh
 
 book Mating Hill
 
-Mating Hill is east of Roar Fest. it is in gonorth. "[if sco-hating-mill is true]There's a mill here in place of the hill that was to the north. You can go north or west[else]There's a big hill to the north, but you can also go back west[end if].". printed name is "[if sco-hating-mill is true]Hating Mill[else]Mating Hill[end if]".
+Mating Hill is east of Roar Fest. it is in gonorth. "[if sco-hating-mill is true]There's a mill here in place of the hill that was to the north. You can go north or west[else]There's a big hill to the north, too big to climb, but you can also go back west. As for what mating occurs, you aren't sure you want to know what or who is mating, or if it is where helpless people get checkmated[end if].". printed name is "[if sco-hating-mill is true]Hating Mill[else]Mating Hill[end if]".
 
 check going north in mating hill when sco-hating-mill is false: say "Mating Hill is too high." instead;
 
@@ -244,7 +244,7 @@ the pending bowl is a thing. "A pending bowl sits here.". description is "It's w
 
 chapter bending pole
 
-the bending pole is a thing. description is "[if sco-pitch-dark is true]It fits snugly between two trees here in the park, holding the keen lamp[else]It reminds you of what people in a circus hold to balance[end if]."
+the bending pole is scenery. description is "[if sco-pitch-dark is true]It fits snugly between two trees here in the park, holding the keen lamp[else]It reminds you of what people in a circus hold to balance[end if]."
 
 book Lean Camp
 
@@ -252,7 +252,7 @@ Lean Camp is north of Mating Hill. it is in gonorth. "Barren and desolate here. 
 
 chapter keen lamp
 
-the keen lamp is a scenery. "It's nice and shiny and bright [if oil is moot]and lit, too[else]but not lit, yet[end if]."
+the keen lamp is a scenery. "It's nice and shiny and bright [if oil is moot]and lit, too[else]but not lit, yet[end if][if sco-pitch-dark is true]. It's keeping Ditch Park nice and lit and safe from the shabby grues[end if]."
 
 book Fear Bridge
 
@@ -280,7 +280,7 @@ volume south hub
 
 book Painful Garden
 
-Painful Garden is south of Ditch Park. It is in gosouth. "[if sco-gainful-pardon is false]You feel bad about wanting to go further south. Plus, it looks really thorny that way. You remember trespassing in flower beds when you were five. The memory hurts[else]You feel up to going south now that you've forgiven yourself for indiscretions when you were five[end if]. You can also go back north to Ditch Park.". printed name is "[if sco-gainful-pardon is true]Gainful Pardon[else]Painful Garden[end if]".
+Painful Garden is south of Ditch Park. It is in gosouth. "[if sco-gainful-pardon is false]You feel bad about wanting to go further south. Plus, it looks really thorny that way. You remember trespassing in neighbors['] flower beds when you were five to cut through to a park. The memory hurts[else]You feel up to going south now that you've forgiven yourself for indiscretions when you were five[end if]. You can also go back north to Ditch Park.". printed name is "[if sco-gainful-pardon is true]Gainful Pardon[else]Painful Garden[end if]".
 
 book Deal Room
 
@@ -288,7 +288,7 @@ Real Doom is a room in gosouth. It is south of Painful Garden. printed name is "
 
 book Dutiful Bawlers
 
-Dutiful Bawlers is a room in gosouth. It is east of Real Doom. "Bend south and west."
+Dutiful Bawlers is a room in gosouth. It is east of Real Doom. "The whining here is really too much! People seem to have given up on happiness. They complain about all sorts of things, such as others who may or may not slightly mispronounce words. Fortunately, nobody has the energy to stop you ditching them to the south or east."
 
 chapter beautiful dollars
 
@@ -296,7 +296,7 @@ the beautiful dollars are a plural-named thing. description is "You can't look a
 
 book Violence Senders
 
-Violence Senders is a room in gosouth. It is west of Real Doom. printed name is "[if sco-silence-vendors is true]Silence Vendors[else]Violence Senders[end if]". "[if sco-silence-vendors is false]You feel oppressed by unseen forces[else]It's more businesslike here with the violence senders pushed back[end if]. You see passage east and south."
+Violence Senders is a room in gosouth. It is west of Real Doom. printed name is "[if sco-silence-vendors is true]Silence Vendors[else]Violence Senders[end if]". "[if sco-silence-vendors is false]You feel oppressed by unseen forces[else]It's more businesslike here with the violence senders pushed back[end if]. You see passage back east and[if silence vendors are not moot], though it strikes fear in you,[end if] south."
 
 check going south in violence senders:
 	unless dollars are moot, say "Alas, the violence senders, hidden to the south, do their thing again. You don't feel equipped to push through all the noise and turbulence." instead;
@@ -309,7 +309,7 @@ after printing the locale description when player is in violence senders (this i
 
 chapter silence vendors
 
-the silence vendors are plural-named people. "Silence vendors stand here, offering no enthusiastic sales pitch. But perhaps .". description is "The silence vendors seem to want to sell you something, but you're not sure what method of payment they'd take. It'd be hypocritical for them to describe in detail, too."
+the silence vendors are plural-named people. "Silence vendors stand here, offering no enthusiastic sales pitch. You'd like a bit of silence, but the main issue here is scrying what sort of payment they accept.". description is "The silence vendors seem to want to sell you something, but you're not sure what method of payment they'd take. It'd be hypocritical for them to describe in detail, too."
 
 book Scraped Shoals
 
@@ -346,16 +346,16 @@ check going in fang duels when sco-dang-fools is false:
 
 book Screening Pool
 
-Screening Pool is a room in goeast. it is north of Fang Duels. "A bend here, south and east.". printed name is "[if sco-preening-school is true]Preening School[else]Screening Pool[end if]".
+Screening Pool is a room in goeast. it is north of Fang Duels. "[if sco-preening-school is true]The preening school has exits south and east[else]You're not sure what the pool here is screening. It extends to the east. You can go back south[end if].". printed name is "[if sco-preening-school is true]Preening School[else]Screening Pool[end if]".
 
 check going east in Screening Pool:
 	if sco-preening-school is false, say "The screening pool gets deeper as you walk out east some more. There's no way to swim through it." instead;
 	if sco-eight-strays is false,  say "You try to go east, but suddenly the straight A's start weighing very heavily on you. You almost feel guilty to have them on your person, as if you were showing off. You can't just go dropping them, but how to get rid of them?" instead;
-	if tool cavern is unvisited, say "You step gingerly easy, worried the straight A's rubbed off on you. But you are not impeded.";
+	if tool cavern is unvisited, say "You step gingerly, worried the straight A's rubbed off on you. But you are not impeded.";
 
 chapter straight as
 
-there is a thing called straight as. printed name is "straight a's". description of straight as is "You're not sure what you can do with good grades, if anything.".
+there is a thing called straight as. printed name is "straight a's". description of straight as is "You're not sure what you can do with good grades, if anything. They are almost more like a scarlet letter.".
 
 chapter eight strays
 
@@ -371,7 +371,15 @@ check going in crazy leap:
 
 book Tool Cavern
 
-Tool Cavern is a room in goeast. it is east of Screening Pool. "Bend west and south.". printed name is "[if cavern-is-tavern is true]Cool Tavern[else]Tool Cavern[end if]".
+Tool Cavern is a room in goeast. it is east of Screening Pool. "[if muddy wrench is moot]You can go back west, or you can go south through the passage the ruddy mensch created[else if cavern-is-tavern is true]The tavern exit is west[else]You're [toolcav]. You can exit back west[end if].". printed name is "[if cavern-is-tavern is true]Cool Tavern[else]Tool Cavern[end if]".
+
+to say toolcav:
+	if sco-cool-tavern is false:
+		say "in a cavern, where many tools gleam, but you can't help thinking a more reliable, well-worn one is what you need. You've no clue yet what it could be";
+	else if sco-muddy-wrench is true:
+		say "in a cavern where no tools seem as valuable as the muddy wrench";
+	else:
+		say "in a cavern that gleams with reflections of new tools. But perhaps you need an old reliable one.";
 
 chapter muddy wrench
 
@@ -416,7 +424,15 @@ the crass mime is a person. "The crass mime dances around here, making slightly 
 
 book Tricky Pile
 
-Tricky Pile is a room in goeast. it is north of Mass Crime. "A tricky pile blocks passage [last-dir]. You can see over it, but it's shifty, so no way you can climb over it. You can go back [opposite of last-dir].". Tricky Pile is oneway.
+Tricky Pile is a room in goeast. it is north of Mass Crime. "A tricky pile blocks passage [last-dir]. You can see over it, but it's shifty, so no way you can climb over it. [pile-status].[paragraph break]You can go back [opposite of last-dir].". Tricky Pile is oneway. printed name is "[if pile-status is 2]Pricky Trial[else if pile-status is 1]Pricky Tile[else]Tricky Pile[end if]".
+
+to say pile-status:
+	if pile-score is 0:
+		say "The pile's so tricky, you bet it could change into a couple other things";
+	else if pile-score is 1:
+		say "You changed the pile to [if sco-picky-trial is true]a picky trial[else]pricky tile[end if], but it seems it could be even more fungible";
+	else:
+		say "You imagine you could re-shift the pile back to the [if pile-status is 2]picky trial[else]pricky tile[end if] without much trouble if needed"
 
 volume west hub
 
@@ -429,7 +445,7 @@ check going in Night Sludge when sco-slight-nudge is false:
 
 book Feeling Harm
 
-Feeling Harm is a room in gowest. it is north of Night Sludge. "[if sco-healing-farm is false]You feel squeezed in by terror. Until that subsides, you can only go back south[else]The healing farm feels more wide open now. You can go west or south[end if].". printed name is "[if sco-healing-farm is true]Healing Farm[else]Healing Farm[end if]".
+Feeling Harm is a room in gowest. it is north of Night Sludge. "[if sco-healing-farm is false]You feel squeezed in by terror. Until that subsides, you can only go back south[else]The healing farm feels more wide open now. You see a passage west in addition to the one back south now[end if].". printed name is "[if sco-healing-farm is true]Healing Farm[else]Feeling Harm[end if]".
 
 check going in feeling harm:
 	if sco-healing-farm is false and noun is rejectable, say "You fear harm any way but south." instead;
@@ -492,7 +508,7 @@ the perky meanie is a person. "That perky meanie you summoned seems to have made
 
 book Tumorous Home
 
-Tumorous Home is a room in gowest. it is west of Feeling Harm. "A bend with passages south and east."
+Tumorous Home is a room in gowest. it is west of Feeling Harm. "A tumorous home blocks out the south and west here, with its odd bulging shape. Passages bend east and south."
 
 chapter weak spell
 
@@ -645,11 +661,13 @@ book taking
 the RoL rejection rule is listed instead of the can't take scenery rule in the check taking rules.
 
 check taking (this is the RoL rejection rule):
+	if player has noun, say "But you already have [the noun]." instead;
 	if noun is treat chunk:
 		say "[if player has chunk]Grow! Need no greed! (Use what you have, first.)[else]The trunk refills itself.[end if]";
 		continue the action;
 	if noun is pending bowl, say "There's no meal ahead. The bowl doesn't seem useful in its current state." instead;
-	say "You shouldn't need to [b]TAKE[r] anything explicitly in [this-game]. It will be done for you, if you find the right command." instead;
+	if noun is lamp or noun is bending pole, say "No, [the noun] will help to repel the shabby grues." instead;
+	say "You don't need to [b]TAKE[r] anything explicitly in [this-game]. It will be done for you, if you find the right command." instead;
 
 book sleeping
 

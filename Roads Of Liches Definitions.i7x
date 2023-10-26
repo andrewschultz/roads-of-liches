@@ -71,6 +71,9 @@ volume score stubs
 
 to max-down: decrement cur-max-bonus;
 
+to decide which number is pile-score:
+	decide on (boolval of sco-picky-trial) + (boolval of sco-pricky-tile)
+
 to decide which number is lamp-score:
 	decide on (boolval of sco-keen-lamp) + (boolval of sco-some-oil)
 
