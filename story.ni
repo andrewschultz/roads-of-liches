@@ -48,27 +48,9 @@ The print final score rule is not listed in for printing the player's obituary.
 
 volume remove before final release - not for release
 
-include property checking by emily short
+[include Property Checking by Emily Short
 
-a thing can be abstract.
-
-a room can be uncheckable. a room is usually not uncheckable.
-
-when play begins:
-	abide by the see-room-desc rule;
-
-the see-room-desc rule is listed first in the shutdown rules.
-
-this is the see-room-desc rule:
-	say "ROOM DESCRIPTIONS[line break]";
-	repeat with rm running through rooms:
-		if map region of rm is gometa, next;
-		say "[rm][line break]";
-		if description of rm is empty:
-			say "--------[line break]";
-		else:
-			say "[description of rm][line break]";
-		say "[line break]";
+a thing can be abstract.]
 
 volume starting stuff
 
