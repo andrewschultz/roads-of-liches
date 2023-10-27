@@ -696,6 +696,28 @@ carry out creditsing:
 	say "Oh hi Club Floyd! Thanks so much. Seriously. Sorry about the unimplemented items. I work from puzzles to details.";
 	the rule succeeds;
 
+chapter layouting
+
+layouting is an action out of world.
+
+understand the command "layout" as something new.
+understand the command "outlay" as something new.
+understand the command "lay out" as something new.
+understand the command "out lay" as something new.
+
+understand "lay out" as layouting.
+understand "out lay" as layouting.
+understand "lay out" as layouting.
+understand "out lay" as layouting.
+
+carry out layouting:
+	say "The layout of [this-game] is as follows:[paragraph break]";
+	say "* The main area, minus the endgame, fits onto a 5x7 rectangle.";
+	say "* It is symmetrical horizontally and vertically.";
+	say "* It is divided into four areas, which are rotations of the other.";
+	say "* In the centerpiece room, so to speak, you can only exit the way you came.";
+	the rule succeeds;
+
 book scoring
 
 the announce the score rule is not listed in the carry out requesting the score rulebook.
