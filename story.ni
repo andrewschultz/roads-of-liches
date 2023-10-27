@@ -718,6 +718,42 @@ carry out layouting:
 	say "* In the centerpiece room, so to speak, you can only exit the way you came.";
 	the rule succeeds;
 
+chapter maping
+
+maping is an action out of world.
+
+understand the command "map" as something new.
+
+understand "map" as maping.
+
+to say ast of (rm - a room): say "[if location of player is rm]U[else if rm is visited]*[else] [end if]";
+
+to say vert of (rm - a room): say "[if rm is visited]|[else] [end if]";
+
+to say horiz of (rm - a room): say "[if rm is visited]-[else] [end if]";
+
+to say vertbin of (ts - a truth state): say "[if ts is true]|[else] [end if]";
+
+to say horizbin of (ts - a truth state): say "[if ts is true]-[else] [end if]";
+
+carry out maping:
+	if sco-my-list is false, say "Nothing to map, yet." instead;
+	say "[fixed letter spacing]  [ast of um soil][horiz of um soil][vert of fear bridge][horiz of lean camp][ast of lean camp][line break]";
+	say "  [vert of pale wrath]   [vert of mating hill][line break]";
+	say "  [ast of pale wrath][horizbin of sco-forest][ast of roar fest][horizbin of sco-forest][ast of mating hill][line break]";
+	say "    [vertbin of sco-bold-carrier][line break]";
+	say "[ast of tumorous home][horizbin of sco-lazy-creep][ast of feeling harm] [ast of cold barrier] [ast of screening pool][horizbin of sco-eight-strays][ast of tool cavern][line break]";
+	say "[vert of tumorous home] [vertbin of sco-slight-nudge] [vertbin of sco-my-list] [vertbin of sco-dang-fools] [vertbin of whether or not mensch is moot][line break]";
+	say "[horiz of trap zoo] [ast of night sludge][horizbin of sco-my-list][ast of ditch park][horizbin of sco-my-list][ast of fang duels] [horiz of tricky pile][line break]";
+	say "[vert of watery pond] [vertbin of sco-slight-nudge] [vertbin of sco-my-list] [vertbin of sco-dang-fools] [vert of mass crime][line break]";
+	say "[ast of watery pond][horizbin of sco-rocking-blows][ast of blue tombs] [ast of painful garden] [ast of crazy leap][horizbin of sco-lazy-creep][ast of mass crime][line break]";
+	say "    [vertbin of sco-gainful-pardon][line break]";
+	say "  [ast of violence senders][horizbin of sco-deal-room][ast of real doom][horizbin of sco-deal-room][ast of dutiful bawlers][line break]";
+	say "  [vert of violence senders]   [vert of dutiful bawlers][line break]";
+	say "  [ast of hater graph][horiz of hater graph][vert of driving rain][horiz of scraped shoals][ast of scraped shoals][line break]";
+	say "[variable letter spacing]";
+	the rule succeeds;
+
 book scoring
 
 the announce the score rule is not listed in the carry out requesting the score rulebook.
