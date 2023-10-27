@@ -264,6 +264,8 @@ book Painful Garden
 
 Painful Garden is south of Ditch Park. It is in gosouth. "[if sco-gainful-pardon is false]You feel bad about wanting to go further south. Plus, it looks really thorny that way. You remember trespassing in neighbors['] flower beds when you were five to cut through to a park. The memory hurts[else]You feel up to going south now that you've forgiven yourself for indiscretions when you were five[end if]. You can also go back north to Ditch Park.". printed name is "[if sco-gainful-pardon is true]Gainful Pardon[else]Painful Garden[end if]".
 
+check going south in painful garden: if sco-gainful-pardon is false, say "No, you can't quite forgive yourself yet for your thoughtless actions when you were five." instead;
+
 book Deal Room
 
 Real Doom is a room in gosouth. It is south of Painful Garden. printed name is "[if sco-deal-room is true]Deal Room[else]Real Doom[end if]". "[if sco-deal-room is false]Ugh! You feel a sense of foreboding you can't negotiate from any direction except back north[else]The deal room has opened up passages north, west and east[end if]."
@@ -590,6 +592,7 @@ final question wording	only if victorious	topic	final response rule	final respon
 
 this is the show-misses rule:
 	if sco-cleared-woes is false, say "You could have, on seeing your weird clothes, [b]CLEARED WOES[r].";
+	if sco-eh-lout is false, say "You could have, on learning of the [b]LAYOUT[r] command, said, [b]EH LOUT[r] or [b]A LOUT[r].";
 	if sco-treat-chunk is false:
 		say "You could have, on seeing the cheat trunk, gotten a [b]TREAT CHUNK[r].";
 	else if chunk-warn is true:
@@ -763,6 +766,8 @@ to say it-they of (n - a number): say "[if n is 1]it[else]they[end if]";
 carry out requesting the score:
 	now verb-dont-print is true;
 	say "You have scored a total of [current-score] out of [max-overall] points and need [min-needed] to win. You have found [cur-bonus] of [max-bonus] bonus points so far[if bonus-locked-out > 0]. You are locked out of [bonus-locked-out] point[plur of bonus-locked-out][one of]. You can check for the maximum score dropping in the upper right, which usually happens when you take a one-way passage[or][stopping][end if].";
+	if player is not in ditch park:
+		say "[line break]You have scored [curregscore of mrlp] of [maxregscore of mrlp] possible points in this area[if mrlp is not endgame] [firstdir of mrlp] of Ditch Park[end if].";
 	now verb-dont-print is false;
 	continue the action;
 

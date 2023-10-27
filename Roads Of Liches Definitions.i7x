@@ -95,13 +95,15 @@ a region has text called descrip.
 
 a region has a number called maxregscore. a region has a number called curregscore.
 
+[there are 3 floating points: weird clothes, layout, not eating the treat chunk. That makes the total of 51.]
+
 hubregion is a region. firstdir of hubregion is up. spoontable of hubregion is table of hub spoonerisms. maxregscore of hubregion is 4.
 
 gonorth is a region. firstdir of gonorth is north. spoontable of gonorth is table of north spoke spoonerisms. descrip of gonorth is "prevent influx of monsters over a dark bridge (north)". maxregscore of gonorth is 10.
 
 gosouth is a region. firstdir of gosouth is south. spoontable of gosouth is table of south spoke spoonerisms. descrip of gosouth is "defeat big bad meanie on a language technicality in the boss fight (south)". maxregscore of gosouth is 8.
 
-goeast is a region. firstdir of goeast is east. spoontable of goeast is table of east spoke spoonerisms. descrip of goeast is "defeat someone who will not attack or annoy with words (east)". maxregscore of goeast is 9.
+goeast is a region. firstdir of goeast is east. spoontable of goeast is table of east spoke spoonerisms. descrip of goeast is "sit through a ghastly performance (east)". maxregscore of goeast is 8.
 
 gowest is a region. firstdir of gowest is west. spoontable of gowest is table of west spoke spoonerisms. descrip of gowest is "rescue animals from a zoo (west)". maxregscore of gowest is 9.
 

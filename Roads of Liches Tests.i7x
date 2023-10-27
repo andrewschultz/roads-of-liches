@@ -6,7 +6,7 @@ volume silly tests
 
 test all with "test st/test n/test s/test w/test e/test end".
 
-test st with "cleared woes/eh lout/treat chunk/my list/start hopping/n/bold carrier/n/forest/s/s/w/slight nudge/e/e/dang fools/w/s/painful garden/s/deal room/n/n".
+test st with "cleared woes/eh lout/treat chunk/my list/start hopping/n/bold carrier/n/forest/s/s/w/slight nudge/e/e/dang fools/w/s/gainful pardon/s/deal room/n/n".
 
 test n with "n/n/w/mill key/rail path/e/e/hating mill/bending pole/n/keen lamp/s/w/w/n/some oil/e/shabby grues/w/s/e/s/s/pitch dark/n/n/e/n/w/beer fridge/e/s/w/s/s".
 
@@ -16,7 +16,7 @@ test s with "s/s/e/beautiful dollars/w/w/silence vendors/s/greater half/n/e/e/s/
 
 test e with "e/n/preening school/s/w/w/n/healing farm/8 strays/s/e/e/n/e/cool tavern/tool cavern/muddy wrench/cool tavern/s/picky trial/n/w/s/s/e/crass mime/n/w/n/n/e/s/pricky tile/n/w/s/s/e/n". [this has an extra HEALING FARM command in it]
 
-test end with "so well/oh swell/thickening suds/revolving door/say farewell/speak mind/rainbow/stop caring/clear my name".
+test end with "so well/oh swell/thickening suds/revolving door/say farewell/speak mind/rainbow/stop caring/map/clear my name".
 
 volume room description tester
 
