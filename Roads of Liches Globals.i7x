@@ -41,7 +41,9 @@ zap-core-entry is a truth state that varies.
 
 to up-min: increment cur-bonus;
 
-to up-reg: increment core-score;
+to up-reg:
+	increment core-score;
+	increment curregscore of mrlp;
 
 to up-which (ts - a truth state):
 	if ts is true:

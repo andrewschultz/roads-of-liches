@@ -37,7 +37,7 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "cleared"	"woes"	--	--	false	true	false	false	--	pre-cleared-woes rule	post-cleared-woes rule
 "eh"	"lout"	--	--	false	true	false	false	--	pre-eh-lout rule	post-eh-lout rule	--	--
 "speak"	"well"	--	--	false	true	true	false	--	pre-speak-well rule	post-speak-well rule	--	--
-"eight|8"	"strays"	--	--	false	true	true	false	--	pre-eight-strays rule	post-eight-strays rule	--	--
+"eight|8"	"strays"	--	--	false	true	true	false	Feeling Harm	pre-eight-strays rule	post-eight-strays rule	--	--
 
 a spoonerism rule (this is the pre-cleared-woes rule):
 	if sco-cleared-woes is true:

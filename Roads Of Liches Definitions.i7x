@@ -93,17 +93,19 @@ a region has a number called max-score. a region has a number called cur-score. 
 
 a region has text called descrip.
 
-hubregion is a region. firstdir of hubregion is up. spoontable of hubregion is table of hub spoonerisms.
+a region has a number called maxregscore. a region has a number called curregscore.
 
-gonorth is a region. firstdir of gonorth is north. spoontable of gonorth is table of north spoke spoonerisms. descrip of gonorth is "prevent influx of monsters over a dark bridge (north)".
+hubregion is a region. firstdir of hubregion is up. spoontable of hubregion is table of hub spoonerisms. maxregscore of hubregion is 4.
 
-gosouth is a region. firstdir of gosouth is south. spoontable of gosouth is table of south spoke spoonerisms. descrip of gosouth is "defeat big bad meanie on a language technicality in the boss fight (south)".
+gonorth is a region. firstdir of gonorth is north. spoontable of gonorth is table of north spoke spoonerisms. descrip of gonorth is "prevent influx of monsters over a dark bridge (north)". maxregscore of gonorth is 10.
 
-goeast is a region. firstdir of goeast is east. spoontable of goeast is table of east spoke spoonerisms. descrip of goeast is "defeat someone who will not attack or annoy with words (east)".
+gosouth is a region. firstdir of gosouth is south. spoontable of gosouth is table of south spoke spoonerisms. descrip of gosouth is "defeat big bad meanie on a language technicality in the boss fight (south)". maxregscore of gosouth is 8.
 
-gowest is a region. firstdir of gowest is west. spoontable of gowest is table of west spoke spoonerisms. descrip of gowest is "rescue animals from a zoo (west)".
+goeast is a region. firstdir of goeast is east. spoontable of goeast is table of east spoke spoonerisms. descrip of goeast is "defeat someone who will not attack or annoy with words (east)". maxregscore of goeast is 9.
 
-endgame is a region. firstdir of endgame is down. spoontable of endgame is table of endgame spoonerisms.
+gowest is a region. firstdir of gowest is west. spoontable of gowest is table of west spoke spoonerisms. descrip of gowest is "rescue animals from a zoo (west)". maxregscore of gowest is 9.
+
+endgame is a region. firstdir of endgame is down. spoontable of endgame is table of endgame spoonerisms. maxregscore of endgame is 9.
 
 definition: a direction (called di) is dirsolved:
 	repeat with X running through regions:
