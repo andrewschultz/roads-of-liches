@@ -56,8 +56,10 @@ volume starting stuff
 
 to die: end the story saying "I do die! Ooh!"
 
+to say quick-score: say "[current-score]/[min-needed][if score is min-needed][else if min-needed is max-available]*[else]-[max-available][end if]"
+
 when play begins:
-	now the right hand status line is "[current-score]/[min-needed][if score is min-needed][else if min-needed is max-available]*[else]-[max-available][end if]";
+	now the right hand status line is "[quick-score]";
 	force-status;
 	say "Alas, dear reader, the intro needs a boost. I was so busy putting the puzzles together.[paragraph break]But this is the gist: spooky spooky Halloween. You note an after-dark dafter ark. You are promised loads of riches ... and you walk through. There are roads -- empty at first, but then liches run you off them, to a park...";
 
@@ -164,7 +166,7 @@ volume north hub
 
 book Cold Barrier
 
-Cold Barrier is north of Ditch Park. Cold Barrier is in gonorth. "[if sco-bold-carrier is false]A cold barrier blocks you to the north. Well, you can always go [gen-dir of south]. Even if baddies may've gotten there by now[else]The ground has transformed into a sort of grounded aircraft carrier. The cold barrier it replaced is no longer around. You can also go [gen-dir of south][end if].". printed name is "[if sco-bold-carrier is false]Cold Barrier[else]Bold Carrier[end if]"
+Cold Barrier is north of Ditch Park. Cold Barrier is in gonorth. "[if sco-bold-carrier is false]A cold barrier blocks you every way but to the south. Well, you can always go [gen-dir of south]. Even if baddies may've gotten there by now[else]The ground has transformed into a sort of grounded aircraft carrier. The cold barrier it replaced is no longer around. You can also go [gen-dir of south][end if].". printed name is "[if sco-bold-carrier is false]Cold Barrier[else]Bold Carrier[end if]"
 
 check going north in Cold Barrier when sco-bold-carrier is false: say "It feels even colder to the north." instead;
 
@@ -741,22 +743,54 @@ to say vertbin of (ts - a truth state): say "[if ts is true]|[else] [end if]";
 
 to say horizbin of (ts - a truth state): say "[if ts is true]-[else] [end if]";
 
+to decide which number is row-to-start:
+	if um soil is visited or lean camp is visited, decide on 1;
+	if sco-hating-mill is true or pale wrath is visited, decide on 2;
+	if roar fest is visited, decide on 3;
+	if sco-bold-carrier is true, decide on 4;
+	if cold barrier is visited or feeling harm is visited or screening pool is visited, decide on 5;
+	if sco-my-list is true, decide on 6;
+	decide on 7;
+
+to decide which number is row-to-end:
+	if hater graph is visited or scraped shoals is visited, decide on 13;
+	if violence senders is visited or dutiful bawlers is visited, decide on 12;
+	if real doom is visited, decide on 11;
+	if sco-gainful-pardon is true, decide on 10;
+	if blue tombs is visited or painful garden is visited or crazy leap is visited, decide on 9;
+	if sco-my-list is true, decide on 8;
+	decide on 7;
+
+to decide which number is total-header-rows:
+	decide on row-to-end - row-to-start + 2;
+
+map-row-list is a list of text variable. map-row-list is {
+"  [ast of um soil][horiz of um soil][vert of fear bridge][horiz of lean camp][ast of lean camp]",
+"  [vert of pale wrath]   [vert of mating hill]",
+"  [ast of pale wrath][horizbin of sco-forest][ast of roar fest][horizbin of sco-forest][ast of mating hill]",
+"    [vertbin of sco-bold-carrier]",
+"[ast of tumorous home][horizbin of sco-lazy-creep][ast of feeling harm] [ast of cold barrier] [ast of screening pool][horizbin of sco-eight-strays][ast of tool cavern]",
+"[vert of tumorous home] [vertbin of sco-slight-nudge] [vertbin of sco-my-list] [vertbin of sco-dang-fools] [vertbin of whether or not mensch is moot]",
+"[horiz of trap zoo] [ast of night sludge][horizbin of sco-my-list][ast of ditch park][horizbin of sco-my-list][ast of fang duels] [horiz of tricky pile]",
+"[vert of watery pond] [vertbin of sco-slight-nudge] [vertbin of sco-my-list] [vertbin of sco-dang-fools] [vert of mass crime]",
+"[ast of watery pond][horizbin of sco-rocking-blows][ast of blue tombs] [ast of painful garden] [ast of crazy leap][horizbin of sco-lazy-creep][ast of mass crime]",
+"    [vertbin of sco-gainful-pardon]",
+"  [ast of violence senders][horizbin of sco-deal-room][ast of real doom][horizbin of sco-deal-room][ast of dutiful bawlers]",
+"  [vert of violence senders]   [vert of dutiful bawlers]",
+"  [ast of hater graph][horiz of hater graph][vert of driving rain][horiz of scraped shoals][ast of scraped shoals]"
+}
+
+to say my-map:
+	say "[fixed letter spacing]";
+	let my-row be row-to-start;
+	while my-row <= row-to-end:
+		say "[entry my-row in map-row-list][line break]";
+		increment my-row;
+	say "[variable letter spacing]";
+
 carry out maping:
 	if sco-my-list is false, say "Nothing to map, yet." instead;
-	say "[fixed letter spacing]  [ast of um soil][horiz of um soil][vert of fear bridge][horiz of lean camp][ast of lean camp][line break]";
-	say "  [vert of pale wrath]   [vert of mating hill][line break]";
-	say "  [ast of pale wrath][horizbin of sco-forest][ast of roar fest][horizbin of sco-forest][ast of mating hill][line break]";
-	say "    [vertbin of sco-bold-carrier][line break]";
-	say "[ast of tumorous home][horizbin of sco-lazy-creep][ast of feeling harm] [ast of cold barrier] [ast of screening pool][horizbin of sco-eight-strays][ast of tool cavern][line break]";
-	say "[vert of tumorous home] [vertbin of sco-slight-nudge] [vertbin of sco-my-list] [vertbin of sco-dang-fools] [vertbin of whether or not mensch is moot][line break]";
-	say "[horiz of trap zoo] [ast of night sludge][horizbin of sco-my-list][ast of ditch park][horizbin of sco-my-list][ast of fang duels] [horiz of tricky pile][line break]";
-	say "[vert of watery pond] [vertbin of sco-slight-nudge] [vertbin of sco-my-list] [vertbin of sco-dang-fools] [vert of mass crime][line break]";
-	say "[ast of watery pond][horizbin of sco-rocking-blows][ast of blue tombs] [ast of painful garden] [ast of crazy leap][horizbin of sco-lazy-creep][ast of mass crime][line break]";
-	say "    [vertbin of sco-gainful-pardon][line break]";
-	say "  [ast of violence senders][horizbin of sco-deal-room][ast of real doom][horizbin of sco-deal-room][ast of dutiful bawlers][line break]";
-	say "  [vert of violence senders]   [vert of dutiful bawlers][line break]";
-	say "  [ast of hater graph][horiz of hater graph][vert of driving rain][horiz of scraped shoals][ast of scraped shoals][line break]";
-	say "[variable letter spacing]";
+	say "[my-map]";
 	the rule succeeds;
 
 chapter scoring
@@ -852,6 +886,58 @@ understand "walk back" as walkbacking.
 
 carry out walkbacking:
 	warpset false;
+
+book map in header
+
+to mapheadset (ts - a truth state):
+	say "Map in header is [if balk-wack is ts]already[else]now[end if] [if ts is true]on[else]off[end if].";
+	now map-in-header is ts;
+
+chapter map in header stuff
+
+map-in-header is a truth state that varies.
+
+x is text that varies.
+
+rule for constructing the status line when map-in-header is true:
+	deepen the status line to total-header-rows rows;
+	center "[location of player], [quick-score][line break]" at row 1;
+	let current-header-row be 2;
+	let overall-map-row be row-to-start;
+	while overall-map-row <= row-to-end:
+		now x is entry overall-map-row in map-row-list;
+		center "[x]" at row current-header-row;
+		increment current-header-row;
+		increment overall-map-row;
+
+[rule for constructing the status line when map-in-header is false:
+	deepen the status line to 1 rows;
+	center "[location of player], [quick-score][line break]" at row 1;]
+
+chapter mapyesing
+
+mapyesing is an action out of world.
+
+understand the command "map yes" as something new.
+
+understand "map yes" as mapyesing.
+
+carry out mapyesing:
+	mapheadset true;
+	the rule succeeds;
+
+chapter yapmessing
+
+yapmessing is an action out of world.
+
+understand the command "yap mess" as something new.
+
+understand "yap mess" as yapmessing.
+
+carry out yapmessing:
+	mapheadset false;
+	force-status;
+	the rule succeeds;
 
 volume parser errors
 
