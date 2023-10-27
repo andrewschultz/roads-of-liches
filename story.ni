@@ -78,13 +78,7 @@ check going when player is in Ditch Park:
 	if sco-my-list is false, say "With the lie mist, you can't see your way around, and you wouldn't trust yourself to make way through it." instead;
 	if sco-start-hopping is false, say "You don't feel brave enough! The adventure feels so heart-stopping at the moment." instead;
 	if noun is not planar, continue the action;
-	repeat with rg running through regions:
-		if firstdir of rg is noun:
-			if rg is not solved, continue the action;
-			if noun is west or noun is east:
-				say "While you took care of things to [the noun], it is interconnected with another sector.";
-				continue the action;
-			say "You've already taken care of things to [the noun]." instead;
+	if balk-wack is true and map region of room gone to is maxpointed, say "You're pretty sure there's nothing more to do to [the noun]." instead;
 
 every turn when player is in ditch park and sco-my-list is true and sco-start-hopping is false: say "It feels so heart-stopping here. You need a way to move.";
 
@@ -396,6 +390,7 @@ this is the mime-map rule:
 		say "The mime slumps over. They've taken too much! As they fall over, a mauled scrap flies up from their hands. You take it. They express astonishment and run off, fake-crying. But you swear they winked at you as they looked back.[paragraph break]Hooray for a new scrap, but you officially feel emotionally blackmailed into putting up with mimes much longer than you thought you had to, for the next few years.";
 		solverg;
 		now tricky pile is oneway;
+		check-warp-home;
 	else:
 		say "The mime raises one finger. There is still more they can do to the north!";
 	the rule succeeds;
@@ -673,6 +668,13 @@ check swearing obscenely:
 
 volume meta verbs
 
+chapter (clearing out trivial ones)
+
+understand the command "y" as something new.
+understand the command "n" as something new.
+understand the command "yes" as something new.
+understand the command "no" as something new.
+
 chapter abouting
 
 abouting is an action out of world.
@@ -757,7 +759,7 @@ carry out maping:
 	say "[variable letter spacing]";
 	the rule succeeds;
 
-book scoring
+chapter scoring
 
 the announce the score rule is not listed in the carry out requesting the score rulebook.
 
@@ -771,7 +773,7 @@ carry out requesting the score:
 	now verb-dont-print is false;
 	continue the action;
 
-book thinking
+chapter thinking
 
 the block thinking rule is not listed in any rulebook.
 
@@ -818,6 +820,38 @@ to spoon-think-check (tn - a table name):
 			else:
 				say "You tried [b][w1 entry in upper case] [w2 entry in upper case][r][if there is a best-room entry] [here-in of best-room entry][end if], but it didn't quite work out. Maybe later.";
 	the rule succeeds;
+
+volume options
+
+book warping when section is done
+
+balk-wack is a truth state that varies.
+
+to warpset (ts - a truth state):
+	say "Warping back to Ditch Park is [if balk-wack is ts]already[else]now[end if] [if ts is true]on[else]off[end if].";
+	now balk-wack is ts;
+
+chapter balkwacking
+
+balkwacking is an action applying to nothing.
+
+understand the command "balk wack" as something new.
+
+understand "balk wack" as balkwacking.
+
+carry out balkwacking:
+	warpset true;
+
+chapter walkbacking
+
+walkbacking is an action out of world.
+
+understand the command "walk back" as something new.
+
+understand "walk back" as walkbacking.
+
+carry out walkbacking:
+	warpset false;
 
 volume parser errors
 

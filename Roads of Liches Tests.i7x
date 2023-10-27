@@ -4,17 +4,37 @@ Version 1/221116 of Roads of Liches Tests by Andrew Schultz begins here.
 
 volume silly tests
 
-test all with "test st/test n/test s/test w/test e/test end".
+test all with "test st/test n/test nr/test s/test sr/test w/test w1/test w2/test w3/test w4/test wr/test e1/test e2/test e3/test end". [ does not test doing east first! ]
+
+test wwest1st with "test st/balk wack/test n/test s/test w1/test w2/test w3/test wr/test e1/test e3/test end".
 
 test st with "cleared woes/eh lout/treat chunk/my list/start hopping/n/bold carrier/n/forest/s/s/w/slight nudge/e/e/dang fools/w/s/gainful pardon/s/deal room/n/n".
 
-test n with "n/n/w/mill key/rail path/e/e/hating mill/bending pole/n/keen lamp/s/w/w/n/some oil/e/shabby grues/w/s/e/s/s/pitch dark/n/n/e/n/w/beer fridge/e/s/w/s/s".
+test n with "n/n/w/mill key/rail path/e/e/hating mill/bending pole/n/keen lamp/s/w/w/n/some oil/e/shabby grues/w/s/e/s/s/pitch dark/n/n/e/n/w/beer fridge".
 
-test w with "w/s/two blooms/perky meanie/rocking blows/w/pottery wand/e/n/n/healing farm/sheddable creep/s/e/e/s/lazy creep/n/w/w/n/w/humorous tome/s/zap true/n/e/s/e".
+test nr with "e/s/w/s/s".
 
-test s with "s/s/e/beautiful dollars/w/w/silence vendors/s/greater half/n/e/e/s/shaped scrolls/w/riving drain/muppet pastor/e/n/w/n/n".
+test w1 with "w/s/two blooms/perky meanie/rocking blows/w/pottery wand/e/n/n/healing farm".
 
-test e with "e/n/preening school/s/w/w/n/healing farm/8 strays/s/e/e/n/e/cool tavern/tool cavern/muddy wrench/cool tavern/s/picky trial/n/w/s/s/e/crass mime/n/w/n/n/e/s/pricky tile/n/w/s/s/e/n". [this has an extra HEALING FARM command in it]
+test w2 with "sheddable creep/s/e/e/s/lazy creep/n/w/w/n".
+
+test w3 with "w/humorous tome/speak well/s/zap true".
+
+test wr with "n/e/s/e".
+
+test s with "s/s/e/beautiful dollars/w/w/silence vendors/s/greater half/n/e/e/s/shaped scrolls/w/riving drain/muppet pastor".
+
+test sr with "e/n/w/n/n".
+
+test e1 with "e/n/preening school/s/w/w/n/healing farm/8 strays".
+
+test e2 with "s/e".
+
+test e3 with "e/n/e/cool tavern/tool cavern/muddy wrench/cool tavern/s/picky trial/n/w/s/s/e/crass mime/n/w/n/n/e/s/pricky tile/n/w/s/s/e/n". [this has an extra HEALING FARM command in it]
+
+test er with "w/n/w".
+
+test weast1st with "test st/balk wack/test n/test s/w/n/healing farm/sheddable creep/s/e/e/s/lazy creep/n/n/preening school/s/w/w/n/eight strays/test e2/test w1/test w3/test e3/test end".
 
 test end with "so well/oh swell/thickening suds/revolving door/say farewell/speak mind/rainbow/stop caring/map/clear my name".
 

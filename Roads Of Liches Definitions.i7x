@@ -6,6 +6,11 @@ volume basic definitions
 
 to decide which region is mrlp: decide on map region of location of player; [this is just a keystroke saver]
 
+definition: a region (called rg) is maxpointed:
+	if curregscore of mrlp < maxregscore of mrlp, no;
+	if mrlp is goeast and (mime-trial is false or mime-tile is false), no;
+	yes;
+
 definition: a direction (called di) is viable:
 	if the room di of location of player is nowhere, no;
 	yes;
@@ -105,9 +110,9 @@ gosouth is a region. firstdir of gosouth is south. spoontable of gosouth is tabl
 
 goeast is a region. firstdir of goeast is east. spoontable of goeast is table of east spoke spoonerisms. descrip of goeast is "sit through a ghastly performance (east)". maxregscore of goeast is 8.
 
-gowest is a region. firstdir of gowest is west. spoontable of gowest is table of west spoke spoonerisms. descrip of gowest is "rescue animals from a zoo (west)". maxregscore of gowest is 9.
+gowest is a region. firstdir of gowest is west. spoontable of gowest is table of west spoke spoonerisms. descrip of gowest is "rescue animals from a zoo (west)". maxregscore of gowest is 11.
 
-endgame is a region. firstdir of endgame is down. spoontable of endgame is table of endgame spoonerisms. maxregscore of endgame is 9.
+endgame is a region. firstdir of endgame is down. spoontable of endgame is table of endgame spoonerisms. maxregscore of endgame is 10.
 
 definition: a direction (called di) is dirsolved:
 	repeat with X running through regions:

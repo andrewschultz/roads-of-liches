@@ -433,7 +433,7 @@ a spoonerism rule (this is the pre-riving-drain rule):
 
 this is the post-riving-drain rule:
 	now sco-riving-drain is true;
-	say "The driving rain lets up a bit, revealing a riving drain that may or may not always have been there.[paragraph break]Either way, it's nice to have a break in the weather! What isn't so nice is the puppet master that rises from the drain";
+	say "The driving rain lets up a bit, revealing a riving drain that may or may not always have been there.[paragraph break]Either way, it's nice to have a break in the weather! What isn't so nice is the puppet master that rises from the drain.";
 
 a spoonerism rule (this is the pre-muppet-pastor rule):
 	if player is not in driving rain and puppet master is not touchable, unavailable;
@@ -727,7 +727,7 @@ this is the post-healing-farm rule:
 	move credible sheep to feeling harm;
 
 a spoonerism rule (this is the pre-sheddable-creep rule):
-	if player is not in feeling harm, unavailable;
+	if player is not in feeling harm or sco-healing-farm is false, unavailable;
 	if sco-sheddable-creep is true:
 		vcal "You already got rid of the credible sheep!";
 		already-done;
@@ -749,6 +749,12 @@ a spoonerism rule (this is the pre-zap-true rule):
 		already-done;
 	if zoo-score is 0:
 		vcp "You have nothing magic that would help you zap anything.";
+		not-yet;
+	if zoo-score is 1:
+		if sco-speak-well is true:
+			vcp "You have nothing to cast the weak spell with.";
+		else:
+			vcp "You have nothing that the wand would help you cast.";
 		not-yet;
 	ready;
 
@@ -886,12 +892,13 @@ this is the post-clear-name rule:
 	if chunk-warn is false and player has treat chunk:
 		say "[line break]And not only that, but you resisted the temptation to eat the treat chunk you found! That merits a bonus point!";
 		up-min;
-		follow the score and thinking changes rule;
 	if sco-cleared-woes is false:
 		max-down;
 	if cur-bonus is max-bonus:
 		choose row with final response rule of show-misses rule in the Table of Final Question Options;
 		blank out the whole row; [don't let the player see MISSED if they got everything]
+	up-reg;
+	follow the score and thinking changes rule;
 	end the story finally;
 	follow the shutdown rules;
 
@@ -962,8 +969,14 @@ a wordguess rule for a table name (called tn) (this is the main-spoonerism-check
 			else:
 				up-min;
 		follow the score and thinking changes rule;
+		check-warp-home;
 		now think-cue entry is false;
 		the rule succeeds;
+
+to check-warp-home:
+	if balk-wack is true and mrlp is maxpointed and firstdir of mrlp is planar:
+		say "[line break]You're done here in [the firstdir of mrlp]. Back to Ditch Park.";
+		move player to ditch park;
 
 volume runoff for later (?)
 
