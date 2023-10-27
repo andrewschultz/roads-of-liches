@@ -35,8 +35,40 @@ book very general stuff
 table of item spoonerisms
 w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "cleared"	"woes"	--	--	false	true	false	false	--	pre-cleared-woes rule	post-cleared-woes rule
+"eh"	"lout"	--	--	false	true	false	false	--	pre-eh-lout rule	post-eh-lout rule	--	--
 "speak"	"well"	--	--	false	true	true	false	--	pre-speak-well rule	post-speak-well rule	--	--
-"eight"	"strays"	--	--	false	true	true	false	--	pre-eight-strays rule	post-eight-strays rule	--	--
+"eight|8"	"strays"	--	--	false	true	true	false	--	pre-eight-strays rule	post-eight-strays rule	--	--
+
+a spoonerism rule (this is the pre-cleared-woes rule):
+	if sco-cleared-woes is true:
+		vcal "You already cleared woes. If you try too hard, you may wind up trying too hard to convince yourself you did, and they'll come back.";
+		already-done;
+	ready;
+
+this is the post-cleared-woes rule:
+	now sco-cleared-woes is true;
+	say "You feel a little less weird now. This may have no concrete value, but it's nice all the same.";
+
+a spoonerism rule (this is the pre-eh-lout rule):
+	if sco-eh-lout is true:
+		vcal "You already expressed pointless exasperation when I tried to help you! I'll only let you get away with that once.";
+		already-done;
+	ready;
+
+this is the post-eh-lout rule:
+	now sco-eh-lout is true;
+	say "You relieve your stress, expressing exasperation when I was just trying to help you.";
+
+a spoonerism rule (this is the pre-speak-well rule):
+	if weak spell is not touchable, unavailable;
+	if sco-speak-well is true:
+		vcal "You already mastered the weak spell!";
+		already-done;
+	ready;
+
+this is the post-speak-well rule:
+	now sco-speak-well is true;
+	say "You practice the weak spell, and you get it nailed down nicely.";
 
 a spoonerism rule (this is the pre-eight-strays rule):
 	if player does not have straight as, unavailable;
@@ -53,17 +85,6 @@ this is the post-eight-strays rule:
 	say "The straight A's change into eight strays, who are happy in the healing farm. You pet them all a bit. You hope you did this for them and not just to gain passage east of Preening School!";
 	move strays to feeling harm;
 	moot straight as;
-
-a spoonerism rule (this is the pre-speak-well rule):
-	if weak spell is not touchable, unavailable;
-	if sco-speak-well is true:
-		vcal "You already mastered the weak spell!";
-		already-done;
-	ready;
-
-this is the post-speak-well rule:
-	now sco-speak-well is true;
-	say "You practice the weak spell, and you get it nailed down nicely.";
 
 book hub stuff
 
@@ -105,16 +126,6 @@ this is the post-treat-chunk rule:
 	now player has treat chunk;
 	set the pronoun it to treat chunk;
 	now sco-treat-chunk is true;
-
-a spoonerism rule (this is the pre-cleared-woes rule):
-	if sco-cleared-woes is true:
-		vcal "You already cleared woes. If you try too hard, you may wind up trying too hard to convince yourself you did, and they'll come back.";
-		already-done;
-	ready;
-
-this is the post-cleared-woes rule:
-	now sco-cleared-woes is true;
-	say "You feel a little less weird now. This may have no concrete value, but it's nice all the same.";
 
 a spoonerism rule (this is the pre-my-list rule):
 	if player is not in Ditch Park, unavailable;

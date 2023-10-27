@@ -6,7 +6,7 @@ volume globals
 
 core-max is a number that varies. core-max is 46.
 
-max-bonus is a number that varies. max-bonus is 3.
+max-bonus is a number that varies. max-bonus is 4.
 
 section copied from PRPR globals
 
@@ -172,6 +172,8 @@ sco-stop-caring is a truth state that varies.
 sco-two-blooms is a truth state that varies.
 
 sco-bold-carrier is a truth state that varies.
+
+sco-eh-lout is a truth state that varies.
 
 book game states
 

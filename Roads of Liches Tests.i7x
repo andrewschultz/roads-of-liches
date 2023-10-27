@@ -6,7 +6,7 @@ volume silly tests
 
 test all with "test st/test n/test s/test w/test e/test end".
 
-test st with "cleared woes/treat chunk/my list/start hopping/n/bold carrier/n/forest/s/s/w/slight nudge/e/e/dang fools/w/s/painful garden/s/deal room/n/n".
+test st with "cleared woes/eh lout/treat chunk/my list/start hopping/n/bold carrier/n/forest/s/s/w/slight nudge/e/e/dang fools/w/s/painful garden/s/deal room/n/n".
 
 test n with "n/n/w/mill key/rail path/e/e/hating mill/bending pole/n/keen lamp/s/w/w/n/some oil/e/shabby grues/w/s/e/s/s/pitch dark/n/n/e/n/w/beer fridge/e/s/w/s/s".
 
