@@ -694,9 +694,9 @@ understand the command "about" as something new.
 understand "about" as abouting.
 
 carry out abouting:
-	say "Placeholder. Written for 2023 EctoComp Grand Guignol. It's sort of a companion to Trail Stash, written in twine for IFComp 2023. I'd had the idea originally for EctoComp 2018 (!) but didn't want to parcel it out too quickly before I had a less niche-y effort. I hope the contrast of spoonerisms in a parser and choice environment are interesting to you, if you are able to play both. They were for me.";
+	say "[this-game] was written for 2023 EctoComp Grand Guignol. It's sort of a companion to [i]Trail Stash[r], written in Twine for IFComp 2023. I'd had the idea originally for EctoComp 2018 (!) but didn't want to parcel it out too quickly before I had a less niche-y effort. I hope the contrast of [if score > 0]spoonerisms in a[else]the[end if] parser and choice environment are interesting to you, if you are able to play both. They were on the programming side.";
 	say "[line break]https://github.com/andrewschultz/roads-of-liches is the repo, for bugs, etc.";
-	say "[line break]This is the second in my [i]I Heart High Art[r] series, [i]Trail Stash[r] being the first.";
+	say "[line break]This is the second in my [i]I Heart High Art[r] series, [i]Trail Stash[r] being the first. I'd like to make more, but the underlying mechanic can get repetitiveif you're not careful.";
 	the rule succeeds;
 
 chapter creditsing
@@ -708,7 +708,9 @@ understand the command "credits" as something new.
 understand "credits" as creditsing.
 
 carry out creditsing:
-	say "Oh hi Club Floyd! Thanks so much. Seriously. Sorry about the unimplemented items. I work from puzzles to details.";
+	say "Thanks to ClubFloyd for beta testing a much buggier version on October 22, 2023. They put up with a lot of implemented items and a few rooms with no visible exits. I tend to work from puzzles to physical details.";
+	say "Thanks to EctoComp administrators past and future: Ruber Eaglenest, J. J. Guest and Duncan Bowsman.";
+	say "Thanks to you for giving [this-game] a whirl.";
 	the rule succeeds;
 
 chapter layouting
@@ -722,8 +724,8 @@ understand the command "out lay" as something new.
 
 understand "lay out" as layouting.
 understand "out lay" as layouting.
-understand "lay out" as layouting.
-understand "out lay" as layouting.
+understand "layout" as layouting.
+understand "outlay" as layouting.
 
 carry out layouting:
 	say "The layout of [this-game] is as follows:[paragraph break]";
@@ -863,6 +865,22 @@ to spoon-think-check (tn - a table name):
 				say "You tried [b][w1 entry in upper case] [w2 entry in upper case][r][if there is a best-room entry] [here-in of best-room entry][end if], but it didn't quite work out. Maybe later.";
 	the rule succeeds;
 
+chapter verbsing
+
+verbsing is an action out of world.
+
+understand the command "verbs" as something new.
+
+understand "verbs" as verbsing.
+
+carry out verbsing:
+	say "Most verbs to push [this-game] forward must be guessed. However, there are some that give useful support";
+	say "[b]ABOUT[r] will tell you about [this-game], and [b]CREDITS[r] gives credits.";
+	say "[b]LAYOUT[r] gives a general layout of the map, and [b]MAP[r] shows a text-map version.";
+	say "For options, [b]MAP YES[r] and [b]YAP MESS[r] toggle the map in the header.";
+	say "[b]BALK WACK[r] provides trivial shortcuts once you're done with an area. It sends you back to Ditch Park, and it blocks you from returning. [b]WALK BACK[r] cancels this.";
+	the rule succeeds;
+
 volume options
 
 book warping when section is done
@@ -949,11 +967,20 @@ carry out yapmessing:
 
 volume parser errors
 
+rule for printing a parser error when the latest parser error is the i beg your pardon error:
+	say "If you're up in the air about commands, [b]VERBS[r] will give a refresher."
+
+error-count is a number that varies.
+
 rule for printing a parser error when the latest parser error is the not a verb I recognise error:
 	if core-score is 0:
-		say "The lie mist remains, pulsating, menacing. You need to dispel the lie mist. Perhaps it is simpler than you think.";
+		say "The lie mist remains, pulsating, menacing. You need to dispel the lie mist. Perhaps it is simpler than you think. You look back to where the after-dark dafter ark was and can't see it. Maybe just remembering it will give you ideas.";
 	else:
-		say "You twiddle words around. No, nothing comes up. ([this-game] has a stripped-down parser, so you don't need to do anything fancy with verbs.)";
+		if error-count is 0, say "You twiddle words around. No, nothing comes up.";
+		increment error-count;
+		if error-count is 5:
+			say "[line break]If you're trying for standard actions beyond moving around, there aren't that many. [b]VERBS[r] gives a list.";
+			now error-count is 0;
 	the rule succeeds;
 
 volume weird verbs
