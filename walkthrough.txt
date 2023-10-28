@@ -1,19 +1,323 @@
-Roads of Liches
+Roads of Liches EctoComp (2023 Grand Guignol entry) walkthrough by Andrew Schultz
 
-2023 EctoComp Grand Guignol entry
+The below is not perfectly efficient. It's taken from my test commands in Inform code. So there is some unnecessary tracking back.
+
+So, how to dispel the lie mist?
 
 > my list
 
+> w
+
+You'd get rejected any way you went.
+
 > start hopping
 
-It doesn't matter which way you go first.
+Let's go north first. It doesn't interlock with other areas.
+
+> n
+
+The cold barrier ...
+
+> bold carrier
+
+> n
+
+> forest
+
+> s
+
+> s
+
+> w
+
+> slight nudge
 
 > e
 
-> ghoul crow
+> e
 
-> cruel go
+> dang fools
 
-> cool grow
+> w
 
-Now you are kicked back to Ditch Park!
+> s
+
+> gainful pardon
+
+> s
+
+> deal room
+
+> n
+
+> n
+
+> n
+
+> n
+
+> w
+
+> mill key
+
+> rail path
+
+> e
+
+> e
+
+> hating mill
+
+> bending pole
+
+> n
+
+> keen lamp
+
+> s
+
+> w
+
+> w
+
+> n
+
+> some oil
+
+> e
+
+> shabby grues
+
+> w
+
+> s
+
+> e
+
+> s
+
+> s
+
+> pitch dark
+
+> n
+
+> n
+
+> e
+
+> n
+
+> w
+
+> beer fridge
+
+> e
+
+> s
+
+> w
+
+> s
+
+> s
+
+> s
+
+> s
+
+> e
+
+> beautiful dollars
+
+> w
+
+> w
+
+> silence vendors
+
+> s
+
+> greater half
+
+> n
+
+> e
+
+> e
+
+> s
+
+> shaped scrolls
+
+> w
+
+> riving drain
+
+> muppet pastor
+
+> e
+
+> n
+
+> w
+
+> n
+
+> n
+
+> w
+
+> s
+
+> two blooms
+
+> perky meanie
+
+> rocking blows
+
+> w
+
+> pottery wand
+
+> e
+
+> n
+
+> n
+
+> healing farm
+
+> sheddable creep
+
+> s
+
+> e
+
+> e
+
+> s
+
+> lazy creep
+
+> n
+
+> w
+
+> w
+
+> n
+
+> w
+
+> humorous tome
+
+> speak well
+
+> s
+
+> zap true
+
+> n
+
+> e
+
+> s
+
+> e
+
+> e
+
+> n
+
+> preening school
+
+> s
+
+> w
+
+> w
+
+> n
+
+> healing farm
+
+> 8 strays
+
+> s
+
+> e
+
+> e
+
+> n
+
+> e
+
+> cool tavern
+
+> tool cavern
+
+> muddy wrench
+
+> cool tavern
+
+> s
+
+> picky trial
+
+> n
+
+> w
+
+> s
+
+> s
+
+> e
+
+> crass mime
+
+> n
+
+> w
+
+> n
+
+> n
+
+> e
+
+> s
+
+> pricky tile
+
+> n
+
+> w
+
+> s
+
+> s
+
+> e
+
+> n
+
+> so well
+
+> oh swell
+
+> thickening suds
+
+> revolving door
+
+> say farewell
+
+> speak mind
+
+> rainbow
+
+> stop caring
+
+> clear my name
