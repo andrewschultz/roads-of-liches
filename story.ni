@@ -76,13 +76,21 @@ to say ditch-park-go:
 	if number of solved regions > 0:
 		say ". You already took care of things to the [list of dirsolved directions]";
 
+went-this-turn is a truth state that varies.
+
 check going when player is in Ditch Park:
 	if sco-my-list is false, say "With the lie mist, you can't see your way around, and you wouldn't trust yourself to make way through it." instead;
-	if sco-start-hopping is false, say "You don't feel brave enough! The adventure feels so heart-stopping at the moment." instead;
+	if need-to-hop is true, say "You have a heart-stopping feeling right now! You're sort of frozen, and you don't know the way to break it!" instead;
+	if sco-start-hopping is false:
+		now went-this-turn is true;
+		now need-to-hop is true;
+		say "[one of]Suddenly a heart-stopping feeling overcomes you[or]That heart-stopping feeling still restricts you[stopping]. Walking around just doesn't quite do the trick. What can you do, instead?" instead;
 	if noun is not planar, continue the action;
 	if balk-wack is true and map region of room gone to is maxpointed, say "You're pretty sure there's nothing more to do to [the noun]." instead;
 
-every turn when player is in ditch park and sco-my-list is true and sco-start-hopping is false: say "It feels so heart-stopping here. You need a way to move.";
+every turn when player is in ditch park and need-to-hop is true and sco-start-hopping is false:
+	if went-this-turn is false, say "You need to shake off the heart-stopping feeling to leave Ditch Park. But how?";
+	now went-this-turn is false;
 
 chapter you uh me
 

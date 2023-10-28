@@ -8,7 +8,7 @@ test all with "test st/test n/test nr/test s/test sr/test w/test w1/test w2/test
 
 test wwest1st with "test st/balk wack/test n/test s/test w1/test w2/test w3/test wr/test e1/test e3/test end".
 
-test st with "cleared woes/eh lout/treat chunk/my list/start hopping/n/bold carrier/n/forest/s/s/w/slight nudge/e/e/dang fools/w/s/gainful pardon/s/deal room/n/n".
+test st with "cleared woes/eh lout/treat chunk/my list/w/start hopping/n/bold carrier/n/forest/s/s/w/slight nudge/e/e/dang fools/w/s/gainful pardon/s/deal room/n/n".
 
 test n with "n/n/w/mill key/rail path/e/e/hating mill/bending pole/n/keen lamp/s/w/w/n/some oil/e/shabby grues/w/s/e/s/s/pitch dark/n/n/e/n/w/beer fridge".
 

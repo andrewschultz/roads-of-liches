@@ -179,6 +179,8 @@ sco-eh-lout is a truth state that varies.
 
 book game states
 
+need-to-hop is a truth state that varies.
+
 pile-status is a number that varies.
 mime-tile is a truth state that varies.
 mime-trial is a truth state that varies.

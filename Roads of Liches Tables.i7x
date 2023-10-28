@@ -141,6 +141,7 @@ this is the post-my-list rule:
 	move cheat trunk to Ditch Park;
 
 a spoonerism rule (this is the pre-start-hopping rule):
+	if player is not in ditch park and need-to-hop is false, unavailable;
 	if sco-start-hopping is true:
 		vcal "You're already moving. You don't want to get too agitated.";
 		already-done;
@@ -149,6 +150,7 @@ a spoonerism rule (this is the pre-start-hopping rule):
 this is the post-start-hopping rule:
 	say "It's good to feel you can move. You feel less helpless now.";
 	now sco-start-hopping is true;
+	now need-to-hop is false;
 
 book north spoke
 
