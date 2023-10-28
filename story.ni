@@ -176,7 +176,7 @@ book Cold Barrier
 
 Cold Barrier is north of Ditch Park. Cold Barrier is in gonorth. "[if sco-bold-carrier is false]A cold barrier blocks you every way but to the south. Well, you can always go [gen-dir of south]. Even if baddies may've gotten there by now[else]The ground has transformed into a sort of grounded aircraft carrier. The cold barrier it replaced is no longer around. You can also go [gen-dir of south][end if].". printed name is "[if sco-bold-carrier is false]Cold Barrier[else]Bold Carrier[end if]"
 
-check going north in Cold Barrier when sco-bold-carrier is false: say "It feels even colder to the north." instead;
+check going in Cold Barrier when sco-bold-carrier is false: if noun is not south, say "It feels even colder to [the noun]." instead;
 
 book Roar Fest
 
@@ -604,6 +604,13 @@ this is the show-misses rule:
 		say "You could've gotten another bonus point for not using the treat chunk."
 
 volume regular action verbs
+
+book replacing going
+
+the new can't go that way rule is listed instead of the can't go that way rule in the check going rules.
+
+check going (this is the new can't go that way rule):
+	if the room gone to is nowhere, say "You can't go [noun]. You can only go [list of viable directions] here." instead;
 
 book attacking
 

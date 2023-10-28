@@ -178,7 +178,7 @@ a spoonerism rule (this is the pre-bold-carrier rule):
 
 this is the post-bold-carrier rule:
 	now sco-bold-carrier is true;
-	say "The ground warms up and turns grey. You're on an aircraft carrier, but thankfully withouth the water around, now.";
+	say "The ground warms up and turns grey. Well, some of it. You're on an aircraft carrier, but thankfully without the water around, now. The carrier caused a split in the barrier to the north, so you can go that way, now.";
 
 
 section hating mill scoring
