@@ -884,8 +884,21 @@ carry out verbsing:
 	say "Most verbs to push [this-game] forward must be guessed. However, there are some that give useful support";
 	say "[b]ABOUT[r] will tell you about [this-game], and [b]CREDITS[r] gives credits.";
 	say "[b]LAYOUT[r] gives a general layout of the map, and [b]MAP[r] shows a text-map version.";
+	say "[b]THINK[r] reminds you of things you tried that won't quite work yet.";
 	say "For options, [b]MAP YES[r] and [b]YAP MESS[r] toggle the map in the header.";
 	say "[b]BALK WACK[r] provides trivial shortcuts once you're done with an area. It sends you back to Ditch Park, and it blocks you from returning. [b]WALK BACK[r] cancels this.";
+	the rule succeeds;
+
+chapter xyzzying
+
+xyzzying is an action out of world.
+
+understand the command "xyzzy" as something new.
+
+understand "xyzzy" as xyzzying.
+
+carry out xyzzying:
+	say "A hollow voice tries to say zyxzy and zzyxy, failing miserably at both.";
 	the rule succeeds;
 
 volume options
