@@ -988,8 +988,12 @@ map-in-header is a truth state that varies.
 
 x is text that varies.
 
+current-header-rows is a number that varies.
+
 rule for constructing the status line when map-in-header is true:
-	deepen the status line to total-header-rows rows;
+	if current-header-rows < total-header-rows:
+		deepen the status line to total-header-rows rows;
+		now current-header-rows is total-header-rows;
 	center "[location of player], [quick-score][line break]" at row 1;
 	let current-header-row be 2;
 	let overall-map-row be row-to-start;
