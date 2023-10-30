@@ -979,7 +979,7 @@ carry out walkbacking:
 book map in header
 
 to mapheadset (ts - a truth state):
-	say "Map in header is [if balk-wack is ts]already[else]now[end if] [if ts is true]on[else]off[end if].";
+	say "Map in header is [if map-in-header is ts]already[else]now[end if] [if ts is true]on[else]off[end if].";
 	now map-in-header is ts;
 
 chapter map in header stuff

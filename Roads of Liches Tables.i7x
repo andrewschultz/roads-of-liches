@@ -324,6 +324,9 @@ to solverg:
 		if sco-treat-chunk is false:
 			max-down;
 			max-down;
+		if map-in-header is true:
+			now map-in-header is false;
+			force-status;
 	else:
 		say "But the scrawled map is incomplete. Still, yay progress.";
 
