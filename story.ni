@@ -675,6 +675,14 @@ rule for supplying a missing noun when eating:
 
 check eating: say "Go nosh? No, gosh! [one of](You don't need to eat anything.)[or][line break][stopping]" instead;
 
+book going
+
+check going when creep-chase is true:
+	if noun is opposite of last-dir and player is not in feeling harm, say "But you would run into the creep that way." instead;
+
+check going when grue-chase is true:
+	if noun is opposite of last-dir and player is not in fear bridge, say "But you would run into the grues that way." instead;
+
 book taking
 
 the RoL rejection rule is listed instead of the can't take scenery rule in the check taking rules.

@@ -39,7 +39,7 @@ a room can be oneway. a room is usually not oneway.
 
 last-dir is a direction that varies
 
-after going to a oneway room:
+after going:
 	now last-dir is noun;
 	continue the action;
 
