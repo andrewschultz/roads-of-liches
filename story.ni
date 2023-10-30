@@ -61,7 +61,7 @@ to say quick-score: say "[current-score]/[min-needed][if score is min-needed][el
 when play begins:
 	now the right hand status line is "[quick-score]";
 	force-status;
-	say "Alas, dear reader, the intro needs a boost. I was so busy putting the puzzles together.[paragraph break]But this is the gist: spooky spooky Halloween. You note an after-dark dafter ark. You are promised loads of riches ... and you walk through. There are roads -- empty at first, but then liches run you off them, to a park...";
+	say "You're too old for haunted houses, of course. You're so beyond it, you even forgot tonight was Halloween. [paragraph break]But this is the gist: spooky spooky Halloween. You note an after-dark dafter ark. You are promised loads of riches ... and you walk through. There are roads -- empty at first, but then liches run you off them, to a park...";
 
 volume hub rooms
 
@@ -276,7 +276,7 @@ Real Doom is a room in gosouth. It is south of Painful Garden. printed name is "
 
 book Dutiful Bawlers
 
-Dutiful Bawlers is a room in gosouth. It is east of Real Doom. "The whining here is really too much! People seem to have given up on happiness. They complain about all sorts of things, such as others who may or may not slightly mispronounce words. Fortunately, nobody has the energy to stop you ditching them to the south or east."
+Dutiful Bawlers is a room in gosouth. It is east of Real Doom. "The whining here is really too much! People seem to have given up on happiness. They complain about all sorts of things, such as others who may or may not slightly mispronounce words. Fortunately, nobody has the energy to stop you ditching them to the south or west."
 
 chapter beautiful dollars
 
@@ -317,7 +317,7 @@ the greater half is a thing. description is "This is a relatively benign message
 
 book Driving Rain
 
-Driving Rain is a room in gosouth. It is east of Hater Graph. It is west of Scraped Shoals. It is oneway. "[if sco-muppet-pastor is true]The drain is less intimidating now. You can go east or west over it as you need[else if sco-riving-drain is false]Ugh! With all this driving rain, you can't see clearly. As-is, you can only play it safe and go back [last-dir][else]A riving drain cuts north-south through the center of this plain, which means you're not making it [opposite of last-dir]. You'll just have to go back [last-dir][end if].". printed name is "[if sco-riving-drain is true]Riving Drain[else]Driving Rain[end if]".
+Driving Rain is a room in gosouth. It is east of Hater Graph. It is west of Scraped Shoals. It is oneway. "[if sco-muppet-pastor is true]The drain is less intimidating now. You can go east or west over it as you need[else if sco-riving-drain is false]Ugh! With all this driving rain, you can't see clearly. As-is, you can only play it safe and go back [last-dir][else]A riving drain cuts north-south through the center of this plain, which means you're not making it [last-dir]. You'll just have to go back [opposite of last-dir][end if].". printed name is "[if sco-riving-drain is true]Riving Drain[else]Driving Rain[end if]".
 
 chapter puppet master
 
@@ -379,7 +379,7 @@ the ruddy mensch is a person. "A ruddy mensch paces around. 'Where is that tool 
 
 book Mass Crime
 
-Mass Crime is a room in goeast. it is east of Crazy Leap. "The path bends west and north here. [if sco-crass-mime is true]Well, okay, you can go east or south, but it's really seedy. You'd reach a bad end[end if]."
+Mass Crime is a room in goeast. it is east of Crazy Leap. "The path bends from west and north here. Well, the only safe path. It's a crime-ridden area, after all[if sco-crass-mime is true], even if you cleaned it up a bit[end if]."
 
 check going north when player is in mass crime:
 	if mime is moot, say "You walk north unimpeded, though you doubt you have anything to do there.";
@@ -505,7 +505,7 @@ the weak spell is a thing. description is "[if sco-speak-well is false]Maybe it'
 
 book Watery Pond
 
-Watery Pond is a room in gowest. it is west of Blue Tombs. "A pond blocks passage all ways both north and west, but it's so nice and clean and non-sludgy, you're grateful it's helping you focus on where you really need to go[if sco-pottery-wand is false]. You wonder, somewhat greedily, if there is anything beneath it for you[end if]."
+Watery Pond is a room in gowest. it is west of Blue Tombs. "A path leads from north to west, with a pond on the other side It's so nice and clean and non-sludgy, you're grateful it's helping you focus on where you really need to go. You [if sco-pottery-wand is false]wonder, somewhat greedily, if there is anything beneath it for you[else]probably can't find anything else in it[end if]."
 
 chapter pottery wand
 
@@ -702,8 +702,8 @@ understand "about" as abouting.
 
 carry out abouting:
 	say "[this-game] was written for 2023 EctoComp Grand Guignol. It's sort of a companion to [i]Trail Stash[r], written in Twine for IFComp 2023. I'd had the idea originally for EctoComp 2018 (!) but didn't want to parcel it out too quickly before I had a less niche-y effort. I hope the contrast of [if score > 0]spoonerisms in a[else]the[end if] parser and choice environment are interesting to you, if you are able to play both. They were on the programming side.";
-	say "[line break]https://github.com/andrewschultz/roads-of-liches is the repo, for bugs, etc.";
-	say "[line break]This is the second in my [i]I Heart High Art[r] series, [i]Trail Stash[r] being the first. I'd like to make more, but the underlying mechanic can get repetitiveif you're not careful.";
+	say "[line break]https://github.com/andrewschultz/roads-of-liches is the repo, for bugs, etc. You can also see the original name if you look back in the history. I thought it was funny. It served as a catalyst until I settled on [this-game].";
+	say "[line break]This is the second in my [i]I Heart High Art[r] series, [i]Trail Stash[r] being the first. I'd like to make more, but the underlying mechanic can get repetitive if you're not careful.";
 	the rule succeeds;
 
 chapter creditsing
@@ -716,6 +716,7 @@ understand "credits" as creditsing.
 
 carry out creditsing:
 	say "Thanks to ClubFloyd for beta testing a much buggier version on October 22, 2023. They put up with a lot of implemented items and a few rooms with no visible exits. I tend to work from puzzles to physical details.";
+	say "Thanks to Leon Lin for testing.";
 	say "Thanks to EctoComp administrators past and future: Ruber Eaglenest, J. J. Guest and Duncan Bowsman.";
 	say "Thanks to you for giving [this-game] a whirl.";
 	the rule succeeds;
@@ -898,7 +899,7 @@ understand the command "xyzzy" as something new.
 understand "xyzzy" as xyzzying.
 
 carry out xyzzying:
-	say "A hollow voice tries to say zyxzy and zzyxy, failing miserably at both.";
+	say "A hollow voice tries to say zyxzy and zzyxy, failing miserably at both. It then says 'I can't do anything with xyzzy.'";
 	the rule succeeds;
 
 volume options
@@ -996,7 +997,7 @@ rule for printing a parser error when the latest parser error is the not a verb 
 	if core-score is 0:
 		say "The lie mist remains, pulsating, menacing. You need to dispel the lie mist. Perhaps it is simpler than you think. You look back to where the after-dark dafter ark was and can't see it. Maybe just remembering it will give you ideas.";
 	else:
-		if error-count is 0, say "You twiddle words around. No, nothing comes up.";
+		say "You twiddle words around. No, nothing comes up.";
 		increment error-count;
 		if error-count is 5:
 			say "[line break]If you're trying for standard actions beyond moving around, there aren't that many. [b]VERBS[r] gives a list.";
