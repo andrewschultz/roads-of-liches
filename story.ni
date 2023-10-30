@@ -817,34 +817,40 @@ to decide which number is total-header-rows:
 	decide on row-to-end - row-to-start + 2;
 
 map-row-list is a list of text variable. map-row-list is {
-"  [ast of um soil][horiz of um soil][vert of fear bridge][horiz of lean camp][ast of lean camp]",
-"  [vert of pale wrath]   [vert of mating hill]",
-"  [ast of pale wrath][horizbin of sco-forest][ast of roar fest][horizbin of sco-forest][ast of mating hill]",
-"    [vertbin of sco-bold-carrier]",
+"[ast of um soil][horiz of um soil][vert of fear bridge][horiz of lean camp][ast of lean camp]",
+"[vert of pale wrath]   [vert of mating hill]",
+"[ast of pale wrath][horizbin of sco-forest][ast of roar fest][horizbin of sco-forest][ast of mating hill]",
+"[vertbin of sco-bold-carrier]",
 "[ast of tumorous home][horizbin of sco-lazy-creep][ast of feeling harm] [ast of cold barrier] [ast of screening pool][horizbin of sco-eight-strays][ast of tool cavern]",
 "[vert of tumorous home] [vertbin of sco-slight-nudge] [vertbin of sco-my-list] [vertbin of sco-dang-fools] [vertbin of whether or not mensch is moot]",
 "[horiz of trap zoo] [ast of night sludge][horizbin of sco-my-list][ast of ditch park][horizbin of sco-my-list][ast of fang duels] [horiz of tricky pile]",
 "[vert of watery pond] [vertbin of sco-slight-nudge] [vertbin of sco-my-list] [vertbin of sco-dang-fools] [vert of mass crime]",
 "[ast of watery pond][horizbin of sco-rocking-blows][ast of blue tombs] [ast of painful garden] [ast of crazy leap][horizbin of sco-lazy-creep][ast of mass crime]",
-"    [vertbin of sco-gainful-pardon]",
-"  [ast of violence senders][horizbin of sco-deal-room][ast of real doom][horizbin of sco-deal-room][ast of dutiful bawlers]",
-"  [vert of violence senders]   [vert of dutiful bawlers]",
-"  [ast of hater graph][horiz of hater graph][vert of driving rain][horiz of scraped shoals][ast of scraped shoals]"
+"[vertbin of sco-gainful-pardon]",
+"[ast of violence senders][horizbin of sco-deal-room][ast of real doom][horizbin of sco-deal-room][ast of dutiful bawlers]",
+"[vert of violence senders]   [vert of dutiful bawlers]",
+"[ast of hater graph][horiz of hater graph][vert of driving rain][horiz of scraped shoals][ast of scraped shoals]"
 }
+
+map-spaces is a list of text variable. map-spaces is { "  ", "  ", "  ", "    ", "", "", "", "", "", "    ", "  ", "  ", "  ", "  " }.
 
 to say my-map:
 	say "[fixed letter spacing]";
 	let my-row be row-to-start;
 	while my-row <= row-to-end:
-		say "[entry my-row in map-row-list][line break]";
+		say "[if in-map-cmd is true][entry my-row in map-spaces][end if][entry my-row in map-row-list][line break]";
 		increment my-row;
 	say "[variable letter spacing]";
 
 check layouting: abide by the still-need-map rule;
 
+in-map-cmd is a truth state that varies.
+
 carry out maping:
 	if sco-my-list is false, say "Nothing to map, yet." instead;
+	now in-map-cmd is true;
 	say "[my-map]";
+	now in-map-cmd is false;
 	the rule succeeds;
 
 chapter scoring
