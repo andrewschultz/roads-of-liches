@@ -111,6 +111,8 @@ this is the post-pitch-dark rule:
 	moot shabby grues;
 	move bending pole to ditch park;
 	move lamp to ditch park;
+	now grue-chase is false;
+	now grue-catch is false;
 
 section ditch park scoring
 
@@ -179,7 +181,6 @@ a spoonerism rule (this is the pre-bold-carrier rule):
 this is the post-bold-carrier rule:
 	now sco-bold-carrier is true;
 	say "The ground warms up and turns grey. Well, some of it. You're on an aircraft carrier, but thankfully without the water around, now. The carrier caused a split in the barrier to the north, so you can go that way, now.";
-
 
 section hating mill scoring
 
@@ -289,9 +290,11 @@ a spoonerism rule (this is the pre-shabby-grues rule):
 
 this is the post-shabby-grues rule:
 	now sco-shabby-grues is true;
-	say "The grabby shoes pop out, replaced by shabby grues. You'll need to get past them, somehow.";
+	say "The grabby shoes pop out, replaced by shabby grues. Ugh! [one of]They are fearsome, of course, but you have a plan: perhaps if the grues did not guard this bridge, it would be less fearsome. How to pull them away?[or]Again! Perhaps you can pull them away for good from the bridge this time.[run paragraph on][line break][stopping]";
 	moot grabby shoes;
 	move shabby grues to fear bridge;
+	now grue-chase is true;
+	now grue-catch is false;
 
 a spoonerism rule (this is the pre-beer-fridge rule):
 	if player is not in fear bridge, unavailable;
@@ -495,6 +498,7 @@ this is the post-lazy-creep rule:
 	say "The sheddable creep suddenly looks exhausted and assures you you're not worth chasing and pestering any more. Whatever they wanted to pester you about, you just won't LEARN. They go off somewhere to find someone else to bug.";
 	moot creep;
 	now creep-chase is false;
+	now creep-catch is false;
 
 section screening pool scoring
 

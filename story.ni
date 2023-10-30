@@ -252,15 +252,34 @@ chapter shabby grues
 
 the shabby grues are people. "Shabby grues here look around, chasing forlornly. Thankfully, you can stay in the moonlight, so they can't attack.". description is "You don't want to get too close where they'd feel comfortable grabbing you."
 
-after printing the locale description when shabby grues are not off-stage and shabby grues are not in location of player and sco-pitch-dark is false:
+grue-chase is a truth state that varies.
+grue-catch is a truth state that varies.
+
+after printing the locale description when grue-chase is true:
 	if grues are in ditch park:
-		say "The grues give up on you.";
+		say "The grues, being a bit shabby, seem out of shape. They've had enough running for now. They give up on you.";
 		move grabby shoes to fear bridge;
 		moot shabby grues;
-	else:
-		say "The shabby grues follow you from [location of shabby grues].";
+		now grue-chase is false;
+	else if grues are not in location of player:
+		say "The shabby grues slink along in the shadows, following you from [location of shabby grues].";
 		move shabby grues to location of player;
+		now grue-catch is false;
 	continue the action;
+
+every turn when grue-chase is true:
+	if grue-catch is true:
+		if player is in Fear Bridge:
+			say "You find a relatively light place where the grues won't get you. They find you not worth chasing. The grabby shoes reappear.";
+		else:
+			say "You panic when the grues get too close and find a relatively light place where they wouldn't dare chase you. They wait for you to venture back into darker areas, but you do not. They eventually tire of this and head back to Fear Bridge.";
+		say "[line break]Hooray for safety, but how could you pull them away for good?";
+		move grabby shoes to fear bridge;
+		move shabby grues to stride seat;
+		now grue-chase is false;
+		now grue-catch is false;
+	else:
+		now grue-catch is true;
 
 volume south hub
 
@@ -453,15 +472,18 @@ creep-chase is a truth state that varies.
 
 every turn when sheddable creep is in location of player:
 	if creep-catch is true:
-		say "The sheddable creep, well, you weren't able to shed them. They bug you a bit, leaving you feeling a bit like a bum. Then they head back to Healing Farm.";
-		move creep to feeling harm;
+		if player is in Feeling Harm:
+			say "The sheddable creep pesters you for a bit before backing off. That got rid of them for now, since they're tired, but they'll recharge, and you will then need to get rid of them for good.";
+		else:
+			say "The sheddable creep, well, you weren't able to shed them. They bug you a bit, leaving you feeling a bit like a bum. Then they head back to [feeling harm].";
+			move creep to feeling harm;
 		now creep-chase is false;
 	else:
 		now creep-catch is true;
 
-after printing the locale description when player is in feeling harm:
+after printing the locale description when player is in feeling harm and sco-lazy-creep is false:
 	if sheddable creep is in feeling harm and creep-chase is false:
-		say "The creep sees you again. There's going to be another chase.";
+		say "The creep sees you again. They shamble over to you, slowly. Maybe you can shake them this time.";
 		now creep-chase is true;
 	continue the action;
 

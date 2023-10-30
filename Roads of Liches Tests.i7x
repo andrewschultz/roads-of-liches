@@ -6,6 +6,10 @@ volume silly tests
 
 test all with "test st/test n/test nr/test s/test sr/test w/test w1/test w2/test w3/test w4/test wr/test e1/test e2/test e3/test end". [ does not test doing east first! ]
 
+test grues1 with "n/n/w/mill key/rail path/e/e/hating mill/bending pole/n/keen lamp/s/w/w/n/some oil/e/shabby grues/w/e/z/e/shabby grues/w/s/e/s/s/s".
+
+test grues2 with "my list/n/start hopping/n/bold carrier/n/forest/s/s/test grues1".
+
 test wwest1st with "test st/balk wack/test n/test s/test w1/test w2/test w3/test wr/test e1/test e3/test end".
 
 test st with "cleared woes/eh lout/treat chunk/my list/w/start hopping/n/bold carrier/n/forest/s/s/w/slight nudge/e/e/dang fools/w/s/gainful pardon/s/deal room/n/n".
