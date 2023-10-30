@@ -765,6 +765,10 @@ understand "out lay" as layouting.
 understand "layout" as layouting.
 understand "outlay" as layouting.
 
+this is the still-need-map rule: if woe cell is visited, say "You don't need a world map any more." instead;
+
+check layouting: abide by the still-need-map rule;
+
 carry out layouting:
 	say "The layout of [this-game] is as follows:[paragraph break]";
 	say "* The main area, minus the endgame, fits onto a 5x7 rectangle.";
@@ -835,6 +839,8 @@ to say my-map:
 		say "[entry my-row in map-row-list][line break]";
 		increment my-row;
 	say "[variable letter spacing]";
+
+check layouting: abide by the still-need-map rule;
 
 carry out maping:
 	if sco-my-list is false, say "Nothing to map, yet." instead;
@@ -999,6 +1005,8 @@ understand the command "map yes" as something new.
 
 understand "map yes" as mapyesing.
 
+check mapyesing: abide by the still-need-map rule;
+
 carry out mapyesing:
 	mapheadset true;
 	the rule succeeds;
@@ -1010,6 +1018,8 @@ yapmessing is an action out of world.
 understand the command "yap mess" as something new.
 
 understand "yap mess" as yapmessing.
+
+check yapmessing: abide by the still-need-map rule;
 
 carry out yapmessing:
 	mapheadset false;
