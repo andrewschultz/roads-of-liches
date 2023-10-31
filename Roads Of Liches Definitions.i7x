@@ -20,6 +20,12 @@ to say gen-dir of (di - a direction):
 	let rdl be the room di of location of player;
 	unless rdl is nowhere or rdl is unvisited, say " to [rdl]";
 
+volume text stuff
+
+ to say first-of-ors of (x - indexed text):
+ 	replace the regular expression "\|.*" in x with "";
+	say "[x]";
+
 volume useful stubs
 
 book directions

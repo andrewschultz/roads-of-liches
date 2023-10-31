@@ -37,7 +37,7 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "cleared"	"woes"	--	--	false	true	false	false	--	pre-cleared-woes rule	post-cleared-woes rule
 "eh"	"lout"	--	--	false	true	false	false	--	pre-eh-lout rule	post-eh-lout rule	--	--
 "speak"	"well"	--	--	false	true	true	false	--	pre-speak-well rule	post-speak-well rule	--	--
-"eight|8"	"strays"	--	--	false	true	true	false	Feeling Harm	pre-eight-strays rule	post-eight-strays rule	--	--
+"eight|8"	"strays"	--	--	false	true	true	false	Feeling Harm	pre-eight-strays rule	post-eight-strays rule	--	"You haven't found the right place to release the [b]EIGHT STRAYS[r], yet."
 
 a spoonerism rule (this is the pre-cleared-woes rule):
 	if sco-cleared-woes is true:
@@ -73,7 +73,7 @@ this is the post-speak-well rule:
 a spoonerism rule (this is the pre-eight-strays rule):
 	if player does not have straight as, unavailable;
 	if player is not in feeling harm:
-		vcp "You can't just let eight strays wander out anywhere!";
+		vcp "[if player is in screening pool]The strays probably need to, uh, stray from where you found them.[else if mrlp is gosouth]This is a bit too wild an area for that.[else if player is in roar fest]The strays could get lost here.[else if mrlp is gonorth]Nowhere here is homey enough.[else if player is in fang duels]The strays don't need to be around duels or fools.[else if player is in watery pond]Very nature-like here, but not homey enough.[else if player is in trap zoo]It's not a friendly zoo. It needs fewer animals![else]You can't just let eight strays wander out anywhere![end if]";
 		not-yet;
 	if sco-healing-farm is false:
 		vcp "It'd be cruel to leave the eight strays here as-is. Could you change the environs?";
@@ -93,7 +93,7 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "my"	"list"	--	--	false	true	true	false	Ditch Park	pre-my-list rule	post-my-list rule	--	--
 "start"	"hopping"	--	--	false	true	true	false	Ditch Park	pre-start-hopping rule	post-start-hopping rule
 "treat"	"chunk"	--	--	false	true	false	false	ditch park	pre-treat-chunk rule	post-treat-chunk rule	--	--
-"pitch"	"dark"	--	--	false	true	true	false	ditch park	pre-pitch-dark rule	post-pitch-dark rule	--	--
+"pitch"	"dark"	--	--	false	true	true	false	ditch park	pre-pitch-dark rule	post-pitch-dark rule	--	"You made in [b]PITCH DARK[r] in Ditch Park, but you didn't have a big reason to, yet."
 
 a spoonerism rule (this is the pre-pitch-dark rule):
 	if player is not in ditch park, unavailable;
@@ -143,7 +143,7 @@ this is the post-my-list rule:
 	move cheat trunk to Ditch Park;
 
 a spoonerism rule (this is the pre-start-hopping rule):
-	if player is not in ditch park and need-to-hop is false, unavailable;
+	if player is not in ditch park or need-to-hop is false, unavailable;
 	if sco-start-hopping is true:
 		vcal "You're already moving. You don't want to get too agitated.";
 		already-done;
@@ -167,7 +167,7 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "keen"	"lamp"	--	--	false	true	true	false	lean camp	pre-keen-lamp rule	post-keen-lamp rule	--	--
 "some"	"oil"	--	--	false	true	true	false	um soil	pre-some-oil rule	post-some-oil rule	--	--
 "shabby"	"grues"	--	--	false	true	true	false	fear bridge	pre-shabby-grues rule	post-shabby-grues rule	--	--
-"beer"	"fridge"	--	--	false	true	true	false	fear bridge	pre-beer-fridge rule	post-beer-fridge rule	--	--
+"beer"	"fridge"	--	--	false	true	true	false	fear bridge	pre-beer-fridge rule	post-beer-fridge rule	--	"The [b]BEER FRIDGE[r] can't replace Fear Bridge until the grues are gone."
 
 section cold barrier scoring
 
@@ -282,9 +282,9 @@ this is the post-forest rule:
 section fear bridge scoring
 
 a spoonerism rule (this is the pre-shabby-grues rule):
-	if player is not in fear bridge, unavailable;
+	if player is not in fear bridge or grabby shoes are not in fear bridge, unavailable;
 	if lamp-score < 2:
-		vcp "No way. Not without a reliable light source.";
+		vcp "Perhaps you could pull the shabby grues from Fear Bridge, but they would get tired of chasing you around semi-lighted areas. You need subterfuge.";
 		not-yet;
 	ready;
 
@@ -299,7 +299,7 @@ this is the post-shabby-grues rule:
 a spoonerism rule (this is the pre-beer-fridge rule):
 	if player is not in fear bridge, unavailable;
 	if shabby grues are not moot:
-		vcp "You fear there may be some deep dark evil behind everything.";
+		vcp "[if grues are touchable]The grues are distracting you[else]You fear there may be some deep dark evil behind everything[end if].";
 		not-yet;
 	if sco-beer-fridge is true:
 		vcal "You already created the beer fridge!";
@@ -314,7 +314,7 @@ this is the post-beer-fridge rule:
 to solverg:
 	now mrlp is solved;
 	bothways;
-	say "You find a[one of][or]nother[stopping] mauled scrap.";
+	say "[line break]You find a[one of][or]nother[stopping] mauled scrap.[line break]";
 	if nsr is 4:
 		say "And this time, they all fit together to find a way down the roads of liches! But you are captured...";
 		follow the score and thinking changes rule;
@@ -339,9 +339,9 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "deal"	"room"	--	--	false	true	true	false	real doom	pre-deal-room rule	post-deal-room rule	--	--
 "silence"	"vendors"	--	--	false	true	true	false	violence senders	pre-silence-vendors rule	post-silence-vendors rule	--	--
 "greater"	"half"	--	--	false	true	true	false	hater graph	pre-greater-half rule	post-greater-half rule	--	--
-"shaped"	"scrolls"	--	--	false	true	true	false	scraped shoals	pre-shaped-scrolls rule	post-shaped-scrolls rule	--	--
+"shaped"	"scrolls"	--	--	false	true	true	false	scraped shoals	pre-shaped-scrolls rule	post-shaped-scrolls rule	--	"You looked for [b]SHAPED SCROLLS[r] but didn't find anything to fit with them yet."
 "riving"	"drain"	--	--	false	true	true	false	driving rain	pre-riving-drain rule	post-riving-drain rule	--	--
-"muppet"	"pastor"	--	--	false	true	true	false	driving rain	pre-muppet-pastor rule	post-muppet-pastor rule	--	--
+"muppet"	"pastor"	--	--	false	true	true	false	driving rain	pre-muppet-pastor rule	post-muppet-pastor rule	--	"You tried to change the puppet master to a [b]PUPPET MASTER[r] but lacked documentation to justify combining spoonerisms with portmanteaus."
 
 section painful garden scoring
 
@@ -420,8 +420,8 @@ a spoonerism rule (this is the pre-shaped-scrolls rule):
 		vcal "There can't be more to find in the scraped shoals.";
 		already-done;
 	if sco-greater-half is false:
-		vcal "But you aren't sure what you are looking for. Maybe if you had part of a document...";
-		already-done;
+		vcal "Yes, that makes sense, but you aren't yet sure what you are looking for. Maybe if you had part of a document, you'd know how the scrolls should be shaped to fit together.";
+		not-yet;
 	ready;
 
 this is the post-shaped-scrolls rule:
@@ -441,10 +441,11 @@ a spoonerism rule (this is the pre-riving-drain rule):
 
 this is the post-riving-drain rule:
 	now sco-riving-drain is true;
-	say "The driving rain lets up a bit, revealing a riving drain that may or may not always have been there.[paragraph break]Either way, it's nice to have a break in the weather! What isn't so nice is the puppet master that rises from the drain.";
+	say "The driving rain lets up a bit, revealing a riving drain that may or may not always have been there.[paragraph break]Either way, it's nice to have a break in the weather! What isn't so nice is the ghastly, supernatural puppet master that rises from the drain.";
+	move puppet master to driving rain;
 
 a spoonerism rule (this is the pre-muppet-pastor rule):
-	if player is not in driving rain and puppet master is not touchable, unavailable;
+	if player is not in driving rain or puppet master is not touchable, unavailable;
 	if player does not have scrolls:
 		vcp "The puppet master smacks down your feeble spoonerism/portmanteau combo try. Obviously, it's not within the rules! Why, it can't be![paragraph break]And yet, perhaps, with the right documentation, you could flim-flam your way past this semantic barrier.";
 		not-yet;
@@ -462,7 +463,7 @@ book east spoke
 table of east spoke spoonerisms
 w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	best-room	check-rule	run-rule	wfull (topic)	think-advice (text)
 "dang"	"fools"	--	--	false	true	true	false	fang duels	pre-dang-fools rule	post-dang-fools rule	--	--
-"lazy"	"creep"	--	--	false	true	true	false	crazy leap	pre-lazy-creep rule	post-lazy-creep rule	--	--
+"lazy"	"creep"	--	--	false	true	true	false	crazy leap	pre-lazy-creep rule	post-lazy-creep rule	--	"You figured you could make a [b]LAZY CREEP[r] in Crazy Leap."
 "cool"	"tavern"	--	--	false	true	true	false	tool cavern	pre-cool-tavern rule	post-cool-tavern rule	--	--
 "tool"	"cavern"	--	--	false	true	true	true	tool cavern	pre-tool-cavern rule	post-tool-cavern rule	--	--
 "crass"	"mime"	--	--	false	true	true	false	mass crime	pre-crass-mime rule	post-crass-mime rule	--	--
@@ -487,9 +488,12 @@ this is the post-dang-fools rule:
 section crazy leap scoring
 
 a spoonerism rule (this is the pre-lazy-creep rule):
-	if player is not in crazy leap, unavailable;
-	if creep is not in crazy leap:
+	if player is not in crazy leap or sheddable creep is not touchable, unavailable;
+	if player is in crazy leap and creep is not in crazy leap:
 		vcp "But there is no creep nearby to make lazy!";
+		not-yet;
+	if creep is touchable and player is not in crazy leap:
+		vcp "There's somewhere that'll work, but not here.";
 		not-yet;
 	if sco-lazy-creep is true:
 		vcal "You already disposed of the creep!";
@@ -632,7 +636,7 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "healing"	"farm"	--	--	false	true	true	false	feeling harm	pre-healing-farm rule	post-healing-farm rule	--	--
 "sheddable"	"creep"	--	--	false	true	true	false	feeling harm	pre-sheddable-creep rule	post-sheddable-creep rule	--	--
 "humorous"	"tome"	--	--	false	true	true	false	tumorous home	pre-humorous-tome rule	post-humorous-tome rule	--	--
-"zap"	"true"	--	--	false	true	true	false	trap zoo	pre-zap-true rule	post-zap-true rule	--	--
+"zap"	"true"	--	--	false	true	true	false	trap zoo	pre-zap-true rule	post-zap-true rule	--	"You didn't quite have the components to [b]ZAP TRUE[r] in Trap Zoo."
 
 section blue tombs scoring
 
@@ -917,12 +921,16 @@ the check forks rule is listed first in the for printing a parser error rulebook
 
 rule for printing a parser error (this is the check forks rule):
 	now partial-row is 0;
+	now got-partial-done is false;
 	abide by the main-spoonerism-checker rule for table of item spoonerisms;
 	if debug-state is true, say "DEBUG INFO [mrlp]: [spoontable of mrlp], [firstdir of mrlp].";
 	if firstdir of mrlp is not inside:
 		abide by the main-spoonerism-checker rule for spoontable of mrlp;
 	if partial-row > 0:
 		say "Hmm. You are on the right track, there.";
+		the rule succeeds;
+	if got-partial-done is true:
+		say "Hmm, no, you already did that, or something like that. You'll know if and when you need to flip between things.";
 		the rule succeeds;
 	continue the action;
 
@@ -931,6 +939,8 @@ volume rule reorg
 the wordguess rules are a table name based rulebook.
 
 partial-row is a number that varies.
+
+got-partial-done is a truth state that varies.
 
 a wordguess rule for a table name (called tn) (this is the main-spoonerism-checker rule):
 	let row-count be 0;
@@ -954,7 +964,10 @@ a wordguess rule for a table name (called tn) (this is the main-spoonerism-check
 			say "You are close, but you probably need to add a trivial word.";
 			the rule succeeds;
 		if my-count is 1:
-			now partial-row is row-count;
+			if rb-out is the already-done outcome:
+				now got-partial-done is true;
+			else:
+				now partial-row is row-count;
 			next;
 		if my-count is 0, next;
 		process the check-rule entry;

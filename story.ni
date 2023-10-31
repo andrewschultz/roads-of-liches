@@ -122,6 +122,8 @@ chapter cheat trunk
 
 the cheat trunk is a thing. "A cheat trunk sits here. [if sco-treat-chunk is false]What could be in it?[else]You got a treat chunk from it, but there's more if needed.[end if]". description is "You [if sco-treat-chunk is true]got a glimpse when it opened the first time, and there are a lot of treat chunks in there[else]can't really see what's in the cheat trunk, but you might be able to guess what's inside it[end if]."
 
+understand "trail mix" and "male/mail tricks/trix" as treat chunk when treat chunk is not off-stage.
+
 check opening cheat trunk: say "[trunk-open-close]." instead;
 check closing cheat trunk: say "[trunk-open-close]." instead;
 
@@ -146,6 +148,7 @@ chunk-warn is a truth state that varies.
 
 a wordguess rule for a table name (called tn) (this is the cheatfind rule):
 	repeat through tn:
+		if core entry is false, next;
 		process the check-rule entry;
 		let rb-out be the outcome of the rulebook;
 		if rb-out is not the ready outcome, next;
@@ -199,7 +202,8 @@ check listening when player is in Pale Wrath:
 
 check going north in pale wrath:
 	if sco-rail-path is false, say "You'd fall to your death." instead;
-	if sco-bending-pole is false, say "You are unable to keep your balance." instead;
+	if sco-bending-pole is false, say "You are unable to keep your balance unaided. What could help with that?" instead;
+	if um soil is unvisited, say "The bending pole is just the thing to help you keep your balance. The more it wobbles, the steadier you feel."
 
 chapter mill key
 
@@ -217,7 +221,7 @@ Mating Hill is east of Roar Fest. it is in gonorth. "[if sco-hating-mill is true
 
 check going north in mating hill when sco-hating-mill is false: say "Mating Hill is too high." instead;
 
-after printing the locale description when player is in mating hill (this is the try-opening-mill rule):
+after printing the locale description when player is in mating hill and sco-hating-mill is true (this is the try-opening-mill rule):
 	if player has mill key:
 		move pending bowl to mating hill;
 		say "Your mill key opens up the mill. It's empty, except for a pending bowl, which seems to be phased in halfway.";
@@ -242,24 +246,24 @@ the keen lamp is a scenery. "It's nice and shiny and bright [if oil is moot]and 
 
 book Fear Bridge
 
-Fear Bridge is west of Lean Camp. Fear Bridge is east of Um Soil. it is in gonorth. "[if sco-beer-fridge is true]By the beer fridge, people come and go, which is nice and relaxing, but you don't have time for that. You can go east or west[else]The fear bridge splits this area north/south, and you don't want to cross or even touch it. You can only go back [opposite of last-dir], though you can see something to [the last-dir][end if].". printed name is "[if sco-beer-fridge is false]Fear Bridge[else]Beer Fridge[end if]". Fear Bridge is oneway.
+Fear Bridge is west of Lean Camp. Fear Bridge is east of Um Soil. it is in gonorth. "[if sco-beer-fridge is true]By the beer fridge, people come and go, which is nice and relaxing, but you don't have time for that. You can go east or west[else]The fear bridge splits this area north/south, and you don't want to cross or even touch it. You can only go back [opposite of last-dir][end if].". printed name is "[if sco-beer-fridge is false]Fear Bridge[else]Beer Fridge[end if]". Fear Bridge is oneway.
 
 chapter grabby shoes
 
-the grabby shoes are a plural-named thing in Fear Bridge. "Some grabby shoes tap-tap about here, just ready to descend on someone who might want to dismantle the fear bridge.". description is "If you get too close, you know they'll close in on your fingers or whatever. Certainly not lethal but annoying in volume. They also seem to hide a much darker nature."
+the grabby shoes are a plural-named thing in Fear Bridge. "Some grabby shoes tap-tap about here, just ready to descend on someone who might want to dismantle the fear bridge[if grues are not off-stage]. You could summon the shabby grues again, if you think you're ready to flummox them this time[end if].". description is "If you get too close, you know they'll close in on your fingers or whatever. Certainly not lethal but annoying in volume. They also seem to hide a much darker nature."
 
 chapter shabby grues
 
-the shabby grues are people. "Shabby grues here look around, chasing forlornly. Thankfully, you can stay in the moonlight, so they can't attack.". description is "You don't want to get too close where they'd feel comfortable grabbing you."
+the shabby grues are people. "Shabby grues here look around forlornly just outside the moonlight, in the shadows. There's got to be a way to sucker them into a fake attack and leave them fleeing, somewhere.". description is "You don't want to get too close where they'd feel comfortable grabbing you."
 
 grue-chase is a truth state that varies.
 grue-catch is a truth state that varies.
 
 after printing the locale description when grue-chase is true:
 	if grues are in ditch park:
-		say "The grues, being a bit shabby, seem out of shape. They've had enough running for now. They give up on you.";
+		say "The grues, being a bit shabby, seem out of shape. They've had enough running for now. They give up on you[if player is in fear bridge]. They hide completely out of sight. You can probably summon the shabby grues again when needed[end if].";
 		move grabby shoes to fear bridge;
-		moot shabby grues;
+		move shabby grues to stride seat;
 		now grue-chase is false;
 	else if grues are not in location of player:
 		say "The shabby grues slink along in the shadows, following you from [location of shabby grues].";
@@ -457,7 +461,9 @@ Feeling Harm is a room in gowest. it is north of Night Sludge. "[if sco-healing-
 
 check going in feeling harm:
 	if sco-healing-farm is false and noun is rejectable, say "You fear harm any way but south." instead;
-	if noun is west and creep is not moot, say "The [sheep-creep] won't let you go west. How to get rid of them?" instead;
+	if noun is west and creep is not moot:
+		now creep-catch is false;
+		say "The [sheep-creep] won't let you go west. How to get rid of them?" instead;
 
 to decide which thing is sheep-creep:
 	if sheep is touchable, decide on sheep;
@@ -465,7 +471,7 @@ to decide which thing is sheep-creep:
 
 chapter sheddable creep
 
-the sheddable creep is a person. "The sheddable creep saunters around.". description is "Not the nicest, but they also seem a bit disinterest. You wonder how you could stoke further disinterest."
+the sheddable creep is a person. "The sheddable creep saunters around.". description is "Not the nicest, but they also seem a bit disinterested. You wonder how you could stoke further disinterest."
 
 creep-catch is a truth state that varies.
 creep-chase is a truth state that varies.
@@ -485,6 +491,7 @@ after printing the locale description when player is in feeling harm and sco-laz
 	if sheddable creep is in feeling harm and creep-chase is false:
 		say "The creep sees you again. They shamble over to you, slowly. Maybe you can shake them this time.";
 		now creep-chase is true;
+		now creep-catch is false;
 	continue the action;
 
 after printing the locale description when creep-chase is true:
@@ -527,7 +534,7 @@ the weak spell is a thing. description is "[if sco-speak-well is false]Maybe it'
 
 book Watery Pond
 
-Watery Pond is a room in gowest. it is west of Blue Tombs. "A path leads from north to west, with a pond on the other side It's so nice and clean and non-sludgy, you're grateful it's helping you focus on where you really need to go. You [if sco-pottery-wand is false]wonder, somewhat greedily, if there is anything beneath it for you[else]probably can't find anything else in it[end if]."
+Watery Pond is a room in gowest. it is west of Blue Tombs. "A path leads from north to east, with a pond on the other side. It's so nice and clean and non-sludgy, you're grateful it's helping you focus on where you really need to go. You [if sco-pottery-wand is false]wonder, somewhat greedily, if there is anything beneath it for you[else]probably can't find anything else in it[end if]."
 
 chapter pottery wand
 
@@ -535,7 +542,7 @@ the pottery wand is a thing. description is "Rather plain looking.  No inscripti
 
 book Trap Zoo
 
-Trap Zoo is a room in gowest. it is south of Tumorous Home. it is north of Watery Pond. Trap Zoo is oneway. "[if sco-zap-true is false]A trap zoo holds animals against their will here, making an east-to-west barrier. You can only go back [opposite of last-dir], although you see a passage [last-dir] of the zoo[else]With the trap zoo opened, you can freely walk north and south here[end if]."
+Trap Zoo is a room in gowest. it is south of Tumorous Home. it is north of Watery Pond. Trap Zoo is oneway. "[if sco-zap-true is false]A trap zoo holds animals against their will here, making an east-to-west barrier. It's even opaque, so you can't see the animals trapped.[paragraph break]You can only go back [opposite of last-dir], although you see a passage [last-dir] of the zoo[else]With the trap zoo opened, you can freely walk north and south here[end if]."
 
 volume unsorted rooms
 
@@ -690,8 +697,9 @@ the RoL rejection rule is listed instead of the can't take scenery rule in the c
 check taking (this is the RoL rejection rule):
 	if player has noun, say "But you already have [the noun]." instead;
 	if noun is treat chunk:
-		say "[if player has chunk]Grow! Need no greed! (Use what you have, first.)[else]The trunk refills itself.[end if]";
-		continue the action;
+		if player has treat chunk, say "Grow! Need no greed! (Use what you have, first.)" instead;
+		now player has treat chunk;
+		say "The trunk refills itself as you take another chunk." instead;
 	if noun is pending bowl, say "There's no meal ahead. The bowl doesn't seem useful in its current state." instead;
 	if noun is lamp or noun is bending pole, say "No, [the noun] will help to repel the shabby grues." instead;
 	say "You don't need to [b]TAKE[r] anything explicitly in [this-game]. It will be done for you, if you find the right command." instead;
@@ -746,7 +754,7 @@ understand "credits" as creditsing.
 
 carry out creditsing:
 	say "Thanks to ClubFloyd for beta testing a much buggier version on October 22, 2023. They put up with a lot of implemented items and a few rooms with no visible exits. I tend to work from puzzles to physical details.";
-	say "Thanks to Leon Lin for testing.";
+	say "Thanks to Leon Lin and Tabitha for testing.";
 	say "Thanks to EctoComp administrators past and future: Ruber Eaglenest, J. J. Guest and Duncan Bowsman.";
 	say "Thanks to you for giving [this-game] a whirl.";
 	the rule succeeds;
@@ -912,7 +920,7 @@ to spoon-think-check (tn - a table name):
 			if there is a think-advice entry:
 				say "[think-advice entry]";
 			else:
-				say "You tried [b][w1 entry in upper case] [w2 entry in upper case][r][if there is a best-room entry] [here-in of best-room entry][end if], but it didn't quite work out. Maybe later.";
+				say "You tried [b][first-of-ors of w1 entry in upper case] [first-of-ors of w2 entry in upper case][r][if there is a best-room entry] [here-in of best-room entry][end if], but it didn't quite work out. Maybe later.";
 	the rule succeeds;
 
 chapter verbsing

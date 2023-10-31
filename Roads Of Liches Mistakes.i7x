@@ -6,9 +6,13 @@ volume mistakes
 
 book general
 
-understand "mail tricks" and "male tricks" and "mail trix" and "male trix" as a mistake ("You look around for a silly rabbit to deny the treat chunk to. You find none.") when player has treat chunk.
+understand "mail tricks" and "male tricks" and "mail trix" and "male trix" as a mistake ("You look around for a silly rabbit to deny the treat chunk to. Then you look up at the status bar to see if your cleverness nets an additional point. Nothing either way. Rats!") when player has treat chunk.
 
-understand "messy journey" as a mistake ("The right idea, but it already is. Why pile on more mess?").
+understand "messy journey" as a mistake ("The right idea, but your journey already is. Why pile on more mess?").
+
+book west area
+
+understand "shreddable keep" as a mistake ("No, tackling a huge haunted castle would be too much.") when credible sheep is touchable or sheddable creep is touchable.
 
 book north area
 
