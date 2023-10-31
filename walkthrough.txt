@@ -1,8 +1,10 @@
 Roads of Liches EctoComp (2023 Grand Guignol entry) walkthrough by Andrew Schultz
 
-The below is not perfectly efficient. It's taken from my test commands in Inform code. So there is some unnecessary tracking back.
+The below is not perfectly efficient. It's taken from my test commands in Inform code. So there is some unnecessary tracking back. It also eliminates bonus points.
 
 So, how to dispel the lie mist?
+
+Clues for this are in your name, the authors' name, and the game name.
 
 > my list
 
@@ -11,6 +13,8 @@ So, how to dispel the lie mist?
 You'd get rejected any way you went.
 
 > start hopping
+
+Now there are a few ways to get bonus points I won't reveal here. You'll see them at game's end if you miss them. The cheat trunk has one. One of them is on you. You get another bonus point for not using a cheat. There's also one a bit hidden if you check out the meta-commands. It's meant to be obscure, and that's why it's a bonus point!
 
 Let's go north first. It doesn't interlock with other areas.
 
