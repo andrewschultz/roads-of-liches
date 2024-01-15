@@ -69,6 +69,10 @@ book ditch park
 
 Ditch Park is a room in hubregion. "[if sco-my-list is false]There is an oppressive lie mist choking you all around. You don't trust yourself to find your way until it's lifted, but how?[else]The lie mist has dissipated, but it's still not very pleasant here[ditch-park-go][lamp-note].[end if]".
 
+after printing the locale description for ditch park when ditch park is unvisited:
+	say "[i][bracket][b]NOTE:[r][i] you can type [b]ABOUT[r][i] to see general information or [b]VERBS[r][i] to see (meta-)verbs and options. [this-game][i] has a stripped-down set of standard commands, but there are a lot you must guess, subject to certain constraints.[close bracket][r][line break]";
+	continue the action;
+
 to say lamp-note: if sco-pitch-dark is true, say ". The keen lamp you left hanging from the bending pole is keeping things lit nicely"
 
 to say ditch-park-go:
@@ -640,6 +644,10 @@ this is the show-misses rule:
 
 volume regular action verbs
 
+chapter examining
+
+check examining a direction: say "You don't need to examine directions. If anything is that way, you can walk there." instead;
+
 book replacing going
 
 the new can't go that way rule is listed instead of the can't go that way rule in the check going rules.
@@ -1053,6 +1061,7 @@ carry out yapmessing:
 volume parser errors
 
 rule for printing a parser error when the latest parser error is the i beg your pardon error:
+	if score > 0, say "Mum, canned command.[paragraph break]";
 	say "If you're up in the air about commands, [b]VERBS[r] will give a refresher."
 
 error-count is a number that varies.
