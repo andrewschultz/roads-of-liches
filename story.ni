@@ -477,6 +477,11 @@ creep-catch is a truth state that varies.
 creep-chase is a truth state that varies.
 
 every turn when sheddable creep is in location of player:
+	if creep-chase is false:
+		say "The creep gets un-bored again and decides to start chasing after you again.";
+		now creep-chase is false;
+		now creep-catch is false;
+		continue the action;
 	if creep-catch is true:
 		if player is in Feeling Harm:
 			say "The sheddable creep pesters you for a bit before backing off. That got rid of them for now, since they're tired, but they'll recharge, and you will then need to get rid of them for good.";
@@ -484,6 +489,7 @@ every turn when sheddable creep is in location of player:
 			say "The sheddable creep, well, you weren't able to shed them. They bug you a bit, leaving you feeling a bit like a bum. Then they head back to [feeling harm].";
 			move creep to feeling harm;
 		now creep-chase is false;
+		now creep-catch is false;
 	else:
 		now creep-catch is true;
 
