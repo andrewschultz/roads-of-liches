@@ -232,20 +232,22 @@ thanks you
 #BALANCE UNDOS
 >pricky tile
 by one point
->n
->w
->s
->s
->e
+>gonear mass crime
 
 >crass mime
 by one point
 
 >n
-You walk north to a trial where the mime overreacts to judgement thrown down on them.
-The mime raises one finger. There is still more they can do 
+You walk north to the pricky tile, where the mime jumps around in pain. Those spiky bumps hurt!
+The mime raises one finger. There is still more they can do to the north!
 
->undo
+>gonear tricky pile
+`Pricky Tile
+>picky trial
+by one point
+>pricky tile
+You already got the mime to step on the tile!
+
 >undo
 >undo
 >undo
@@ -258,10 +260,10 @@ The mime raises one finger. There is still more they can do
 by one point
 
 >picky trial
-WRONG
+But the trial is already here!
 
 >tricky pile
-WRONG
+You don't need to change things back to the tricky pile here.
 
 >n
 >w
@@ -275,7 +277,7 @@ by one point
 >n
 !by one point
 
-You walk north to the pricky tile, where the mime jumps around in pain. Those spiky bumps hurt!
+You walk north to a trial where the mime overreacts to judgement thrown down on them.
 The mime raises one finger. There is still more they can do 
 
 >n
@@ -290,11 +292,15 @@ You already put the mime on trial.
 >pricky tile
 by one point
 
+`Pricky Tile
+>pricky tile
+But the tile is already here!
+
 >picky trial
-But the trial is already here!
+You already had the mime face a trial!
 
 >tricky pile
-WRONG
+You don't need to change things back to the tricky pile here.
 
 >n
 >w
@@ -332,7 +338,7 @@ by one point
 #BALANCE UNDOS
 >e
 >n
-WRONG
+Mating Hill is too high.
 >hating mill
 by one point
 >n
@@ -355,7 +361,7 @@ by one point
 `Rail Path
 
 >n
-WRONG
+You are unable to keep your balance unaided. What could help with that?
 
 >e
 >e
@@ -401,7 +407,7 @@ by one point
 `Fear Bridge
 
 >e
-WRONG
+No, Fear Bridge is cut in half. You can only go back west.
 >undo
 
 >shabby grues
@@ -432,7 +438,7 @@ by one point
 >w
 
 >w
-WRONG
+No, Fear Bridge is cut in half. You can only go back east.
 
 >shabby grues
 by one point
@@ -540,16 +546,13 @@ by one point
 >oh swell
 by one point
 
-`Wayfair Cell
-
->say farewell
-WRONG
-
 >thickening suds
 by one point
 
+`Wayfair Cell
+
 >say farewell
-WRONG
+That'd be nice, but you have no way out, yet.
 
 >revolving door
 by one point

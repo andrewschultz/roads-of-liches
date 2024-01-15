@@ -440,7 +440,7 @@ the crass mime is a person. "The crass mime dances around here, making slightly 
 
 book Tricky Pile
 
-Tricky Pile is a room in goeast. it is north of Mass Crime. "A tricky pile blocks passage [last-dir]. You can see over it, but it's shifty, so no way you can climb over it. [pile-status].[paragraph break]You can go back [opposite of last-dir].". Tricky Pile is oneway. printed name is "[if pile-status is 2]Pricky Trial[else if pile-status is 1]Pricky Tile[else]Tricky Pile[end if]".
+Tricky Pile is a room in goeast. it is north of Mass Crime. "A tricky pile blocks passage [last-dir]. You can see over it, but it's shifty, so no way you can climb over it. [pile-status].[paragraph break]You can go back [opposite of last-dir].". Tricky Pile is oneway. printed name is "[if pile-status is 1]Picky Trial[else if pile-status is 2]Pricky Tile[else]Tricky Pile[end if]".
 
 to say pile-status:
 	if pile-score is 0:

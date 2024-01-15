@@ -308,21 +308,22 @@ thanks you
 #BALANCE UNDOS
 >pricky tile
 by one point
-}}SCORE++
->n
->w
->s
->s
->e
+>gonear mass crime
 \\
 >crass mime
 by one point
 \\
 >n
-You walk north to a trial where the mime overreacts to judgement thrown down on them.
-The mime raises one finger. There is still more they can do 
+You walk north to the pricky tile, where the mime jumps around in pain. Those spiky bumps hurt!
+The mime raises one finger. There is still more they can do to the north!
 \\
->undo
+>gonear tricky pile
+`Pricky Tile
+>picky trial
+by one point
+>pricky tile
+You already got the mime to step on the tile!
+\\
 >undo
 >undo
 >undo
@@ -337,10 +338,10 @@ by one point
 
 @all
 >picky trial
-WRONG
+But the trial is already here!
 \\
 >tricky pile
-WRONG
+You don't need to change things back to the tricky pile here.
 
 >n
 >w
@@ -356,7 +357,7 @@ by one point
 !by one point
 
 @all
-You walk north to the pricky tile, where the mime jumps around in pain. Those spiky bumps hurt!
+You walk north to a trial where the mime overreacts to judgement thrown down on them.
 The mime raises one finger. There is still more they can do 
 \\
 >n
@@ -373,11 +374,15 @@ by one point
 }}SCORE++
 
 @all
+`Pricky Tile
+>pricky tile
+But the tile is already here!
+\\
 >picky trial
-But the trial is already here!
+You already had the mime face a trial!
 \\
 >tricky pile
-WRONG
+You don't need to change things back to the tricky pile here.
 
 >n
 >w
@@ -421,7 +426,7 @@ by one point
 #BALANCE UNDOS
 >e
 >n
-WRONG
+Mating Hill is too high.
 >hating mill
 by one point
 }}SCORE++
@@ -449,7 +454,7 @@ by one point
 `Rail Path
 \\
 >n
-WRONG
+You are unable to keep your balance unaided. What could help with that?
 
 >e
 >e
@@ -504,7 +509,7 @@ by one point
 `Fear Bridge
 \\
 >e
-WRONG
+No, Fear Bridge is cut in half. You can only go back west.
 >undo
 \\
 >shabby grues
@@ -539,7 +544,7 @@ by one point
 
 @all
 >w
-WRONG
+No, Fear Bridge is cut in half. You can only go back east.
 
 >shabby grues
 by one point
@@ -668,19 +673,15 @@ by one point
 by one point
 }}SCORE++
 
-@all
-`Wayfair Cell
-\\
->say farewell
-WRONG
-
 >thickening suds
 by one point
 }}SCORE++
 
 @all
+`Wayfair Cell
+\\
 >say farewell
-WRONG
+That'd be nice, but you have no way out, yet.
 
 >revolving door
 by one point
