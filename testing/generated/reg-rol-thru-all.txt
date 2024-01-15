@@ -342,7 +342,7 @@ Mating Hill is too high.
 >hating mill
 by one point
 >n
-WRONG
+The mill is locked.
 >undo
 >undo
 >undo

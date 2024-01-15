@@ -223,7 +223,9 @@ book Mating Hill
 
 Mating Hill is east of Roar Fest. it is in gonorth. "[if sco-hating-mill is true]There's a mill here in place of the hill that was to the north. You can go north or west[else]There's a big hill to the north, too big to climb, but you can also go back west. As for what mating occurs, you aren't sure you want to know what or who is mating, or if it is where helpless people get checkmated[end if].". printed name is "[if sco-hating-mill is true]Hating Mill[else]Mating Hill[end if]".
 
-check going north in mating hill when sco-hating-mill is false: say "Mating Hill is too high." instead;
+check going north in mating hill:
+	if sco-hating-mill is false, say "Mating Hill is too high." instead;
+	if mill key is off-stage, say "The mill is locked." instead;
 
 after printing the locale description when player is in mating hill and sco-hating-mill is true (this is the try-opening-mill rule):
 	if player has mill key:

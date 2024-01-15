@@ -431,7 +431,7 @@ Mating Hill is too high.
 by one point
 }}SCORE++
 >n
-WRONG
+The mill is locked.
 >undo
 >undo
 >undo
