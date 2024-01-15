@@ -16,14 +16,14 @@ file=reg-rol-thru-min.txt,min,minimum walkthrough
 file=reg-rol-thru-all.txt,all,walkthrough with all points
 
 ### these obviously need to be fixed later. Right now, there are bigger things to do.
-}}MAX=0
-}}CURMAX=0
+}}MAX=53
+}}CURMAX=53
 }}SCORE=0
 }}CURMIN=0
 }}CURMINBONUS=0
 }}CURMAXBONUS=0
 }}MAXBONUS=0
-}$SCOS=You have so far scored {SCORE} out of a possible {MAX},
+}$SCOS=You have scored a total of {SCORE} out of {MAX} points
 
 ##--stable-file: this eventually says that the project is stable, and I shouldn't change the main/minimal file unless I really need to.
 #--strict-file: this says that the project requires strict section marking e.g. @all instead of ==t1.
@@ -46,18 +46,41 @@ by one point
 \\
 >score
 {$SCOS}
+\\
+>eh lout
+by one point
+}}CURMIN++
+}}SCORE++
+
+>treat chunk
+by one point
+}}CURMIN++
+}}SCORE++
 
 >my list
 by one point
-}}CURMIN++
 }}SCORE++
 
 >score
 }$SCOS
 
+>n
+Suddenly
+
 >start hopping
 by one point
-}}CURMIN++
+}}SCORE++
+
+>score
+}$SCOS
+
+>w
+
+@all
+`Night Sludge
+
+>slight nudge
+by one point
 }}SCORE++
 
 >score
@@ -66,9 +89,322 @@ by one point
 >n
 
 @all
-`Meek Spined
+`Feeling Harm
 
->speak mind
+>healing farm
+by one point
+}}SCORE++
+
+>score
+}$SCOS
+
+>sheddable creep
+by one point
+}}SCORE++
+
+>score
+}$SCOS
+
+>s
+>e
+>e
+
+@all
+`Fang Duels
+
+>dang fools
+by one point
+}}SCORE++
+
+>s
+
+@all
+`Crazy Leap
+
+>lazy creep
+by one point
+}}SCORE++
+
+>n
+>n
+
+@all
+`Screening Pool
+
+>preening school
+by one point
+}}SCORE++
+
+>s
+>w
+>w
+
+@all
+#BALANCE UNDOS
+>n
+>w
+>humorous tome
+by one point
+>s
+>zap true
+You have nothing magic that would help you zap anything.
+NOTE: this command will be useful later, but you aren't ready to use it, yet. You can track commands like this by typing THINK, which will also clue you if they now work.
+!by one point
+>undo
+>undo
+>undo
+>undo
+>undo
+
+>s
+
+@all
+`Blue Tombs
+
+>two blooms
+by one point
+}}SCORE++
+
+>perky meanie
+by one point
+}}SCORE++
+
+>rocking blows
+by one point
+}}SCORE++
+
+>w
+
+@all
+`Watery Pond
+\\
+#BALANCE UNDOS
+>n
+>zap true
+You have nothing magic that would help you zap anything.
+!by one point
+>undo
+>undo
+
+>pottery wand
+by one point
+}}SCORE++
+
+@all
+#BALANCE UNDOS
+>n
+A trap zoo holds animals against their will here, making an east-to-west barrier. It's even opaque, so you can't see the animals trapped.
+You can only go back south, although you see a passage north of the zoo.
+>zap true
+!by one point
+You have nothing that the wand would help you cast.
+>think
+You think of what you've done and what you want to do.
+Things undone in this region:
+You didn't quite have the components to ZAP TRUE in Trap Zoo.
+>undo
+>undo
+>undo
+
+>e
+>n
+>n
+
+>eight strays
+by one point
+}}SCORE++
+
+>w
+
+@all
+`Tumorous Home
+
+>humorous tome
+by one point
+}}SCORE++
+
+>speak well
+by one point
+}}SCORE++
+
+>s
+
+@all
+A trap zoo holds animals against their will here, making an east-to-west barrier. It's even opaque, so you can't see the animals trapped.
+You can only go back north, although you see a passage south of the zoo.
+\\
+# here we make sure we can solve from the other side too
+>n
+>e
+>s
+>s
+>w
+>n
+>zap true
+by one point
+}}SCORE++
+\\
+>l
+With the trap zoo opened, you can freely walk north and south here.
+>n
+Tumorous
+\\
+>undo
+>undo
+>undo
+>undo
+>undo
+>undo
+>undo
+>undo
+>undo
+
+>zap true
+by one point
+}}SCORE++
+
+@all
+>l
+With the trap zoo opened, you can freely walk north and south here.
+>s
+Watery Pond
+>undo
+
+>n
+>e
+>s
+>e
+
+>e
+>n
+>e
+
+@all
+`Tool Cavern
+
+>cool tavern
+by one point
+}}SCORE++
+
+@all
+`Cool Tavern
+
+>tool cavern
+!by one point
+
+>muddy wrench
+by one point
+}}SCORE++
+
+>cool tavern
+!by one point
+thanks you
+
+>s
+
+@all
+`Tricky Pile
+\\
+#BALANCE UNDOS
+>pricky tile
+by one point
+}}SCORE++
+>n
+>w
+>s
+>s
+>e
+\\
+>crass mime
+by one point
+\\
+>n
+You walk north to a trial where the mime overreacts to judgement thrown down on them.
+The mime raises one finger. There is still more they can do 
+\\
+>undo
+>undo
+>undo
+>undo
+>undo
+>undo
+>undo
+>undo
+
+>picky trial
+by one point
+}}SCORE++
+
+@all
+>picky trial
+WRONG
+\\
+>tricky pile
+WRONG
+
+>n
+>w
+>s
+>s
+>e
+
+>crass mime
+by one point
+}}SCORE++
+
+>n
+!by one point
+
+@all
+You walk north to the pricky tile, where the mime jumps around in pain. Those spiky bumps hurt!
+The mime raises one finger. There is still more they can do 
+\\
+>n
+You already put the mime on trial.
+
+>w
+>n
+>n
+>e
+>s
+
+>pricky tile
+by one point
+}}SCORE++
+
+@all
+>picky trial
+But the trial is already here!
+\\
+>tricky pile
+WRONG
+
+>n
+>w
+>s
+>s
+>e
+
+>n
+!by one point
+You walk north to the pricky tile, where the mime jumps around in pain. Those spiky bumps hurt!
+The mime slumps over. They've taken too much! As they fall over, a mauled scrap flies up from their hands. You take it. They express astonishment and run off, fake-crying. But you swear they winked at you as they looked back.
+
+>w
+>n
+>w
+
+>n
+
+@all
+`Cold Barrier
+
+>bold carrier
+by one point
+}}SCORE++
+
+@all
+`Bold Carrier
 
 >n
 
@@ -76,6 +412,25 @@ by one point
 `Roar Fest
 
 >forest
+by one point
+}}SCORE++
+
+@all
+`Forest
+\\
+#BALANCE UNDOS
+>e
+>n
+WRONG
+>hating mill
+by one point
+}}SCORE++
+>n
+WRONG
+>undo
+>undo
+>undo
+>undo
 
 >w
 
@@ -83,13 +438,291 @@ by one point
 `Pale Wrath
 
 >mill key
+by one point
+}}SCORE++
 
 >rail path
+by one point
+}}SCORE++
 
 @all
 `Rail Path
+\\
+>n
+WRONG
 
 >e
+>e
+
+@all
+`Mating Hill
+
+>hating mill
+by one point
+}}SCORE++
+
+@all
+pending bowl
+
+>bending pole
+by one point
+}}SCORE++
+
+>w
+>w
+>n
+
+@all
+`Um, Soil
+
+>some oil
+by one point
+}}SCORE++
+
+>s
+
+>e
+>e
+
+>n
+
+@all
+`Lean Camp
+
+>keen lamp
+by one point
+}}SCORE++
+
+@all
+>s
+>w
+\\
+#BALANCE UNDOS
+>w
+>n
+>e
+`Fear Bridge
+\\
+>e
+WRONG
+>undo
+\\
+>shabby grues
+by one point
+}}SCORE++
+\\
+>w
+>s
+>e
+>s
+>s
+>pitch dark
+by one point
+}}SCORE++
+\\
+>undo
+>undo
+>undo
+>undo
+>undo
+>undo
+>undo
+>undo
+>undo
+>undo
+
+@all+
+>e
+>n
+
+>w
+
+@all
+>w
+WRONG
+
+>shabby grues
+by one point
+}}SCORE++
+
+>e
+>s
+>w
+>s
+>s
+
+>pitch dark
+by one point
+}}SCORE++
+
+>n
+>n
+
+@all
+#BALANCE UNDOS
+>w
+>n
+>e
+>beer fridge
+by one point
+}}SCORE++
+>undo
+>undo
+>undo
+>undo
+
+>e
+>n
+>w
+>beer fridge
+by one point
+}}SCORE++
+
+@all
+`Beer Fridge
+
+>e
+>s
+>w
+>s
+>s
+
+#now part 4
+
+>s
+
+@all
+`Painful Garden
+
+>gainful pardon
+by one point
+}}SCORE++
+
+@all
+`Gainful Pardon
+
+>s
+>e
+>beautiful dollars
+by one point
+}}SCORE++
+
+>w
+>w
+>silence vendors
+by one point
+}}SCORE++
+
+>s
+>greater half
+by one point
+}}SCORE++
+
+>n
+>e
+>e
+>s
+>shaped scrolls
+by one point
+}}SCORE++
+
+@all
+#BALANCE UNDOS
+>n
+>w
+>w
+>s
+>e
+>riving drain
+by one point
+}}SCORE++
+>muppet pastor
+by one point
+}}SCORE++
+Woe Cell
+\\
+>undo
+>undo
+>undo
+>undo
+>undo
+>undo
+>undo
+
+>w
+>riving drain
+by one point
+}}SCORE++
+>muppet pastor
+by one point
+}}SCORE++
+
+@all
+`Woe Cell
+
+>so well
+by one point
+}}SCORE++
+
+>oh swell
+by one point
+}}SCORE++
+
+@all
+`Wayfair Cell
+\\
+>say farewell
+WRONG
+
+>thickening suds
+by one point
+}}SCORE++
+
+@all
+>say farewell
+WRONG
+
+>revolving door
+by one point
+}}SCORE++
+
+>say farewell
+by one point
+}}SCORE++
+
+@all
+`Bane Row
+\\
+>rainbow
+You're too meek-spined at the moment to admit a rainbow would be nice here.
+(useful command again saved to THINK for later reference.)
+!by one point
+
+>speak mind
+by one point
+}}SCORE++
+
+>rainbow
+by one point
+}}SCORE++
+
+@all
+`Near My Claim
+\\
+>clear my name
+You'd love to, but you still feel guilt! Unreasonable guilt, but guilt nonetheless.
+(useful command again saved to THINK for later reference.)
+!by one point
+
+>stop caring
+by one point
+}}SCORE++
+
+>clear my name
+by one point
+}}SCORE++
+
+* _notdoneyet
 
 >e
 
@@ -98,11 +731,8 @@ by one point
 
 >hating mill
 
-@all
-pending bowl
-
->bending pole
-
+>w
+>w
 >n
 
 @all
@@ -166,73 +796,3 @@ by one point
 >s
 
 >e
-
-@all
-`Gruel Co
-
->ghoul crow
-by one point
-}}CURMIN++
-}}SCORE++
-
->score
-}$SCOS
-
->cruel go
-by one point
-}}CURMIN++
-}}SCORE++
-
->score
-}$SCOS
-
->cool grow
-by one point
-}}CURMIN++
-}}SCORE++
-
->score
-}$SCOS
-
->w
-
->w
-
-@all
-`Night Sludge
-
->slight nudge
-by one point
-}}CURMIN++
-}}SCORE++
-
->score
-}$SCOS
-
->e
->s
-
-@all
-`Painful Garden
-
->gainful pardon
-by one point
-}}CURMIN++
-}}SCORE++
-
->score
-}$SCOS
-
->n
->n
-
-@all
-`Meek Spined
-
->speak mind
-by one point
-}}CURMIN++
-}}SCORE++
-
->score
-}$SCOS

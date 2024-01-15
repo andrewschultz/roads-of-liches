@@ -8,38 +8,304 @@
 
 * main-thru
 
+>treat chunk
+by one point
+
 >my list
 by one point
 
 >score
+
+>n
+Suddenly
 
 >start hopping
 by one point
 
 >score
 
+>w
+
+>slight nudge
+by one point
+
+>score
+
 >n
 
->speak mind
+>healing farm
+by one point
+
+>score
+
+>sheddable creep
+by one point
+
+>score
+
+>s
+>e
+>e
+
+>dang fools
+by one point
+
+>s
+
+>lazy creep
+by one point
+
+>n
+>n
+
+>preening school
+by one point
+
+>s
+>w
+>w
+
+>s
+
+>two blooms
+by one point
+
+>perky meanie
+by one point
+
+>rocking blows
+by one point
+
+>w
+
+>pottery wand
+by one point
+
+>e
+>n
+>n
+
+>eight strays
+by one point
+
+>w
+
+>humorous tome
+by one point
+
+>speak well
+by one point
+
+>s
+
+>zap true
+by one point
+
+>n
+>e
+>s
+>e
+
+>e
+>n
+>e
+
+>cool tavern
+by one point
+
+>tool cavern
+!by one point
+
+>muddy wrench
+by one point
+
+>cool tavern
+!by one point
+thanks you
+
+>s
+
+>picky trial
+by one point
+
+>n
+>w
+>s
+>s
+>e
+
+>crass mime
+by one point
+
+>n
+!by one point
+
+>w
+>n
+>n
+>e
+>s
+
+>pricky tile
+by one point
+
+>n
+>w
+>s
+>s
+>e
+
+>n
+!by one point
+You walk north to the pricky tile, where the mime jumps around in pain. Those spiky bumps hurt!
+The mime slumps over. They've taken too much! As they fall over, a mauled scrap flies up from their hands. You take it. They express astonishment and run off, fake-crying. But you swear they winked at you as they looked back.
+
+>w
+>n
+>w
+
+>n
+
+>bold carrier
+by one point
 
 >n
 
 >forest
+by one point
 
 >w
 
 >mill key
+by one point
 
 >rail path
+by one point
 
 >e
+>e
+
+>hating mill
+by one point
+
+>bending pole
+by one point
+
+>w
+>w
+>n
+
+>some oil
+by one point
+
+>s
+
+>e
+>e
+
+>n
+
+>keen lamp
+by one point
+
+>w
+
+>shabby grues
+by one point
+
+>e
+>s
+>w
+>s
+>s
+
+>pitch dark
+by one point
+
+>n
+>n
+
+>e
+>n
+>w
+>beer fridge
+by one point
+
+>e
+>s
+>w
+>s
+>s
+
+#now part 4
+
+>s
+
+>gainful pardon
+by one point
+
+>s
+>e
+>beautiful dollars
+by one point
+
+>w
+>w
+>silence vendors
+by one point
+
+>s
+>greater half
+by one point
+
+>n
+>e
+>e
+>s
+>shaped scrolls
+by one point
+
+>w
+>riving drain
+by one point
+>muppet pastor
+by one point
+
+>so well
+by one point
+
+>oh swell
+by one point
+
+>thickening suds
+by one point
+
+>revolving door
+by one point
+
+>say farewell
+by one point
+
+>speak mind
+by one point
+
+>rainbow
+by one point
+
+>stop caring
+by one point
+
+>clear my name
+by one point
+
+* _notdoneyet
 
 >e
 
 >hating mill
 
->bending pole
-
+>w
+>w
 >n
 
 >keen lamp
@@ -94,43 +360,3 @@ by one point
 >s
 
 >e
-
->ghoul crow
-by one point
-
->score
-
->cruel go
-by one point
-
->score
-
->cool grow
-by one point
-
->score
-
->w
-
->w
-
->slight nudge
-by one point
-
->score
-
->e
->s
-
->gainful pardon
-by one point
-
->score
-
->n
->n
-
->speak mind
-by one point
-
->score
