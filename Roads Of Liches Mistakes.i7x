@@ -22,6 +22,10 @@ understand "for rest" and "four rest" as a mistake ("No, it's not quite rest you
 
 understand "milky" as a mistake ("No, we need something more substantial, not a description.") when kill me is touchable.
 
+book east area
+
+understand "tricky pile" as a mistake ("You don't need to change things back to the tricky pile here.") when player is in tricky pile and pile-score > 0.
+
 book ending
 
 understand "brain oh" as a mistake ("You wrack your brain for what to do. Something cheery. Anything.") when player is in Bane Row.

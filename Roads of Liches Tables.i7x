@@ -6,6 +6,8 @@ Version 1/221116 of Roads of Liches Tables by Andrew Schultz begins here.
 
 volume stuff that may go to core
 
+to say-loc: say "[b][location of player][r][line break]";
+
 to bothways:
 	now location of player is not oneway;
 
@@ -181,6 +183,7 @@ a spoonerism rule (this is the pre-bold-carrier rule):
 this is the post-bold-carrier rule:
 	now sco-bold-carrier is true;
 	say "The ground warms up and turns grey. Well, some of it. You're on an aircraft carrier, but thankfully without the water around, now. The carrier caused a split in the barrier to the north, so you can go that way, now.";
+	say-loc;
 
 section hating mill scoring
 
@@ -230,6 +233,7 @@ a spoonerism rule (this is the pre-rail-path rule):
 this is the post-rail-path rule:
 	now sco-rail-path is true;
 	say "The wrath subsides, revealing a rickety rail path to the north. You'll probably need assistance to make it across without falling. It's a huge drop down!";
+	say-loc;
 
 section um soil scoring
 
@@ -278,6 +282,7 @@ a spoonerism rule (this is the pre-forest rule):
 this is the post-forest rule:
 	now sco-forest is true;
 	say "The roar fest quiets a bit. It opens up a passage to a dark forest, which is slightly less intimidating.";
+	say-loc;
 
 section fear bridge scoring
 
@@ -329,6 +334,7 @@ to solverg:
 			force-status;
 	else:
 		say "But the scrawled map is incomplete. Still, yay progress.";
+		say-loc;
 
 book south spoke
 
@@ -355,6 +361,7 @@ a spoonerism rule (this is the pre-gainful-pardon rule):
 this is the post-gainful-pardon rule:
 	now sco-gainful-pardon is true;
 	say "Well, you can't expect any judge to give you a sealed document, so you work things out for yourself. Perhaps there are some things you need to make restitution for, but pain for its own sake will do no good, and you'll think of anything once you get out. If you get out. Maybe track down someone you did wrong. Here, though, not much to do.";
+	say-loc;
 
 section real doom scoring
 
@@ -543,6 +550,7 @@ this is the post-cool-tavern rule:
 		continue the action;
 	move ruddy mensch to tool cavern;
 	now cavern-is-tavern is true;
+	say-loc;
 
 a spoonerism rule (this is the pre-tool-cavern rule):
 	if player is not in tool cavern, unavailable;
@@ -555,6 +563,7 @@ this is the post-tool-cavern rule:
 	say "You focus and blink, and the tavern changes[one of][or] back to[stopping] a cavern[if ruddy mensch is in tool cavern]. The ruddy mensch blurs out of view as well[end if].";
 	now cavern-is-tavern is false;
 	if ruddy mensch is in tool cavern, now ruddy mensch is in stride seat;
+	say-loc;
 
 a spoonerism rule (this is the pre-muddy-wrench rule):
 	if player is not in tool cavern, unavailable;
@@ -606,8 +615,9 @@ a spoonerism rule (this is the pre-pricky-tile rule):
 
 this is the post-pricky-tile rule:
 	now sco-pricky-tile is true;
-	say "The tricky pile rearranges so there is pricky tile all around."; [?? bug check if it is already in a certain status]
+	say "The tricky pile rearranges so there is pricky tile all around.";
 	now pile-status is 2;
+	say-loc;
 
 a spoonerism rule (this is the pre-picky-trial rule):
 	abide by the tile-flip rule;
@@ -623,6 +633,7 @@ this is the post-picky-trial rule:
 	now sco-picky-trial is true;
 	say "The tricky pile rearranges to become an impromptu courtroom."; [?? bug check if it is already in a certain status]
 	now pile-status is 1;
+	say-loc;
 
 book west spoke
 
